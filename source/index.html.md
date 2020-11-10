@@ -19,7 +19,7 @@ search: true
 code_clipboard: true
 ---
 
-# Hello GAC - SUPUN !
+# Hello GAC - SUPUN and Harsha !
 
 Welcome to the GAC V1 API! You can use our API to access `GAC Bookings` API endpoints, which can get information on various bookings, airport, and terminals in our database.
 
