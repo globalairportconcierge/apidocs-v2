@@ -37,6 +37,16 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
+```shell
+curl --request GET \
+  --url 'http://127.0.0.1:4010/airports?limit=10&starting_from=0' \
+  --header 'accept-encoding: gzip,compress' \
+  --header 'apikey: uiuyiuyiuyu' \
+  --header 'content-type: application/json' \
+  --header 'prefer: dynamic=true, code=200' \
+  --header 'x-trace-id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'
+```
+
 ```python
 import kittn
 
