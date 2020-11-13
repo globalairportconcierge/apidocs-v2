@@ -268,7 +268,6 @@ html, body {
     right: 0;
     top: 0;
     bottom: 0;
-    padding: 2em;
   }
 
   .lang-selector {
@@ -452,8 +451,8 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.05);
-    padding: 5px;
-    border-radius: 5px;
+    padding: 3px;
+    border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
   }
@@ -468,6 +467,7 @@ html, body {
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    border-right: #2484FF;width: 3px;
     background: $aside-notice-bg;
     line-height: 1.6;
 
