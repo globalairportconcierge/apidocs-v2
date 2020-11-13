@@ -1,5 +1,5 @@
 ---
-title: GAC API V2.0.0 v1.0
+title: GAC API V1.1.0
 language_tabs:
   - shell: Shell
   - http: HTTP
@@ -14,11 +14,12 @@ includes: []
 search: true
 highlight_theme: darkula
 headingLevel: 2
+code_clipboard: true
 ---
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="gac-api-v2-0-0">GAC API V2.0.0 v1.0</h1>
+<h1 id="gac-api-v2-0-0">GAC API V1.1.0 </h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -49,7 +50,7 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 
 ```shell
 # You can also use wget
-curl -X DELETE http://3.89.112.137:4010terminals/{id} \
+curl -X DELETE http://3.89.112.137:4010/terminals/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -58,7 +59,7 @@ curl -X DELETE http://3.89.112.137:4010terminals/{id} \
 ```
 
 ```http
-DELETE http://3.89.112.137:4010terminals/{id} HTTP/1.1
+DELETE http://3.89.112.137:4010/terminals/{id} HTTP/1.1
 Host: 3.89.112.137:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -74,7 +75,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("http://3.89.112.137:4010terminals/{id}", {
+fetch("http://3.89.112.137:4010/terminals/{id}", {
   method: "DELETE",
 
   headers: headers,
@@ -98,7 +99,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.delete 'http://3.89.112.137:4010terminals/{id}',
+result = RestClient.delete 'http://3.89.112.137:4010/terminals/{id}',
   params: {
   }, headers: headers
 
@@ -115,7 +116,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.delete('http://3.89.112.137:4010terminals/{id}', headers = headers)
+r = requests.delete('http://3.89.112.137:4010/terminals/{id}', headers = headers)
 
 print(r.json())
 
@@ -139,7 +140,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('DELETE','http://3.89.112.137:4010terminals/{id}', array(
+    $response = $client->request('DELETE','http://3.89.112.137:4010/terminals/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -156,7 +157,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://3.89.112.137:4010terminals/{id}");
+URL obj = new URL("http://3.89.112.137:4010/terminals/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
@@ -190,7 +191,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "http://3.89.112.137:4010terminals/{id}", data)
+    req, err := http.NewRequest("DELETE", "http://3.89.112.137:4010/terminals/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -200,7 +201,7 @@ func main() {
 
 ```
 
-`DELETE terminals/{id}`
+`DELETE /terminals/{id}`
 
 _DELETE_
 
@@ -671,9 +672,6 @@ Get list of operating Airports.
 | currency       | USD   |
 | currency       | GBP   |
 | currency       | EUR   |
-| currency       | USD   |
-| currency       | GBP   |
-| currency       | EUR   |
 | currancy       | USD   |
 | currancy       | GBP   |
 | currancy       | EUR   |
@@ -1000,69 +998,11 @@ Endpoint to create a new airport.
 
 <h3 id="post-airports-parameters">Parameters</h3>
 
-| Name                      | In     | Type           | Required | Description                                                       |
-| ------------------------- | ------ | -------------- | -------- | ----------------------------------------------------------------- |
-| X-Trace-Id                | header | string         | false    | Please provide your UUID for tracing                              |
-| Content-Type              | header | string         | true     | application/json                                                  |
-| body                      | body   | object         | false    | Request body for creating an airport.                             |
-| » code                    | body   | string         | true     | Airport code                                                      |
-| » name                    | body   | string         | true     | Airport name                                                      |
-| » country                 | body   | string         | true     | Airport country                                                   |
-| » city                    | body   | string         | true     | Airport city                                                      |
-| » time_zone               | body   | string         | false    | Airport time zone                                                 |
-| » booking_window          | body   | number         | false    | Minimal time allowed to make a booking pior serivce date and time |
-| » currency                | body   | string         | false    | Preffered currency of the airport                                 |
-| » comments                | body   | string         | false    | Special comments regarding the airport                            |
-| » image                   | body   | string         | false    | Image url of the airport                                          |
-| » location                | body   | object         | false    | Exact geo location of the airport                                 |
-| »» lat                    | body   | number(double) | false    | none                                                              |
-| »» long                   | body   | number(double) | false    | none                                                              |
-| » contacts                | body   | [object]       | false    | Contact details of the airport                                    |
-| »» address                | body   | object         | false    | Addres information                                                |
-| »»» streets               | body   | [string]       | false    | none                                                              |
-| »»» city                  | body   | string         | false    | none                                                              |
-| »»» state                 | body   | string         | false    | none                                                              |
-| »»» postal_code           | body   | string         | false    | none                                                              |
-| »»» country               | body   | string         | false    | none                                                              |
-| »» emails                 | body   | [object]       | false    | Email information                                                 |
-| »»» type                  | body   | string         | false    | none                                                              |
-| »»» email                 | body   | string(email)  | false    | none                                                              |
-| »» phones                 | body   | [object]       | false    | Phone numbers                                                     |
-| »»» type                  | body   | string         | false    | none                                                              |
-| »»» name                  | body   | string         | false    | none                                                              |
-| »»» phone                 | body   | string         | false    | none                                                              |
-| » operational             | body   | boolean        | false    | If the airport is operatable                                      |
-| » charges                 | body   | object         | false    | harges assosiated with the airport                                |
-| »» surcharge              | body   | [object]       | false    | none                                                              |
-| »»» below                 | body   | number         | false    | none                                                              |
-| »»» percentage            | body   | number         | false    | none                                                              |
-| »» additional_hour_charge | body   | [object]       | false    | none                                                              |
-| »»» currancy              | body   | string         | false    | none                                                              |
-| »»» rate                  | body   | number         | false    | none                                                              |
-| » air_side_meetup         | body   | object         | false    | Passenger meet up point is at the air side or land side           |
-| »» international          | body   | object         | false    | none                                                              |
-| »»» arrival               | body   | boolean        | false    | none                                                              |
-| »»» depature              | body   | boolean        | false    | none                                                              |
-| »»» transit               | body   | boolean        | false    | none                                                              |
-| »» domestic               | body   | object         | false    | none                                                              |
-| »»» arrival               | body   | boolean        | false    | none                                                              |
-| »»» depature              | body   | boolean        | false    | none                                                              |
-| »»» transit               | body   | boolean        | false    | none                                                              |
-
-#### Enumerated Values
-
-| Parameter        | Value |
-| ---------------- | ----- |
-| » booking_window | 6     |
-| » booking_window | 12    |
-| » booking_window | 24    |
-| » booking_window | 48    |
-| » currency       | USD   |
-| » currency       | GBP   |
-| » currency       | EUR   |
-| »»» currancy     | USD   |
-| »»» currancy     | GBP   |
-| »»» currancy     | EUR   |
+| Name         | In     | Type                                                                                                                                                | Required | Description                           |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------- |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing  |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                      |
+| body         | body   | [#/paths/~1airports/post/requestBody/content/application~1json/schema](#schema#/paths/~1airports/post/requestbody/content/application~1json/schema) | false    | Request body for creating an airport. |
 
 > Example responses
 
@@ -1324,9 +1264,6 @@ Endpoint to create a new airport.
 | currency       | USD   |
 | currency       | GBP   |
 | currency       | EUR   |
-| currency       | USD   |
-| currency       | GBP   |
-| currency       | EUR   |
 | currancy       | USD   |
 | currancy       | GBP   |
 | currancy       | EUR   |
@@ -1532,9 +1469,6 @@ GET Airport details.
 | booking_window | 12    |
 | booking_window | 24    |
 | booking_window | 48    |
-| currency       | USD   |
-| currency       | GBP   |
-| currency       | EUR   |
 | currency       | USD   |
 | currency       | GBP   |
 | currency       | EUR   |
@@ -2076,70 +2010,12 @@ Update an exsisting airport main details
 
 <h3 id="post-airports-id-parameters">Parameters</h3>
 
-| Name                      | In     | Type           | Required | Description                                                       |
-| ------------------------- | ------ | -------------- | -------- | ----------------------------------------------------------------- |
-| X-Trace-Id                | header | string         | false    | Please provide your UUID for tracing                              |
-| Content-Type              | header | string         | true     | application/json                                                  |
-| body                      | body   | object         | false    | PUT airport request body                                          |
-| » code                    | body   | string         | true     | Airport code                                                      |
-| » name                    | body   | string         | true     | Airport name                                                      |
-| » country                 | body   | string         | true     | Airport country                                                   |
-| » city                    | body   | string         | true     | Airport city                                                      |
-| » time_zone               | body   | string         | false    | Airport time zone                                                 |
-| » booking_window          | body   | number         | false    | Minimal time allowed to make a booking pior serivce date and time |
-| » currency                | body   | string         | false    | Preffered currency of the airport                                 |
-| » comments                | body   | string         | false    | Special comments regarding the airport                            |
-| » image                   | body   | string         | false    | Image url of the airport                                          |
-| » location                | body   | object         | false    | Exact geo location of the airport                                 |
-| »» lat                    | body   | number(double) | false    | none                                                              |
-| »» long                   | body   | number(double) | false    | none                                                              |
-| » contacts                | body   | [object]       | false    | Contact details of the airport                                    |
-| »» address                | body   | object         | false    | Addres information                                                |
-| »»» streets               | body   | [string]       | false    | none                                                              |
-| »»» city                  | body   | string         | false    | none                                                              |
-| »»» state                 | body   | string         | false    | none                                                              |
-| »»» postal_code           | body   | string         | false    | none                                                              |
-| »»» country               | body   | string         | false    | none                                                              |
-| »» emails                 | body   | [object]       | false    | Email information                                                 |
-| »»» type                  | body   | string         | false    | none                                                              |
-| »»» email                 | body   | string(email)  | false    | none                                                              |
-| »» phones                 | body   | [object]       | false    | Phone numbers                                                     |
-| »»» type                  | body   | string         | false    | none                                                              |
-| »»» name                  | body   | string         | false    | none                                                              |
-| »»» phone                 | body   | string         | false    | none                                                              |
-| » operational             | body   | boolean        | false    | If the airport is operatable                                      |
-| » charges                 | body   | object         | false    | harges assosiated with the airport                                |
-| »» surcharge              | body   | [object]       | false    | none                                                              |
-| »»» below                 | body   | number         | false    | none                                                              |
-| »»» percentage            | body   | number         | false    | none                                                              |
-| »» additional_hour_charge | body   | [object]       | false    | none                                                              |
-| »»» currancy              | body   | string         | false    | none                                                              |
-| »»» rate                  | body   | number         | false    | none                                                              |
-| » air_side_meetup         | body   | object         | false    | Passenger meet up point is at the air side or land side           |
-| »» international          | body   | object         | false    | none                                                              |
-| »»» arrival               | body   | boolean        | false    | none                                                              |
-| »»» depature              | body   | boolean        | false    | none                                                              |
-| »»» transit               | body   | boolean        | false    | none                                                              |
-| »» domestic               | body   | object         | false    | none                                                              |
-| »»» arrival               | body   | boolean        | false    | none                                                              |
-| »»» depature              | body   | boolean        | false    | none                                                              |
-| »»» transit               | body   | boolean        | false    | none                                                              |
-| id                        | path   | string         | true     | an airport id                                                     |
-
-#### Enumerated Values
-
-| Parameter        | Value |
-| ---------------- | ----- |
-| » booking_window | 6     |
-| » booking_window | 12    |
-| » booking_window | 24    |
-| » booking_window | 48    |
-| » currency       | USD   |
-| » currency       | GBP   |
-| » currency       | EUR   |
-| »»» currancy     | USD   |
-| »»» currancy     | GBP   |
-| »»» currancy     | EUR   |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1airports/post/requestBody/content/application~1json/schema](#schema#/paths/~1airports/post/requestbody/content/application~1json/schema) | false    | PUT airport request body             |
+| id           | path   | string                                                                                                                                              | true     | an airport id                        |
 
 > Example responses
 
@@ -2867,18 +2743,6 @@ GET a list of bookings
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | type     | Online     |
 | type     | RES Online |
 | type     | Invoice    |
@@ -3124,46 +2988,11 @@ Create a booking
 
 <h3 id="post-bookings-parameters">Parameters</h3>
 
-| Name                  | In     | Type           | Required | Description                          |
-| --------------------- | ------ | -------------- | -------- | ------------------------------------ |
-| X-Trace-Id            | header | string         | false    | Please provide your UUID for tracing |
-| Content-Type          | header | string         | true     | application/json                     |
-| body                  | body   | object         | false    | booking request body                 |
-| » type                | body   | string         | true     | Booking type                         |
-| » booker              | body   | object         | true     | Booker details                       |
-| »» id                 | body   | string         | true     | none                                 |
-| »» company            | body   | object         | true     | none                                 |
-| »»» id                | body   | string         | true     | none                                 |
-| » billing             | body   | object         | true     | Billing details                      |
-| »» type               | body   | string         | true     | none                                 |
-| »» status             | body   | number         | true     | none                                 |
-| »» ref_id             | body   | string         | false    | none                                 |
-| »» card               | body   | string         | false    | none                                 |
-| »» total_service_cost | body   | number(double) | true     | none                                 |
-| »» add_hrs_charge     | body   | number         | true     | none                                 |
-| »» surcharge          | body   | number(double) | true     | none                                 |
-| »» total_booking_cost | body   | number(double) | true     | none                                 |
-| »» promo_code         | body   | string         | true     | none                                 |
-| »» total_discount     | body   | number         | true     | none                                 |
-| »» grand_total        | body   | number         | true     | none                                 |
-| »» total_paid         | body   | number         | true     | none                                 |
-| » commets             | body   | string         | false    | Special comments of the booking      |
-
-#### Enumerated Values
-
-| Parameter | Value      |
-| --------- | ---------- |
-| » type    | GAC        |
-| » type    | USS        |
-| » type    | MCS        |
-| »» type   | Online     |
-| »» type   | RES Online |
-| »» type   | Invoice    |
-| »» type   | Quotation  |
-| »» status | 0          |
-| »» status | 1          |
-| »» status | 2          |
-| »» status | 3          |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1bookings/post/requestBody/content/application~1json/schema](#schema#/paths/~1bookings/post/requestbody/content/application~1json/schema) | false    | booking request body                 |
 
 > Example responses
 
@@ -3417,18 +3246,6 @@ Create a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | type     | Online     |
 | type     | RES Online |
 | type     | Invoice    |
@@ -3873,18 +3690,6 @@ GET a booking by id
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | type     | Online     |
 | type     | RES Online |
 | type     | Invoice    |
@@ -4130,47 +3935,12 @@ Update a booking
 
 <h3 id="post-bookings-id-parameters">Parameters</h3>
 
-| Name                  | In     | Type           | Required | Description                          |
-| --------------------- | ------ | -------------- | -------- | ------------------------------------ |
-| X-Trace-Id            | header | string         | false    | Please provide your UUID for tracing |
-| Content-Type          | header | string         | true     | application/json                     |
-| body                  | body   | object         | false    | update booking request body          |
-| » type                | body   | string         | true     | Booking type                         |
-| » booker              | body   | object         | true     | Booker details                       |
-| »» id                 | body   | string         | true     | none                                 |
-| »» company            | body   | object         | true     | none                                 |
-| »»» id                | body   | string         | true     | none                                 |
-| » billing             | body   | object         | true     | Billing details                      |
-| »» type               | body   | string         | true     | none                                 |
-| »» status             | body   | number         | true     | none                                 |
-| »» ref_id             | body   | string         | false    | none                                 |
-| »» card               | body   | string         | false    | none                                 |
-| »» total_service_cost | body   | number(double) | true     | none                                 |
-| »» add_hrs_charge     | body   | number         | true     | none                                 |
-| »» surcharge          | body   | number(double) | true     | none                                 |
-| »» total_booking_cost | body   | number(double) | true     | none                                 |
-| »» promo_code         | body   | string         | true     | none                                 |
-| »» total_discount     | body   | number         | true     | none                                 |
-| »» grand_total        | body   | number         | true     | none                                 |
-| »» total_paid         | body   | number         | true     | none                                 |
-| » commets             | body   | string         | false    | Special comments of the booking      |
-| id                    | path   | string         | true     | a booking id                         |
-
-#### Enumerated Values
-
-| Parameter | Value      |
-| --------- | ---------- |
-| » type    | GAC        |
-| » type    | USS        |
-| » type    | MCS        |
-| »» type   | Online     |
-| »» type   | RES Online |
-| »» type   | Invoice    |
-| »» type   | Quotation  |
-| »» status | 0          |
-| »» status | 1          |
-| »» status | 2          |
-| »» status | 3          |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1bookings/post/requestBody/content/application~1json/schema](#schema#/paths/~1bookings/post/requestbody/content/application~1json/schema) | false    | update booking request body          |
+| id           | path   | string                                                                                                                                              | true     | a booking id                         |
 
 > Example responses
 
@@ -4424,18 +4194,6 @@ Update a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | type     | Online     |
 | type     | RES Online |
 | type     | Invoice    |
@@ -5319,42 +5077,42 @@ Creat a new company
 
 <h3 id="post-companies-parameters">Parameters</h3>
 
-| Name              | In     | Type          | Required | Description                                                                                   |
-| ----------------- | ------ | ------------- | -------- | --------------------------------------------------------------------------------------------- |
-| X-Trace-Id        | header | string        | false    | Please provide your UUID for tracing                                                          |
-| Content-Type      | header | string        | true     | application/json                                                                              |
-| body              | body   | object        | false    | company request body                                                                          |
-| » name            | body   | string        | true     | Company name                                                                                  |
-| » roles           | body   | [string]      | true     | Company roles                                                                                 |
-| » contacts        | body   | object        | false    | Contact model                                                                                 |
-| »» address        | body   | object        | false    | Addres information                                                                            |
-| »»» streets       | body   | [string]      | false    | none                                                                                          |
-| »»» city          | body   | string        | false    | none                                                                                          |
-| »»» state         | body   | string        | false    | none                                                                                          |
-| »»» postal_code   | body   | string        | false    | none                                                                                          |
-| »»» country       | body   | string        | false    | none                                                                                          |
-| »» emails         | body   | [object]      | false    | Email information                                                                             |
-| »»» type          | body   | string        | false    | none                                                                                          |
-| »»» email         | body   | string(email) | false    | none                                                                                          |
-| »» phones         | body   | [object]      | false    | Phone numbers                                                                                 |
-| »»» type          | body   | string        | false    | none                                                                                          |
-| »»» name          | body   | string        | false    | none                                                                                          |
-| »»» phone         | body   | string        | false    | none                                                                                          |
-| » image           | body   | string        | false    | COmpany image URL                                                                             |
-| » bank_details    | body   | [allOf]       | false    | Bank Details of the bank                                                                      |
-| »» id             | body   | string        | false    | none                                                                                          |
-| »» account_name   | body   | string        | false    | none                                                                                          |
-| »» account_number | body   | string        | false    | none                                                                                          |
-| »» bank_name      | body   | string        | false    | none                                                                                          |
-| »» swift_code     | body   | string        | false    | none                                                                                          |
-| »» iban_num       | body   | string        | false    | none                                                                                          |
-| »» address        | body   | object        | false    | none                                                                                          |
-| »»» streets       | body   | [string]      | false    | !!! Please note the MAX value is set for Prism Mock to return a limited number of objects !!! |
-| »»» city          | body   | string        | false    | none                                                                                          |
-| »»» state         | body   | string        | false    | none                                                                                          |
-| »»» postal_code   | body   | string        | false    | none                                                                                          |
-| »»» country       | body   | string        | false    | none                                                                                          |
-| »» default        | body   | boolean       | false    | none                                                                                          |
+| Name              | In     | Type                                                                                                                                                                                                    | Required | Description                                                                                   |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------- |
+| X-Trace-Id        | header | string                                                                                                                                                                                                  | false    | Please provide your UUID for tracing                                                          |
+| Content-Type      | header | string                                                                                                                                                                                                  | true     | application/json                                                                              |
+| body              | body   | object                                                                                                                                                                                                  | false    | company request body                                                                          |
+| » name            | body   | string                                                                                                                                                                                                  | true     | Company name                                                                                  |
+| » roles           | body   | [string]                                                                                                                                                                                                | true     | Company roles                                                                                 |
+| » contacts        | body   | [#/paths/~1airports/post/requestBody/content/application~1json/schema/properties/contacts/items](#schema#/paths/~1airports/post/requestbody/content/application~1json/schema/properties/contacts/items) | false    | Contact model                                                                                 |
+| »» address        | body   | object                                                                                                                                                                                                  | false    | Addres information                                                                            |
+| »»» streets       | body   | [string]                                                                                                                                                                                                | false    | none                                                                                          |
+| »»» city          | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» state         | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» postal_code   | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» country       | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» emails         | body   | [object]                                                                                                                                                                                                | false    | Email information                                                                             |
+| »»» type          | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» email         | body   | string(email)                                                                                                                                                                                           | false    | none                                                                                          |
+| »» phones         | body   | [object]                                                                                                                                                                                                | false    | Phone numbers                                                                                 |
+| »»» type          | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» name          | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» phone         | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| » image           | body   | string                                                                                                                                                                                                  | false    | COmpany image URL                                                                             |
+| » bank_details    | body   | [allOf]                                                                                                                                                                                                 | false    | Bank Details of the bank                                                                      |
+| »» id             | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» account_name   | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» account_number | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» bank_name      | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» swift_code     | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» iban_num       | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» address        | body   | object                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» streets       | body   | [string]                                                                                                                                                                                                | false    | !!! Please note the MAX value is set for Prism Mock to return a limited number of objects !!! |
+| »»» city          | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» state         | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» postal_code   | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »»» country       | body   | string                                                                                                                                                                                                  | false    | none                                                                                          |
+| »» default        | body   | boolean                                                                                                                                                                                                 | false    | none                                                                                          |
 
 #### Detailed descriptions
 
@@ -6441,12 +6199,12 @@ Update a company
 
 <h3 id="post-companies-id-parameters">Parameters</h3>
 
-| Name         | In     | Type   | Required | Description                          |
-| ------------ | ------ | ------ | -------- | ------------------------------------ |
-| X-Trace-Id   | header | string | false    | Please provide your UUID for tracing |
-| Content-Type | header | string | true     | application/json                     |
-| body         | body   | any    | false    | con=mpany request body               |
-| id           | path   | string | true     | a company id                         |
+| Name         | In     | Type                                                                                                                                                                    | Required | Description                          |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                                  | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                                  | true     | application/json                     |
+| body         | body   | [#/paths/~1companies~1%7Bid%7D/put/requestBody/content/application~1json/schema](#schema#/paths/~1companies~1%7bid%7d/put/requestbody/content/application~1json/schema) | false    | con=mpany request body               |
+| id           | path   | string                                                                                                                                                                  | true     | a company id                         |
 
 <h3 id="post-companies-id-responses">Responses</h3>
 
@@ -7171,12 +6929,12 @@ Create a new global discount for a company
 
 <h3 id="post-discounts-parameters">Parameters</h3>
 
-| Name         | In     | Type   | Required | Description                          |
-| ------------ | ------ | ------ | -------- | ------------------------------------ |
-| X-Trace-Id   | header | string | false    | Please provide your UUID for tracing |
-| Content-Type | header | string | true     | application/json                     |
-| company_id   | query  | string | true     | a company id                         |
-| body         | body   | any    | false    | discount request body                |
+| Name         | In     | Type                                                                                                                                                  | Required | Description                          |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                | true     | application/json                     |
+| company_id   | query  | string                                                                                                                                                | true     | a company id                         |
+| body         | body   | [#/paths/~1discounts/post/requestBody/content/application~1json/schema](#schema#/paths/~1discounts/post/requestbody/content/application~1json/schema) | false    | discount request body                |
 
 > Example responses
 
@@ -8030,759 +7788,6 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
-<h1 id="gac-api-v2-0-0-terminals-id-">terminals/{id}</h1>
-
-## get-airports-id-terminals-id
-
-<a id="opIdget-airports-id-terminals-id"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET http://3.89.112.137:4010terminals/{id} \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-GET http://3.89.112.137:4010terminals/{id} HTTP/1.1
-Host: 3.89.112.137:4010
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  apiKey: "API_KEY",
-};
-
-fetch("http://3.89.112.137:4010terminals/{id}", {
-  method: "GET",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.get 'http://3.89.112.137:4010terminals/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.get('http://3.89.112.137:4010terminals/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','http://3.89.112.137:4010terminals/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("http://3.89.112.137:4010terminals/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://3.89.112.137:4010terminals/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`GET terminals/{id}`
-
-_GET_
-
-GET a single terminal by id
-
-<h3 id="get-airports-id-terminals-id-parameters">Parameters</h3>
-
-| Name         | In     | Type   | Required | Description                          |
-| ------------ | ------ | ------ | -------- | ------------------------------------ |
-| X-Trace-Id   | header | string | false    | Please provide your UUID for tracing |
-| Content-Type | header | string | true     | application/json                     |
-| id           | path   | string | true     | a terminal id                        |
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "Data": [
-    {
-      "id": "47cc67093475061e3d95369d",
-      "terminal_name": "LHR Terminal 2",
-      "services": [
-        {
-          "id": "string",
-          "service_name": "Meet & Assist Service",
-          "rates": [
-            {
-              "currency": "USD",
-              "packages": [
-                {
-                  "pax": 0,
-                  "value": 0
-                }
-              ]
-            }
-          ],
-          "created_by": {
-            "id": "47cc67093475061e3d95369d",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "47cc67093475061e3d95369d",
-            "username": "Anna"
-          },
-          "created_at": "2020-04-23 13:34:45",
-          "updated_at": "2020-05-25 16:45:23",
-          "deleted_at": "2020-06-13 14:23:42"
-        }
-      ],
-      "service_providers": {
-        "id": "47cc67093475061e3d95369d",
-        "company_name": "string",
-        "image": "company_image.png",
-        "default": true,
-        "contacts": {
-          "address": {
-            "streets": ["No 221/1, Baker's Street"],
-            "city": "Hethrow",
-            "state": "London",
-            "postal_code": "LN223 2323",
-            "country": "United Kingdom"
-          },
-          "emails": [
-            {
-              "type": "Main",
-              "email": "email@email.com"
-            }
-          ],
-          "phones": [
-            {
-              "type": "Office",
-              "name": "Head Office",
-              "phone": "+44 7799 473 140"
-            }
-          ]
-        },
-        "agents": [
-          {
-            "id": "47cc67093475061e3d95369d",
-            "name": "This Company LHR OPS Team",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Main",
-                "name": "Head Office",
-                "phone": "+44 772 2323 2323"
-              }
-            ]
-          }
-        ],
-        "greeters": [
-          {
-            "id": "47cc67093475061e3d95369d",
-            "name": "Jone Doe",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Office",
-                "name": "Head Office",
-                "phone": "+44 779 3232 2323"
-              }
-            ]
-          }
-        ],
-        "services": [
-          {
-            "id": "string",
-            "service_name": "Meet & Assist Service",
-            "rates": [
-              {
-                "currency": "USD",
-                "packages": [
-                  {
-                    "pax": 0,
-                    "value": 0
-                  }
-                ]
-              }
-            ],
-            "created_by": {
-              "id": "47cc67093475061e3d95369d",
-              "username": "Resil"
-            },
-            "updated_by": {
-              "id": "47cc67093475061e3d95369d",
-              "username": "Anna"
-            },
-            "created_at": "2020-04-23 13:34:45",
-            "updated_at": "2020-05-25 16:45:23",
-            "deleted_at": "2020-06-13 14:23:42"
-          }
-        ],
-        "created_by": {
-          "id": "47cc67093475061e3d95369d",
-          "username": "Resil"
-        },
-        "updated_by": {
-          "id": "47cc67093475061e3d95369d",
-          "username": "Anna"
-        },
-        "created_at": "2020-04-23 13:34:45",
-        "updated_at": "2020-05-25 16:45:23",
-        "deleted_at": "2020-06-13 14:23:42"
-      },
-      "created_by": {
-        "id": "47cc67093475061e3d95369d",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "47cc67093475061e3d95369d",
-        "username": "Anna"
-      },
-      "created_at": "2020-04-23 13:34:45",
-      "updated_at": "2020-05-25 16:45:23",
-      "deleted_at": "2020-06-13 14:23:42"
-    }
-  ],
-  "success": true,
-  "status": 200,
-  "message": "string",
-  "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-  "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-  "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-}
-```
-
-<h3 id="get-airports-id-terminals-id-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="get-airports-id-terminals-id-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value |
-| -------- | ----- |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## post-airports-id-terminals-id
-
-<a id="opIdpost-airports-id-terminals-id"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X PUT http://3.89.112.137:4010terminals/{id} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-PUT http://3.89.112.137:4010terminals/{id} HTTP/1.1
-Host: 3.89.112.137:4010
-Content-Type: application/json
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-
-```
-
-```javascript
-const inputBody = '{
-  "terminal_name": "LHR Terminal 2"
-}';
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json',
-  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type':'application/json',
-  'apiKey':'API_KEY'
-};
-
-fetch('http://3.89.112.137:4010terminals/{id}',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.put 'http://3.89.112.137:4010terminals/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.put('http://3.89.112.137:4010terminals/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Content-Type' => 'application/json',
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('PUT','http://3.89.112.137:4010terminals/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("http://3.89.112.137:4010terminals/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Content-Type": []string{"application/json"},
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "http://3.89.112.137:4010terminals/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`PUT terminals/{id}`
-
-_POST_
-
-Update an exsisting terminal of an Airport.
-
-> Body parameter
-
-```json
-{
-  "terminal_name": "LHR Terminal 2"
-}
-```
-
-<h3 id="post-airports-id-terminals-id-parameters">Parameters</h3>
-
-| Name            | In     | Type   | Required | Description                          |
-| --------------- | ------ | ------ | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string | true     | application/json                     |
-| body            | body   | object | false    | POST terminal request body           |
-| » terminal_name | body   | string | true     | none                                 |
-| id              | path   | string | true     | a terminal id                        |
-
-> Example responses
-
-> 201 Response
-
-```json
-{
-  "Data": [
-    {
-      "id": "47cc67093475061e3d95369d",
-      "terminal_name": "LHR Terminal 2",
-      "services": [
-        {
-          "id": "string",
-          "service_name": "Meet & Assist Service",
-          "rates": [
-            {
-              "currency": "USD",
-              "packages": [
-                {
-                  "pax": 0,
-                  "value": 0
-                }
-              ]
-            }
-          ],
-          "created_by": {
-            "id": "47cc67093475061e3d95369d",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "47cc67093475061e3d95369d",
-            "username": "Anna"
-          },
-          "created_at": "2020-04-23 13:34:45",
-          "updated_at": "2020-05-25 16:45:23",
-          "deleted_at": "2020-06-13 14:23:42"
-        }
-      ],
-      "service_providers": {
-        "id": "47cc67093475061e3d95369d",
-        "company_name": "string",
-        "image": "company_image.png",
-        "default": true,
-        "contacts": {
-          "address": {
-            "streets": ["No 221/1, Baker's Street"],
-            "city": "Hethrow",
-            "state": "London",
-            "postal_code": "LN223 2323",
-            "country": "United Kingdom"
-          },
-          "emails": [
-            {
-              "type": "Main",
-              "email": "email@email.com"
-            }
-          ],
-          "phones": [
-            {
-              "type": "Office",
-              "name": "Head Office",
-              "phone": "+44 7799 473 140"
-            }
-          ]
-        },
-        "agents": [
-          {
-            "id": "47cc67093475061e3d95369d",
-            "name": "This Company LHR OPS Team",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Main",
-                "name": "Head Office",
-                "phone": "+44 772 2323 2323"
-              }
-            ]
-          }
-        ],
-        "greeters": [
-          {
-            "id": "47cc67093475061e3d95369d",
-            "name": "Jone Doe",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Office",
-                "name": "Head Office",
-                "phone": "+44 779 3232 2323"
-              }
-            ]
-          }
-        ],
-        "services": [
-          {
-            "id": "string",
-            "service_name": "Meet & Assist Service",
-            "rates": [
-              {
-                "currency": "USD",
-                "packages": [
-                  {
-                    "pax": 0,
-                    "value": 0
-                  }
-                ]
-              }
-            ],
-            "created_by": {
-              "id": "47cc67093475061e3d95369d",
-              "username": "Resil"
-            },
-            "updated_by": {
-              "id": "47cc67093475061e3d95369d",
-              "username": "Anna"
-            },
-            "created_at": "2020-04-23 13:34:45",
-            "updated_at": "2020-05-25 16:45:23",
-            "deleted_at": "2020-06-13 14:23:42"
-          }
-        ],
-        "created_by": {
-          "id": "47cc67093475061e3d95369d",
-          "username": "Resil"
-        },
-        "updated_by": {
-          "id": "47cc67093475061e3d95369d",
-          "username": "Anna"
-        },
-        "created_at": "2020-04-23 13:34:45",
-        "updated_at": "2020-05-25 16:45:23",
-        "deleted_at": "2020-06-13 14:23:42"
-      },
-      "created_by": {
-        "id": "47cc67093475061e3d95369d",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "47cc67093475061e3d95369d",
-        "username": "Anna"
-      },
-      "created_at": "2020-04-23 13:34:45",
-      "updated_at": "2020-05-25 16:45:23",
-      "deleted_at": "2020-06-13 14:23:42"
-    }
-  ],
-  "success": true,
-  "status": 200,
-  "message": "string",
-  "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-  "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-  "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-}
-```
-
-<h3 id="post-airports-id-terminals-id-responses">Responses</h3>
-
-| Status | Meaning                                                      | Description | Schema |
-| ------ | ------------------------------------------------------------ | ----------- | ------ |
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
-
-<h3 id="post-airports-id-terminals-id-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value |
-| -------- | ----- |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
 <h1 id="gac-api-v2-0-0--journeys">/journeys</h1>
 
 ## get-bookings-id-journeys
@@ -9181,18 +8186,6 @@ GET a list of journeys in a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | status   | 200        |
 | status   | 201        |
 | status   | 204        |
@@ -9577,87 +8570,12 @@ Create a new journey in a booking
 
 <h3 id="post-bookings-id-journeys-parameters">Parameters</h3>
 
-| Name                 | In     | Type              | Required | Description                          |
-| -------------------- | ------ | ----------------- | -------- | ------------------------------------ |
-| X-Trace-Id           | header | string            | false    | Please provide your UUID for tracing |
-| Content-Type         | header | string            | true     | application/json                     |
-| booking_id           | query  | string            | true     | a booking id                         |
-| body                 | body   | object            | false    | journey request body                 |
-| » passengers         | body   | object            | true     | none                                 |
-| »» meta              | body   | object            | true     | none                                 |
-| »»» adult            | body   | number            | true     | none                                 |
-| »»» child            | body   | number            | true     | none                                 |
-| »»» infant           | body   | number            | true     | none                                 |
-| »»» bags             | body   | number            | true     | none                                 |
-| »» pax               | body   | [object]          | true     | none                                 |
-| »»» type             | body   | string            | false    | none                                 |
-| »»» pnr              | body   | string            | false    | none                                 |
-| »»» class            | body   | string            | false    | none                                 |
-| »»» id               | body   | string            | false    | none                                 |
-| » stops              | body   | [object]          | true     | none                                 |
-| »» type              | body   | string            | true     | none                                 |
-| »» meeting_date      | body   | string(date)      | true     | none                                 |
-| »» meeting_time      | body   | string(time)      | true     | none                                 |
-| »» location          | body   | string            | true     | none                                 |
-| »» airport           | body   | object            | false    | none                                 |
-| »»» id               | body   | string            | true     | none                                 |
-| »» flights           | body   | object            | false    | none                                 |
-| »»» arrival          | body   | object            | true     | none                                 |
-| »»»» flight_no       | body   | string            | true     | none                                 |
-| »»»» terminal        | body   | string            | true     | none                                 |
-| »»»» date            | body   | string(date)      | true     | none                                 |
-| »»»» time            | body   | string(time)      | true     | none                                 |
-| »»»» origin          | body   | object            | true     | none                                 |
-| »»»»» id             | body   | string            | true     | none                                 |
-| »»»»» name           | body   | string            | true     | none                                 |
-| »»» departure        | body   | object            | true     | none                                 |
-| »»»» flight_no       | body   | string            | true     | none                                 |
-| »»»» terminal        | body   | string            | true     | none                                 |
-| »»»» date            | body   | string(date)      | true     | none                                 |
-| »»»» time            | body   | string(time)      | true     | none                                 |
-| »»»» destination     | body   | object            | true     | none                                 |
-| »»»»» id             | body   | string            | true     | none                                 |
-| »»»»» name           | body   | string            | true     | none                                 |
-| »» service_providers | body   | [allOf]           | true     | none                                 |
-| »»» id               | body   | string            | true     | none                                 |
-| »»» services         | body   | [string]          | false    | none                                 |
-| »»» status           | body   | number            | true     | none                                 |
-| »»» email_status     | body   | object            | false    | none                                 |
-| »»»» sup_email_sent  | body   | boolean           | true     | none                                 |
-| »»»» sup_sent_date   | body   | string(date-time) | false    | none                                 |
-| »»»» sup_action_date | body   | string(date-time) | false    | none                                 |
-| »»»» grt_info_sent   | body   | boolean           | true     | none                                 |
-| »»»» grt_sent_date   | body   | string(date-time) | false    | none                                 |
-| »»» agent            | body   | [object]          | false    | none                                 |
-| »»»» id              | body   | string            | false    | none                                 |
-| »»» greeter          | body   | [object]          | false    | none                                 |
-| »»»» id              | body   | string            | false    | none                                 |
-| »» services          | body   | [object]          | true     | none                                 |
-| »»» id               | body   | string            | false    | none                                 |
-| »»» passengers       | body   | object            | false    | none                                 |
-| »»»» meta            | body   | object            | false    | none                                 |
-| »»»»» adult          | body   | number            | false    | none                                 |
-| »»»»» child          | body   | number            | false    | none                                 |
-| »»»»» infant         | body   | number            | false    | none                                 |
-| »»»»» bags           | body   | number            | false    | none                                 |
-| »»»» pax             | body   | [object]          | false    | none                                 |
-| »»»»» type           | body   | string            | false    | none                                 |
-| »»»»» id             | body   | string            | false    | none                                 |
-| » special_notes      | body   | string            | false    | none                                 |
-
-#### Enumerated Values
-
-| Parameter  | Value      |
-| ---------- | ---------- |
-| »»» type   | Lead       |
-| »» type    | Arrival    |
-| »» type    | Departure  |
-| »» type    | Connection |
-| »»» status | 0          |
-| »»» status | 1          |
-| »»» status | 2          |
-| »»»»» type | Lead       |
-| »»»»» type | Additional |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| booking_id   | query  | string                                                                                                                                              | true     | a booking id                         |
+| body         | body   | [#/paths/~1journeys/post/requestBody/content/application~1json/schema](#schema#/paths/~1journeys/post/requestbody/content/application~1json/schema) | false    | journey request body                 |
 
 > Example responses
 
@@ -9882,18 +8800,6 @@ Create a new journey in a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | status   | 200        |
 | status   | 201        |
 | status   | 204        |
@@ -10301,18 +9207,6 @@ GET a single journey of a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | status   | 200        |
 | status   | 201        |
 | status   | 204        |
@@ -10694,87 +9588,12 @@ update a jounry of a booking
 
 <h3 id="post-bookings-id-journeys-id-parameters">Parameters</h3>
 
-| Name                 | In     | Type              | Required | Description                          |
-| -------------------- | ------ | ----------------- | -------- | ------------------------------------ |
-| X-Trace-Id           | header | string            | false    | Please provide your UUID for tracing |
-| Content-Type         | header | string            | true     | application/json                     |
-| body                 | body   | object            | false    | update journey request body          |
-| » passengers         | body   | object            | true     | none                                 |
-| »» meta              | body   | object            | true     | none                                 |
-| »»» adult            | body   | number            | true     | none                                 |
-| »»» child            | body   | number            | true     | none                                 |
-| »»» infant           | body   | number            | true     | none                                 |
-| »»» bags             | body   | number            | true     | none                                 |
-| »» pax               | body   | [object]          | true     | none                                 |
-| »»» type             | body   | string            | false    | none                                 |
-| »»» pnr              | body   | string            | false    | none                                 |
-| »»» class            | body   | string            | false    | none                                 |
-| »»» id               | body   | string            | false    | none                                 |
-| » stops              | body   | [object]          | true     | none                                 |
-| »» type              | body   | string            | true     | none                                 |
-| »» meeting_date      | body   | string(date)      | true     | none                                 |
-| »» meeting_time      | body   | string(time)      | true     | none                                 |
-| »» location          | body   | string            | true     | none                                 |
-| »» airport           | body   | object            | false    | none                                 |
-| »»» id               | body   | string            | true     | none                                 |
-| »» flights           | body   | object            | false    | none                                 |
-| »»» arrival          | body   | object            | true     | none                                 |
-| »»»» flight_no       | body   | string            | true     | none                                 |
-| »»»» terminal        | body   | string            | true     | none                                 |
-| »»»» date            | body   | string(date)      | true     | none                                 |
-| »»»» time            | body   | string(time)      | true     | none                                 |
-| »»»» origin          | body   | object            | true     | none                                 |
-| »»»»» id             | body   | string            | true     | none                                 |
-| »»»»» name           | body   | string            | true     | none                                 |
-| »»» departure        | body   | object            | true     | none                                 |
-| »»»» flight_no       | body   | string            | true     | none                                 |
-| »»»» terminal        | body   | string            | true     | none                                 |
-| »»»» date            | body   | string(date)      | true     | none                                 |
-| »»»» time            | body   | string(time)      | true     | none                                 |
-| »»»» destination     | body   | object            | true     | none                                 |
-| »»»»» id             | body   | string            | true     | none                                 |
-| »»»»» name           | body   | string            | true     | none                                 |
-| »» service_providers | body   | [allOf]           | true     | none                                 |
-| »»» id               | body   | string            | true     | none                                 |
-| »»» services         | body   | [string]          | false    | none                                 |
-| »»» status           | body   | number            | true     | none                                 |
-| »»» email_status     | body   | object            | false    | none                                 |
-| »»»» sup_email_sent  | body   | boolean           | true     | none                                 |
-| »»»» sup_sent_date   | body   | string(date-time) | false    | none                                 |
-| »»»» sup_action_date | body   | string(date-time) | false    | none                                 |
-| »»»» grt_info_sent   | body   | boolean           | true     | none                                 |
-| »»»» grt_sent_date   | body   | string(date-time) | false    | none                                 |
-| »»» agent            | body   | [object]          | false    | none                                 |
-| »»»» id              | body   | string            | false    | none                                 |
-| »»» greeter          | body   | [object]          | false    | none                                 |
-| »»»» id              | body   | string            | false    | none                                 |
-| »» services          | body   | [object]          | true     | none                                 |
-| »»» id               | body   | string            | false    | none                                 |
-| »»» passengers       | body   | object            | false    | none                                 |
-| »»»» meta            | body   | object            | false    | none                                 |
-| »»»»» adult          | body   | number            | false    | none                                 |
-| »»»»» child          | body   | number            | false    | none                                 |
-| »»»»» infant         | body   | number            | false    | none                                 |
-| »»»»» bags           | body   | number            | false    | none                                 |
-| »»»» pax             | body   | [object]          | false    | none                                 |
-| »»»»» type           | body   | string            | false    | none                                 |
-| »»»»» id             | body   | string            | false    | none                                 |
-| » special_notes      | body   | string            | false    | none                                 |
-| id                   | path   | string            | true     | a journey id                         |
-
-#### Enumerated Values
-
-| Parameter  | Value      |
-| ---------- | ---------- |
-| »»» type   | Lead       |
-| »» type    | Arrival    |
-| »» type    | Departure  |
-| »» type    | Connection |
-| »»» status | 0          |
-| »»» status | 1          |
-| »»» status | 2          |
-| »»»»» type | Lead       |
-| »»»»» type | Additional |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1journeys/post/requestBody/content/application~1json/schema](#schema#/paths/~1journeys/post/requestbody/content/application~1json/schema) | false    | update journey request body          |
+| id           | path   | string                                                                                                                                              | true     | a journey id                         |
 
 > Example responses
 
@@ -10999,18 +9818,6 @@ update a jounry of a booking
 | status   | 2          |
 | type     | Lead       |
 | type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
 | status   | 200        |
 | status   | 201        |
 | status   | 204        |
@@ -11557,54 +10364,12 @@ Create a new passenger of a company
 
 <h3 id="post-passengers-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| company_id      | query  | string        | true     | a company id                         |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | passenger request body               |
-| » name          | body   | object        | true     | none                                 |
-| »» title        | body   | string        | true     | none                                 |
-| »» forename     | body   | string        | true     | none                                 |
-| »» surname      | body   | string        | true     | none                                 |
-| » contacts      | body   | object        | true     | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » date_of_birth | body   | string(date)  | false    | none                                 |
-| » passport_no   | body   | string        | false    | none                                 |
-| » comments      | body   | string        | false    | none                                 |
-| » signage       | body   | string        | false    | none                                 |
-| » sig_image     | body   | string        | false    | none                                 |
-| » image         | body   | string        | false    | none                                 |
-| » pas_stat      | body   | boolean       | false    | none                                 |
-
-#### Enumerated Values
-
-| Parameter | Value  |
-| --------- | ------ |
-| »» title  | Mr.    |
-| »» title  | Mrs.   |
-| »» title  | Ms.    |
-| »» title  | Dr.    |
-| »» title  | Mstr.  |
-| »» title  | Miss   |
-| »» title  | Mx.    |
-| »» title  | Prof.  |
-| »» title  | Rev.   |
-| »» title  | Sir    |
-| »» title  | Sister |
-| »» title  | Team   |
+| Name         | In     | Type                                                                                                                                                    | Required | Description                          |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| company_id   | query  | string                                                                                                                                                  | true     | a company id                         |
+| X-Trace-Id   | header | string                                                                                                                                                  | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                  | true     | application/json                     |
+| body         | body   | [#/paths/~1passengers/post/requestBody/content/application~1json/schema](#schema#/paths/~1passengers/post/requestbody/content/application~1json/schema) | false    | passenger request body               |
 
 > Example responses
 
@@ -12231,54 +10996,12 @@ Update an exsisting passenger of a company
 
 <h3 id="put-passengers-id-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | passenger request body               |
-| » name          | body   | object        | true     | none                                 |
-| »» title        | body   | string        | true     | none                                 |
-| »» forename     | body   | string        | true     | none                                 |
-| »» surname      | body   | string        | true     | none                                 |
-| » contacts      | body   | object        | true     | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » date_of_birth | body   | string(date)  | false    | none                                 |
-| » passport_no   | body   | string        | false    | none                                 |
-| » comments      | body   | string        | false    | none                                 |
-| » signage       | body   | string        | false    | none                                 |
-| » sig_image     | body   | string        | false    | none                                 |
-| » image         | body   | string        | false    | none                                 |
-| » pas_stat      | body   | boolean       | false    | none                                 |
-| id              | path   | string        | true     | passenger_id                         |
-
-#### Enumerated Values
-
-| Parameter | Value  |
-| --------- | ------ |
-| »» title  | Mr.    |
-| »» title  | Mrs.   |
-| »» title  | Ms.    |
-| »» title  | Dr.    |
-| »» title  | Mstr.  |
-| »» title  | Miss   |
-| »» title  | Mx.    |
-| »» title  | Prof.  |
-| »» title  | Rev.   |
-| »» title  | Sir    |
-| »» title  | Sister |
-| »» title  | Team   |
+| Name         | In     | Type                                                                                                                                                    | Required | Description                          |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                  | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                  | true     | application/json                     |
+| body         | body   | [#/paths/~1passengers/post/requestBody/content/application~1json/schema](#schema#/paths/~1passengers/post/requestbody/content/application~1json/schema) | false    | passenger request body               |
+| id           | path   | string                                                                                                                                                  | true     | passenger_id                         |
 
 > Example responses
 
@@ -13047,27 +11770,12 @@ Add a new service to a terminal of an airport
 
 <h3 id="post-airports-id-services-parameters">Parameters</h3>
 
-| Name           | In     | Type     | Required | Description                          |
-| -------------- | ------ | -------- | -------- | ------------------------------------ |
-| X-Trace-Id     | header | string   | false    | Please provide your UUID for tracing |
-| Content-Type   | header | string   | true     | application/json                     |
-| terminal_id    | query  | string   | true     | none                                 |
-| body           | body   | object   | false    | services request body                |
-| » id           | body   | string   | true     | none                                 |
-| » service_name | body   | string   | true     | none                                 |
-| » rates        | body   | [object] | true     | none                                 |
-| »» currency    | body   | string   | true     | none                                 |
-| »» packages    | body   | [object] | false    | none                                 |
-| »»» pax        | body   | number   | true     | none                                 |
-| »»» value      | body   | number   | true     | none                                 |
-
-#### Enumerated Values
-
-| Parameter   | Value |
-| ----------- | ----- |
-| »» currency | USD   |
-| »» currency | GBP   |
-| »» currency | EUR   |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| terminal_id  | query  | string                                                                                                                                              | true     | none                                 |
+| body         | body   | [#/paths/~1services/post/requestBody/content/application~1json/schema](#schema#/paths/~1services/post/requestbody/content/application~1json/schema) | false    | services request body                |
 
 > Example responses
 
@@ -13590,27 +12298,12 @@ Update a sirvice in an airport
 
 <h3 id="post-airpoots-id-service-id-parameters">Parameters</h3>
 
-| Name           | In     | Type     | Required | Description                          |
-| -------------- | ------ | -------- | -------- | ------------------------------------ |
-| X-Trace-Id     | header | string   | false    | Please provide your UUID for tracing |
-| Content-Type   | header | string   | true     | none                                 |
-| body           | body   | object   | false    | update airport request body          |
-| » id           | body   | string   | true     | none                                 |
-| » service_name | body   | string   | true     | none                                 |
-| » rates        | body   | [object] | true     | none                                 |
-| »» currency    | body   | string   | true     | none                                 |
-| »» packages    | body   | [object] | false    | none                                 |
-| »»» pax        | body   | number   | true     | none                                 |
-| »»» value      | body   | number   | true     | none                                 |
-| id             | path   | string   | true     | a service id                         |
-
-#### Enumerated Values
-
-| Parameter   | Value |
-| ----------- | ----- |
-| »» currency | USD   |
-| »» currency | GBP   |
-| »» currency | EUR   |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | none                                 |
+| body         | body   | [#/paths/~1services/post/requestBody/content/application~1json/schema](#schema#/paths/~1services/post/requestbody/content/application~1json/schema) | false    | update airport request body          |
+| id           | path   | string                                                                                                                                              | true     | a service id                         |
 
 > Example responses
 
@@ -14430,18 +13123,12 @@ Asign a new service provider to an airport
 
 <h3 id="post-airports-id-service-provicders-parameters">Parameters</h3>
 
-| Name         | In     | Type     | Required | Description                          |
-| ------------ | ------ | -------- | -------- | ------------------------------------ |
-| X-Trace-Id   | header | string   | false    | Please provide your UUID for tracing |
-| terminal_id  | query  | string   | true     | terminal id                          |
-| Content-Type | header | string   | true     | application/json                     |
-| body         | body   | object   | false    | Assign service provider request body |
-| » id         | body   | string   | true     | none                                 |
-| » default    | body   | boolean  | true     | none                                 |
-| » agents     | body   | [object] | false    | none                                 |
-| »» id        | body   | string   | false    | none                                 |
-| » greeters   | body   | [object] | false    | none                                 |
-| »» id        | body   | string   | false    | none                                 |
+| Name         | In     | Type                                                                                                                                                                  | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                                | false    | Please provide your UUID for tracing |
+| terminal_id  | query  | string                                                                                                                                                                | true     | terminal id                          |
+| Content-Type | header | string                                                                                                                                                                | true     | application/json                     |
+| body         | body   | [#/paths/~1service_providers/post/requestBody/content/application~1json/schema](#schema#/paths/~1service_providers/post/requestbody/content/application~1json/schema) | false    | Assign service provider request body |
 
 > Example responses
 
@@ -15125,18 +13812,12 @@ Updating an exsisting service provider of an airport
 
 <h3 id="post-airports-id-service-providers-id-parameters">Parameters</h3>
 
-| Name         | In     | Type     | Required | Description                          |
-| ------------ | ------ | -------- | -------- | ------------------------------------ |
-| X-Trace-Id   | header | string   | false    | Please provide your UUID for tracing |
-| Content-Type | header | string   | true     | application/json                     |
-| body         | body   | object   | false    | Update service provider request body |
-| » id         | body   | string   | true     | none                                 |
-| » default    | body   | boolean  | true     | none                                 |
-| » agents     | body   | [object] | false    | none                                 |
-| »» id        | body   | string   | false    | none                                 |
-| » greeters   | body   | [object] | false    | none                                 |
-| »» id        | body   | string   | false    | none                                 |
-| id           | path   | string   | true     | a service provider id                |
+| Name         | In     | Type                                                                                                                                                                  | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                                | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                                | true     | application/json                     |
+| body         | body   | [#/paths/~1service_providers/post/requestBody/content/application~1json/schema](#schema#/paths/~1service_providers/post/requestbody/content/application~1json/schema) | false    | Update service provider request body |
+| id           | path   | string                                                                                                                                                                | true     | a service provider id                |
 
 > Example responses
 
@@ -15851,9 +14532,6 @@ GET list of terminals at an airport
 | currency | USD   |
 | currency | GBP   |
 | currency | EUR   |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
 | status   | 200   |
 | status   | 201   |
 | status   | 204   |
@@ -16049,12 +14727,11 @@ Create a new terminal in an ariport
 
 <h3 id="post-airports-id-terminals-parameters">Parameters</h3>
 
-| Name            | In     | Type   | Required | Description                          |
-| --------------- | ------ | ------ | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string | true     | application/json                     |
-| body            | body   | object | false    | POST terminal request body           |
-| » terminal_name | body   | string | true     | none                                 |
+| Name         | In     | Type                                                                                                                                                  | Required | Description                          |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                | true     | application/json                     |
+| body         | body   | [#/paths/~1terminals/post/requestBody/content/application~1json/schema](#schema#/paths/~1terminals/post/requestbody/content/application~1json/schema) | false    | POST terminal request body           |
 
 > Example responses
 
@@ -16233,9 +14910,6 @@ Create a new terminal in an ariport
 
 | Property | Value |
 | -------- | ----- |
-| currency | USD   |
-| currency | GBP   |
-| currency | EUR   |
 | currency | USD   |
 | currency | GBP   |
 | currency | EUR   |
@@ -16732,27 +15406,11 @@ Create a new tenant
 
 <h3 id="post-tenants-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | tenant request body                  |
-| » name          | body   | string        | true     | none                                 |
-| » contacts      | body   | object        | false    | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » image         | body   | string        | false    | none                                 |
+| Name         | In     | Type                                                                                                                                              | Required | Description                          |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                            | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                            | true     | application/json                     |
+| body         | body   | [#/paths/~1tenants/post/requestBody/content/application~1json/schema](#schema#/paths/~1tenants/post/requestbody/content/application~1json/schema) | false    | tenant request body                  |
 
 > Example responses
 
@@ -17315,28 +15973,12 @@ Update an exsisting tenant
 
 <h3 id="put-tenants-id-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | tenant request body                  |
-| » name          | body   | string        | true     | none                                 |
-| » contacts      | body   | object        | false    | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » image         | body   | string        | false    | none                                 |
-| id              | path   | string        | true     | a tenant id                          |
+| Name         | In     | Type                                                                                                                                              | Required | Description                          |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                            | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                            | true     | application/json                     |
+| body         | body   | [#/paths/~1tenants/post/requestBody/content/application~1json/schema](#schema#/paths/~1tenants/post/requestbody/content/application~1json/schema) | false    | tenant request body                  |
+| id           | path   | string                                                                                                                                            | true     | a tenant id                          |
 
 > Example responses
 
@@ -17372,9 +16014,6 @@ Update an exsisting tenant
 
 | Property | Value |
 | -------- | ----- |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
 | status   | 200   |
 | status   | 201   |
 | status   | 204   |
@@ -18067,52 +16706,11 @@ Create a new user
 
 <h3 id="post-users-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | user request form                    |
-| » email         | body   | string(email) | true     | none                                 |
-| » contacts      | body   | object        | true     | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » name          | body   | object        | true     | none                                 |
-| »» title        | body   | string        | true     | none                                 |
-| »» forename     | body   | string        | true     | none                                 |
-| »» surname      | body   | string        | true     | none                                 |
-| » image         | body   | string        | true     | none                                 |
-| » company       | body   | [object]      | true     | none                                 |
-| »» id           | body   | string        | true     | none                                 |
-| »» roles        | body   | [string]      | false    | none                                 |
-| »» permission   | body   | [string]      | false    | none                                 |
-
-#### Enumerated Values
-
-| Parameter | Value  |
-| --------- | ------ |
-| »» title  | Mr.    |
-| »» title  | Mrs.   |
-| »» title  | Ms.    |
-| »» title  | Dr.    |
-| »» title  | Mstr.  |
-| »» title  | Miss   |
-| »» title  | Mx.    |
-| »» title  | Prof.  |
-| »» title  | Rev.   |
-| »» title  | Sir    |
-| »» title  | Sister |
-| »» title  | Team   |
+| Name         | In     | Type                                                                                                                                          | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                        | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                        | true     | application/json                     |
+| body         | body   | [#/paths/~1users/post/requestBody/content/application~1json/schema](#schema#/paths/~1users/post/requestbody/content/application~1json/schema) | false    | user request form                    |
 
 > Example responses
 
@@ -18753,53 +17351,12 @@ Update an exsisting user
 
 <h3 id="put-users-id-parameters">Parameters</h3>
 
-| Name            | In     | Type          | Required | Description                          |
-| --------------- | ------ | ------------- | -------- | ------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing |
-| Content-Type    | header | string        | true     | application/json                     |
-| body            | body   | object        | false    | user request body                    |
-| » email         | body   | string(email) | true     | none                                 |
-| » contacts      | body   | object        | true     | Contact model                        |
-| »» address      | body   | object        | false    | Addres information                   |
-| »»» streets     | body   | [string]      | false    | none                                 |
-| »»» city        | body   | string        | false    | none                                 |
-| »»» state       | body   | string        | false    | none                                 |
-| »»» postal_code | body   | string        | false    | none                                 |
-| »»» country     | body   | string        | false    | none                                 |
-| »» emails       | body   | [object]      | false    | Email information                    |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» email       | body   | string(email) | false    | none                                 |
-| »» phones       | body   | [object]      | false    | Phone numbers                        |
-| »»» type        | body   | string        | false    | none                                 |
-| »»» name        | body   | string        | false    | none                                 |
-| »»» phone       | body   | string        | false    | none                                 |
-| » name          | body   | object        | true     | none                                 |
-| »» title        | body   | string        | true     | none                                 |
-| »» forename     | body   | string        | true     | none                                 |
-| »» surname      | body   | string        | true     | none                                 |
-| » image         | body   | string        | true     | none                                 |
-| » company       | body   | [object]      | true     | none                                 |
-| »» id           | body   | string        | true     | none                                 |
-| »» roles        | body   | [string]      | false    | none                                 |
-| »» permission   | body   | [string]      | false    | none                                 |
-| id              | path   | string        | true     | a user id                            |
-
-#### Enumerated Values
-
-| Parameter | Value  |
-| --------- | ------ |
-| »» title  | Mr.    |
-| »» title  | Mrs.   |
-| »» title  | Ms.    |
-| »» title  | Dr.    |
-| »» title  | Mstr.  |
-| »» title  | Miss   |
-| »» title  | Mx.    |
-| »» title  | Prof.  |
-| »» title  | Rev.   |
-| »» title  | Sir    |
-| »» title  | Sister |
-| »» title  | Team   |
+| Name         | In     | Type                                                                                                                                          | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                        | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                        | true     | application/json                     |
+| body         | body   | [#/paths/~1users/post/requestBody/content/application~1json/schema](#schema#/paths/~1users/post/requestbody/content/application~1json/schema) | false    | user request body                    |
+| id           | path   | string                                                                                                                                        | true     | a user id                            |
 
 > Example responses
 
@@ -19550,18 +18107,11 @@ Create a new white label website
 
 <h3 id="post-websites-parameters">Parameters</h3>
 
-| Name                | In     | Type        | Required | Description                          |
-| ------------------- | ------ | ----------- | -------- | ------------------------------------ |
-| X-Trace-Id          | header | string      | false    | Please provide your UUID for tracing |
-| Content-Type        | header | string      | true     | application/json                     |
-| body                | body   | object      | false    | website request body                 |
-| » code              | body   | string      | true     | none                                 |
-| » name              | body   | string      | true     | none                                 |
-| » url               | body   | string(uri) | true     | none                                 |
-| » email_templates   | body   | [object]    | false    | none                                 |
-| »» type             | body   | string      | false    | none                                 |
-| »» background-color | body   | string      | false    | none                                 |
-| »» logo             | body   | string      | false    | none                                 |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1websites/post/requestBody/content/application~1json/schema](#schema#/paths/~1websites/post/requestbody/content/application~1json/schema) | false    | website request body                 |
 
 > Example responses
 
@@ -20066,19 +18616,12 @@ Update an exsisting white label website
 
 <h3 id="put-websites-id-parameters">Parameters</h3>
 
-| Name                | In     | Type        | Required | Description                          |
-| ------------------- | ------ | ----------- | -------- | ------------------------------------ |
-| X-Trace-Id          | header | string      | false    | Please provide your UUID for tracing |
-| Content-Type        | header | string      | true     | application/json                     |
-| body                | body   | object      | false    | website request body                 |
-| » code              | body   | string      | true     | none                                 |
-| » name              | body   | string      | true     | none                                 |
-| » url               | body   | string(uri) | true     | none                                 |
-| » email_templates   | body   | [object]    | false    | none                                 |
-| »» type             | body   | string      | false    | none                                 |
-| »» background-color | body   | string      | false    | none                                 |
-| »» logo             | body   | string      | false    | none                                 |
-| id                  | path   | string      | true     | a website id                         |
+| Name         | In     | Type                                                                                                                                                | Required | Description                          |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                              | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                              | true     | application/json                     |
+| body         | body   | [#/paths/~1websites/post/requestBody/content/application~1json/schema](#schema#/paths/~1websites/post/requestbody/content/application~1json/schema) | false    | website request body                 |
+| id           | path   | string                                                                                                                                              | true     | a website id                         |
 
 > Example responses
 
@@ -20114,9 +18657,6 @@ Update an exsisting white label website
 
 | Property | Value |
 | -------- | ----- |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
 | status   | 200   |
 | status   | 201   |
 | status   | 204   |
@@ -20335,4 +18875,891 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
+<h1 id="gac-api-v2-0-0--terminals-id-">/terminals/{id}</h1>
+
+## get-airports-id-terminals-id
+
+<a id="opIdget-airports-id-terminals-id"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET http://3.89.112.137:4010/terminals/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET http://3.89.112.137:4010/terminals/{id} HTTP/1.1
+Host: 3.89.112.137:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  apiKey: "API_KEY",
+};
+
+fetch("http://3.89.112.137:4010/terminals/{id}", {
+  method: "GET",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get 'http://3.89.112.137:4010/terminals/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('http://3.89.112.137:4010/terminals/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','http://3.89.112.137:4010/terminals/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://3.89.112.137:4010/terminals/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "http://3.89.112.137:4010/terminals/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /terminals/{id}`
+
+_GET_
+
+GET a single terminal by id
+
+<h3 id="get-airports-id-terminals-id-parameters">Parameters</h3>
+
+| Name         | In     | Type   | Required | Description                          |
+| ------------ | ------ | ------ | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string | false    | Please provide your UUID for tracing |
+| Content-Type | header | string | true     | application/json                     |
+| id           | path   | string | true     | a terminal id                        |
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "Data": [
+    {
+      "id": "47cc67093475061e3d95369d",
+      "terminal_name": "LHR Terminal 2",
+      "services": [
+        {
+          "id": "string",
+          "service_name": "Meet & Assist Service",
+          "rates": [
+            {
+              "currency": "USD",
+              "packages": [
+                {
+                  "pax": 0,
+                  "value": 0
+                }
+              ]
+            }
+          ],
+          "created_by": {
+            "id": "47cc67093475061e3d95369d",
+            "username": "Resil"
+          },
+          "updated_by": {
+            "id": "47cc67093475061e3d95369d",
+            "username": "Anna"
+          },
+          "created_at": "2020-04-23 13:34:45",
+          "updated_at": "2020-05-25 16:45:23",
+          "deleted_at": "2020-06-13 14:23:42"
+        }
+      ],
+      "service_providers": {
+        "id": "47cc67093475061e3d95369d",
+        "company_name": "string",
+        "image": "company_image.png",
+        "default": true,
+        "contacts": {
+          "address": {
+            "streets": ["No 221/1, Baker's Street"],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+44 7799 473 140"
+            }
+          ]
+        },
+        "agents": [
+          {
+            "id": "47cc67093475061e3d95369d",
+            "name": "This Company LHR OPS Team",
+            "emails": [
+              {
+                "type": "Main",
+                "email": "email@email.com"
+              }
+            ],
+            "phones": [
+              {
+                "type": "Main",
+                "name": "Head Office",
+                "phone": "+44 772 2323 2323"
+              }
+            ]
+          }
+        ],
+        "greeters": [
+          {
+            "id": "47cc67093475061e3d95369d",
+            "name": "Jone Doe",
+            "emails": [
+              {
+                "type": "Main",
+                "email": "email@email.com"
+              }
+            ],
+            "phones": [
+              {
+                "type": "Office",
+                "name": "Head Office",
+                "phone": "+44 779 3232 2323"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "id": "string",
+            "service_name": "Meet & Assist Service",
+            "rates": [
+              {
+                "currency": "USD",
+                "packages": [
+                  {
+                    "pax": 0,
+                    "value": 0
+                  }
+                ]
+              }
+            ],
+            "created_by": {
+              "id": "47cc67093475061e3d95369d",
+              "username": "Resil"
+            },
+            "updated_by": {
+              "id": "47cc67093475061e3d95369d",
+              "username": "Anna"
+            },
+            "created_at": "2020-04-23 13:34:45",
+            "updated_at": "2020-05-25 16:45:23",
+            "deleted_at": "2020-06-13 14:23:42"
+          }
+        ],
+        "created_by": {
+          "id": "47cc67093475061e3d95369d",
+          "username": "Resil"
+        },
+        "updated_by": {
+          "id": "47cc67093475061e3d95369d",
+          "username": "Anna"
+        },
+        "created_at": "2020-04-23 13:34:45",
+        "updated_at": "2020-05-25 16:45:23",
+        "deleted_at": "2020-06-13 14:23:42"
+      },
+      "created_by": {
+        "id": "47cc67093475061e3d95369d",
+        "username": "Resil"
+      },
+      "updated_by": {
+        "id": "47cc67093475061e3d95369d",
+        "username": "Anna"
+      },
+      "created_at": "2020-04-23 13:34:45",
+      "updated_at": "2020-05-25 16:45:23",
+      "deleted_at": "2020-06-13 14:23:42"
+    }
+  ],
+  "success": true,
+  "status": 200,
+  "message": "string",
+  "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+  "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+  "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+}
+```
+
+<h3 id="get-airports-id-terminals-id-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="get-airports-id-terminals-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value |
+| -------- | ----- |
+| currency | USD   |
+| currency | GBP   |
+| currency | EUR   |
+| status   | 200   |
+| status   | 201   |
+| status   | 204   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## post-airports-id-terminals-id
+
+<a id="opIdpost-airports-id-terminals-id"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT http://3.89.112.137:4010/terminals/{id} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT http://3.89.112.137:4010/terminals/{id} HTTP/1.1
+Host: 3.89.112.137:4010
+Content-Type: application/json
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+
+```
+
+```javascript
+const inputBody = '{
+  "terminal_name": "LHR Terminal 2"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type':'application/json',
+  'apiKey':'API_KEY'
+};
+
+fetch('http://3.89.112.137:4010/terminals/{id}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put 'http://3.89.112.137:4010/terminals/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('http://3.89.112.137:4010/terminals/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','http://3.89.112.137:4010/terminals/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://3.89.112.137:4010/terminals/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "http://3.89.112.137:4010/terminals/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /terminals/{id}`
+
+_POST_
+
+Update an exsisting terminal of an Airport.
+
+> Body parameter
+
+```json
+{
+  "terminal_name": "LHR Terminal 2"
+}
+```
+
+<h3 id="post-airports-id-terminals-id-parameters">Parameters</h3>
+
+| Name         | In     | Type                                                                                                                                                  | Required | Description                          |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------ |
+| X-Trace-Id   | header | string                                                                                                                                                | false    | Please provide your UUID for tracing |
+| Content-Type | header | string                                                                                                                                                | true     | application/json                     |
+| body         | body   | [#/paths/~1terminals/post/requestBody/content/application~1json/schema](#schema#/paths/~1terminals/post/requestbody/content/application~1json/schema) | false    | POST terminal request body           |
+| id           | path   | string                                                                                                                                                | true     | a terminal id                        |
+
+> Example responses
+
+> 201 Response
+
+```json
+{
+  "Data": [
+    {
+      "id": "47cc67093475061e3d95369d",
+      "terminal_name": "LHR Terminal 2",
+      "services": [
+        {
+          "id": "string",
+          "service_name": "Meet & Assist Service",
+          "rates": [
+            {
+              "currency": "USD",
+              "packages": [
+                {
+                  "pax": 0,
+                  "value": 0
+                }
+              ]
+            }
+          ],
+          "created_by": {
+            "id": "47cc67093475061e3d95369d",
+            "username": "Resil"
+          },
+          "updated_by": {
+            "id": "47cc67093475061e3d95369d",
+            "username": "Anna"
+          },
+          "created_at": "2020-04-23 13:34:45",
+          "updated_at": "2020-05-25 16:45:23",
+          "deleted_at": "2020-06-13 14:23:42"
+        }
+      ],
+      "service_providers": {
+        "id": "47cc67093475061e3d95369d",
+        "company_name": "string",
+        "image": "company_image.png",
+        "default": true,
+        "contacts": {
+          "address": {
+            "streets": ["No 221/1, Baker's Street"],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+44 7799 473 140"
+            }
+          ]
+        },
+        "agents": [
+          {
+            "id": "47cc67093475061e3d95369d",
+            "name": "This Company LHR OPS Team",
+            "emails": [
+              {
+                "type": "Main",
+                "email": "email@email.com"
+              }
+            ],
+            "phones": [
+              {
+                "type": "Main",
+                "name": "Head Office",
+                "phone": "+44 772 2323 2323"
+              }
+            ]
+          }
+        ],
+        "greeters": [
+          {
+            "id": "47cc67093475061e3d95369d",
+            "name": "Jone Doe",
+            "emails": [
+              {
+                "type": "Main",
+                "email": "email@email.com"
+              }
+            ],
+            "phones": [
+              {
+                "type": "Office",
+                "name": "Head Office",
+                "phone": "+44 779 3232 2323"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "id": "string",
+            "service_name": "Meet & Assist Service",
+            "rates": [
+              {
+                "currency": "USD",
+                "packages": [
+                  {
+                    "pax": 0,
+                    "value": 0
+                  }
+                ]
+              }
+            ],
+            "created_by": {
+              "id": "47cc67093475061e3d95369d",
+              "username": "Resil"
+            },
+            "updated_by": {
+              "id": "47cc67093475061e3d95369d",
+              "username": "Anna"
+            },
+            "created_at": "2020-04-23 13:34:45",
+            "updated_at": "2020-05-25 16:45:23",
+            "deleted_at": "2020-06-13 14:23:42"
+          }
+        ],
+        "created_by": {
+          "id": "47cc67093475061e3d95369d",
+          "username": "Resil"
+        },
+        "updated_by": {
+          "id": "47cc67093475061e3d95369d",
+          "username": "Anna"
+        },
+        "created_at": "2020-04-23 13:34:45",
+        "updated_at": "2020-05-25 16:45:23",
+        "deleted_at": "2020-06-13 14:23:42"
+      },
+      "created_by": {
+        "id": "47cc67093475061e3d95369d",
+        "username": "Resil"
+      },
+      "updated_by": {
+        "id": "47cc67093475061e3d95369d",
+        "username": "Anna"
+      },
+      "created_at": "2020-04-23 13:34:45",
+      "updated_at": "2020-05-25 16:45:23",
+      "deleted_at": "2020-06-13 14:23:42"
+    }
+  ],
+  "success": true,
+  "status": 200,
+  "message": "string",
+  "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+  "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+  "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+}
+```
+
+<h3 id="post-airports-id-terminals-id-responses">Responses</h3>
+
+| Status | Meaning                                                      | Description | Schema |
+| ------ | ------------------------------------------------------------ | ----------- | ------ |
+| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
+
+<h3 id="post-airports-id-terminals-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value |
+| -------- | ----- |
+| currency | USD   |
+| currency | GBP   |
+| currency | EUR   |
+| status   | 200   |
+| status   | 201   |
+| status   | 204   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
 # Schemas
+
+<h2 id="tocS_airport">airport</h2>
+<!-- backwards compatibility -->
+<a id="schemaairport"></a>
+<a id="schema_airport"></a>
+<a id="tocSairport"></a>
+<a id="tocsairport"></a>
+
+```json
+{
+  "code": "LHR",
+  "name": "LHR London Heahrow Airport",
+  "country": "United Kingdom",
+  "city": "London",
+  "time_zone": "Europe/London",
+  "booking_window": 48,
+  "currency": "GBP",
+  "comments": "Use Hethrow VIP for ABI",
+  "image": "airport_image.png",
+  "location": {
+    "lat": 40.690252,
+    "long": -74.172314
+  },
+  "contacts": [
+    {
+      "address": {
+        "streets": ["No 221/1, Baker's Street"],
+        "city": "Hethrow",
+        "state": "London",
+        "postal_code": "LN223 2323",
+        "country": "United Kingdom"
+      },
+      "emails": [
+        {
+          "type": "Main",
+          "email": "email@email.com"
+        }
+      ],
+      "phones": [
+        {
+          "type": "Office",
+          "name": "Head Office",
+          "phone": "+44 7799 473 140"
+        }
+      ]
+    }
+  ],
+  "operational": true,
+  "charges": {
+    "surcharge": [
+      {
+        "below": 48,
+        "percentage": 50
+      }
+    ],
+    "additional_hour_charge": [
+      {
+        "currancy": "GBP",
+        "rate": 50
+      }
+    ]
+  },
+  "air_side_meetup": {
+    "international": {
+      "arrival": true,
+      "depature": true,
+      "transit": true
+    },
+    "domestic": {
+      "arrival": true,
+      "depature": true,
+      "transit": true
+    }
+  }
+}
+```
+
+airport.json
+
+### Properties
+
+| Name                     | Type           | Required | Restrictions | Description                                                       |
+| ------------------------ | -------------- | -------- | ------------ | ----------------------------------------------------------------- |
+| code                     | string         | true     | none         | Airport code                                                      |
+| name                     | string         | true     | none         | Airport name                                                      |
+| country                  | string         | true     | none         | Airport country                                                   |
+| city                     | string         | true     | none         | Airport city                                                      |
+| time_zone                | string         | false    | none         | Airport time zone                                                 |
+| booking_window           | number         | false    | none         | Minimal time allowed to make a booking pior serivce date and time |
+| currency                 | string         | false    | none         | Preffered currency of the airport                                 |
+| comments                 | string         | false    | none         | Special comments regarding the airport                            |
+| image                    | string         | false    | none         | Image url of the airport                                          |
+| location                 | object         | false    | none         | Exact geo location of the airport                                 |
+| » lat                    | number(double) | false    | none         | none                                                              |
+| » long                   | number(double) | false    | none         | none                                                              |
+| contacts                 | [object]       | false    | none         | Contact details of the airport                                    |
+| » address                | object         | false    | none         | Addres information                                                |
+| »» streets               | [string]       | false    | none         | none                                                              |
+| »» city                  | string         | false    | none         | none                                                              |
+| »» state                 | string         | false    | none         | none                                                              |
+| »» postal_code           | string         | false    | none         | none                                                              |
+| »» country               | string         | false    | none         | none                                                              |
+| » emails                 | [object]       | false    | none         | Email information                                                 |
+| »» type                  | string         | false    | none         | none                                                              |
+| »» email                 | string(email)  | false    | none         | none                                                              |
+| » phones                 | [object]       | false    | none         | Phone numbers                                                     |
+| »» type                  | string         | false    | none         | none                                                              |
+| »» name                  | string         | false    | none         | none                                                              |
+| »» phone                 | string         | false    | none         | none                                                              |
+| operational              | boolean        | false    | none         | If the airport is operatable                                      |
+| charges                  | object         | false    | none         | harges assosiated with the airport                                |
+| » surcharge              | [object]       | false    | none         | none                                                              |
+| »» below                 | number         | false    | none         | none                                                              |
+| »» percentage            | number         | false    | none         | none                                                              |
+| » additional_hour_charge | [object]       | false    | none         | none                                                              |
+| »» currancy              | string         | false    | none         | none                                                              |
+| »» rate                  | number         | false    | none         | none                                                              |
+| air_side_meetup          | object         | false    | none         | Passenger meet up point is at the air side or land side           |
+| » international          | object         | false    | none         | none                                                              |
+| »» arrival               | boolean        | false    | none         | none                                                              |
+| »» depature              | boolean        | false    | none         | none                                                              |
+| »» transit               | boolean        | false    | none         | none                                                              |
+| » domestic               | object         | false    | none         | none                                                              |
+| »» arrival               | boolean        | false    | none         | none                                                              |
+| »» depature              | boolean        | false    | none         | none                                                              |
+| »» transit               | boolean        | false    | none         | none                                                              |
+
+#### Enumerated Values
+
+| Property       | Value |
+| -------------- | ----- |
+| booking_window | 6     |
+| booking_window | 12    |
+| booking_window | 24    |
+| booking_window | 48    |
+| currency       | USD   |
+| currency       | GBP   |
+| currency       | EUR   |
+| currancy       | USD   |
+| currancy       | GBP   |
+| currancy       | EUR   |
