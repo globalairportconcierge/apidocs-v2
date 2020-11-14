@@ -12,5 +12,5 @@ function setupCodeCopy() {
   $('.copy-clipboard').on('click', function() {
     copyToClipboard(this.parentNode.children[1]);
   });
-  $('pre.highlight').prepend('<div class="run-insomnia"><a href="https://insomnia.rest/run/?label=GAC%20V1.1.0&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fglobalairportconcierge%2Fapidocs-v1.1.0%2Fmaster%2Freference%2FGAC.v1.yaml%3Ftoken%3DAEL5HX6CGFLUYGKHBAEVFKK7WAAJS" target="_blank"><img src="./images/insomnia.svg" alt="Run in Insomnia"></a></div>');
+  $('pre.highlight').prepend('<div class="run-insomnia"><a href="https://insomnia.rest/run/?label=GAC%20V1.1.0&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fglobalairportconcierge%2Fapidocs-v1.1.0%2Fmaster%2Freference%2FGAC.v1.yaml%3Ftoken%3DAEL5HX6CGFLUYGKHBAEVFKK7WAAJS" target="_blank"><img src="images/insomnia.svg" alt="Run in Insomnia"></a></div>');
 }
