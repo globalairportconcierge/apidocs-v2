@@ -313,7 +313,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#gac-api-v2-0-0" class="toc-h1 toc-link" data-title="GAC API V1.1.0 ">GAC API V1.1.0 </a>
+            <a href="#gac-api-v1-1-0" class="toc-h1 toc-link" data-title="GAC API V1.1.0">GAC API V1.1.0</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -640,7 +640,7 @@
       <div class="content">
         <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="gac-api-v2-0-0">GAC API V1.1.0 </h1>
+<h1 id="gac-api-v1-1-0">GAC API V1.1.0</h1>
 
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
@@ -1149,7 +1149,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip,compress'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://3.89.112.137:4010/airports</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1157,13 +1157,13 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-<span class="na">Accept-Encoding</span><span class="p">:</span> <span class="s">gzip,compress</span>
+<span class="na">Accept-Encoding</span><span class="p">:</span> <span class="s">gzip</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">Accept</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">X-Trace-Id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">Accept-Encoding</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gzip,compress</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">Accept-Encoding</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gzip</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">apiKey</span><span class="p">:</span> <span class="dl">"</span><span class="s2">API_KEY</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">};</span>
 
@@ -1185,7 +1185,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
   <span class="s1">'X-Trace-Id'</span> <span class="o">=&gt;</span> <span class="s1">'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span><span class="p">,</span>
   <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'Accept-Encoding'</span> <span class="o">=&gt;</span> <span class="s1">'gzip,compress'</span><span class="p">,</span>
+  <span class="s1">'Accept-Encoding'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
@@ -1200,7 +1200,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
   <span class="s">'X-Trace-Id'</span><span class="p">:</span> <span class="s">'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span><span class="p">,</span>
   <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
-  <span class="s">'Accept-Encoding'</span><span class="p">:</span> <span class="s">'gzip,compress'</span><span class="p">,</span>
+  <span class="s">'Accept-Encoding'</span><span class="p">:</span> <span class="s">'gzip'</span><span class="p">,</span>
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
@@ -1216,7 +1216,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
     <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
     <span class="s1">'X-Trace-Id'</span> <span class="o">=&gt;</span> <span class="s1">'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span><span class="p">,</span>
     <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
-    <span class="s1">'Accept-Encoding'</span> <span class="o">=&gt;</span> <span class="s1">'gzip,compress'</span><span class="p">,</span>
+    <span class="s1">'Accept-Encoding'</span> <span class="o">=&gt;</span> <span class="s1">'gzip'</span><span class="p">,</span>
     <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
 <span class="p">);</span>
 
@@ -1267,7 +1267,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
         <span class="s">"Accept"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json"</span><span class="p">},</span>
         <span class="s">"X-Trace-Id"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"</span><span class="p">},</span>
         <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json"</span><span class="p">},</span>
-        <span class="s">"Accept-Encoding"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"gzip,compress"</span><span class="p">},</span>
+        <span class="s">"Accept-Encoding"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"gzip"</span><span class="p">},</span>
         <span class="s">"apiKey"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
     <span class="p">}</span>
 
@@ -1357,9 +1357,32 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
 <tr>
 <td>Accept-Encoding</td>
 <td>header</td>
-<td>string</td>
+<td>sring</td>
 <td>true</td>
-<td>Gzip compression</td>
+<td>add a req. header for payload to be compressed by the server</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>will sort objects returned from the request</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-3'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort</td>
+<td>asc</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>desc</td>
 </tr>
 </tbody></table>
 
@@ -1386,7 +1409,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
 </tbody></table>
 
 <h3 id="get-airports-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-3'>Enumerated Values</h4>
+<h4 id='enumerated-values-4'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -1408,6 +1431,18 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports <span clas
 <tr>
 <td>booking_window</td>
 <td>48</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -1779,9 +1814,358 @@ fetch('http://3.89.112.137:4010/airports',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1airports/post/requestbody/content/application~1json/schema">#/paths/~1airports/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>Request body for creating an airport.</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport code</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport name</td>
+</tr>
+<tr>
+<td>» country</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport country</td>
+</tr>
+<tr>
+<td>» city</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport city</td>
+</tr>
+<tr>
+<td>» time_zone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Airport time zone</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>Minimal time allowed to make a booking pior serivce date and time</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Preffered currency of the airport</td>
+</tr>
+<tr>
+<td>» comments</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Special comments regarding the airport</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Image url of the airport</td>
+</tr>
+<tr>
+<td>» location</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Exact geo location of the airport</td>
+</tr>
+<tr>
+<td>»» lat</td>
+<td>body</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» long</td>
+<td>body</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Contact details of the airport</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» operational</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>If the airport is operatable</td>
+</tr>
+<tr>
+<td>» charges</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>harges assosiated with the airport</td>
+</tr>
+<tr>
+<td>»» surcharge</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» below</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» percentage</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» additional_hour_charge</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» rate</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» air_side_meetup</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Passenger meet up point is at the air side or land side</td>
+</tr>
+<tr>
+<td>»» international</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» depature</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» transit</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» domestic</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» depature</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» transit</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-5'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» booking_window</td>
+<td>6</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>12</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>24</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>48</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>EUR</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>EUR</td>
 </tr>
 </tbody></table>
 
@@ -2041,7 +2425,7 @@ fetch('http://3.89.112.137:4010/airports',
 </tbody></table>
 
 <h3 id="post-airports-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-4'>Enumerated Values</h4>
+<h4 id='enumerated-values-6'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -2063,6 +2447,18 @@ fetch('http://3.89.112.137:4010/airports',
 <tr>
 <td>booking_window</td>
 <td>48</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -2319,7 +2715,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports/<span clas
 </tbody></table>
 
 <h3 id="get-airports-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-5'>Enumerated Values</h4>
+<h4 id='enumerated-values-7'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -2341,6 +2737,18 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/airports/<span clas
 <tr>
 <td>booking_window</td>
 <td>48</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -2605,7 +3013,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/airports/<span c
 </tbody></table>
 
 <h3 id="delete-airports-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-6'>Enumerated Values</h4>
+<h4 id='enumerated-values-8'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -2946,9 +3354,310 @@ fetch('http://3.89.112.137:4010/airports/{id}',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1airports/post/requestbody/content/application~1json/schema">#/paths/~1airports/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>PUT airport request body</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport code</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport name</td>
+</tr>
+<tr>
+<td>» country</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport country</td>
+</tr>
+<tr>
+<td>» city</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Airport city</td>
+</tr>
+<tr>
+<td>» time_zone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Airport time zone</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>Minimal time allowed to make a booking pior serivce date and time</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Preffered currency of the airport</td>
+</tr>
+<tr>
+<td>» comments</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Special comments regarding the airport</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Image url of the airport</td>
+</tr>
+<tr>
+<td>» location</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Exact geo location of the airport</td>
+</tr>
+<tr>
+<td>»» lat</td>
+<td>body</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» long</td>
+<td>body</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Contact details of the airport</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» operational</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>If the airport is operatable</td>
+</tr>
+<tr>
+<td>» charges</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>harges assosiated with the airport</td>
+</tr>
+<tr>
+<td>»» surcharge</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» below</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» percentage</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» additional_hour_charge</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» rate</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» air_side_meetup</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Passenger meet up point is at the air side or land side</td>
+</tr>
+<tr>
+<td>»» international</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» depature</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» transit</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» domestic</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» depature</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» transit</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -2956,6 +3665,54 @@ fetch('http://3.89.112.137:4010/airports/{id}',
 <td>string</td>
 <td>true</td>
 <td>an airport id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-9'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» booking_window</td>
+<td>6</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>12</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>24</td>
+</tr>
+<tr>
+<td>» booking_window</td>
+<td>48</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>EUR</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>»»» currancy</td>
+<td>EUR</td>
 </tr>
 </tbody></table>
 
@@ -3231,7 +3988,7 @@ fetch('http://3.89.112.137:4010/airports/{id}',
 </tbody></table>
 
 <h3 id="post-airports-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-7'>Enumerated Values</h4>
+<h4 id='enumerated-values-10'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -3482,7 +4239,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/bookings <span clas
 <td>lead passenger</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-8'>Enumerated Values</h4>
+<h4 id='enumerated-values-11'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3761,7 +4518,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/bookings <span clas
 </tbody></table>
 
 <h3 id="get-bookings-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-9'>Enumerated Values</h4>
+<h4 id='enumerated-values-12'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -3911,6 +4668,54 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/bookings <span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>type</td>
@@ -4192,9 +4997,194 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/bookings <span cla
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1bookings/post/requestbody/content/application~1json/schema">#/paths/~1bookings/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>booking request body</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Booking type</td>
+</tr>
+<tr>
+<td>» booker</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Booker details</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» company</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» billing</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Billing details</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» ref_id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» card</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_service_cost</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» add_hrs_charge</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surcharge</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_booking_cost</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» promo_code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_discount</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» grand_total</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_paid</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» commets</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Special comments of the booking</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-13'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» type</td>
+<td>GAC</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>USS</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>MCS</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>RES Online</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Invoice</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Quotation</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>0</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>1</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>2</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>3</td>
 </tr>
 </tbody></table>
 
@@ -4420,7 +5410,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/bookings <span cla
 </tbody></table>
 
 <h3 id="post-bookings-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-10'>Enumerated Values</h4>
+<h4 id='enumerated-values-14'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -4570,6 +5560,54 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/bookings <span cla
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>type</td>
@@ -5021,7 +6059,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/bookings/<span clas
 </tbody></table>
 
 <h3 id="get-bookings-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-11'>Enumerated Values</h4>
+<h4 id='enumerated-values-15'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -5171,6 +6209,54 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/bookings/<span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>type</td>
@@ -5452,9 +6538,142 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/bookings/<span clas
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1bookings/post/requestbody/content/application~1json/schema">#/paths/~1bookings/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>update booking request body</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Booking type</td>
+</tr>
+<tr>
+<td>» booker</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Booker details</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» company</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» billing</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Billing details</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» ref_id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» card</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_service_cost</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» add_hrs_charge</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surcharge</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_booking_cost</td>
+<td>body</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» promo_code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_discount</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» grand_total</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» total_paid</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» commets</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Special comments of the booking</td>
 </tr>
 <tr>
 <td>id</td>
@@ -5462,6 +6681,58 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/bookings/<span clas
 <td>string</td>
 <td>true</td>
 <td>a booking id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-16'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» type</td>
+<td>GAC</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>USS</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>MCS</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>RES Online</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Invoice</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Quotation</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>0</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>1</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>2</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>3</td>
 </tr>
 </tbody></table>
 
@@ -5687,7 +6958,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/bookings/<span clas
 </tbody></table>
 
 <h3 id="post-bookings-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-12'>Enumerated Values</h4>
+<h4 id='enumerated-values-17'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -5837,6 +7108,54 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/bookings/<span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>type</td>
@@ -6097,7 +7416,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/bookings/<span c
 </tbody></table>
 
 <h3 id="delete-bookings-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-13'>Enumerated Values</h4>
+<h4 id='enumerated-values-18'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -6512,7 +7831,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/companies <span cla
 </tbody></table>
 
 <h3 id="get-companies-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-14'>Enumerated Values</h4>
+<h4 id='enumerated-values-19'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -6896,7 +8215,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/companies <span cl
 <tr>
 <td>» contacts</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1airports/post/requestbody/content/application~1json/schema/properties/contacts/items">#/paths/~1airports/post/requestBody/content/application~1json/schema/properties/contacts/items</a></td>
+<td>object</td>
 <td>false</td>
 <td>Contact model</td>
 </tr>
@@ -7103,7 +8422,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/companies <span cl
 
 <p><strong>» bank_details</strong>: Bank Details of the bank
 !!! Please note the MAX value is set for Prism Mock to return a limited number of objects !!!</p>
-<h4 id='enumerated-values-15'>Enumerated Values</h4>
+<h4 id='enumerated-values-20'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7308,7 +8627,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/companies <span cl
 </tbody></table>
 
 <h3 id="post-companies-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-16'>Enumerated Values</h4>
+<h4 id='enumerated-values-21'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -7755,7 +9074,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/companies/<span cla
 </tbody></table>
 
 <h3 id="get-companies-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-17'>Enumerated Values</h4>
+<h4 id='enumerated-values-22'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -8332,7 +9651,7 @@ fetch('http://3.89.112.137:4010/companies/{id}',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1companies~1%7bid%7d/put/requestbody/content/application~1json/schema">#/paths/~1companies~1%7Bid%7D/put/requestBody/content/application~1json/schema</a></td>
+<td>any</td>
 <td>false</td>
 <td>con=mpany request body</td>
 </tr>
@@ -8576,7 +9895,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/companies/<span 
 </tbody></table>
 
 <h3 id="delete-companies-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-18'>Enumerated Values</h4>
+<h4 id='enumerated-values-23'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -8866,7 +10185,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/discounts?company_i
 </tbody></table>
 
 <h3 id="get-discounts-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-19'>Enumerated Values</h4>
+<h4 id='enumerated-values-24'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -9159,7 +10478,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/discounts?company_
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1discounts/post/requestbody/content/application~1json/schema">#/paths/~1discounts/post/requestBody/content/application~1json/schema</a></td>
+<td>any</td>
 <td>false</td>
 <td>discount request body</td>
 </tr>
@@ -9232,7 +10551,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/discounts?company_
 </tbody></table>
 
 <h3 id="post-discounts-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-20'>Enumerated Values</h4>
+<h4 id='enumerated-values-25'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -9514,7 +10833,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/discounts/<span cla
 </tbody></table>
 
 <h3 id="get-discounts-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-21'>Enumerated Values</h4>
+<h4 id='enumerated-values-26'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -9851,7 +11170,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/discounts/<span cla
 <h4 id='detailed-descriptions-2'>Detailed descriptions</h4>
 <p><strong>» services</strong>: Services which the discount is applicable
 !!! Please note the MAX value is set for Prism Mock to return a limited number of objects !!!</p>
-<h4 id='enumerated-values-22'>Enumerated Values</h4>
+<h4 id='enumerated-values-27'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9939,7 +11258,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/discounts/<span cla
 </tbody></table>
 
 <h3 id="put-discounts-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-23'>Enumerated Values</h4>
+<h4 id='enumerated-values-28'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -10185,7 +11504,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/discounts/<span 
 </tbody></table>
 
 <h3 id="delete-discounts-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-24'>Enumerated Values</h4>
+<h4 id='enumerated-values-29'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -10596,7 +11915,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/journeys <span clas
 </tbody></table>
 
 <h3 id="get-bookings-id-journeys-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-25'>Enumerated Values</h4>
+<h4 id='enumerated-values-30'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -10686,6 +12005,54 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/journeys <span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>status</td>
@@ -11089,9 +12456,480 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/journeys?booking_i
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1journeys/post/requestbody/content/application~1json/schema">#/paths/~1journeys/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>journey request body</td>
+</tr>
+<tr>
+<td>» passengers</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meta</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» adult</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» child</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» infant</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» bags</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» pax</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» pnr</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» class</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» stops</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meeting_date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meeting_time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» location</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» airport</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» flights</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» flight_no</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» terminal</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» origin</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» departure</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» flight_no</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» terminal</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» destination</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» service_providers</td>
+<td>body</td>
+<td>[allOf]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» services</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email_status</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_email_sent</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_sent_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_action_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» grt_info_sent</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» grt_sent_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» agent</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» greeter</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» services</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» passengers</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» meta</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» adult</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» child</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» infant</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» bags</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» pax</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» special_notes</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-31'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» type</td>
+<td>Lead</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Arrival</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Departure</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Connection</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>0</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>1</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>2</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>Lead</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>Additional</td>
 </tr>
 </tbody></table>
 
@@ -11303,7 +13141,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/journeys?booking_i
 </tbody></table>
 
 <h3 id="post-bookings-id-journeys-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-26'>Enumerated Values</h4>
+<h4 id='enumerated-values-32'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -11393,6 +13231,54 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/journeys?booking_i
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>status</td>
@@ -11798,7 +13684,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/journeys/<span clas
 </tbody></table>
 
 <h3 id="get-bookings-id-journeys-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-27'>Enumerated Values</h4>
+<h4 id='enumerated-values-33'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -11888,6 +13774,54 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/journeys/<span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>status</td>
@@ -12281,9 +14215,436 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/journeys/<span clas
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1journeys/post/requestbody/content/application~1json/schema">#/paths/~1journeys/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>update journey request body</td>
+</tr>
+<tr>
+<td>» passengers</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meta</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» adult</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» child</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» infant</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» bags</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» pax</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» pnr</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» class</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» stops</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meeting_date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» meeting_time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» location</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» airport</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» flights</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» arrival</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» flight_no</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» terminal</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» origin</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» departure</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» flight_no</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» terminal</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» date</td>
+<td>body</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» time</td>
+<td>body</td>
+<td>string(time)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» destination</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» service_providers</td>
+<td>body</td>
+<td>[allOf]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» services</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email_status</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_email_sent</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_sent_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» sup_action_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» grt_info_sent</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» grt_sent_date</td>
+<td>body</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» agent</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» greeter</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» services</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» passengers</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» meta</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» adult</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» child</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» infant</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» bags</td>
+<td>body</td>
+<td>number</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» pax</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» special_notes</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -12291,6 +14652,50 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/journeys/<span clas
 <td>string</td>
 <td>true</td>
 <td>a journey id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-34'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» type</td>
+<td>Lead</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Arrival</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Departure</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>Connection</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>0</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>1</td>
+</tr>
+<tr>
+<td>»»» status</td>
+<td>2</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>Lead</td>
+</tr>
+<tr>
+<td>»»»»» type</td>
+<td>Additional</td>
 </tr>
 </tbody></table>
 
@@ -12502,7 +14907,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/journeys/<span clas
 </tbody></table>
 
 <h3 id="post-bookings-id-journeys-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-28'>Enumerated Values</h4>
+<h4 id='enumerated-values-35'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -12592,6 +14997,54 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/journeys/<span clas
 <tr>
 <td>type</td>
 <td>Additional</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Team</td>
 </tr>
 <tr>
 <td>status</td>
@@ -12921,7 +15374,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/passengers <span cl
 </tbody></table>
 
 <h3 id="get-lpassengers-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-29'>Enumerated Values</h4>
+<h4 id='enumerated-values-36'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -13260,9 +15713,240 @@ fetch('http://3.89.112.137:4010/passengers?company_id=47cc67093475061e3d95369d',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1passengers/post/requestbody/content/application~1json/schema">#/paths/~1passengers/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>passenger request body</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» forename</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» date_of_birth</td>
+<td>body</td>
+<td>string(date)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» passport_no</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» comments</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» signage</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» sig_image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» pas_stat</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-37'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Team</td>
 </tr>
 </tbody></table>
 
@@ -13349,7 +16033,7 @@ fetch('http://3.89.112.137:4010/passengers?company_id=47cc67093475061e3d95369d',
 </tbody></table>
 
 <h3 id="post-passengers-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-30'>Enumerated Values</h4>
+<h4 id='enumerated-values-38'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -13683,7 +16367,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/passengers/<span cl
 </tbody></table>
 
 <h3 id="get-passengers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-31'>Enumerated Values</h4>
+<h4 id='enumerated-values-39'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -14012,9 +16696,184 @@ fetch('http://3.89.112.137:4010/passengers/{id}',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1passengers/post/requestbody/content/application~1json/schema">#/paths/~1passengers/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>passenger request body</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» forename</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» date_of_birth</td>
+<td>body</td>
+<td>string(date)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» passport_no</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» comments</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» signage</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» sig_image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» pas_stat</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -14022,6 +16881,62 @@ fetch('http://3.89.112.137:4010/passengers/{id}',
 <td>string</td>
 <td>true</td>
 <td>passenger_id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-40'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Team</td>
 </tr>
 </tbody></table>
 
@@ -14108,7 +17023,7 @@ fetch('http://3.89.112.137:4010/passengers/{id}',
 </tbody></table>
 
 <h3 id="put-passengers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-32'>Enumerated Values</h4>
+<h4 id='enumerated-values-41'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -14390,7 +17305,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/passengers/<span
 </tbody></table>
 
 <h3 id="delete-passengers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-33'>Enumerated Values</h4>
+<h4 id='enumerated-values-42'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -14689,7 +17604,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/services <span clas
 </tbody></table>
 
 <h3 id="get-airports-id-services-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-34'>Enumerated Values</h4>
+<h4 id='enumerated-values-43'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -14948,9 +17863,78 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/services?terminal_
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1services/post/requestbody/content/application~1json/schema">#/paths/~1services/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>services request body</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» service_name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» rates</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» packages</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» pax</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» value</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-44'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>EUR</td>
 </tr>
 </tbody></table>
 
@@ -15015,7 +17999,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/services?terminal_
 </tbody></table>
 
 <h3 id="post-airports-id-services-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-35'>Enumerated Values</h4>
+<h4 id='enumerated-values-45'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -15305,7 +18289,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/services/<span clas
 </tbody></table>
 
 <h3 id="get-airpoots-id-service-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-36'>Enumerated Values</h4>
+<h4 id='enumerated-values-46'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -15554,9 +18538,58 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/services/<span clas
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1services/post/requestbody/content/application~1json/schema">#/paths/~1services/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>update airport request body</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» service_name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» rates</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» packages</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» pax</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» value</td>
+<td>body</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -15564,6 +18597,26 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/services/<span clas
 <td>string</td>
 <td>true</td>
 <td>a service id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-47'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>»» currency</td>
+<td>EUR</td>
 </tr>
 </tbody></table>
 
@@ -15628,7 +18681,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/services/<span clas
 </tbody></table>
 
 <h3 id="post-airpoots-id-service-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-37'>Enumerated Values</h4>
+<h4 id='enumerated-values-48'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -15874,7 +18927,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/services/<span c
 </tbody></table>
 
 <h3 id="delete-airpoots-id-service-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-38'>Enumerated Values</h4>
+<h4 id='enumerated-values-49'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -16251,7 +19304,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/service_providers?a
 </tbody></table>
 
 <h3 id="get-airports-id-service-provicders-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-39'>Enumerated Values</h4>
+<h4 id='enumerated-values-50'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -16508,9 +19561,51 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/service_providers?
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1service_providers/post/requestbody/content/application~1json/schema">#/paths/~1service_providers/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>Assign service provider request body</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» default</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» agents</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» greeters</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
@@ -16654,7 +19749,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/service_providers?
 </tbody></table>
 
 <h3 id="post-airports-id-service-provicders-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-40'>Enumerated Values</h4>
+<h4 id='enumerated-values-51'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -17022,7 +20117,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/service_providers/<
 </tbody></table>
 
 <h3 id="get-airports-id-service-providers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-41'>Enumerated Values</h4>
+<h4 id='enumerated-values-52'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -17269,9 +20364,51 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/service_providers/<
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1service_providers/post/requestbody/content/application~1json/schema">#/paths/~1service_providers/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>Update service provider request body</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» default</td>
+<td>body</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» agents</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» greeters</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -17422,7 +20559,7 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/service_providers/<
 </tbody></table>
 
 <h3 id="post-airports-id-service-providers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-42'>Enumerated Values</h4>
+<h4 id='enumerated-values-53'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -17668,7 +20805,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/service_provider
 </tbody></table>
 
 <h3 id="delete-airports-id-service-providers-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-43'>Enumerated Values</h4>
+<h4 id='enumerated-values-54'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -18075,13 +21212,25 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/terminals <span cla
 </tbody></table>
 
 <h3 id="get-airports-id-terminals-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-44'>Enumerated Values</h4>
+<h4 id='enumerated-values-55'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
+</tr>
 <tr>
 <td>currency</td>
 <td>USD</td>
@@ -18300,9 +21449,16 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/terminals <span cl
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1terminals/post/requestbody/content/application~1json/schema">#/paths/~1terminals/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>POST terminal request body</td>
+</tr>
+<tr>
+<td>» terminal_name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
@@ -18489,13 +21645,25 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/terminals <span cl
 </tbody></table>
 
 <h3 id="post-airports-id-terminals-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-45'>Enumerated Values</h4>
+<h4 id='enumerated-values-56'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
+</tr>
 <tr>
 <td>currency</td>
 <td>USD</td>
@@ -18770,7 +21938,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/tenants <span class
 </tbody></table>
 
 <h3 id="get-tenants-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-46'>Enumerated Values</h4>
+<h4 id='enumerated-values-57'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -19031,9 +22199,121 @@ fetch('http://3.89.112.137:4010/tenants',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1tenants/post/requestbody/content/application~1json/schema">#/paths/~1tenants/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>tenant request body</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
@@ -19110,7 +22390,7 @@ fetch('http://3.89.112.137:4010/tenants',
 </tbody></table>
 
 <h3 id="post-tenants-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-47'>Enumerated Values</h4>
+<h4 id='enumerated-values-58'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -19386,7 +22666,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/tenants/<span class
 </tbody></table>
 
 <h3 id="get-tenants-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-48'>Enumerated Values</h4>
+<h4 id='enumerated-values-59'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -19647,9 +22927,121 @@ fetch('http://3.89.112.137:4010/tenants/{id}',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1tenants/post/requestbody/content/application~1json/schema">#/paths/~1tenants/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>tenant request body</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -19700,13 +23092,25 @@ fetch('http://3.89.112.137:4010/tenants/{id}',
 </tbody></table>
 
 <h3 id="put-tenants-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-49'>Enumerated Values</h4>
+<h4 id='enumerated-values-60'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>status</td>
+<td>200</td>
+</tr>
+<tr>
+<td>status</td>
+<td>201</td>
+</tr>
+<tr>
+<td>status</td>
+<td>204</td>
+</tr>
 <tr>
 <td>status</td>
 <td>200</td>
@@ -19934,7 +23338,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/tenants/<span cl
 </tbody></table>
 
 <h3 id="delete-tenants-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-50'>Enumerated Values</h4>
+<h4 id='enumerated-values-61'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -20174,7 +23578,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/users <span class="
 </tbody></table>
 
 <h3 id="get-users-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-51'>Enumerated Values</h4>
+<h4 id='enumerated-values-62'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -20511,9 +23915,233 @@ fetch('http://3.89.112.137:4010/users',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1users/post/requestbody/content/application~1json/schema">#/paths/~1users/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>user request form</td>
+</tr>
+<tr>
+<td>» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» forename</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» company</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» roles</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» permission</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-63'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Team</td>
 </tr>
 </tbody></table>
 
@@ -20603,7 +24231,7 @@ fetch('http://3.89.112.137:4010/users',
 </tbody></table>
 
 <h3 id="post-users-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-52'>Enumerated Values</h4>
+<h4 id='enumerated-values-64'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -20940,7 +24568,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/users/<span class="
 </tbody></table>
 
 <h3 id="get-users-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-53'>Enumerated Values</h4>
+<h4 id='enumerated-values-65'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -21277,9 +24905,177 @@ fetch('http://3.89.112.137:4010/users/{id}',
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1users/post/requestbody/content/application~1json/schema">#/paths/~1users/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>user request body</td>
+</tr>
+<tr>
+<td>» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» contacts</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>Contact model</td>
+</tr>
+<tr>
+<td>»» address</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>Addres information</td>
+</tr>
+<tr>
+<td>»»» streets</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» city</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» state</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» postal_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» country</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» emails</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Email information</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» email</td>
+<td>body</td>
+<td>string(email)</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» phones</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>Phone numbers</td>
+</tr>
+<tr>
+<td>»»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» phone</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» forename</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» surname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» company</td>
+<td>body</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» roles</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» permission</td>
+<td>body</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -21287,6 +25083,62 @@ fetch('http://3.89.112.137:4010/users/{id}',
 <td>string</td>
 <td>true</td>
 <td>a user id</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-66'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» title</td>
+<td>Mr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mrs.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Ms.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Dr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mstr.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Miss</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Mx.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Prof.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Rev.</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sir</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Sister</td>
+</tr>
+<tr>
+<td>»» title</td>
+<td>Team</td>
 </tr>
 </tbody></table>
 
@@ -21373,7 +25225,7 @@ fetch('http://3.89.112.137:4010/users/{id}',
 </tbody></table>
 
 <h3 id="put-users-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-54'>Enumerated Values</h4>
+<h4 id='enumerated-values-67'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -21643,7 +25495,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/users/<span clas
 </tbody></table>
 
 <h3 id="delete-users-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-55'>Enumerated Values</h4>
+<h4 id='enumerated-values-68'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -21933,7 +25785,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/websites <span clas
 </tbody></table>
 
 <h3 id="get-websites-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-56'>Enumerated Values</h4>
+<h4 id='enumerated-values-69'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -22164,9 +26016,58 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/websites <span cla
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1websites/post/requestbody/content/application~1json/schema">#/paths/~1websites/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>website request body</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» url</td>
+<td>body</td>
+<td>string(uri)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» email_templates</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» background-color</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» logo</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
@@ -22229,7 +26130,7 @@ curl <span class="nt">-X</span> POST http://3.89.112.137:4010/websites <span cla
 </tbody></table>
 
 <h3 id="post-websites-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-57'>Enumerated Values</h4>
+<h4 id='enumerated-values-70'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -22491,7 +26392,7 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/websites/<span clas
 </tbody></table>
 
 <h3 id="get-websites-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-58'>Enumerated Values</h4>
+<h4 id='enumerated-values-71'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -22722,9 +26623,58 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/websites/<span clas
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1websites/post/requestbody/content/application~1json/schema">#/paths/~1websites/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>website request body</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» url</td>
+<td>body</td>
+<td>string(uri)</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» email_templates</td>
+<td>body</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» background-color</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» logo</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -22775,13 +26725,25 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/websites/<span clas
 </tbody></table>
 
 <h3 id="put-websites-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-59'>Enumerated Values</h4>
+<h4 id='enumerated-values-72'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>status</td>
+<td>200</td>
+</tr>
+<tr>
+<td>status</td>
+<td>201</td>
+</tr>
+<tr>
+<td>status</td>
+<td>204</td>
+</tr>
 <tr>
 <td>status</td>
 <td>200</td>
@@ -23009,7 +26971,7 @@ curl <span class="nt">-X</span> DELETE http://3.89.112.137:4010/websites/<span c
 </tbody></table>
 
 <h3 id="delete-websites-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-60'>Enumerated Values</h4>
+<h4 id='enumerated-values-73'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -23395,13 +27357,25 @@ curl <span class="nt">-X</span> GET http://3.89.112.137:4010/terminals/<span cla
 </tbody></table>
 
 <h3 id="get-airports-id-terminals-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-61'>Enumerated Values</h4>
+<h4 id='enumerated-values-74'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
+</tr>
 <tr>
 <td>currency</td>
 <td>USD</td>
@@ -23620,9 +27594,16 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/terminals/<span cla
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schema#/paths/~1terminals/post/requestbody/content/application~1json/schema">#/paths/~1terminals/post/requestBody/content/application~1json/schema</a></td>
+<td>object</td>
 <td>false</td>
 <td>POST terminal request body</td>
+</tr>
+<tr>
+<td>» terminal_name</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
 </tr>
 <tr>
 <td>id</td>
@@ -23816,13 +27797,25 @@ curl <span class="nt">-X</span> PUT http://3.89.112.137:4010/terminals/<span cla
 </tbody></table>
 
 <h3 id="post-airports-id-terminals-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-62'>Enumerated Values</h4>
+<h4 id='enumerated-values-75'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>currency</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>EUR</td>
+</tr>
 <tr>
 <td>currency</td>
 <td>USD</td>
@@ -24242,7 +28235,7 @@ Authorization
 <td>none</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-63'>Enumerated Values</h4>
+<h4 id='enumerated-values-76'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
