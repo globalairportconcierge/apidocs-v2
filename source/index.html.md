@@ -40,13 +40,19 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 - API Key (Authorization)
   - Parameter Name: **apiKey**, in: header. Bearer Token
 
+# Run in Insomnia
+
+> We provide you with this button so you can take our API's for spin in a matter of minutes.
+
+Insomnia like Postman allows developers to iteract with API's beyound the capabilites of cURL in CLI. It is a great tool for testing and getting familiar instantily with all the API's endpoints
+
 <h1 id="gac-api-v2-0-0-default">Default</h1>
 
 ## delete-airports-id-terminals-id
 
 <a id="opIddelete-airports-id-terminals-id"></a>
 
-> Code samples
+> Code samples [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=GAC%20V1.1.0&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fglobalairportconcierge%2Fapidocs-v1.1.0%2Fmaster%2Freference%2FGAC.v1.yaml%3Ftoken%3DAEL5HX6CGFLUYGKHBAEVFKK7WAAJS)
 
 ```shell
 # You can also use wget
