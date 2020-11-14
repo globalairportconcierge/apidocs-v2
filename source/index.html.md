@@ -52,7 +52,7 @@ Insomnia like Postman allows developers to iteract with API's beyound the capabi
 
 <a id="opIddelete-airports-id-terminals-id"></a>
 
-> Code samples [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=GAC%20V1.1.0&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fglobalairportconcierge%2Fapidocs-v1.1.0%2Fmaster%2Freference%2FGAC.v1.yaml%3Ftoken%3DAEL5HX6CGFLUYGKHBAEVFKK7WAAJS)
+> Code samples
 
 ```shell
 # You can also use wget
