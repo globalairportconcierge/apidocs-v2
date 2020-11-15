@@ -511,15 +511,29 @@ body {
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
     background: $aside-notice-bg;
     line-height: 1.6;
+    border-radius: 5px; // Eduard: was 10px
+    border-left: 4px solid $aside-notice-bord-left;
+    max-width: 100%-($examples-width+2%);
 
+    // display: flex;
+    // flex-direction: inherit;
     &.warning {
       background-color: $aside-warning-bg;
+      border-left: 4px solid $aside-warning-bord-left;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      border-left: 4px solid $aside-success-bord-left;
+    }
+
+    &.path {
+      background-color: $aside-path-bg;
+      border-left: 4px solid $aside-path-bord-left;
     }
   }
 
@@ -531,14 +545,22 @@ body {
 
   aside.notice:before {
     @extend %icon-info-sign;
+    color: $aside-notice-bord-left;
   }
 
   aside.warning:before {
     @extend %icon-exclamation-sign;
+    color: $aside-warning-bord-left;
   }
 
   aside.success:before {
     @extend %icon-ok-sign;
+    color: $aside-success-bord-left;
+  }
+
+  aside.path:before {
+    @extend %icon-info-sign;
+    color: $aside-path-bord-left;
   }
 
   .search-highlight {
