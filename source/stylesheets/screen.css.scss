@@ -391,12 +391,16 @@ body {
   h1:first-child,
   div:first-child+h1 {
     border-top-width: 0;
+    font-size: x-large;
+    //color: teal; // eduard
     margin-top: 0;
   }
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
+    //color:seagreen; //eduard - new
+    //font-size: 15px; // eduard - new
+    //font-weight: 200; // eduard - new
     margin-top: 4em;
     margin-bottom: 0;
     border-top: 1px solid #ccc;
@@ -407,26 +411,55 @@ body {
 
   // h2s right after h1s should bump right up
   // against the h1s.
-  h1+h2,
-  h1+div+h2 {
-    margin-top: $h1-margin-bottom * -1;
+  h1 {
     border-top: none;
+    //color: rgb(22, 196, 16); // eduard - new
+    //background-color: $code-bg; // eduard -new
   }
 
-  h3,
-  h4,
-  h5,
-  h6 {
+  ////////////////////////////////////////////
+  // eduard - moved h1 withing a <div> into own class below
+  h1+div {
+    border-top: none;
+    //color: red; // eduard - new
+    background-color:slateblue; // eduard - new
+  }
+
+  h1+h2{
+    margin-top: $h1-margin-bottom * -1;
+  }
+
+  h2 {
+    border-top: none;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgb(24, 21, 16); // eduard - new
+    background-color: rgba(149, 248, 248, 0.2); // eduard - new
+  }
+
+  /////////////////////////////////////////
+  // eduard - new split h1,h2 and h2+div into their own elements
+  h2+div {
+    margin-top: $h1-margin-bottom * -1;
+    border-top: none;
+    color: #fff; // eduard - new
+    background-color: black; // eduard - new
+  }
+
+  h3
+  {
     @extend %header-font;
     font-size: 15px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
+    background-color: rgba(149, 248, 248, 0.1); // eduard - new
   }
 
   h4,
   h5,
   h6 {
-    font-size: 10px;
+    font-size: 12px;
+    background-color: rgba(149, 248, 248, 0.05); //eduard - new
   }
 
   hr {
@@ -489,6 +522,32 @@ body {
     margin-top: 0;
   }
 
+////////////////////////////////////////////
+// Styling the "<Method> /path"
+    p>code {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #9DAAB6;
+      font-size: 30px;
+      color:#fff;
+      border-radius: 5px;
+
+
+    }
+
+////////////////////////////////////////////
+// Eduard - Styling the HTTP Method only
+  p>em {
+    border: 0.1em solid; // eduard - new
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: black;
+    //background-color: #9DAAB6;
+    //color:black;
+    font-size: 20px;
+  }
+
   img {
     max-width: 100%;
   }
@@ -497,6 +556,7 @@ body {
     background-color: rgba(0, 0, 0, 0.05);
     padding: 3px;
     border-radius: 3px;
+    // font-size: 40px; // eduard - new
     @extend %break-words;
     @extend %code-font;
   }
