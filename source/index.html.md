@@ -44,7 +44,7 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 
 > ![Run In Insomnia](/images/insomnia.svg) button
 
-The _**Run In Insomnia**_ button, ![Run In Insomnia](/images/insomnia.svg), allows developers to take our API's for spin in a matter of minutes.
+The **Run In Insomnia** button, ![Run In Insomnia](/images/insomnia.svg), allows developers to take our API's for spin in a matter of minutes.
 
 Insomnia like Postman allows developers to iteract with API's beyound the capabilites of cURL in CLI. It's a great tool for testing and getting familiar instantily with all the API's endpoints and a great compliment to any documentation.
 
