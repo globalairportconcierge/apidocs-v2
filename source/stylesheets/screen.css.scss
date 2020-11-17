@@ -392,7 +392,8 @@ body {
   div:first-child+h1 {
     border-top-width: 0;
     font-size: x-large;
-    //color: teal; // eduard
+    color: #ffffff; // eduard
+    background-color: rgba(0, 12, 10,0.8);
     margin-top: 0;
   }
 
@@ -434,7 +435,7 @@ body {
     font-size: 10px;
     font-weight: 400;
     color: rgb(24, 21, 16); // eduard - new
-    background-color: rgba(149, 248, 248, 0.2); // eduard - new
+    background-color: rgba(165, 208, 227,0.5); // eduard - new
   }
 
   /////////////////////////////////////////
@@ -452,14 +453,14 @@ body {
     font-size: 15px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
-    background-color: rgba(143, 158, 158, 0.2); // eduard - new
+    background-color: rgba(165, 208, 227, 0.5); // eduard - new
   }
 
   h4,
   h5,
   h6 {
     font-size: 12px;
-    background-color: rgba(143, 158, 158, 0.1); //eduard - new
+    background-color: rgba(232, 247, 252,0.5); //eduard - new
   }
 
   hr {

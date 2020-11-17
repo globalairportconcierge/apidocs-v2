@@ -27,7 +27,7 @@ The best passenger services APIs on the market.
 
 Base URLs:
 
-- <a href="http://3.89.112.137:4010">http://3.89.112.137:4010</a>
+- <a href="https://prism.supun.xyz:4010">http://3.89.112.137:4010</a>
 
 - <a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a>
 
@@ -42,9 +42,9 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 
 # Run in Insomnia
 
-> We provide you with the ![Run In Insomnia](/images/insomnia.svg)
+> ![Run In Insomnia](/images/insomnia.svg) button
 
-`Run In Insomnia` button so you can take our API's for spin in a matter of minutes.
+The _**Run In Insomnia**_ button, ![Run In Insomnia](/images/insomnia.svg), allows developers to take our API's for spin in a matter of minutes.
 
 Insomnia like Postman allows developers to iteract with API's beyound the capabilites of cURL in CLI. It's a great tool for testing and getting familiar instantily with all the API's endpoints and a great compliment to any documentation.
 
