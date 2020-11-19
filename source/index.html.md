@@ -42,6 +42,8 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 
 # Sequence diagram
 
+> > Mermaid sequence diagram
+
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#A5CFE3'}}}%%
 sequenceDiagram
