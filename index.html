@@ -319,6 +319,9 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#collapsible-sections" class="toc-h1 toc-link" data-title="Collapsible sections">Collapsible sections</a>
+          </li>
+          <li>
             <a href="#sequence-diagram" class="toc-h1 toc-link" data-title="Sequence diagram">Sequence diagram</a>
           </li>
           <li>
@@ -434,6 +437,25 @@
 <li>Parameter Name: <strong>apiKey</strong>, in: header. Bearer Token</li>
 </ul></li>
 </ul>
+<h1 id='collapsible-sections'>Collapsible sections</h1>
+<details>
+<summary>Expand here...</summary>
+<p>
+
+```c#
+public class Order
+{
+    public int OrderId { get; set; }
+    public int CustomerId { get; set; }
+
+    public List<int> Products { get; set; }
+}
+```
+
+</p>
+</details> 
+
+<p><br></p>
 <h1 id='sequence-diagram'>Sequence diagram</h1>
 <blockquote>
 <blockquote>
