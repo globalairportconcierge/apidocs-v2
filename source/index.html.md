@@ -40,6 +40,26 @@ License: <a href="https://gac.com/api-license.html">Apache 2.0</a>
 - API Key (Authorization)
   - Parameter Name: **apiKey**, in: header. Bearer Token
 
+# Collapsible sections
+
+<details>
+<summary>Expand here...</summary>
+<p>
+
+```c#
+public class Order
+{
+    public int OrderId { get; set; }
+    public int CustomerId { get; set; }
+
+    public List<int> Products { get; set; }
+}
+```
+
+</p>
+</details> 
+<br>
+
 # Sequence diagram
 
 > > Mermaid sequence diagram
