@@ -10,7 +10,7 @@ language_tabs:
   - java: Java
   - go: Go
 toc_footers: []
-includes: []
+includes: [errors]
 search: true
 highlight_theme: darkula
 headingLevel: 2
@@ -19,15 +19,7 @@ code_clipboard: true
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="gac-api-v1-1-0">GAC API V1.1.0</h1>
-
-# Run in Insomnia
-
-> ![Run In Insomnia](/images/insomnia.svg) button
-
-The **Run In Insomnia** button, ![Run In Insomnia](/images/insomnia.svg), allows developers to take our API's for spin in a matter of minutes.
-
-Insomnia like Postman allows developers to iteract with API's beyound the capabilites of cURL in CLI. It's a great tool for testing and getting familiar instantily with all the API's endpoints and a great compliment to any documentation.
+<h1 id="gac-api-v1-1-0">GAC API V1.1.0 v1.0</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -35,348 +27,28 @@ Your passenger services APIs of choice
 
 Base URLs:
 
-- <a href="https://prism.supun.xyz">https://prism.supun.xyz</a>
-
-- <a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a>
+- <a href="http://online.globalairportconcierge.com">http://online.globalairportconcierge.com</a>
 
 <a href="https://gac.com/terms-of-service.html">Terms of service</a>
 
 License: <a href="https://gac.com/api-license.html">GAC</a>
-
-# Collapsible sections
-
-<details>
-<summary>Expand here...</summary>
-<p>
-
-```c#
-public class Order
-{
-    public int OrderId { get; set; }
-    public int CustomerId { get; set; }
-
-    public List<int> Products { get; set; }
-}
-```
-
-</p>
-</details> 
-<br>
-
-# Sequence diagram
-
-> > Mermaid sequence diagram
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#A5CFE3'}}}%%
-sequenceDiagram
-autonumber
-    Note over Partner/API/WEB/Mob,API: Quote sequence
-    Partner/API/WEB/Mob->>+API: Quote a trip/service
-    API->>+Quote: Calculate the quote
-    Quote-->>-API: Return the Quote priced up
-    loop Create Booking
-    Partner/API/WEB/Mob->>API: Convert Quote into a booking
-    Note over Partner/API/WEB/Mob,DB: Booking squence
-    loop Payment Process
-    API->>+Payment~GW: Take payment
-    Payment~GW-->>API: Failure, Try another card
-    Payment~GW-->>-API: Success
-    end
-    API->>+DB: Save booking
-    API-->>-Partner/API/WEB/Mob: Booking confirmation
-end
-
-```
-
-[![](https://mermaid.ink/img/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG5hdXRvbnVtYmVyXG4gICAgTm90ZSBvdmVyIFBhcnRuZXIvQVBJL1dFQi9Nb2IsQVBJOiBRdW90ZSBzZXF1ZW5jZVxuICAgIFBhcnRuZXIvQVBJL1dFQi9Nb2ItPj4rQVBJOiBRdW90ZSBhIHRyaXAvc2VydmljZVxuICAgIEFQSS0-PitRdW90ZTogQ2FsY3VsYXRlIHRoZSBxdW90ZVxuICAgIFF1b3RlLS0-Pi1BUEk6IFJldHVybiB0aGUgUXVvdGUgcHJpY2VkIHVwXG4gICAgbG9vcCBDcmVhdGUgQm9va2luZ1xuICAgIFBhcnRuZXIvQVBJL1dFQi9Nb2ItPj5BUEk6IENvbnZlcnQgUXVvdGUgaW50byBhIGJvb2tpbmdcbiAgICBOb3RlIG92ZXIgUGFydG5lci9BUEkvV0VCL01vYixEQjogQm9va2luZyBzcXVlbmNlXG4gICAgbG9vcCBQYXltZW50IFByb2Nlc3NcbiAgICBBUEktPj4rUGF5bWVudH5HVzogVGFrZSBwYXltZW50XG4gICAgUGF5bWVudH5HVy0tPj5BUEk6IEZhaWx1cmUsIFRyeSBhbm90aGVyIGNhcmRcbiAgICBQYXltZW50fkdXLS0-Pi1BUEk6IFN1Y2Nlc3NcbiAgICBlbmRcbiAgICBBUEktPj4rREI6IFNhdmUgYm9va2luZ1xuICAgIEFQSS0tPj4tUGFydG5lci9BUEkvV0VCL01vYjogQm9va2luZyBjb25maXJtYXRpb25cbmVuZFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQiLCJ0aGVtZVZhcmlhYmxlcyI6eyJiYWNrZ3JvdW5kIjoid2hpdGUiLCJwcmltYXJ5Q29sb3IiOiIjRTdGNkZDIiwic2Vjb25kYXJ5Q29sb3IiOiIjZmZmZmRlIiwidGVydGlhcnlDb2xvciI6ImhzbCg4MCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeUJvcmRlckNvbG9yIjoiaHNsKDI0MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJzZWNvbmRhcnlCb3JkZXJDb2xvciI6ImhzbCg2MCwgNjAlLCA4My41Mjk0MTE3NjQ3JSkiLCJ0ZXJ0aWFyeUJvcmRlckNvbG9yIjoiaHNsKDgwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInByaW1hcnlUZXh0Q29sb3IiOiIjMTMxMzAwIiwic2Vjb25kYXJ5VGV4dENvbG9yIjoiIzAwMDAyMSIsInRlcnRpYXJ5VGV4dENvbG9yIjoicmdiKDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEpIiwibGluZUNvbG9yIjoiIzMzMzMzMyIsInRleHRDb2xvciI6IiMzMzMiLCJtYWluQmtnIjoiI0VDRUNGRiIsInNlY29uZEJrZyI6IiNmZmZmZGUiLCJib3JkZXIxIjoiIzkzNzBEQiIsImJvcmRlcjIiOiIjYWFhYTMzIiwiYXJyb3doZWFkQ29sb3IiOiIjMzMzMzMzIiwiZm9udEZhbWlseSI6IlwidHJlYnVjaGV0IG1zXCIsIHZlcmRhbmEsIGFyaWFsIiwiZm9udFNpemUiOiIxNnB4IiwibGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsIm5vZGVCa2ciOiIjRUNFQ0ZGIiwibm9kZUJvcmRlciI6IiM5MzcwREIiLCJjbHVzdGVyQmtnIjoiI2ZmZmZkZSIsImNsdXN0ZXJCb3JkZXIiOiIjYWFhYTMzIiwiZGVmYXVsdExpbmtDb2xvciI6IiMzMzMzMzMiLCJ0aXRsZUNvbG9yIjoiIzMzMyIsImVkZ2VMYWJlbEJhY2tncm91bmQiOiIjZThlOGU4IiwiYWN0b3JCb3JkZXIiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJhY3RvckJrZyI6IiNFQ0VDRkYiLCJhY3RvclRleHRDb2xvciI6ImJsYWNrIiwiYWN0b3JMaW5lQ29sb3IiOiJncmV5Iiwic2lnbmFsQ29sb3IiOiIjMzMzIiwic2lnbmFsVGV4dENvbG9yIjoiIzMzMyIsImxhYmVsQm94QmtnQ29sb3IiOiIjRUNFQ0ZGIiwibGFiZWxCb3hCb3JkZXJDb2xvciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImxhYmVsVGV4dENvbG9yIjoiYmxhY2siLCJsb29wVGV4dENvbG9yIjoiYmxhY2siLCJub3RlQm9yZGVyQ29sb3IiOiIjYWFhYTMzIiwibm90ZUJrZ0NvbG9yIjoiI0U3RjZGQyIsIm5vdGVUZXh0Q29sb3IiOiJibGFjayIsImFjdGl2YXRpb25Cb3JkZXJDb2xvciI6IiM2NjYiLCJhY3RpdmF0aW9uQmtnQ29sb3IiOiIjZjRmNGY0Iiwic2VxdWVuY2VOdW1iZXJDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yIjoicmdiYSgxMDIsIDEwMiwgMjU1LCAwLjQ5KSIsImFsdFNlY3Rpb25Ca2dDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yMiI6IiNmZmY0MDAiLCJ0YXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwidGFza0JrZ0NvbG9yIjoiIzhhOTBkZCIsInRhc2tUZXh0TGlnaHRDb2xvciI6IndoaXRlIiwidGFza1RleHRDb2xvciI6IndoaXRlIiwidGFza1RleHREYXJrQ29sb3IiOiJibGFjayIsInRhc2tUZXh0T3V0c2lkZUNvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dENsaWNrYWJsZUNvbG9yIjoiIzAwMzE2MyIsImFjdGl2ZVRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJhY3RpdmVUYXNrQmtnQ29sb3IiOiIjYmZjN2ZmIiwiZ3JpZENvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCa2dDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQm9yZGVyQ29sb3IiOiJncmV5IiwiY3JpdEJvcmRlckNvbG9yIjoiI2ZmODg4OCIsImNyaXRCa2dDb2xvciI6InJlZCIsInRvZGF5TGluZUNvbG9yIjoicmVkIiwibGFiZWxDb2xvciI6ImJsYWNrIiwiZXJyb3JCa2dDb2xvciI6IiM1NTIyMjIiLCJlcnJvclRleHRDb2xvciI6IiM1NTIyMjIiLCJjbGFzc1RleHQiOiIjMTMxMzAwIiwiZmlsbFR5cGUwIjoiI0U3RjZGQyIsImZpbGxUeXBlMSI6IiNmZmZmZGUiLCJmaWxsVHlwZTIiOiJoc2woMjYxLjE0Mjg1NzE0MjksIDc3Ljc3Nzc3Nzc3NzglLCA5NC43MDU4ODIzNTI5JSkiLCJmaWxsVHlwZTMiOiJoc2woMTI0LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTQiOiJoc2woMTMzLjE0Mjg1NzE0MjksIDc3Ljc3Nzc3Nzc3NzglLCA5NC43MDU4ODIzNTI5JSkiLCJmaWxsVHlwZTUiOiJoc2woLTQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNiI6ImhzbCgzMjUuMTQyODU3MTQyOSwgNzcuNzc3Nzc3Nzc3OCUsIDk0LjcwNTg4MjM1MjklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fX0)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG5hdXRvbnVtYmVyXG4gICAgTm90ZSBvdmVyIFBhcnRuZXIvQVBJL1dFQi9Nb2IsQVBJOiBRdW90ZSBzZXF1ZW5jZVxuICAgIFBhcnRuZXIvQVBJL1dFQi9Nb2ItPj4rQVBJOiBRdW90ZSBhIHRyaXAvc2VydmljZVxuICAgIEFQSS0-PitRdW90ZTogQ2FsY3VsYXRlIHRoZSBxdW90ZVxuICAgIFF1b3RlLS0-Pi1BUEk6IFJldHVybiB0aGUgUXVvdGUgcHJpY2VkIHVwXG4gICAgbG9vcCBDcmVhdGUgQm9va2luZ1xuICAgIFBhcnRuZXIvQVBJL1dFQi9Nb2ItPj5BUEk6IENvbnZlcnQgUXVvdGUgaW50byBhIGJvb2tpbmdcbiAgICBOb3RlIG92ZXIgUGFydG5lci9BUEkvV0VCL01vYixEQjogQm9va2luZyBzcXVlbmNlXG4gICAgbG9vcCBQYXltZW50IFByb2Nlc3NcbiAgICBBUEktPj4rUGF5bWVudH5HVzogVGFrZSBwYXltZW50XG4gICAgUGF5bWVudH5HVy0tPj5BUEk6IEZhaWx1cmUsIFRyeSBhbm90aGVyIGNhcmRcbiAgICBQYXltZW50fkdXLS0-Pi1BUEk6IFN1Y2Nlc3NcbiAgICBlbmRcbiAgICBBUEktPj4rREI6IFNhdmUgYm9va2luZ1xuICAgIEFQSS0tPj4tUGFydG5lci9BUEkvV0VCL01vYjogQm9va2luZyBjb25maXJtYXRpb25cbmVuZFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQiLCJ0aGVtZVZhcmlhYmxlcyI6eyJiYWNrZ3JvdW5kIjoid2hpdGUiLCJwcmltYXJ5Q29sb3IiOiIjRTdGNkZDIiwic2Vjb25kYXJ5Q29sb3IiOiIjZmZmZmRlIiwidGVydGlhcnlDb2xvciI6ImhzbCg4MCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeUJvcmRlckNvbG9yIjoiaHNsKDI0MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJzZWNvbmRhcnlCb3JkZXJDb2xvciI6ImhzbCg2MCwgNjAlLCA4My41Mjk0MTE3NjQ3JSkiLCJ0ZXJ0aWFyeUJvcmRlckNvbG9yIjoiaHNsKDgwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInByaW1hcnlUZXh0Q29sb3IiOiIjMTMxMzAwIiwic2Vjb25kYXJ5VGV4dENvbG9yIjoiIzAwMDAyMSIsInRlcnRpYXJ5VGV4dENvbG9yIjoicmdiKDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEpIiwibGluZUNvbG9yIjoiIzMzMzMzMyIsInRleHRDb2xvciI6IiMzMzMiLCJtYWluQmtnIjoiI0VDRUNGRiIsInNlY29uZEJrZyI6IiNmZmZmZGUiLCJib3JkZXIxIjoiIzkzNzBEQiIsImJvcmRlcjIiOiIjYWFhYTMzIiwiYXJyb3doZWFkQ29sb3IiOiIjMzMzMzMzIiwiZm9udEZhbWlseSI6IlwidHJlYnVjaGV0IG1zXCIsIHZlcmRhbmEsIGFyaWFsIiwiZm9udFNpemUiOiIxNnB4IiwibGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsIm5vZGVCa2ciOiIjRUNFQ0ZGIiwibm9kZUJvcmRlciI6IiM5MzcwREIiLCJjbHVzdGVyQmtnIjoiI2ZmZmZkZSIsImNsdXN0ZXJCb3JkZXIiOiIjYWFhYTMzIiwiZGVmYXVsdExpbmtDb2xvciI6IiMzMzMzMzMiLCJ0aXRsZUNvbG9yIjoiIzMzMyIsImVkZ2VMYWJlbEJhY2tncm91bmQiOiIjZThlOGU4IiwiYWN0b3JCb3JkZXIiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJhY3RvckJrZyI6IiNFQ0VDRkYiLCJhY3RvclRleHRDb2xvciI6ImJsYWNrIiwiYWN0b3JMaW5lQ29sb3IiOiJncmV5Iiwic2lnbmFsQ29sb3IiOiIjMzMzIiwic2lnbmFsVGV4dENvbG9yIjoiIzMzMyIsImxhYmVsQm94QmtnQ29sb3IiOiIjRUNFQ0ZGIiwibGFiZWxCb3hCb3JkZXJDb2xvciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImxhYmVsVGV4dENvbG9yIjoiYmxhY2siLCJsb29wVGV4dENvbG9yIjoiYmxhY2siLCJub3RlQm9yZGVyQ29sb3IiOiIjYWFhYTMzIiwibm90ZUJrZ0NvbG9yIjoiI0U3RjZGQyIsIm5vdGVUZXh0Q29sb3IiOiJibGFjayIsImFjdGl2YXRpb25Cb3JkZXJDb2xvciI6IiM2NjYiLCJhY3RpdmF0aW9uQmtnQ29sb3IiOiIjZjRmNGY0Iiwic2VxdWVuY2VOdW1iZXJDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yIjoicmdiYSgxMDIsIDEwMiwgMjU1LCAwLjQ5KSIsImFsdFNlY3Rpb25Ca2dDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yMiI6IiNmZmY0MDAiLCJ0YXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwidGFza0JrZ0NvbG9yIjoiIzhhOTBkZCIsInRhc2tUZXh0TGlnaHRDb2xvciI6IndoaXRlIiwidGFza1RleHRDb2xvciI6IndoaXRlIiwidGFza1RleHREYXJrQ29sb3IiOiJibGFjayIsInRhc2tUZXh0T3V0c2lkZUNvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dENsaWNrYWJsZUNvbG9yIjoiIzAwMzE2MyIsImFjdGl2ZVRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJhY3RpdmVUYXNrQmtnQ29sb3IiOiIjYmZjN2ZmIiwiZ3JpZENvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCa2dDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQm9yZGVyQ29sb3IiOiJncmV5IiwiY3JpdEJvcmRlckNvbG9yIjoiI2ZmODg4OCIsImNyaXRCa2dDb2xvciI6InJlZCIsInRvZGF5TGluZUNvbG9yIjoicmVkIiwibGFiZWxDb2xvciI6ImJsYWNrIiwiZXJyb3JCa2dDb2xvciI6IiM1NTIyMjIiLCJlcnJvclRleHRDb2xvciI6IiM1NTIyMjIiLCJjbGFzc1RleHQiOiIjMTMxMzAwIiwiZmlsbFR5cGUwIjoiI0U3RjZGQyIsImZpbGxUeXBlMSI6IiNmZmZmZGUiLCJmaWxsVHlwZTIiOiJoc2woMjYxLjE0Mjg1NzE0MjksIDc3Ljc3Nzc3Nzc3NzglLCA5NC43MDU4ODIzNTI5JSkiLCJmaWxsVHlwZTMiOiJoc2woMTI0LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTQiOiJoc2woMTMzLjE0Mjg1NzE0MjksIDc3Ljc3Nzc3Nzc3NzglLCA5NC43MDU4ODIzNTI5JSkiLCJmaWxsVHlwZTUiOiJoc2woLTQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNiI6ImhzbCgzMjUuMTQyODU3MTQyOSwgNzcuNzc3Nzc3Nzc3OCUsIDk0LjcwNTg4MjM1MjklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fX0)
-
-<!-- Generator: Widdershins v4.0.1 -->
 
 # Authentication
 
 - API Key (Authorization)
   - Parameter Name: **apiKey**, in: header. Bearer Token
 
-<h1 id="gac-api-v1-1-0-terminals">Terminals</h1>
-
-## GET _terminals_{id}\_services
-
-<a id="opIdGET /terminals/{id}/services"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://prism.supun.xyz/terminals/{id}/services \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-GET https://prism.supun.xyz/terminals/{id}/services HTTP/1.1
-Host: prism.supun.xyz
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  "Accept-Encoding": "gzip",
-  apiKey: "API_KEY",
-};
-
-fetch("https://prism.supun.xyz/terminals/{id}/services", {
-  method: "GET",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.get 'https://prism.supun.xyz/terminals/{id}/services',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.get('https://prism.supun.xyz/terminals/{id}/services', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://prism.supun.xyz/terminals/{id}/services', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/terminals/{id}/services");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/terminals/{id}/services", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`GET /terminals/{id}/services`
-
-_/terminals/{id}/services_
-
-GET a list of services in a terminal
-
-<h3 id="get-_terminals_{id}_services-parameters">Parameters</h3>
-
-| Name            | In     | Type           | Required | Description                                                  |
-| --------------- | ------ | -------------- | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string         | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string         | true     | application/json                                             |
-| Accept-Encoding | header | string         | true     | add a req. header for payload to be compressed by the server |
-| name            | query  | string         | false    | a service name                                               |
-| limit           | query  | integer(int32) | false    | specify the number of results returned from the request      |
-| starting_from   | query  | integer(int32) | false    | specify the number of results returned from the request      |
-| sort            | query  | string         | false    | will sort objects returned from the request                  |
-| id              | path   | string         | true     | a terminal id                                                |
-
-#### Enumerated Values
-
-| Parameter | Value |
-| --------- | ----- |
-| sort      | asc   |
-| sort      | desc  |
-
-> Example responses
-
-> OK
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  },
-  "Pagination": {
-    "total_count": 100,
-    "total_pages": 20,
-    "current_page": 3,
-    "limit": 10
-  },
-  "Data": [
-    {
-      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "service_name": "Meet & Assist Service",
-      "rates": [
-        {
-          "currency": "USD",
-          "packages": [
-            {
-              "pax": 0,
-              "value": 0
-            }
-          ]
-        }
-      ],
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
-    }
-  ]
-}
-```
-
-<h3 id="get-_terminals_{id}_services-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="get-_terminals_{id}_services-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value |
-| -------- | ----- |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
 <h1 id="gac-api-v1-1-0-airports">Airports</h1>
 
-## GET \_airports
+## GET-airports
 
-<a id="opIdGET /airports"></a>
+<a id="opIdGET-airports"></a>
 
 > Code samples
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/airports \
+curl -X GET http://127.0.0.1:4010/airports \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -386,8 +58,8 @@ curl -X GET https://prism.supun.xyz/airports \
 ```
 
 ```http
-GET https://prism.supun.xyz/airports HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/airports HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -404,7 +76,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/airports", {
+fetch("http://127.0.0.1:4010/airports", {
   method: "GET",
 
   headers: headers,
@@ -429,7 +101,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/airports',
+result = RestClient.get 'http://127.0.0.1:4010/airports',
   params: {
   }, headers: headers
 
@@ -447,7 +119,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/airports', headers = headers)
+r = requests.get('http://127.0.0.1:4010/airports', headers = headers)
 
 print(r.json())
 
@@ -472,7 +144,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/airports', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/airports', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -489,7 +161,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/airports");
+URL obj = new URL("http://127.0.0.1:4010/airports");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -524,7 +196,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/airports", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/airports", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -540,7 +212,7 @@ _/airports_
 
 Get list of operating Airports.
 
-<h3 id="get-_airports-parameters">Parameters</h3>
+<h3 id="get-airports-parameters">Parameters</h3>
 
 | Name            | In     | Type           | Required | Description                                                  |
 | --------------- | ------ | -------------- | -------- | ------------------------------------------------------------ |
@@ -591,38 +263,7 @@ Get list of operating Airports.
       "name": "LHR London Heahrow Airport",
       "country": "United Kingdom",
       "city": "London",
-      "time_zone": "Europe/London",
       "booking_window": 48,
-      "currency": "GBP",
-      "comments": "Use Hethrow VIP for ABI",
-      "image": "airport_image.png",
-      "location": {
-        "latitude": 40.690252,
-        "longitude": -74.172314
-      },
-      "contacts": {
-        "address": {
-          "streets": ["No 221/1, Baker's Street"],
-          "city": "Hethrow",
-          "state": "London",
-          "postal_code": "LN223 2323",
-          "country": "United Kingdom"
-        },
-        "emails": [
-          {
-            "type": "Main",
-            "email": "email@email.com"
-          }
-        ],
-        "phones": [
-          {
-            "type": "Office",
-            "name": "Head Office",
-            "phone": "+44 7799 473 140"
-          }
-        ]
-      },
-      "operational": true,
       "terminals": [
         {
           "airport_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -631,7 +272,24 @@ Get list of operating Airports.
           "services": [
             {
               "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "service_name": "Meet & Assist Service",
+              "service_name": "string",
+              "fields": [
+                {
+                  "field_name": "string",
+                  "field_type": "string",
+                  "validation": [
+                    {
+                      "required": true
+                    }
+                  ]
+                }
+              ],
+              "validataion": [
+                {
+                  "rule": "string",
+                  "service_id": "string"
+                }
+              ],
               "rates": [
                 {
                   "currency": "USD",
@@ -655,123 +313,7 @@ Get list of operating Airports.
               "updated_at": "2019-08-24T14:15:22Z",
               "deleted_at": "2019-08-24T14:15:22Z"
             }
-          ],
-          "service_providers": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "company_name": "string",
-            "image": "company_image.png",
-            "default": true,
-            "contacts": {
-              "address": {
-                "streets": ["No 221/1, Baker's Street"],
-                "city": "Hethrow",
-                "state": "London",
-                "postal_code": "LN223 2323",
-                "country": "United Kingdom"
-              },
-              "emails": [
-                {
-                  "type": "Main",
-                  "email": "email@email.com"
-                }
-              ],
-              "phones": [
-                {
-                  "type": "Office",
-                  "name": "Head Office",
-                  "phone": "+44 7799 473 140"
-                }
-              ]
-            },
-            "agents": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "This Company LHR OPS Team",
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Main",
-                    "name": "Head Office",
-                    "phone": "+44 772 2323 2323"
-                  }
-                ]
-              }
-            ],
-            "greeters": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "Jone Doe",
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Office",
-                    "name": "Head Office",
-                    "phone": "+44 779 3232 2323"
-                  }
-                ]
-              }
-            ],
-            "services": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "service_name": "Meet & Assist Service",
-                "rates": [
-                  {
-                    "currency": "USD",
-                    "packages": [
-                      {
-                        "pax": 0,
-                        "value": 0
-                      }
-                    ]
-                  }
-                ],
-                "created_by": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "username": "Resil"
-                },
-                "updated_by": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "username": "Anna"
-                },
-                "created_at": "2019-08-24T14:15:22Z",
-                "updated_at": "2019-08-24T14:15:22Z",
-                "deleted_at": "2019-08-24T14:15:22Z"
-              }
-            ],
-            "created_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Resil"
-            },
-            "updated_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Anna"
-            },
-            "created_at": "2019-08-24T14:15:22Z",
-            "updated_at": "2019-08-24T14:15:22Z",
-            "deleted_at": "2019-08-24T14:15:22Z"
-          },
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
+          ]
         }
       ],
       "charges": {
@@ -799,30 +341,19 @@ Get list of operating Airports.
           "depature": true,
           "transit": true
         }
-      },
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      }
     }
   ]
 }
 ```
 
-<h3 id="get-_airports-responses">Responses</h3>
+<h3 id="get-airports-responses">Responses</h3>
 
 | Status | Meaning                                                 | Description | Schema |
 | ------ | ------------------------------------------------------- | ----------- | ------ |
 | 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
 
-<h3 id="get-_airports-responseschema">Response Schema</h3>
+<h3 id="get-airports-responseschema">Response Schema</h3>
 
 #### Enumerated Values
 
@@ -853,7 +384,7 @@ Authorization ( Scopes: 1234 )
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/airports/{id} \
+curl -X GET http://127.0.0.1:4010/airports/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -863,8 +394,8 @@ curl -X GET https://prism.supun.xyz/airports/{id} \
 ```
 
 ```http
-GET https://prism.supun.xyz/airports/{id} HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/airports/{id} HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -881,7 +412,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/airports/{id}", {
+fetch("http://127.0.0.1:4010/airports/{id}", {
   method: "GET",
 
   headers: headers,
@@ -906,7 +437,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/airports/{id}',
+result = RestClient.get 'http://127.0.0.1:4010/airports/{id}',
   params: {
   }, headers: headers
 
@@ -924,7 +455,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/airports/{id}', headers = headers)
+r = requests.get('http://127.0.0.1:4010/airports/{id}', headers = headers)
 
 print(r.json())
 
@@ -949,7 +480,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/airports/{id}', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/airports/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -966,7 +497,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/airports/{id}");
+URL obj = new URL("http://127.0.0.1:4010/airports/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1001,7 +532,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/airports/{id}", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/airports/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1049,38 +580,7 @@ GET Airport details.
       "name": "LHR London Heahrow Airport",
       "country": "United Kingdom",
       "city": "London",
-      "time_zone": "Europe/London",
       "booking_window": 48,
-      "currency": "GBP",
-      "comments": "Use Hethrow VIP for ABI",
-      "image": "airport_image.png",
-      "location": {
-        "latitude": 40.690252,
-        "longitude": -74.172314
-      },
-      "contacts": {
-        "address": {
-          "streets": ["No 221/1, Baker's Street"],
-          "city": "Hethrow",
-          "state": "London",
-          "postal_code": "LN223 2323",
-          "country": "United Kingdom"
-        },
-        "emails": [
-          {
-            "type": "Main",
-            "email": "email@email.com"
-          }
-        ],
-        "phones": [
-          {
-            "type": "Office",
-            "name": "Head Office",
-            "phone": "+44 7799 473 140"
-          }
-        ]
-      },
-      "operational": true,
       "terminals": [
         {
           "airport_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -1089,7 +589,24 @@ GET Airport details.
           "services": [
             {
               "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "service_name": "Meet & Assist Service",
+              "service_name": "string",
+              "fields": [
+                {
+                  "field_name": "string",
+                  "field_type": "string",
+                  "validation": [
+                    {
+                      "required": true
+                    }
+                  ]
+                }
+              ],
+              "validataion": [
+                {
+                  "rule": "string",
+                  "service_id": "string"
+                }
+              ],
               "rates": [
                 {
                   "currency": "USD",
@@ -1113,123 +630,7 @@ GET Airport details.
               "updated_at": "2019-08-24T14:15:22Z",
               "deleted_at": "2019-08-24T14:15:22Z"
             }
-          ],
-          "service_providers": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "company_name": "string",
-            "image": "company_image.png",
-            "default": true,
-            "contacts": {
-              "address": {
-                "streets": ["No 221/1, Baker's Street"],
-                "city": "Hethrow",
-                "state": "London",
-                "postal_code": "LN223 2323",
-                "country": "United Kingdom"
-              },
-              "emails": [
-                {
-                  "type": "Main",
-                  "email": "email@email.com"
-                }
-              ],
-              "phones": [
-                {
-                  "type": "Office",
-                  "name": "Head Office",
-                  "phone": "+44 7799 473 140"
-                }
-              ]
-            },
-            "agents": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "This Company LHR OPS Team",
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Main",
-                    "name": "Head Office",
-                    "phone": "+44 772 2323 2323"
-                  }
-                ]
-              }
-            ],
-            "greeters": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "Jone Doe",
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Office",
-                    "name": "Head Office",
-                    "phone": "+44 779 3232 2323"
-                  }
-                ]
-              }
-            ],
-            "services": [
-              {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "service_name": "Meet & Assist Service",
-                "rates": [
-                  {
-                    "currency": "USD",
-                    "packages": [
-                      {
-                        "pax": 0,
-                        "value": 0
-                      }
-                    ]
-                  }
-                ],
-                "created_by": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "username": "Resil"
-                },
-                "updated_by": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "username": "Anna"
-                },
-                "created_at": "2019-08-24T14:15:22Z",
-                "updated_at": "2019-08-24T14:15:22Z",
-                "deleted_at": "2019-08-24T14:15:22Z"
-              }
-            ],
-            "created_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Resil"
-            },
-            "updated_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Anna"
-            },
-            "created_at": "2019-08-24T14:15:22Z",
-            "updated_at": "2019-08-24T14:15:22Z",
-            "deleted_at": "2019-08-24T14:15:22Z"
-          },
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
+          ]
         }
       ],
       "charges": {
@@ -1257,18 +658,7 @@ GET Airport details.
           "depature": true,
           "transit": true
         }
-      },
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      }
     }
   ]
 }
@@ -1311,7 +701,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/airports/{id}/terminals \
+curl -X GET http://127.0.0.1:4010/airports/{id}/terminals \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -1321,8 +711,8 @@ curl -X GET https://prism.supun.xyz/airports/{id}/terminals \
 ```
 
 ```http
-GET https://prism.supun.xyz/airports/{id}/terminals HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/airports/{id}/terminals HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -1339,7 +729,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/airports/{id}/terminals", {
+fetch("http://127.0.0.1:4010/airports/{id}/terminals", {
   method: "GET",
 
   headers: headers,
@@ -1364,7 +754,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/airports/{id}/terminals',
+result = RestClient.get 'http://127.0.0.1:4010/airports/{id}/terminals',
   params: {
   }, headers: headers
 
@@ -1382,7 +772,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/airports/{id}/terminals', headers = headers)
+r = requests.get('http://127.0.0.1:4010/airports/{id}/terminals', headers = headers)
 
 print(r.json())
 
@@ -1407,7 +797,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/airports/{id}/terminals', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/airports/{id}/terminals', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1424,7 +814,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/airports/{id}/terminals");
+URL obj = new URL("http://127.0.0.1:4010/airports/{id}/terminals");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1459,7 +849,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/airports/{id}/terminals", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/airports/{id}/terminals", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1525,7 +915,24 @@ Get a list of terminals at an airport
       "services": [
         {
           "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "service_name": "Meet & Assist Service",
+          "service_name": "string",
+          "fields": [
+            {
+              "field_name": "string",
+              "field_type": "string",
+              "validation": [
+                {
+                  "required": true
+                }
+              ]
+            }
+          ],
+          "validataion": [
+            {
+              "rule": "string",
+              "service_id": "string"
+            }
+          ],
           "rates": [
             {
               "currency": "USD",
@@ -1536,136 +943,9 @@ Get a list of terminals at an airport
                 }
               ]
             }
-          ],
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
-        }
-      ],
-      "service_providers": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "company_name": "string",
-        "image": "company_image.png",
-        "default": true,
-        "contacts": {
-          "address": {
-            "streets": ["No 221/1, Baker's Street"],
-            "city": "Hethrow",
-            "state": "London",
-            "postal_code": "LN223 2323",
-            "country": "United Kingdom"
-          },
-          "emails": [
-            {
-              "type": "Main",
-              "email": "email@email.com"
-            }
-          ],
-          "phones": [
-            {
-              "type": "Office",
-              "name": "Head Office",
-              "phone": "+44 7799 473 140"
-            }
           ]
-        },
-        "agents": [
-          {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "This Company LHR OPS Team",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Main",
-                "name": "Head Office",
-                "phone": "+44 772 2323 2323"
-              }
-            ]
-          }
-        ],
-        "greeters": [
-          {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "Jone Doe",
-            "emails": [
-              {
-                "type": "Main",
-                "email": "email@email.com"
-              }
-            ],
-            "phones": [
-              {
-                "type": "Office",
-                "name": "Head Office",
-                "phone": "+44 779 3232 2323"
-              }
-            ]
-          }
-        ],
-        "services": [
-          {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "service_name": "Meet & Assist Service",
-            "rates": [
-              {
-                "currency": "USD",
-                "packages": [
-                  {
-                    "pax": 0,
-                    "value": 0
-                  }
-                ]
-              }
-            ],
-            "created_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Resil"
-            },
-            "updated_by": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "username": "Anna"
-            },
-            "created_at": "2019-08-24T14:15:22Z",
-            "updated_at": "2019-08-24T14:15:22Z",
-            "deleted_at": "2019-08-24T14:15:22Z"
-          }
-        ],
-        "created_by": {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "username": "Resil"
-        },
-        "updated_by": {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "username": "Anna"
-        },
-        "created_at": "2019-08-24T14:15:22Z",
-        "updated_at": "2019-08-24T14:15:22Z",
-        "deleted_at": "2019-08-24T14:15:22Z"
-      },
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+        }
+      ]
     }
   ]
 }
@@ -1702,7 +982,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/bookings \
+curl -X GET http://127.0.0.1:4010/bookings \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -1712,8 +992,8 @@ curl -X GET https://prism.supun.xyz/bookings \
 ```
 
 ```http
-GET https://prism.supun.xyz/bookings HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/bookings HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -1730,7 +1010,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/bookings", {
+fetch("http://127.0.0.1:4010/bookings", {
   method: "GET",
 
   headers: headers,
@@ -1755,7 +1035,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/bookings',
+result = RestClient.get 'http://127.0.0.1:4010/bookings',
   params: {
   }, headers: headers
 
@@ -1773,7 +1053,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/bookings', headers = headers)
+r = requests.get('http://127.0.0.1:4010/bookings', headers = headers)
 
 print(r.json())
 
@@ -1798,7 +1078,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/bookings', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1815,7 +1095,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings");
+URL obj = new URL("http://127.0.0.1:4010/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1850,7 +1130,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/bookings", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2001,18 +1281,7 @@ GET a list of bookings
                   "signage": "John Doe",
                   "sig_image": "signage_image.png",
                   "image": "passenger_image.png",
-                  "pas_stat": true,
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
+                  "pas_stat": true
                 }
               }
             ]
@@ -2049,56 +1318,6 @@ GET a list of bookings
                   }
                 }
               },
-              "service_providers": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "This is a Company PVT Ltd",
-                  "services": ["47cc67093475061e3d95369d"],
-                  "status": 0,
-                  "email_status": {
-                    "sup_email_sent": true,
-                    "sup_sent_date": "2019-08-24T14:15:22Z",
-                    "sup_action_date": "2019-08-24T14:15:22Z",
-                    "grt_info_sent": true,
-                    "grt_sent_date": "2019-08-24T14:15:22Z"
-                  },
-                  "agent": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Company LHR OPS Team",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "greeter": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Jane Doe",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
-                }
-              ],
               "services": [
                 {
                   "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -2148,18 +1367,7 @@ GET a list of bookings
                           "signage": "John Doe",
                           "sig_image": "signage_image.png",
                           "image": "passenger_image.png",
-                          "pas_stat": true,
-                          "created_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Resil"
-                          },
-                          "updated_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Anna"
-                          },
-                          "created_at": "2019-08-24T14:15:22Z",
-                          "updated_at": "2019-08-24T14:15:22Z",
-                          "deleted_at": "2019-08-24T14:15:22Z"
+                          "pas_stat": true
                         }
                       }
                     ]
@@ -2168,18 +1376,7 @@ GET a list of bookings
               ]
             }
           ],
-          "special_notes": "string",
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
+          "special_notes": "string"
         }
       ],
       "billing": {
@@ -2197,18 +1394,7 @@ GET a list of bookings
         "total_paid": 302.75
       },
       "commets": "First Time Traveller",
-      "status": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "status": true
     }
   ]
 }
@@ -2260,9 +1446,6 @@ GET a list of bookings
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -2299,7 +1482,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST https://prism.supun.xyz/bookings \
+curl -X POST http://127.0.0.1:4010/bookings \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -2310,8 +1493,8 @@ curl -X POST https://prism.supun.xyz/bookings \
 ```
 
 ```http
-POST https://prism.supun.xyz/bookings HTTP/1.1
-Host: prism.supun.xyz
+POST http://127.0.0.1:4010/bookings HTTP/1.1
+Host: 127.0.0.1:4010
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -2354,7 +1537,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://prism.supun.xyz/bookings',
+fetch('http://127.0.0.1:4010/bookings',
 {
   method: 'POST',
   body: inputBody,
@@ -2381,7 +1564,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'https://prism.supun.xyz/bookings',
+result = RestClient.post 'http://127.0.0.1:4010/bookings',
   params: {
   }, headers: headers
 
@@ -2400,7 +1583,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('https://prism.supun.xyz/bookings', headers = headers)
+r = requests.post('http://127.0.0.1:4010/bookings', headers = headers)
 
 print(r.json())
 
@@ -2426,7 +1609,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://prism.supun.xyz/bookings', array(
+    $response = $client->request('POST','http://127.0.0.1:4010/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2443,7 +1626,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings");
+URL obj = new URL("http://127.0.0.1:4010/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -2479,7 +1662,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "https://prism.supun.xyz/bookings", data)
+    req, err := http.NewRequest("POST", "http://127.0.0.1:4010/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2918,9 +2101,6 @@ Create a booking
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -2957,7 +2137,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/bookings/{id} \
+curl -X GET http://127.0.0.1:4010/bookings/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -2967,8 +2147,8 @@ curl -X GET https://prism.supun.xyz/bookings/{id} \
 ```
 
 ```http
-GET https://prism.supun.xyz/bookings/{id} HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/bookings/{id} HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -2985,7 +2165,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/bookings/{id}", {
+fetch("http://127.0.0.1:4010/bookings/{id}", {
   method: "GET",
 
   headers: headers,
@@ -3010,7 +2190,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/bookings/{id}',
+result = RestClient.get 'http://127.0.0.1:4010/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -3028,7 +2208,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/bookings/{id}', headers = headers)
+r = requests.get('http://127.0.0.1:4010/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -3053,7 +2233,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/bookings/{id}', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3070,7 +2250,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings/{id}");
+URL obj = new URL("http://127.0.0.1:4010/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -3105,7 +2285,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/bookings/{id}", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3221,18 +2401,7 @@ GET a booking by id
                   "signage": "John Doe",
                   "sig_image": "signage_image.png",
                   "image": "passenger_image.png",
-                  "pas_stat": true,
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
+                  "pas_stat": true
                 }
               }
             ]
@@ -3269,56 +2438,6 @@ GET a booking by id
                   }
                 }
               },
-              "service_providers": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "This is a Company PVT Ltd",
-                  "services": ["47cc67093475061e3d95369d"],
-                  "status": 0,
-                  "email_status": {
-                    "sup_email_sent": true,
-                    "sup_sent_date": "2019-08-24T14:15:22Z",
-                    "sup_action_date": "2019-08-24T14:15:22Z",
-                    "grt_info_sent": true,
-                    "grt_sent_date": "2019-08-24T14:15:22Z"
-                  },
-                  "agent": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Company LHR OPS Team",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "greeter": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Jane Doe",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
-                }
-              ],
               "services": [
                 {
                   "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -3368,18 +2487,7 @@ GET a booking by id
                           "signage": "John Doe",
                           "sig_image": "signage_image.png",
                           "image": "passenger_image.png",
-                          "pas_stat": true,
-                          "created_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Resil"
-                          },
-                          "updated_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Anna"
-                          },
-                          "created_at": "2019-08-24T14:15:22Z",
-                          "updated_at": "2019-08-24T14:15:22Z",
-                          "deleted_at": "2019-08-24T14:15:22Z"
+                          "pas_stat": true
                         }
                       }
                     ]
@@ -3388,18 +2496,7 @@ GET a booking by id
               ]
             }
           ],
-          "special_notes": "string",
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
+          "special_notes": "string"
         }
       ],
       "billing": {
@@ -3417,18 +2514,7 @@ GET a booking by id
         "total_paid": 302.75
       },
       "commets": "First Time Traveller",
-      "status": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "status": true
     }
   ]
 }
@@ -3480,9 +2566,6 @@ GET a booking by id
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -3519,7 +2602,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT https://prism.supun.xyz/bookings/{id} \
+curl -X PUT http://127.0.0.1:4010/bookings/{id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -3530,8 +2613,8 @@ curl -X PUT https://prism.supun.xyz/bookings/{id} \
 ```
 
 ```http
-PUT https://prism.supun.xyz/bookings/{id} HTTP/1.1
-Host: prism.supun.xyz
+PUT http://127.0.0.1:4010/bookings/{id} HTTP/1.1
+Host: 127.0.0.1:4010
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -3574,7 +2657,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://prism.supun.xyz/bookings/{id}',
+fetch('http://127.0.0.1:4010/bookings/{id}',
 {
   method: 'PUT',
   body: inputBody,
@@ -3601,7 +2684,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'https://prism.supun.xyz/bookings/{id}',
+result = RestClient.put 'http://127.0.0.1:4010/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -3620,7 +2703,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('https://prism.supun.xyz/bookings/{id}', headers = headers)
+r = requests.put('http://127.0.0.1:4010/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -3646,7 +2729,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','https://prism.supun.xyz/bookings/{id}', array(
+    $response = $client->request('PUT','http://127.0.0.1:4010/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3663,7 +2746,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings/{id}");
+URL obj = new URL("http://127.0.0.1:4010/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -3699,7 +2782,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://prism.supun.xyz/bookings/{id}", data)
+    req, err := http.NewRequest("PUT", "http://127.0.0.1:4010/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3880,18 +2963,7 @@ Update a booking
                   "signage": "John Doe",
                   "sig_image": "signage_image.png",
                   "image": "passenger_image.png",
-                  "pas_stat": true,
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
+                  "pas_stat": true
                 }
               }
             ]
@@ -3928,56 +3000,6 @@ Update a booking
                   }
                 }
               },
-              "service_providers": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "This is a Company PVT Ltd",
-                  "services": ["47cc67093475061e3d95369d"],
-                  "status": 0,
-                  "email_status": {
-                    "sup_email_sent": true,
-                    "sup_sent_date": "2019-08-24T14:15:22Z",
-                    "sup_action_date": "2019-08-24T14:15:22Z",
-                    "grt_info_sent": true,
-                    "grt_sent_date": "2019-08-24T14:15:22Z"
-                  },
-                  "agent": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Company LHR OPS Team",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "greeter": [
-                    {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": "Jane Doe",
-                      "email_contacts": [
-                        {
-                          "type": "Main",
-                          "email": "email@email.com"
-                        }
-                      ]
-                    }
-                  ],
-                  "created_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Resil"
-                  },
-                  "updated_by": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "username": "Anna"
-                  },
-                  "created_at": "2019-08-24T14:15:22Z",
-                  "updated_at": "2019-08-24T14:15:22Z",
-                  "deleted_at": "2019-08-24T14:15:22Z"
-                }
-              ],
               "services": [
                 {
                   "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -4027,18 +3049,7 @@ Update a booking
                           "signage": "John Doe",
                           "sig_image": "signage_image.png",
                           "image": "passenger_image.png",
-                          "pas_stat": true,
-                          "created_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Resil"
-                          },
-                          "updated_by": {
-                            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                            "username": "Anna"
-                          },
-                          "created_at": "2019-08-24T14:15:22Z",
-                          "updated_at": "2019-08-24T14:15:22Z",
-                          "deleted_at": "2019-08-24T14:15:22Z"
+                          "pas_stat": true
                         }
                       }
                     ]
@@ -4047,18 +3058,7 @@ Update a booking
               ]
             }
           ],
-          "special_notes": "string",
-          "created_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Resil"
-          },
-          "updated_by": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "username": "Anna"
-          },
-          "created_at": "2019-08-24T14:15:22Z",
-          "updated_at": "2019-08-24T14:15:22Z",
-          "deleted_at": "2019-08-24T14:15:22Z"
+          "special_notes": "string"
         }
       ],
       "billing": {
@@ -4076,18 +3076,7 @@ Update a booking
         "total_paid": 302.75
       },
       "commets": "First Time Traveller",
-      "status": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "status": true
     }
   ]
 }
@@ -4139,9 +3128,6 @@ Update a booking
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -4178,7 +3164,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X DELETE https://prism.supun.xyz/bookings/{id} \
+curl -X DELETE http://127.0.0.1:4010/bookings/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -4188,8 +3174,8 @@ curl -X DELETE https://prism.supun.xyz/bookings/{id} \
 ```
 
 ```http
-DELETE https://prism.supun.xyz/bookings/{id} HTTP/1.1
-Host: prism.supun.xyz
+DELETE http://127.0.0.1:4010/bookings/{id} HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -4206,7 +3192,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/bookings/{id}", {
+fetch("http://127.0.0.1:4010/bookings/{id}", {
   method: "DELETE",
 
   headers: headers,
@@ -4231,7 +3217,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.delete 'https://prism.supun.xyz/bookings/{id}',
+result = RestClient.delete 'http://127.0.0.1:4010/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -4249,7 +3235,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.delete('https://prism.supun.xyz/bookings/{id}', headers = headers)
+r = requests.delete('http://127.0.0.1:4010/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -4274,7 +3260,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('DELETE','https://prism.supun.xyz/bookings/{id}', array(
+    $response = $client->request('DELETE','http://127.0.0.1:4010/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4291,7 +3277,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings/{id}");
+URL obj = new URL("http://127.0.0.1:4010/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
@@ -4326,7 +3312,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "https://prism.supun.xyz/bookings/{id}", data)
+    req, err := http.NewRequest("DELETE", "http://127.0.0.1:4010/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4399,7 +3385,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/bookings/{id}/journeys \
+curl -X GET http://127.0.0.1:4010/bookings/{id}/journeys \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -4409,8 +3395,8 @@ curl -X GET https://prism.supun.xyz/bookings/{id}/journeys \
 ```
 
 ```http
-GET https://prism.supun.xyz/bookings/{id}/journeys HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/bookings/{id}/journeys HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -4427,7 +3413,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/bookings/{id}/journeys", {
+fetch("http://127.0.0.1:4010/bookings/{id}/journeys", {
   method: "GET",
 
   headers: headers,
@@ -4452,7 +3438,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/bookings/{id}/journeys',
+result = RestClient.get 'http://127.0.0.1:4010/bookings/{id}/journeys',
   params: {
   }, headers: headers
 
@@ -4470,7 +3456,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/bookings/{id}/journeys', headers = headers)
+r = requests.get('http://127.0.0.1:4010/bookings/{id}/journeys', headers = headers)
 
 print(r.json())
 
@@ -4495,7 +3481,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/bookings/{id}/journeys', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/bookings/{id}/journeys', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4512,7 +3498,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings/{id}/journeys");
+URL obj = new URL("http://127.0.0.1:4010/bookings/{id}/journeys");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -4547,7 +3533,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/bookings/{id}/journeys", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/bookings/{id}/journeys", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4655,18 +3641,7 @@ GET a list of journeys for a single booking
               "signage": "John Doe",
               "sig_image": "signage_image.png",
               "image": "passenger_image.png",
-              "pas_stat": true,
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
+              "pas_stat": true
             }
           }
         ]
@@ -4703,56 +3678,6 @@ GET a list of journeys for a single booking
               }
             }
           },
-          "service_providers": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": "This is a Company PVT Ltd",
-              "services": ["47cc67093475061e3d95369d"],
-              "status": 0,
-              "email_status": {
-                "sup_email_sent": true,
-                "sup_sent_date": "2019-08-24T14:15:22Z",
-                "sup_action_date": "2019-08-24T14:15:22Z",
-                "grt_info_sent": true,
-                "grt_sent_date": "2019-08-24T14:15:22Z"
-              },
-              "agent": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Company LHR OPS Team",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "greeter": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Jane Doe",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          ],
           "services": [
             {
               "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -4802,18 +3727,7 @@ GET a list of journeys for a single booking
                       "signage": "John Doe",
                       "sig_image": "signage_image.png",
                       "image": "passenger_image.png",
-                      "pas_stat": true,
-                      "created_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Resil"
-                      },
-                      "updated_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Anna"
-                      },
-                      "created_at": "2019-08-24T14:15:22Z",
-                      "updated_at": "2019-08-24T14:15:22Z",
-                      "deleted_at": "2019-08-24T14:15:22Z"
+                      "pas_stat": true
                     }
                   }
                 ]
@@ -4822,18 +3736,7 @@ GET a list of journeys for a single booking
           ]
         }
       ],
-      "special_notes": "string",
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "special_notes": "string"
     }
   ]
 }
@@ -4870,9 +3773,6 @@ GET a list of journeys for a single booking
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -4901,7 +3801,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST https://prism.supun.xyz/bookings/{id}/journeys \
+curl -X POST http://127.0.0.1:4010/bookings/{id}/journeys \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -4912,8 +3812,8 @@ curl -X POST https://prism.supun.xyz/bookings/{id}/journeys \
 ```
 
 ```http
-POST https://prism.supun.xyz/bookings/{id}/journeys HTTP/1.1
-Host: prism.supun.xyz
+POST http://127.0.0.1:4010/bookings/{id}/journeys HTTP/1.1
+Host: 127.0.0.1:4010
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -4971,32 +3871,6 @@ const inputBody = '{
           }
         }
       },
-      "service_providers": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "services": [
-            "47cc67093475061e3d95369d"
-          ],
-          "status": 0,
-          "email_status": {
-            "sup_email_sent": true,
-            "sup_sent_date": "2019-08-24T14:15:22Z",
-            "sup_action_date": "2019-08-24T14:15:22Z",
-            "grt_info_sent": true,
-            "grt_sent_date": "2019-08-24T14:15:22Z"
-          },
-          "agent": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ],
-          "greeter": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ]
-        }
-      ],
       "services": [
         {
           "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -5029,7 +3903,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://prism.supun.xyz/bookings/{id}/journeys',
+fetch('http://127.0.0.1:4010/bookings/{id}/journeys',
 {
   method: 'POST',
   body: inputBody,
@@ -5056,7 +3930,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'https://prism.supun.xyz/bookings/{id}/journeys',
+result = RestClient.post 'http://127.0.0.1:4010/bookings/{id}/journeys',
   params: {
   }, headers: headers
 
@@ -5075,7 +3949,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('https://prism.supun.xyz/bookings/{id}/journeys', headers = headers)
+r = requests.post('http://127.0.0.1:4010/bookings/{id}/journeys', headers = headers)
 
 print(r.json())
 
@@ -5101,7 +3975,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://prism.supun.xyz/bookings/{id}/journeys', array(
+    $response = $client->request('POST','http://127.0.0.1:4010/bookings/{id}/journeys', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -5118,7 +3992,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/bookings/{id}/journeys");
+URL obj = new URL("http://127.0.0.1:4010/bookings/{id}/journeys");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -5154,7 +4028,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "https://prism.supun.xyz/bookings/{id}/journeys", data)
+    req, err := http.NewRequest("POST", "http://127.0.0.1:4010/bookings/{id}/journeys", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -5221,30 +4095,6 @@ Create a new journey in a booking
           }
         }
       },
-      "service_providers": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "services": ["47cc67093475061e3d95369d"],
-          "status": 0,
-          "email_status": {
-            "sup_email_sent": true,
-            "sup_sent_date": "2019-08-24T14:15:22Z",
-            "sup_action_date": "2019-08-24T14:15:22Z",
-            "grt_info_sent": true,
-            "grt_sent_date": "2019-08-24T14:15:22Z"
-          },
-          "agent": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ],
-          "greeter": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ]
-        }
-      ],
       "services": [
         {
           "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -5272,74 +4122,60 @@ Create a new journey in a booking
 
 <h3 id="post-_bookings_{id}_journeys-parameters">Parameters</h3>
 
-| Name                 | In     | Type              | Required | Description                                                  |
-| -------------------- | ------ | ----------------- | -------- | ------------------------------------------------------------ |
-| X-Trace-Id           | header | string            | false    | Please provide your UUID for tracing                         |
-| Content-Type         | header | string            | true     | application/json                                             |
-| Accept-Encoding      | header | string            | true     | add a req. header for payload to be compressed by the server |
-| body                 | body   | object            | false    | Create new journey request body                              |
-| » passengers         | body   | object            | true     | Number of passengers in the journey                          |
-| »» meta              | body   | object            | true     | none                                                         |
-| »»» adult            | body   | integer           | true     | none                                                         |
-| »»» child            | body   | integer           | true     | none                                                         |
-| »»» infant           | body   | integer           | true     | none                                                         |
-| »»» bags             | body   | integer           | true     | none                                                         |
-| »» pax               | body   | [object]          | true     | none                                                         |
-| »»» type             | body   | string            | false    | none                                                         |
-| »»» pnr              | body   | string            | false    | none                                                         |
-| »»» class            | body   | string            | false    | none                                                         |
-| »»» id               | body   | string(uuid)      | false    | none                                                         |
-| » stops              | body   | [object]          | true     | Number of stops in the journey                               |
-| »» type              | body   | string            | true     | none                                                         |
-| »» meeting_date      | body   | string(date)      | true     | none                                                         |
-| »» meeting_time      | body   | string(time)      | true     | none                                                         |
-| »» location          | body   | string            | true     | none                                                         |
-| »» airport           | body   | object            | false    | none                                                         |
-| »»» id               | body   | string(uuid)      | true     | none                                                         |
-| »» flights           | body   | object            | false    | none                                                         |
-| »»» arrival          | body   | object            | true     | none                                                         |
-| »»»» flight_no       | body   | string            | true     | none                                                         |
-| »»»» terminal        | body   | string            | true     | none                                                         |
-| »»»» date            | body   | string(date)      | true     | none                                                         |
-| »»»» time            | body   | string(time)      | true     | none                                                         |
-| »»»» origin          | body   | object            | true     | none                                                         |
-| »»»»» id             | body   | string(uuid)      | true     | none                                                         |
-| »»»»» name           | body   | string            | true     | none                                                         |
-| »»» departure        | body   | object            | true     | none                                                         |
-| »»»» flight_no       | body   | string            | true     | none                                                         |
-| »»»» terminal        | body   | string            | true     | none                                                         |
-| »»»» date            | body   | string(date)      | true     | none                                                         |
-| »»»» time            | body   | string(time)      | true     | none                                                         |
-| »»»» destination     | body   | object            | true     | none                                                         |
-| »»»»» id             | body   | string(uuid)      | true     | none                                                         |
-| »»»»» name           | body   | string            | true     | none                                                         |
-| »» service_providers | body   | [allOf]           | true     | none                                                         |
-| »»» id               | body   | string(uuid)      | true     | none                                                         |
-| »»» services         | body   | [string]          | false    | none                                                         |
-| »»» status           | body   | integer           | true     | none                                                         |
-| »»» email_status     | body   | object            | false    | none                                                         |
-| »»»» sup_email_sent  | body   | boolean           | true     | none                                                         |
-| »»»» sup_sent_date   | body   | string(date-time) | false    | none                                                         |
-| »»»» sup_action_date | body   | string(date-time) | false    | none                                                         |
-| »»»» grt_info_sent   | body   | boolean           | true     | none                                                         |
-| »»»» grt_sent_date   | body   | string(date-time) | false    | none                                                         |
-| »»» agent            | body   | [object]          | false    | none                                                         |
-| »»»» id              | body   | string(uuid)      | false    | none                                                         |
-| »»» greeter          | body   | [object]          | false    | none                                                         |
-| »»»» id              | body   | string            | false    | none                                                         |
-| »» services          | body   | [object]          | true     | none                                                         |
-| »»» id               | body   | string(uuid)      | false    | none                                                         |
-| »»» passengers       | body   | object            | false    | none                                                         |
-| »»»» meta            | body   | object            | false    | none                                                         |
-| »»»»» adult          | body   | integer           | false    | none                                                         |
-| »»»»» child          | body   | integer           | false    | none                                                         |
-| »»»»» infant         | body   | integer           | false    | none                                                         |
-| »»»»» bags           | body   | integer           | false    | none                                                         |
-| »»»» pax             | body   | [object]          | false    | none                                                         |
-| »»»»» type           | body   | string            | false    | none                                                         |
-| »»»»» id             | body   | string(uuid)      | false    | none                                                         |
-| » special_notes      | body   | string            | false    | Special notes for the journey                                |
-| id                   | path   | string            | true     | a booking Id                                                 |
+| Name             | In     | Type         | Required | Description                                                  |
+| ---------------- | ------ | ------------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id       | header | string       | false    | Please provide your UUID for tracing                         |
+| Content-Type     | header | string       | true     | application/json                                             |
+| Accept-Encoding  | header | string       | true     | add a req. header for payload to be compressed by the server |
+| body             | body   | object       | false    | Create new journey request body                              |
+| » passengers     | body   | object       | true     | Number of passengers in the journey                          |
+| »» meta          | body   | object       | true     | none                                                         |
+| »»» adult        | body   | integer      | true     | none                                                         |
+| »»» child        | body   | integer      | true     | none                                                         |
+| »»» infant       | body   | integer      | true     | none                                                         |
+| »»» bags         | body   | integer      | true     | none                                                         |
+| »» pax           | body   | [object]     | true     | none                                                         |
+| »»» type         | body   | string       | false    | none                                                         |
+| »»» pnr          | body   | string       | false    | none                                                         |
+| »»» class        | body   | string       | false    | none                                                         |
+| »»» id           | body   | string(uuid) | false    | none                                                         |
+| » stops          | body   | [object]     | true     | Number of stops in the journey                               |
+| »» type          | body   | string       | true     | none                                                         |
+| »» meeting_date  | body   | string(date) | true     | none                                                         |
+| »» meeting_time  | body   | string(time) | true     | none                                                         |
+| »» location      | body   | string       | true     | none                                                         |
+| »» airport       | body   | object       | false    | none                                                         |
+| »»» id           | body   | string(uuid) | true     | none                                                         |
+| »» flights       | body   | object       | false    | none                                                         |
+| »»» arrival      | body   | object       | true     | none                                                         |
+| »»»» flight_no   | body   | string       | true     | none                                                         |
+| »»»» terminal    | body   | string       | true     | none                                                         |
+| »»»» date        | body   | string(date) | true     | none                                                         |
+| »»»» time        | body   | string(time) | true     | none                                                         |
+| »»»» origin      | body   | object       | true     | none                                                         |
+| »»»»» id         | body   | string(uuid) | true     | none                                                         |
+| »»»»» name       | body   | string       | true     | none                                                         |
+| »»» departure    | body   | object       | true     | none                                                         |
+| »»»» flight_no   | body   | string       | true     | none                                                         |
+| »»»» terminal    | body   | string       | true     | none                                                         |
+| »»»» date        | body   | string(date) | true     | none                                                         |
+| »»»» time        | body   | string(time) | true     | none                                                         |
+| »»»» destination | body   | object       | true     | none                                                         |
+| »»»»» id         | body   | string(uuid) | true     | none                                                         |
+| »»»»» name       | body   | string       | true     | none                                                         |
+| »» services      | body   | [object]     | true     | none                                                         |
+| »»» id           | body   | string(uuid) | false    | none                                                         |
+| »»» passengers   | body   | object       | false    | none                                                         |
+| »»»» meta        | body   | object       | false    | none                                                         |
+| »»»»» adult      | body   | integer      | false    | none                                                         |
+| »»»»» child      | body   | integer      | false    | none                                                         |
+| »»»»» infant     | body   | integer      | false    | none                                                         |
+| »»»»» bags       | body   | integer      | false    | none                                                         |
+| »»»» pax         | body   | [object]     | false    | none                                                         |
+| »»»»» type       | body   | string       | false    | none                                                         |
+| »»»»» id         | body   | string(uuid) | false    | none                                                         |
+| » special_notes  | body   | string       | false    | Special notes for the journey                                |
+| id               | path   | string       | true     | a booking Id                                                 |
 
 #### Enumerated Values
 
@@ -5349,9 +4185,6 @@ Create a new journey in a booking
 | »» type    | Arrival    |
 | »» type    | Departure  |
 | »» type    | Connection |
-| »»» status | 0          |
-| »»» status | 1          |
-| »»» status | 2          |
 | »»»»» type | Lead       |
 | »»»»» type | Additional |
 
@@ -5422,18 +4255,7 @@ Create a new journey in a booking
               "signage": "John Doe",
               "sig_image": "signage_image.png",
               "image": "passenger_image.png",
-              "pas_stat": true,
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
+              "pas_stat": true
             }
           }
         ]
@@ -5470,56 +4292,6 @@ Create a new journey in a booking
               }
             }
           },
-          "service_providers": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": "This is a Company PVT Ltd",
-              "services": ["47cc67093475061e3d95369d"],
-              "status": 0,
-              "email_status": {
-                "sup_email_sent": true,
-                "sup_sent_date": "2019-08-24T14:15:22Z",
-                "sup_action_date": "2019-08-24T14:15:22Z",
-                "grt_info_sent": true,
-                "grt_sent_date": "2019-08-24T14:15:22Z"
-              },
-              "agent": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Company LHR OPS Team",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "greeter": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Jane Doe",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          ],
           "services": [
             {
               "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
@@ -5569,18 +4341,7 @@ Create a new journey in a booking
                       "signage": "John Doe",
                       "sig_image": "signage_image.png",
                       "image": "passenger_image.png",
-                      "pas_stat": true,
-                      "created_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Resil"
-                      },
-                      "updated_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Anna"
-                      },
-                      "created_at": "2019-08-24T14:15:22Z",
-                      "updated_at": "2019-08-24T14:15:22Z",
-                      "deleted_at": "2019-08-24T14:15:22Z"
+                      "pas_stat": true
                     }
                   }
                 ]
@@ -5589,18 +4350,7 @@ Create a new journey in a booking
           ]
         }
       ],
-      "special_notes": "string",
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "special_notes": "string"
     }
   ]
 }
@@ -5637,9 +4387,6 @@ Create a new journey in a booking
 | type     | Arrival    |
 | type     | Departure  |
 | type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
 | type     | Lead       |
 | type     | Additional |
 | title    | Mr.        |
@@ -5654,2401 +4401,6 @@ Create a new journey in a booking
 | title    | Sir        |
 | title    | Sister     |
 | title    | Team       |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-<h1 id="gac-api-v1-1-0-journeys">Journeys</h1>
-
-## GET _journeys_{id}
-
-<a id="opIdGET /journeys/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://prism.supun.xyz/journeys/{id} \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-GET https://prism.supun.xyz/journeys/{id} HTTP/1.1
-Host: prism.supun.xyz
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  "Accept-Encoding": "gzip",
-  apiKey: "API_KEY",
-};
-
-fetch("https://prism.supun.xyz/journeys/{id}", {
-  method: "GET",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.get 'https://prism.supun.xyz/journeys/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.get('https://prism.supun.xyz/journeys/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://prism.supun.xyz/journeys/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/journeys/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/journeys/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`GET /journeys/{id}`
-
-_/journeys/{id}_
-
-GET a single journey of a booking
-
-<h3 id="get-_journeys_{id}-parameters">Parameters</h3>
-
-| Name            | In     | Type   | Required | Description                                                  |
-| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string | true     | application/json                                             |
-| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
-| id              | path   | string | true     | a journey id                                                 |
-
-> Example responses
-
-> OK
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  },
-  "Data": [
-    {
-      "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "reference_id": 1,
-      "passengers": {
-        "meta": {
-          "adult": 2,
-          "child": 2,
-          "infant": 0,
-          "bags": 5
-        },
-        "pax": [
-          {
-            "type": "Lead",
-            "pnr": "JHS3ES",
-            "class": "First",
-            "details": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": {
-                "title": "Mr.",
-                "forename": "John",
-                "surname": "Doe"
-              },
-              "contacts": {
-                "address": {
-                  "streets": ["No 221/1, Baker's Street"],
-                  "city": "Hethrow",
-                  "state": "London",
-                  "postal_code": "LN223 2323",
-                  "country": "United Kingdom"
-                },
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Office",
-                    "name": "Head Office",
-                    "phone": "+44 7799 473 140"
-                  }
-                ]
-              },
-              "date_of_birth": "1989-02-14",
-              "passport_no": "N32343423",
-              "comments": "First time traveller.",
-              "signage": "John Doe",
-              "sig_image": "signage_image.png",
-              "image": "passenger_image.png",
-              "pas_stat": true,
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          }
-        ]
-      },
-      "stops": [
-        {
-          "type": "Connection",
-          "meeting_date": "2020-10-31",
-          "meeting_time": "18:20:00",
-          "location": "United Kingdom",
-          "airport": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "LHR London Hethrow Airport"
-          },
-          "flights": {
-            "arrival": {
-              "flight_no": "BA281",
-              "terminal": "LHR Terminal 2",
-              "date": "2020-11-05",
-              "time": "20:15:00",
-              "origin": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "LAX Los Angeles Airport"
-              }
-            },
-            "departure": {
-              "flight_no": "BA282",
-              "terminal": "LHR Terminal 4",
-              "date": "2020-11-05",
-              "time": "22:15:00",
-              "destination": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "DXB Dubai International Airport"
-              }
-            }
-          },
-          "service_providers": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": "This is a Company PVT Ltd",
-              "services": ["47cc67093475061e3d95369d"],
-              "status": 0,
-              "email_status": {
-                "sup_email_sent": true,
-                "sup_sent_date": "2019-08-24T14:15:22Z",
-                "sup_action_date": "2019-08-24T14:15:22Z",
-                "grt_info_sent": true,
-                "grt_sent_date": "2019-08-24T14:15:22Z"
-              },
-              "agent": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Company LHR OPS Team",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "greeter": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Jane Doe",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          ],
-          "services": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "service_name": "Meet & Assist Service",
-              "passengers": {
-                "meta": {
-                  "adult": 2,
-                  "child": 2,
-                  "infant": 0,
-                  "bags": 5
-                },
-                "pax": [
-                  {
-                    "type": "Lead",
-                    "details": {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": {
-                        "title": "Mr.",
-                        "forename": "John",
-                        "surname": "Doe"
-                      },
-                      "contacts": {
-                        "address": {
-                          "streets": ["No 221/1, Baker's Street"],
-                          "city": "Hethrow",
-                          "state": "London",
-                          "postal_code": "LN223 2323",
-                          "country": "United Kingdom"
-                        },
-                        "emails": [
-                          {
-                            "type": "Main",
-                            "email": "email@email.com"
-                          }
-                        ],
-                        "phones": [
-                          {
-                            "type": "Office",
-                            "name": "Head Office",
-                            "phone": "+44 7799 473 140"
-                          }
-                        ]
-                      },
-                      "date_of_birth": "1989-02-14",
-                      "passport_no": "N32343423",
-                      "comments": "First time traveller.",
-                      "signage": "John Doe",
-                      "sig_image": "signage_image.png",
-                      "image": "passenger_image.png",
-                      "pas_stat": true,
-                      "created_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Resil"
-                      },
-                      "updated_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Anna"
-                      },
-                      "created_at": "2019-08-24T14:15:22Z",
-                      "updated_at": "2019-08-24T14:15:22Z",
-                      "deleted_at": "2019-08-24T14:15:22Z"
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ],
-      "special_notes": "string",
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
-    }
-  ]
-}
-```
-
-<h3 id="get-_journeys_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="get-_journeys_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value      |
-| -------- | ---------- |
-| status   | 200        |
-| status   | 201        |
-| status   | 204        |
-| type     | Lead       |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
-| type     | Arrival    |
-| type     | Departure  |
-| type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
-| type     | Lead       |
-| type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## PUT _journeys_{id}
-
-<a id="opIdPUT /journeys/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X PUT https://prism.supun.xyz/journeys/{id} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-PUT https://prism.supun.xyz/journeys/{id} HTTP/1.1
-Host: prism.supun.xyz
-Content-Type: application/json
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const inputBody = '{
-  "passengers": {
-    "meta": {
-      "adult": 2,
-      "child": 2,
-      "infant": 0,
-      "bags": 5
-    },
-    "pax": [
-      {
-        "type": "Lead",
-        "pnr": "JHS3ES",
-        "class": "First",
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-      }
-    ]
-  },
-  "stops": [
-    {
-      "type": "Connection",
-      "meeting_date": "2020-10-31",
-      "meeting_time": "18:20:00",
-      "location": "United Kingdom",
-      "airport": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-      },
-      "flights": {
-        "arrival": {
-          "flight_no": "BA281",
-          "terminal": "LHR Terminal 2",
-          "date": "2020-11-05",
-          "time": "20:15:00",
-          "origin": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "LAX Los Angeles Airport"
-          }
-        },
-        "departure": {
-          "flight_no": "BA282",
-          "terminal": "LHR Terminal 4",
-          "date": "2020-11-05",
-          "time": "22:15:00",
-          "destination": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "DXB Dubai International Airport"
-          }
-        }
-      },
-      "service_providers": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "services": [
-            "47cc67093475061e3d95369d"
-          ],
-          "status": 0,
-          "email_status": {
-            "sup_email_sent": true,
-            "sup_sent_date": "2019-08-24T14:15:22Z",
-            "sup_action_date": "2019-08-24T14:15:22Z",
-            "grt_info_sent": true,
-            "grt_sent_date": "2019-08-24T14:15:22Z"
-          },
-          "agent": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ],
-          "greeter": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ]
-        }
-      ],
-      "services": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "passengers": {
-            "meta": {
-              "adult": 2,
-              "child": 2,
-              "infant": 0,
-              "bags": 5
-            },
-            "pax": [
-              {
-                "type": "Lead",
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "special_notes": "string"
-}';
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json',
-  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type':'application/json',
-  'Accept-Encoding':'gzip',
-  'apiKey':'API_KEY'
-};
-
-fetch('https://prism.supun.xyz/journeys/{id}',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.put 'https://prism.supun.xyz/journeys/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.put('https://prism.supun.xyz/journeys/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Content-Type' => 'application/json',
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('PUT','https://prism.supun.xyz/journeys/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/journeys/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Content-Type": []string{"application/json"},
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://prism.supun.xyz/journeys/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`PUT /journeys/{id}`
-
-_/journeys/{id}_
-
-update a jounry of a booking
-
-> Body parameter
-
-```json
-{
-  "passengers": {
-    "meta": {
-      "adult": 2,
-      "child": 2,
-      "infant": 0,
-      "bags": 5
-    },
-    "pax": [
-      {
-        "type": "Lead",
-        "pnr": "JHS3ES",
-        "class": "First",
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-      }
-    ]
-  },
-  "stops": [
-    {
-      "type": "Connection",
-      "meeting_date": "2020-10-31",
-      "meeting_time": "18:20:00",
-      "location": "United Kingdom",
-      "airport": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-      },
-      "flights": {
-        "arrival": {
-          "flight_no": "BA281",
-          "terminal": "LHR Terminal 2",
-          "date": "2020-11-05",
-          "time": "20:15:00",
-          "origin": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "LAX Los Angeles Airport"
-          }
-        },
-        "departure": {
-          "flight_no": "BA282",
-          "terminal": "LHR Terminal 4",
-          "date": "2020-11-05",
-          "time": "22:15:00",
-          "destination": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "DXB Dubai International Airport"
-          }
-        }
-      },
-      "service_providers": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "services": ["47cc67093475061e3d95369d"],
-          "status": 0,
-          "email_status": {
-            "sup_email_sent": true,
-            "sup_sent_date": "2019-08-24T14:15:22Z",
-            "sup_action_date": "2019-08-24T14:15:22Z",
-            "grt_info_sent": true,
-            "grt_sent_date": "2019-08-24T14:15:22Z"
-          },
-          "agent": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ],
-          "greeter": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-            }
-          ]
-        }
-      ],
-      "services": [
-        {
-          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-          "passengers": {
-            "meta": {
-              "adult": 2,
-              "child": 2,
-              "infant": 0,
-              "bags": 5
-            },
-            "pax": [
-              {
-                "type": "Lead",
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "special_notes": "string"
-}
-```
-
-<h3 id="put-_journeys_{id}-parameters">Parameters</h3>
-
-| Name                 | In     | Type              | Required | Description                                                  |
-| -------------------- | ------ | ----------------- | -------- | ------------------------------------------------------------ |
-| X-Trace-Id           | header | string            | false    | Please provide your UUID for tracing                         |
-| Content-Type         | header | string            | true     | application/json                                             |
-| Accept-Encoding      | header | string            | true     | add a req. header for payload to be compressed by the server |
-| body                 | body   | object            | false    | update journey request body                                  |
-| » passengers         | body   | object            | true     | Number of passengers in the journey                          |
-| »» meta              | body   | object            | true     | none                                                         |
-| »»» adult            | body   | integer           | true     | none                                                         |
-| »»» child            | body   | integer           | true     | none                                                         |
-| »»» infant           | body   | integer           | true     | none                                                         |
-| »»» bags             | body   | integer           | true     | none                                                         |
-| »» pax               | body   | [object]          | true     | none                                                         |
-| »»» type             | body   | string            | false    | none                                                         |
-| »»» pnr              | body   | string            | false    | none                                                         |
-| »»» class            | body   | string            | false    | none                                                         |
-| »»» id               | body   | string(uuid)      | false    | none                                                         |
-| » stops              | body   | [object]          | true     | Number of stops in the journey                               |
-| »» type              | body   | string            | true     | none                                                         |
-| »» meeting_date      | body   | string(date)      | true     | none                                                         |
-| »» meeting_time      | body   | string(time)      | true     | none                                                         |
-| »» location          | body   | string            | true     | none                                                         |
-| »» airport           | body   | object            | false    | none                                                         |
-| »»» id               | body   | string(uuid)      | true     | none                                                         |
-| »» flights           | body   | object            | false    | none                                                         |
-| »»» arrival          | body   | object            | true     | none                                                         |
-| »»»» flight_no       | body   | string            | true     | none                                                         |
-| »»»» terminal        | body   | string            | true     | none                                                         |
-| »»»» date            | body   | string(date)      | true     | none                                                         |
-| »»»» time            | body   | string(time)      | true     | none                                                         |
-| »»»» origin          | body   | object            | true     | none                                                         |
-| »»»»» id             | body   | string(uuid)      | true     | none                                                         |
-| »»»»» name           | body   | string            | true     | none                                                         |
-| »»» departure        | body   | object            | true     | none                                                         |
-| »»»» flight_no       | body   | string            | true     | none                                                         |
-| »»»» terminal        | body   | string            | true     | none                                                         |
-| »»»» date            | body   | string(date)      | true     | none                                                         |
-| »»»» time            | body   | string(time)      | true     | none                                                         |
-| »»»» destination     | body   | object            | true     | none                                                         |
-| »»»»» id             | body   | string(uuid)      | true     | none                                                         |
-| »»»»» name           | body   | string            | true     | none                                                         |
-| »» service_providers | body   | [allOf]           | true     | none                                                         |
-| »»» id               | body   | string(uuid)      | true     | none                                                         |
-| »»» services         | body   | [string]          | false    | none                                                         |
-| »»» status           | body   | integer           | true     | none                                                         |
-| »»» email_status     | body   | object            | false    | none                                                         |
-| »»»» sup_email_sent  | body   | boolean           | true     | none                                                         |
-| »»»» sup_sent_date   | body   | string(date-time) | false    | none                                                         |
-| »»»» sup_action_date | body   | string(date-time) | false    | none                                                         |
-| »»»» grt_info_sent   | body   | boolean           | true     | none                                                         |
-| »»»» grt_sent_date   | body   | string(date-time) | false    | none                                                         |
-| »»» agent            | body   | [object]          | false    | none                                                         |
-| »»»» id              | body   | string(uuid)      | false    | none                                                         |
-| »»» greeter          | body   | [object]          | false    | none                                                         |
-| »»»» id              | body   | string            | false    | none                                                         |
-| »» services          | body   | [object]          | true     | none                                                         |
-| »»» id               | body   | string(uuid)      | false    | none                                                         |
-| »»» passengers       | body   | object            | false    | none                                                         |
-| »»»» meta            | body   | object            | false    | none                                                         |
-| »»»»» adult          | body   | integer           | false    | none                                                         |
-| »»»»» child          | body   | integer           | false    | none                                                         |
-| »»»»» infant         | body   | integer           | false    | none                                                         |
-| »»»»» bags           | body   | integer           | false    | none                                                         |
-| »»»» pax             | body   | [object]          | false    | none                                                         |
-| »»»»» type           | body   | string            | false    | none                                                         |
-| »»»»» id             | body   | string(uuid)      | false    | none                                                         |
-| » special_notes      | body   | string            | false    | Special notes for the journey                                |
-| id                   | path   | string            | true     | a journey id                                                 |
-
-#### Enumerated Values
-
-| Parameter  | Value      |
-| ---------- | ---------- |
-| »»» type   | Lead       |
-| »» type    | Arrival    |
-| »» type    | Departure  |
-| »» type    | Connection |
-| »»» status | 0          |
-| »»» status | 1          |
-| »»» status | 2          |
-| »»»»» type | Lead       |
-| »»»»» type | Additional |
-
-> Example responses
-
-> Created
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  },
-  "Data": [
-    {
-      "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "reference_id": 1,
-      "passengers": {
-        "meta": {
-          "adult": 2,
-          "child": 2,
-          "infant": 0,
-          "bags": 5
-        },
-        "pax": [
-          {
-            "type": "Lead",
-            "pnr": "JHS3ES",
-            "class": "First",
-            "details": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": {
-                "title": "Mr.",
-                "forename": "John",
-                "surname": "Doe"
-              },
-              "contacts": {
-                "address": {
-                  "streets": ["No 221/1, Baker's Street"],
-                  "city": "Hethrow",
-                  "state": "London",
-                  "postal_code": "LN223 2323",
-                  "country": "United Kingdom"
-                },
-                "emails": [
-                  {
-                    "type": "Main",
-                    "email": "email@email.com"
-                  }
-                ],
-                "phones": [
-                  {
-                    "type": "Office",
-                    "name": "Head Office",
-                    "phone": "+44 7799 473 140"
-                  }
-                ]
-              },
-              "date_of_birth": "1989-02-14",
-              "passport_no": "N32343423",
-              "comments": "First time traveller.",
-              "signage": "John Doe",
-              "sig_image": "signage_image.png",
-              "image": "passenger_image.png",
-              "pas_stat": true,
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          }
-        ]
-      },
-      "stops": [
-        {
-          "type": "Connection",
-          "meeting_date": "2020-10-31",
-          "meeting_time": "18:20:00",
-          "location": "United Kingdom",
-          "airport": {
-            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-            "name": "LHR London Hethrow Airport"
-          },
-          "flights": {
-            "arrival": {
-              "flight_no": "BA281",
-              "terminal": "LHR Terminal 2",
-              "date": "2020-11-05",
-              "time": "20:15:00",
-              "origin": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "LAX Los Angeles Airport"
-              }
-            },
-            "departure": {
-              "flight_no": "BA282",
-              "terminal": "LHR Terminal 4",
-              "date": "2020-11-05",
-              "time": "22:15:00",
-              "destination": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "name": "DXB Dubai International Airport"
-              }
-            }
-          },
-          "service_providers": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "name": "This is a Company PVT Ltd",
-              "services": ["47cc67093475061e3d95369d"],
-              "status": 0,
-              "email_status": {
-                "sup_email_sent": true,
-                "sup_sent_date": "2019-08-24T14:15:22Z",
-                "sup_action_date": "2019-08-24T14:15:22Z",
-                "grt_info_sent": true,
-                "grt_sent_date": "2019-08-24T14:15:22Z"
-              },
-              "agent": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Company LHR OPS Team",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "greeter": [
-                {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "name": "Jane Doe",
-                  "email_contacts": [
-                    {
-                      "type": "Main",
-                      "email": "email@email.com"
-                    }
-                  ]
-                }
-              ],
-              "created_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Resil"
-              },
-              "updated_by": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                "username": "Anna"
-              },
-              "created_at": "2019-08-24T14:15:22Z",
-              "updated_at": "2019-08-24T14:15:22Z",
-              "deleted_at": "2019-08-24T14:15:22Z"
-            }
-          ],
-          "services": [
-            {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-              "service_name": "Meet & Assist Service",
-              "passengers": {
-                "meta": {
-                  "adult": 2,
-                  "child": 2,
-                  "infant": 0,
-                  "bags": 5
-                },
-                "pax": [
-                  {
-                    "type": "Lead",
-                    "details": {
-                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                      "name": {
-                        "title": "Mr.",
-                        "forename": "John",
-                        "surname": "Doe"
-                      },
-                      "contacts": {
-                        "address": {
-                          "streets": ["No 221/1, Baker's Street"],
-                          "city": "Hethrow",
-                          "state": "London",
-                          "postal_code": "LN223 2323",
-                          "country": "United Kingdom"
-                        },
-                        "emails": [
-                          {
-                            "type": "Main",
-                            "email": "email@email.com"
-                          }
-                        ],
-                        "phones": [
-                          {
-                            "type": "Office",
-                            "name": "Head Office",
-                            "phone": "+44 7799 473 140"
-                          }
-                        ]
-                      },
-                      "date_of_birth": "1989-02-14",
-                      "passport_no": "N32343423",
-                      "comments": "First time traveller.",
-                      "signage": "John Doe",
-                      "sig_image": "signage_image.png",
-                      "image": "passenger_image.png",
-                      "pas_stat": true,
-                      "created_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Resil"
-                      },
-                      "updated_by": {
-                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                        "username": "Anna"
-                      },
-                      "created_at": "2019-08-24T14:15:22Z",
-                      "updated_at": "2019-08-24T14:15:22Z",
-                      "deleted_at": "2019-08-24T14:15:22Z"
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ],
-      "special_notes": "string",
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
-    }
-  ]
-}
-```
-
-<h3 id="put-_journeys_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                      | Description | Schema |
-| ------ | ------------------------------------------------------------ | ----------- | ------ |
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
-
-<h3 id="put-_journeys_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value      |
-| -------- | ---------- |
-| status   | 200        |
-| status   | 201        |
-| status   | 204        |
-| type     | Lead       |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
-| type     | Arrival    |
-| type     | Departure  |
-| type     | Connection |
-| status   | 0          |
-| status   | 1          |
-| status   | 2          |
-| type     | Lead       |
-| type     | Additional |
-| title    | Mr.        |
-| title    | Mrs.       |
-| title    | Ms.        |
-| title    | Dr.        |
-| title    | Mstr.      |
-| title    | Miss       |
-| title    | Mx.        |
-| title    | Prof.      |
-| title    | Rev.       |
-| title    | Sir        |
-| title    | Sister     |
-| title    | Team       |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## DELETE _journeys_{id}
-
-<a id="opIdDELETE /journeys/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X DELETE https://prism.supun.xyz/journeys/{id} \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-DELETE https://prism.supun.xyz/journeys/{id} HTTP/1.1
-Host: prism.supun.xyz
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  "Accept-Encoding": "gzip",
-  apiKey: "API_KEY",
-};
-
-fetch("https://prism.supun.xyz/journeys/{id}", {
-  method: "DELETE",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.delete 'https://prism.supun.xyz/journeys/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.delete('https://prism.supun.xyz/journeys/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('DELETE','https://prism.supun.xyz/journeys/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/journeys/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "https://prism.supun.xyz/journeys/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`DELETE /journeys/{id}`
-
-_/journeys/{id}_
-
-Delete a journey of a booking
-
-<h3 id="delete-_journeys_{id}-parameters">Parameters</h3>
-
-| Name            | In     | Type   | Required | Description                                                  |
-| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string | true     | application/json                                             |
-| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
-| id              | path   | string | true     | a journey id                                                 |
-
-> Example responses
-
-> OK
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-<h3 id="delete-_journeys_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="delete-_journeys_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value |
-| -------- | ----- |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-<h1 id="gac-api-v1-1-0-passengers">Passengers</h1>
-
-## GET _passengers_{id}
-
-<a id="opIdGET /passengers/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://prism.supun.xyz/passengers/{id} \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-GET https://prism.supun.xyz/passengers/{id} HTTP/1.1
-Host: prism.supun.xyz
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  "Accept-Encoding": "gzip",
-  apiKey: "API_KEY",
-};
-
-fetch("https://prism.supun.xyz/passengers/{id}", {
-  method: "GET",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.get 'https://prism.supun.xyz/passengers/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.get('https://prism.supun.xyz/passengers/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://prism.supun.xyz/passengers/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/passengers/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/passengers/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`GET /passengers/{id}`
-
-_/passengers/{id}_
-
-GET a single passenger of a company
-
-<h3 id="get-_passengers_{id}-parameters">Parameters</h3>
-
-| Name            | In     | Type   | Required | Description                                                  |
-| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string | true     | application/json                                             |
-| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
-| id              | path   | string | true     | passenger_id                                                 |
-
-> Example responses
-
-> OK
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  },
-  "Data": [
-    {
-      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "name": {
-        "title": "Mr.",
-        "forename": "John",
-        "surname": "Doe"
-      },
-      "contacts": {
-        "address": {
-          "streets": ["No 221/1, Baker's Street"],
-          "city": "Hethrow",
-          "state": "London",
-          "postal_code": "LN223 2323",
-          "country": "United Kingdom"
-        },
-        "emails": [
-          {
-            "type": "Main",
-            "email": "email@email.com"
-          }
-        ],
-        "phones": [
-          {
-            "type": "Office",
-            "name": "Head Office",
-            "phone": "+44 7799 473 140"
-          }
-        ]
-      },
-      "date_of_birth": "1989-02-14",
-      "passport_no": "N32343423",
-      "comments": "First time traveller.",
-      "signage": "John Doe",
-      "sig_image": "signage_image.png",
-      "image": "passenger_image.png",
-      "pas_stat": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
-    }
-  ]
-}
-```
-
-<h3 id="get-_passengers_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="get-_passengers_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value  |
-| -------- | ------ |
-| status   | 200    |
-| status   | 201    |
-| status   | 204    |
-| title    | Mr.    |
-| title    | Mrs.   |
-| title    | Ms.    |
-| title    | Dr.    |
-| title    | Mstr.  |
-| title    | Miss   |
-| title    | Mx.    |
-| title    | Prof.  |
-| title    | Rev.   |
-| title    | Sir    |
-| title    | Sister |
-| title    | Team   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## PUT _passengers_{id}
-
-<a id="opIdPUT /passengers/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X PUT https://prism.supun.xyz/passengers/{id} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-PUT https://prism.supun.xyz/passengers/{id} HTTP/1.1
-Host: prism.supun.xyz
-Content-Type: application/json
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const inputBody = '{
-  "name": {
-    "title": "Mr.",
-    "forename": "John",
-    "surname": "Doe"
-  },
-  "contacts": {
-    "address": {
-      "streets": [
-        "No 221/1, Baker's Street"
-      ],
-      "city": "Hethrow",
-      "state": "London",
-      "postal_code": "LN223 2323",
-      "country": "United Kingdom"
-    },
-    "emails": [
-      {
-        "type": "Main",
-        "email": "email@email.com"
-      }
-    ],
-    "phones": [
-      {
-        "type": "Office",
-        "name": "Head Office",
-        "phone": "+44 7799 473 140"
-      }
-    ]
-  },
-  "date_of_birth": "1989-02-14",
-  "passport_no": "N32343423",
-  "comments": "First time traveller.",
-  "signage": "John Doe",
-  "sig_image": "signage_image.png",
-  "image": "passenger_image.jpg",
-  "pas_stat": true
-}';
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json',
-  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type':'application/json',
-  'Accept-Encoding':'gzip',
-  'apiKey':'API_KEY'
-};
-
-fetch('https://prism.supun.xyz/passengers/{id}',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.put 'https://prism.supun.xyz/passengers/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.put('https://prism.supun.xyz/passengers/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Content-Type' => 'application/json',
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('PUT','https://prism.supun.xyz/passengers/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/passengers/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Content-Type": []string{"application/json"},
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://prism.supun.xyz/passengers/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`PUT /passengers/{id}`
-
-_/passengers/{id}_
-
-Update an exsisting passenger of a company
-
-> Body parameter
-
-```json
-{
-  "name": {
-    "title": "Mr.",
-    "forename": "John",
-    "surname": "Doe"
-  },
-  "contacts": {
-    "address": {
-      "streets": ["No 221/1, Baker's Street"],
-      "city": "Hethrow",
-      "state": "London",
-      "postal_code": "LN223 2323",
-      "country": "United Kingdom"
-    },
-    "emails": [
-      {
-        "type": "Main",
-        "email": "email@email.com"
-      }
-    ],
-    "phones": [
-      {
-        "type": "Office",
-        "name": "Head Office",
-        "phone": "+44 7799 473 140"
-      }
-    ]
-  },
-  "date_of_birth": "1989-02-14",
-  "passport_no": "N32343423",
-  "comments": "First time traveller.",
-  "signage": "John Doe",
-  "sig_image": "signage_image.png",
-  "image": "passenger_image.jpg",
-  "pas_stat": true
-}
-```
-
-<h3 id="put-_passengers_{id}-parameters">Parameters</h3>
-
-| Name            | In     | Type          | Required | Description                                                  |
-| --------------- | ------ | ------------- | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string        | true     | application/json                                             |
-| Accept-Encoding | header | string        | true     | add a req. header for payload to be compressed by the server |
-| body            | body   | object        | false    | passenger request body                                       |
-| » name          | body   | object        | true     | Details of the passenger                                     |
-| »» title        | body   | string        | true     | none                                                         |
-| »» forename     | body   | string        | true     | none                                                         |
-| »» surname      | body   | string        | true     | none                                                         |
-| » contacts      | body   | object        | true     | Contact model                                                |
-| »» address      | body   | object        | false    | Addres information                                           |
-| »»» streets     | body   | [string]      | false    | none                                                         |
-| »»» city        | body   | string        | false    | none                                                         |
-| »»» state       | body   | string        | false    | none                                                         |
-| »»» postal_code | body   | string        | false    | none                                                         |
-| »»» country     | body   | string        | false    | none                                                         |
-| »» emails       | body   | [object]      | false    | Email information                                            |
-| »»» type        | body   | string        | false    | none                                                         |
-| »»» email       | body   | string(email) | false    | none                                                         |
-| »» phones       | body   | [object]      | false    | Phone numbers                                                |
-| »»» type        | body   | string        | false    | none                                                         |
-| »»» name        | body   | string        | false    | none                                                         |
-| »»» phone       | body   | string        | false    | none                                                         |
-| » date_of_birth | body   | string(date)  | false    | Date of birth of the passenger                               |
-| » passport_no   | body   | string        | false    | Passport number of the passenger                             |
-| » comments      | body   | string        | false    | Special comments of the passenger                            |
-| » signage       | body   | string        | false    | Signage of the passenger                                     |
-| » sig_image     | body   | string        | false    | Signage image of the pasenger                                |
-| » image         | body   | string        | false    | Image of the passenger                                       |
-| » pas_stat      | body   | boolean       | false    | Status of the passenger                                      |
-| id              | path   | string        | true     | passenger_id                                                 |
-
-#### Enumerated Values
-
-| Parameter | Value  |
-| --------- | ------ |
-| »» title  | Mr.    |
-| »» title  | Mrs.   |
-| »» title  | Ms.    |
-| »» title  | Dr.    |
-| »» title  | Mstr.  |
-| »» title  | Miss   |
-| »» title  | Mx.    |
-| »» title  | Prof.  |
-| »» title  | Rev.   |
-| »» title  | Sir    |
-| »» title  | Sister |
-| »» title  | Team   |
-
-> Example responses
-
-> Created
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  },
-  "Data": [
-    {
-      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "name": {
-        "title": "Mr.",
-        "forename": "John",
-        "surname": "Doe"
-      },
-      "contacts": {
-        "address": {
-          "streets": ["No 221/1, Baker's Street"],
-          "city": "Hethrow",
-          "state": "London",
-          "postal_code": "LN223 2323",
-          "country": "United Kingdom"
-        },
-        "emails": [
-          {
-            "type": "Main",
-            "email": "email@email.com"
-          }
-        ],
-        "phones": [
-          {
-            "type": "Office",
-            "name": "Head Office",
-            "phone": "+44 7799 473 140"
-          }
-        ]
-      },
-      "date_of_birth": "1989-02-14",
-      "passport_no": "N32343423",
-      "comments": "First time traveller.",
-      "signage": "John Doe",
-      "sig_image": "signage_image.png",
-      "image": "passenger_image.png",
-      "pas_stat": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
-    }
-  ]
-}
-```
-
-<h3 id="put-_passengers_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                      | Description | Schema |
-| ------ | ------------------------------------------------------------ | ----------- | ------ |
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
-
-<h3 id="put-_passengers_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value  |
-| -------- | ------ |
-| status   | 200    |
-| status   | 201    |
-| status   | 204    |
-| title    | Mr.    |
-| title    | Mrs.   |
-| title    | Ms.    |
-| title    | Dr.    |
-| title    | Mstr.  |
-| title    | Miss   |
-| title    | Mx.    |
-| title    | Prof.  |
-| title    | Rev.   |
-| title    | Sir    |
-| title    | Sister |
-| title    | Team   |
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## DELETE _passengers_{id}
-
-<a id="opIdDELETE /passengers/{id}"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X DELETE https://prism.supun.xyz/passengers/{id} \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-DELETE https://prism.supun.xyz/passengers/{id} HTTP/1.1
-Host: prism.supun.xyz
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-const headers = {
-  Accept: "application/json",
-  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
-  "Content-Type": "application/json",
-  "Accept-Encoding": "gzip",
-  apiKey: "API_KEY",
-};
-
-fetch("https://prism.supun.xyz/passengers/{id}", {
-  method: "DELETE",
-
-  headers: headers,
-})
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (body) {
-    console.log(body);
-  });
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.delete 'https://prism.supun.xyz/passengers/{id}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.delete('https://prism.supun.xyz/passengers/{id}', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('DELETE','https://prism.supun.xyz/passengers/{id}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://prism.supun.xyz/passengers/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "https://prism.supun.xyz/passengers/{id}", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`DELETE /passengers/{id}`
-
-_/passengers/{id}_
-
-DELETE a passenger of a company
-
-<h3 id="delete-_passengers_{id}-parameters">Parameters</h3>
-
-| Name            | In     | Type   | Required | Description                                                  |
-| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
-| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
-| Content-Type    | header | string | true     | application/json                                             |
-| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
-| id              | path   | string | true     | passenger_id                                                 |
-
-> Example responses
-
-> OK
-
-```json
-{
-  "Status": {
-    "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
-  },
-  "Trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-<h3 id="delete-_passengers_{id}-responses">Responses</h3>
-
-| Status | Meaning                                                 | Description | Schema |
-| ------ | ------------------------------------------------------- | ----------- | ------ |
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
-
-<h3 id="delete-_passengers_{id}-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-| Property | Value |
-| -------- | ----- |
-| status   | 200   |
-| status   | 201   |
-| status   | 204   |
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -8065,7 +4417,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://prism.supun.xyz/companies/{id}/passengers \
+curl -X GET http://127.0.0.1:4010/companies/{id}/passengers \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -8075,8 +4427,8 @@ curl -X GET https://prism.supun.xyz/companies/{id}/passengers \
 ```
 
 ```http
-GET https://prism.supun.xyz/companies/{id}/passengers HTTP/1.1
-Host: prism.supun.xyz
+GET http://127.0.0.1:4010/companies/{id}/passengers HTTP/1.1
+Host: 127.0.0.1:4010
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -8093,7 +4445,7 @@ const headers = {
   apiKey: "API_KEY",
 };
 
-fetch("https://prism.supun.xyz/companies/{id}/passengers", {
+fetch("http://127.0.0.1:4010/companies/{id}/passengers", {
   method: "GET",
 
   headers: headers,
@@ -8118,7 +4470,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://prism.supun.xyz/companies/{id}/passengers',
+result = RestClient.get 'http://127.0.0.1:4010/companies/{id}/passengers',
   params: {
   }, headers: headers
 
@@ -8136,7 +4488,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://prism.supun.xyz/companies/{id}/passengers', headers = headers)
+r = requests.get('http://127.0.0.1:4010/companies/{id}/passengers', headers = headers)
 
 print(r.json())
 
@@ -8161,7 +4513,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://prism.supun.xyz/companies/{id}/passengers', array(
+    $response = $client->request('GET','http://127.0.0.1:4010/companies/{id}/passengers', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -8178,7 +4530,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/companies/{id}/passengers");
+URL obj = new URL("http://127.0.0.1:4010/companies/{id}/passengers");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -8213,7 +4565,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://prism.supun.xyz/companies/{id}/passengers", data)
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/companies/{id}/passengers", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -8311,18 +4663,7 @@ GET a list of passengers of a company
       "signage": "John Doe",
       "sig_image": "signage_image.png",
       "image": "passenger_image.png",
-      "pas_stat": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "pas_stat": true
     }
   ]
 }
@@ -8369,7 +4710,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST https://prism.supun.xyz/companies/{id}/passengers \
+curl -X POST http://127.0.0.1:4010/companies/{id}/passengers \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -8380,8 +4721,8 @@ curl -X POST https://prism.supun.xyz/companies/{id}/passengers \
 ```
 
 ```http
-POST https://prism.supun.xyz/companies/{id}/passengers HTTP/1.1
-Host: prism.supun.xyz
+POST http://127.0.0.1:4010/companies/{id}/passengers HTTP/1.1
+Host: 127.0.0.1:4010
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -8438,7 +4779,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://prism.supun.xyz/companies/{id}/passengers',
+fetch('http://127.0.0.1:4010/companies/{id}/passengers',
 {
   method: 'POST',
   body: inputBody,
@@ -8465,7 +4806,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'https://prism.supun.xyz/companies/{id}/passengers',
+result = RestClient.post 'http://127.0.0.1:4010/companies/{id}/passengers',
   params: {
   }, headers: headers
 
@@ -8484,7 +4825,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('https://prism.supun.xyz/companies/{id}/passengers', headers = headers)
+r = requests.post('http://127.0.0.1:4010/companies/{id}/passengers', headers = headers)
 
 print(r.json())
 
@@ -8510,7 +4851,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://prism.supun.xyz/companies/{id}/passengers', array(
+    $response = $client->request('POST','http://127.0.0.1:4010/companies/{id}/passengers', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -8527,7 +4868,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://prism.supun.xyz/companies/{id}/passengers");
+URL obj = new URL("http://127.0.0.1:4010/companies/{id}/passengers");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -8563,7 +4904,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "https://prism.supun.xyz/companies/{id}/passengers", data)
+    req, err := http.NewRequest("POST", "http://127.0.0.1:4010/companies/{id}/passengers", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -8724,18 +5065,7 @@ Create a new passenger of a company
       "signage": "John Doe",
       "sig_image": "signage_image.png",
       "image": "passenger_image.png",
-      "pas_stat": true,
-      "created_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Resil"
-      },
-      "updated_by": {
-        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-        "username": "Anna"
-      },
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z",
-      "deleted_at": "2019-08-24T14:15:22Z"
+      "pas_stat": true
     }
   ]
 }
@@ -8768,6 +5098,2421 @@ Create a new passenger of a company
 | title    | Sir    |
 | title    | Sister |
 | title    | Team   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+<h1 id="gac-api-v1-1-0-passengers">Passengers</h1>
+
+## GET _passengers_{id}
+
+<a id="opIdGET /passengers/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET http://127.0.0.1:4010/passengers/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET http://127.0.0.1:4010/passengers/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  "Accept-Encoding": "gzip",
+  apiKey: "API_KEY",
+};
+
+fetch("http://127.0.0.1:4010/passengers/{id}", {
+  method: "GET",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get 'http://127.0.0.1:4010/passengers/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('http://127.0.0.1:4010/passengers/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','http://127.0.0.1:4010/passengers/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/passengers/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/passengers/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /passengers/{id}`
+
+_/passengers/{id}_
+
+GET a single passenger of a company
+
+<h3 id="get-_passengers_{id}-parameters">Parameters</h3>
+
+| Name            | In     | Type   | Required | Description                                                  |
+| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string | true     | application/json                                             |
+| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
+| id              | path   | string | true     | passenger_id                                                 |
+
+> Example responses
+
+> OK
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "Data": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "contacts": {
+        "address": {
+          "streets": ["No 221/1, Baker's Street"],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+44 7799 473 140"
+          }
+        ]
+      },
+      "date_of_birth": "1989-02-14",
+      "passport_no": "N32343423",
+      "comments": "First time traveller.",
+      "signage": "John Doe",
+      "sig_image": "signage_image.png",
+      "image": "passenger_image.png",
+      "pas_stat": true
+    }
+  ]
+}
+```
+
+<h3 id="get-_passengers_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="get-_passengers_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value  |
+| -------- | ------ |
+| status   | 200    |
+| status   | 201    |
+| status   | 204    |
+| title    | Mr.    |
+| title    | Mrs.   |
+| title    | Ms.    |
+| title    | Dr.    |
+| title    | Mstr.  |
+| title    | Miss   |
+| title    | Mx.    |
+| title    | Prof.  |
+| title    | Rev.   |
+| title    | Sir    |
+| title    | Sister |
+| title    | Team   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## PUT _passengers_{id}
+
+<a id="opIdPUT /passengers/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT http://127.0.0.1:4010/passengers/{id} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT http://127.0.0.1:4010/passengers/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Content-Type: application/json
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const inputBody = '{
+  "name": {
+    "title": "Mr.",
+    "forename": "John",
+    "surname": "Doe"
+  },
+  "contacts": {
+    "address": {
+      "streets": [
+        "No 221/1, Baker's Street"
+      ],
+      "city": "Hethrow",
+      "state": "London",
+      "postal_code": "LN223 2323",
+      "country": "United Kingdom"
+    },
+    "emails": [
+      {
+        "type": "Main",
+        "email": "email@email.com"
+      }
+    ],
+    "phones": [
+      {
+        "type": "Office",
+        "name": "Head Office",
+        "phone": "+44 7799 473 140"
+      }
+    ]
+  },
+  "date_of_birth": "1989-02-14",
+  "passport_no": "N32343423",
+  "comments": "First time traveller.",
+  "signage": "John Doe",
+  "sig_image": "signage_image.png",
+  "image": "passenger_image.jpg",
+  "pas_stat": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type':'application/json',
+  'Accept-Encoding':'gzip',
+  'apiKey':'API_KEY'
+};
+
+fetch('http://127.0.0.1:4010/passengers/{id}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put 'http://127.0.0.1:4010/passengers/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('http://127.0.0.1:4010/passengers/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','http://127.0.0.1:4010/passengers/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/passengers/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "http://127.0.0.1:4010/passengers/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /passengers/{id}`
+
+_/passengers/{id}_
+
+Update an exsisting passenger of a company
+
+> Body parameter
+
+```json
+{
+  "name": {
+    "title": "Mr.",
+    "forename": "John",
+    "surname": "Doe"
+  },
+  "contacts": {
+    "address": {
+      "streets": ["No 221/1, Baker's Street"],
+      "city": "Hethrow",
+      "state": "London",
+      "postal_code": "LN223 2323",
+      "country": "United Kingdom"
+    },
+    "emails": [
+      {
+        "type": "Main",
+        "email": "email@email.com"
+      }
+    ],
+    "phones": [
+      {
+        "type": "Office",
+        "name": "Head Office",
+        "phone": "+44 7799 473 140"
+      }
+    ]
+  },
+  "date_of_birth": "1989-02-14",
+  "passport_no": "N32343423",
+  "comments": "First time traveller.",
+  "signage": "John Doe",
+  "sig_image": "signage_image.png",
+  "image": "passenger_image.jpg",
+  "pas_stat": true
+}
+```
+
+<h3 id="put-_passengers_{id}-parameters">Parameters</h3>
+
+| Name            | In     | Type          | Required | Description                                                  |
+| --------------- | ------ | ------------- | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string        | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string        | true     | application/json                                             |
+| Accept-Encoding | header | string        | true     | add a req. header for payload to be compressed by the server |
+| body            | body   | object        | false    | passenger request body                                       |
+| » name          | body   | object        | true     | Details of the passenger                                     |
+| »» title        | body   | string        | true     | none                                                         |
+| »» forename     | body   | string        | true     | none                                                         |
+| »» surname      | body   | string        | true     | none                                                         |
+| » contacts      | body   | object        | true     | Contact model                                                |
+| »» address      | body   | object        | false    | Addres information                                           |
+| »»» streets     | body   | [string]      | false    | none                                                         |
+| »»» city        | body   | string        | false    | none                                                         |
+| »»» state       | body   | string        | false    | none                                                         |
+| »»» postal_code | body   | string        | false    | none                                                         |
+| »»» country     | body   | string        | false    | none                                                         |
+| »» emails       | body   | [object]      | false    | Email information                                            |
+| »»» type        | body   | string        | false    | none                                                         |
+| »»» email       | body   | string(email) | false    | none                                                         |
+| »» phones       | body   | [object]      | false    | Phone numbers                                                |
+| »»» type        | body   | string        | false    | none                                                         |
+| »»» name        | body   | string        | false    | none                                                         |
+| »»» phone       | body   | string        | false    | none                                                         |
+| » date_of_birth | body   | string(date)  | false    | Date of birth of the passenger                               |
+| » passport_no   | body   | string        | false    | Passport number of the passenger                             |
+| » comments      | body   | string        | false    | Special comments of the passenger                            |
+| » signage       | body   | string        | false    | Signage of the passenger                                     |
+| » sig_image     | body   | string        | false    | Signage image of the pasenger                                |
+| » image         | body   | string        | false    | Image of the passenger                                       |
+| » pas_stat      | body   | boolean       | false    | Status of the passenger                                      |
+| id              | path   | string        | true     | passenger_id                                                 |
+
+#### Enumerated Values
+
+| Parameter | Value  |
+| --------- | ------ |
+| »» title  | Mr.    |
+| »» title  | Mrs.   |
+| »» title  | Ms.    |
+| »» title  | Dr.    |
+| »» title  | Mstr.  |
+| »» title  | Miss   |
+| »» title  | Mx.    |
+| »» title  | Prof.  |
+| »» title  | Rev.   |
+| »» title  | Sir    |
+| »» title  | Sister |
+| »» title  | Team   |
+
+> Example responses
+
+> Created
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "Data": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "contacts": {
+        "address": {
+          "streets": ["No 221/1, Baker's Street"],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+44 7799 473 140"
+          }
+        ]
+      },
+      "date_of_birth": "1989-02-14",
+      "passport_no": "N32343423",
+      "comments": "First time traveller.",
+      "signage": "John Doe",
+      "sig_image": "signage_image.png",
+      "image": "passenger_image.png",
+      "pas_stat": true
+    }
+  ]
+}
+```
+
+<h3 id="put-_passengers_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                      | Description | Schema |
+| ------ | ------------------------------------------------------------ | ----------- | ------ |
+| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
+
+<h3 id="put-_passengers_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value  |
+| -------- | ------ |
+| status   | 200    |
+| status   | 201    |
+| status   | 204    |
+| title    | Mr.    |
+| title    | Mrs.   |
+| title    | Ms.    |
+| title    | Dr.    |
+| title    | Mstr.  |
+| title    | Miss   |
+| title    | Mx.    |
+| title    | Prof.  |
+| title    | Rev.   |
+| title    | Sir    |
+| title    | Sister |
+| title    | Team   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## DELETE _passengers_{id}
+
+<a id="opIdDELETE /passengers/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE http://127.0.0.1:4010/passengers/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE http://127.0.0.1:4010/passengers/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  "Accept-Encoding": "gzip",
+  apiKey: "API_KEY",
+};
+
+fetch("http://127.0.0.1:4010/passengers/{id}", {
+  method: "DELETE",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete 'http://127.0.0.1:4010/passengers/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('http://127.0.0.1:4010/passengers/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','http://127.0.0.1:4010/passengers/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/passengers/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "http://127.0.0.1:4010/passengers/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /passengers/{id}`
+
+_/passengers/{id}_
+
+DELETE a passenger of a company
+
+<h3 id="delete-_passengers_{id}-parameters">Parameters</h3>
+
+| Name            | In     | Type   | Required | Description                                                  |
+| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string | true     | application/json                                             |
+| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
+| id              | path   | string | true     | passenger_id                                                 |
+
+> Example responses
+
+> OK
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+<h3 id="delete-_passengers_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="delete-_passengers_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value |
+| -------- | ----- |
+| status   | 200   |
+| status   | 201   |
+| status   | 204   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+<h1 id="gac-api-v1-1-0-terminals">Terminals</h1>
+
+## GET _terminals_{id}\_services
+
+<a id="opIdGET /terminals/{id}/services"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET http://127.0.0.1:4010/terminals/{id}/services \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET http://127.0.0.1:4010/terminals/{id}/services HTTP/1.1
+Host: 127.0.0.1:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  "Accept-Encoding": "gzip",
+  apiKey: "API_KEY",
+};
+
+fetch("http://127.0.0.1:4010/terminals/{id}/services", {
+  method: "GET",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get 'http://127.0.0.1:4010/terminals/{id}/services',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('http://127.0.0.1:4010/terminals/{id}/services', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','http://127.0.0.1:4010/terminals/{id}/services', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/terminals/{id}/services");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/terminals/{id}/services", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /terminals/{id}/services`
+
+_/terminals/{id}/services_
+
+GET a list of services in a terminal
+
+<h3 id="get-_terminals_{id}_services-parameters">Parameters</h3>
+
+| Name            | In     | Type           | Required | Description                                                  |
+| --------------- | ------ | -------------- | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string         | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string         | true     | application/json                                             |
+| Accept-Encoding | header | string         | true     | add a req. header for payload to be compressed by the server |
+| name            | query  | string         | false    | a service name                                               |
+| limit           | query  | integer(int32) | false    | specify the number of results returned from the request      |
+| starting_from   | query  | integer(int32) | false    | specify the number of results returned from the request      |
+| sort            | query  | string         | false    | will sort objects returned from the request                  |
+| id              | path   | string         | true     | a terminal id                                                |
+
+#### Enumerated Values
+
+| Parameter | Value |
+| --------- | ----- |
+| sort      | asc   |
+| sort      | desc  |
+
+> Example responses
+
+> OK
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "Pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "Data": [
+    {
+      "airport_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "terminal_name": "LHR Terminal 2",
+      "services": [
+        {
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "service_name": "string",
+          "fields": [
+            {
+              "field_name": "string",
+              "field_type": "string",
+              "validation": [
+                {
+                  "required": true
+                }
+              ]
+            }
+          ],
+          "validataion": [
+            {
+              "rule": "string",
+              "service_id": "string"
+            }
+          ],
+          "rates": [
+            {
+              "currency": "USD",
+              "packages": [
+                {
+                  "pax": 0,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+<h3 id="get-_terminals_{id}_services-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="get-_terminals_{id}_services-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value |
+| -------- | ----- |
+| status   | 200   |
+| status   | 201   |
+| status   | 204   |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+<h1 id="gac-api-v1-1-0-journeys">Journeys</h1>
+
+## GET _journeys_{id}
+
+<a id="opIdGET /journeys/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET http://127.0.0.1:4010/journeys/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET http://127.0.0.1:4010/journeys/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  "Accept-Encoding": "gzip",
+  apiKey: "API_KEY",
+};
+
+fetch("http://127.0.0.1:4010/journeys/{id}", {
+  method: "GET",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get 'http://127.0.0.1:4010/journeys/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('http://127.0.0.1:4010/journeys/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','http://127.0.0.1:4010/journeys/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/journeys/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "http://127.0.0.1:4010/journeys/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /journeys/{id}`
+
+_/journeys/{id}_
+
+GET a single journey of a booking
+
+<h3 id="get-_journeys_{id}-parameters">Parameters</h3>
+
+| Name            | In     | Type   | Required | Description                                                  |
+| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string | true     | application/json                                             |
+| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
+| id              | path   | string | true     | a journey id                                                 |
+
+> Example responses
+
+> OK
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "Data": [
+    {
+      "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "reference_id": 1,
+      "passengers": {
+        "meta": {
+          "adult": 2,
+          "child": 2,
+          "infant": 0,
+          "bags": 5
+        },
+        "pax": [
+          {
+            "type": "Lead",
+            "pnr": "JHS3ES",
+            "class": "First",
+            "details": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "name": {
+                "title": "Mr.",
+                "forename": "John",
+                "surname": "Doe"
+              },
+              "contacts": {
+                "address": {
+                  "streets": ["No 221/1, Baker's Street"],
+                  "city": "Hethrow",
+                  "state": "London",
+                  "postal_code": "LN223 2323",
+                  "country": "United Kingdom"
+                },
+                "emails": [
+                  {
+                    "type": "Main",
+                    "email": "email@email.com"
+                  }
+                ],
+                "phones": [
+                  {
+                    "type": "Office",
+                    "name": "Head Office",
+                    "phone": "+44 7799 473 140"
+                  }
+                ]
+              },
+              "date_of_birth": "1989-02-14",
+              "passport_no": "N32343423",
+              "comments": "First time traveller.",
+              "signage": "John Doe",
+              "sig_image": "signage_image.png",
+              "image": "passenger_image.png",
+              "pas_stat": true
+            }
+          }
+        ]
+      },
+      "stops": [
+        {
+          "type": "Connection",
+          "meeting_date": "2020-10-31",
+          "meeting_time": "18:20:00",
+          "location": "United Kingdom",
+          "airport": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "LHR London Hethrow Airport"
+          },
+          "flights": {
+            "arrival": {
+              "flight_no": "BA281",
+              "terminal": "LHR Terminal 2",
+              "date": "2020-11-05",
+              "time": "20:15:00",
+              "origin": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "name": "LAX Los Angeles Airport"
+              }
+            },
+            "departure": {
+              "flight_no": "BA282",
+              "terminal": "LHR Terminal 4",
+              "date": "2020-11-05",
+              "time": "22:15:00",
+              "destination": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "name": "DXB Dubai International Airport"
+              }
+            }
+          },
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_name": "Meet & Assist Service",
+              "passengers": {
+                "meta": {
+                  "adult": 2,
+                  "child": 2,
+                  "infant": 0,
+                  "bags": 5
+                },
+                "pax": [
+                  {
+                    "type": "Lead",
+                    "details": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "name": {
+                        "title": "Mr.",
+                        "forename": "John",
+                        "surname": "Doe"
+                      },
+                      "contacts": {
+                        "address": {
+                          "streets": ["No 221/1, Baker's Street"],
+                          "city": "Hethrow",
+                          "state": "London",
+                          "postal_code": "LN223 2323",
+                          "country": "United Kingdom"
+                        },
+                        "emails": [
+                          {
+                            "type": "Main",
+                            "email": "email@email.com"
+                          }
+                        ],
+                        "phones": [
+                          {
+                            "type": "Office",
+                            "name": "Head Office",
+                            "phone": "+44 7799 473 140"
+                          }
+                        ]
+                      },
+                      "date_of_birth": "1989-02-14",
+                      "passport_no": "N32343423",
+                      "comments": "First time traveller.",
+                      "signage": "John Doe",
+                      "sig_image": "signage_image.png",
+                      "image": "passenger_image.png",
+                      "pas_stat": true
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "special_notes": "string"
+    }
+  ]
+}
+```
+
+<h3 id="get-_journeys_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="get-_journeys_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value      |
+| -------- | ---------- |
+| status   | 200        |
+| status   | 201        |
+| status   | 204        |
+| type     | Lead       |
+| title    | Mr.        |
+| title    | Mrs.       |
+| title    | Ms.        |
+| title    | Dr.        |
+| title    | Mstr.      |
+| title    | Miss       |
+| title    | Mx.        |
+| title    | Prof.      |
+| title    | Rev.       |
+| title    | Sir        |
+| title    | Sister     |
+| title    | Team       |
+| type     | Arrival    |
+| type     | Departure  |
+| type     | Connection |
+| type     | Lead       |
+| type     | Additional |
+| title    | Mr.        |
+| title    | Mrs.       |
+| title    | Ms.        |
+| title    | Dr.        |
+| title    | Mstr.      |
+| title    | Miss       |
+| title    | Mx.        |
+| title    | Prof.      |
+| title    | Rev.       |
+| title    | Sir        |
+| title    | Sister     |
+| title    | Team       |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## PUT _journeys_{id}
+
+<a id="opIdPUT /journeys/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT http://127.0.0.1:4010/journeys/{id} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT http://127.0.0.1:4010/journeys/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Content-Type: application/json
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const inputBody = '{
+  "passengers": {
+    "meta": {
+      "adult": 2,
+      "child": 2,
+      "infant": 0,
+      "bags": 5
+    },
+    "pax": [
+      {
+        "type": "Lead",
+        "pnr": "JHS3ES",
+        "class": "First",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+      }
+    ]
+  },
+  "stops": [
+    {
+      "type": "Connection",
+      "meeting_date": "2020-10-31",
+      "meeting_time": "18:20:00",
+      "location": "United Kingdom",
+      "airport": {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+      },
+      "flights": {
+        "arrival": {
+          "flight_no": "BA281",
+          "terminal": "LHR Terminal 2",
+          "date": "2020-11-05",
+          "time": "20:15:00",
+          "origin": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "LAX Los Angeles Airport"
+          }
+        },
+        "departure": {
+          "flight_no": "BA282",
+          "terminal": "LHR Terminal 4",
+          "date": "2020-11-05",
+          "time": "22:15:00",
+          "destination": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "DXB Dubai International Airport"
+          }
+        }
+      },
+      "services": [
+        {
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "passengers": {
+            "meta": {
+              "adult": 2,
+              "child": 2,
+              "infant": 0,
+              "bags": 5
+            },
+            "pax": [
+              {
+                "type": "Lead",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "special_notes": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type':'application/json',
+  'Accept-Encoding':'gzip',
+  'apiKey':'API_KEY'
+};
+
+fetch('http://127.0.0.1:4010/journeys/{id}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put 'http://127.0.0.1:4010/journeys/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('http://127.0.0.1:4010/journeys/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','http://127.0.0.1:4010/journeys/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/journeys/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "http://127.0.0.1:4010/journeys/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /journeys/{id}`
+
+_/journeys/{id}_
+
+update a jounry of a booking
+
+> Body parameter
+
+```json
+{
+  "passengers": {
+    "meta": {
+      "adult": 2,
+      "child": 2,
+      "infant": 0,
+      "bags": 5
+    },
+    "pax": [
+      {
+        "type": "Lead",
+        "pnr": "JHS3ES",
+        "class": "First",
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+      }
+    ]
+  },
+  "stops": [
+    {
+      "type": "Connection",
+      "meeting_date": "2020-10-31",
+      "meeting_time": "18:20:00",
+      "location": "United Kingdom",
+      "airport": {
+        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+      },
+      "flights": {
+        "arrival": {
+          "flight_no": "BA281",
+          "terminal": "LHR Terminal 2",
+          "date": "2020-11-05",
+          "time": "20:15:00",
+          "origin": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "LAX Los Angeles Airport"
+          }
+        },
+        "departure": {
+          "flight_no": "BA282",
+          "terminal": "LHR Terminal 4",
+          "date": "2020-11-05",
+          "time": "22:15:00",
+          "destination": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "DXB Dubai International Airport"
+          }
+        }
+      },
+      "services": [
+        {
+          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "passengers": {
+            "meta": {
+              "adult": 2,
+              "child": 2,
+              "infant": 0,
+              "bags": 5
+            },
+            "pax": [
+              {
+                "type": "Lead",
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "special_notes": "string"
+}
+```
+
+<h3 id="put-_journeys_{id}-parameters">Parameters</h3>
+
+| Name             | In     | Type         | Required | Description                                                  |
+| ---------------- | ------ | ------------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id       | header | string       | false    | Please provide your UUID for tracing                         |
+| Content-Type     | header | string       | true     | application/json                                             |
+| Accept-Encoding  | header | string       | true     | add a req. header for payload to be compressed by the server |
+| body             | body   | object       | false    | update journey request body                                  |
+| » passengers     | body   | object       | true     | Number of passengers in the journey                          |
+| »» meta          | body   | object       | true     | none                                                         |
+| »»» adult        | body   | integer      | true     | none                                                         |
+| »»» child        | body   | integer      | true     | none                                                         |
+| »»» infant       | body   | integer      | true     | none                                                         |
+| »»» bags         | body   | integer      | true     | none                                                         |
+| »» pax           | body   | [object]     | true     | none                                                         |
+| »»» type         | body   | string       | false    | none                                                         |
+| »»» pnr          | body   | string       | false    | none                                                         |
+| »»» class        | body   | string       | false    | none                                                         |
+| »»» id           | body   | string(uuid) | false    | none                                                         |
+| » stops          | body   | [object]     | true     | Number of stops in the journey                               |
+| »» type          | body   | string       | true     | none                                                         |
+| »» meeting_date  | body   | string(date) | true     | none                                                         |
+| »» meeting_time  | body   | string(time) | true     | none                                                         |
+| »» location      | body   | string       | true     | none                                                         |
+| »» airport       | body   | object       | false    | none                                                         |
+| »»» id           | body   | string(uuid) | true     | none                                                         |
+| »» flights       | body   | object       | false    | none                                                         |
+| »»» arrival      | body   | object       | true     | none                                                         |
+| »»»» flight_no   | body   | string       | true     | none                                                         |
+| »»»» terminal    | body   | string       | true     | none                                                         |
+| »»»» date        | body   | string(date) | true     | none                                                         |
+| »»»» time        | body   | string(time) | true     | none                                                         |
+| »»»» origin      | body   | object       | true     | none                                                         |
+| »»»»» id         | body   | string(uuid) | true     | none                                                         |
+| »»»»» name       | body   | string       | true     | none                                                         |
+| »»» departure    | body   | object       | true     | none                                                         |
+| »»»» flight_no   | body   | string       | true     | none                                                         |
+| »»»» terminal    | body   | string       | true     | none                                                         |
+| »»»» date        | body   | string(date) | true     | none                                                         |
+| »»»» time        | body   | string(time) | true     | none                                                         |
+| »»»» destination | body   | object       | true     | none                                                         |
+| »»»»» id         | body   | string(uuid) | true     | none                                                         |
+| »»»»» name       | body   | string       | true     | none                                                         |
+| »» services      | body   | [object]     | true     | none                                                         |
+| »»» id           | body   | string(uuid) | false    | none                                                         |
+| »»» passengers   | body   | object       | false    | none                                                         |
+| »»»» meta        | body   | object       | false    | none                                                         |
+| »»»»» adult      | body   | integer      | false    | none                                                         |
+| »»»»» child      | body   | integer      | false    | none                                                         |
+| »»»»» infant     | body   | integer      | false    | none                                                         |
+| »»»»» bags       | body   | integer      | false    | none                                                         |
+| »»»» pax         | body   | [object]     | false    | none                                                         |
+| »»»»» type       | body   | string       | false    | none                                                         |
+| »»»»» id         | body   | string(uuid) | false    | none                                                         |
+| » special_notes  | body   | string       | false    | Special notes for the journey                                |
+| id               | path   | string       | true     | a journey id                                                 |
+
+#### Enumerated Values
+
+| Parameter  | Value      |
+| ---------- | ---------- |
+| »»» type   | Lead       |
+| »» type    | Arrival    |
+| »» type    | Departure  |
+| »» type    | Connection |
+| »»»»» type | Lead       |
+| »»»»» type | Additional |
+
+> Example responses
+
+> Created
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "Data": [
+    {
+      "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "reference_id": 1,
+      "passengers": {
+        "meta": {
+          "adult": 2,
+          "child": 2,
+          "infant": 0,
+          "bags": 5
+        },
+        "pax": [
+          {
+            "type": "Lead",
+            "pnr": "JHS3ES",
+            "class": "First",
+            "details": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "name": {
+                "title": "Mr.",
+                "forename": "John",
+                "surname": "Doe"
+              },
+              "contacts": {
+                "address": {
+                  "streets": ["No 221/1, Baker's Street"],
+                  "city": "Hethrow",
+                  "state": "London",
+                  "postal_code": "LN223 2323",
+                  "country": "United Kingdom"
+                },
+                "emails": [
+                  {
+                    "type": "Main",
+                    "email": "email@email.com"
+                  }
+                ],
+                "phones": [
+                  {
+                    "type": "Office",
+                    "name": "Head Office",
+                    "phone": "+44 7799 473 140"
+                  }
+                ]
+              },
+              "date_of_birth": "1989-02-14",
+              "passport_no": "N32343423",
+              "comments": "First time traveller.",
+              "signage": "John Doe",
+              "sig_image": "signage_image.png",
+              "image": "passenger_image.png",
+              "pas_stat": true
+            }
+          }
+        ]
+      },
+      "stops": [
+        {
+          "type": "Connection",
+          "meeting_date": "2020-10-31",
+          "meeting_time": "18:20:00",
+          "location": "United Kingdom",
+          "airport": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "LHR London Hethrow Airport"
+          },
+          "flights": {
+            "arrival": {
+              "flight_no": "BA281",
+              "terminal": "LHR Terminal 2",
+              "date": "2020-11-05",
+              "time": "20:15:00",
+              "origin": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "name": "LAX Los Angeles Airport"
+              }
+            },
+            "departure": {
+              "flight_no": "BA282",
+              "terminal": "LHR Terminal 4",
+              "date": "2020-11-05",
+              "time": "22:15:00",
+              "destination": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "name": "DXB Dubai International Airport"
+              }
+            }
+          },
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_name": "Meet & Assist Service",
+              "passengers": {
+                "meta": {
+                  "adult": 2,
+                  "child": 2,
+                  "infant": 0,
+                  "bags": 5
+                },
+                "pax": [
+                  {
+                    "type": "Lead",
+                    "details": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "name": {
+                        "title": "Mr.",
+                        "forename": "John",
+                        "surname": "Doe"
+                      },
+                      "contacts": {
+                        "address": {
+                          "streets": ["No 221/1, Baker's Street"],
+                          "city": "Hethrow",
+                          "state": "London",
+                          "postal_code": "LN223 2323",
+                          "country": "United Kingdom"
+                        },
+                        "emails": [
+                          {
+                            "type": "Main",
+                            "email": "email@email.com"
+                          }
+                        ],
+                        "phones": [
+                          {
+                            "type": "Office",
+                            "name": "Head Office",
+                            "phone": "+44 7799 473 140"
+                          }
+                        ]
+                      },
+                      "date_of_birth": "1989-02-14",
+                      "passport_no": "N32343423",
+                      "comments": "First time traveller.",
+                      "signage": "John Doe",
+                      "sig_image": "signage_image.png",
+                      "image": "passenger_image.png",
+                      "pas_stat": true
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "special_notes": "string"
+    }
+  ]
+}
+```
+
+<h3 id="put-_journeys_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                      | Description | Schema |
+| ------ | ------------------------------------------------------------ | ----------- | ------ |
+| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | Inline |
+
+<h3 id="put-_journeys_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value      |
+| -------- | ---------- |
+| status   | 200        |
+| status   | 201        |
+| status   | 204        |
+| type     | Lead       |
+| title    | Mr.        |
+| title    | Mrs.       |
+| title    | Ms.        |
+| title    | Dr.        |
+| title    | Mstr.      |
+| title    | Miss       |
+| title    | Mx.        |
+| title    | Prof.      |
+| title    | Rev.       |
+| title    | Sir        |
+| title    | Sister     |
+| title    | Team       |
+| type     | Arrival    |
+| type     | Departure  |
+| type     | Connection |
+| type     | Lead       |
+| type     | Additional |
+| title    | Mr.        |
+| title    | Mrs.       |
+| title    | Ms.        |
+| title    | Dr.        |
+| title    | Mstr.      |
+| title    | Miss       |
+| title    | Mx.        |
+| title    | Prof.      |
+| title    | Rev.       |
+| title    | Sir        |
+| title    | Sister     |
+| title    | Team       |
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## DELETE _journeys_{id}
+
+<a id="opIdDELETE /journeys/{id}"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE http://127.0.0.1:4010/journeys/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE http://127.0.0.1:4010/journeys/{id} HTTP/1.1
+Host: 127.0.0.1:4010
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+const headers = {
+  Accept: "application/json",
+  "X-Trace-Id": "1061b7fe-e742-47e2-a41c-1f8cb3c58d9f",
+  "Content-Type": "application/json",
+  "Accept-Encoding": "gzip",
+  apiKey: "API_KEY",
+};
+
+fetch("http://127.0.0.1:4010/journeys/{id}", {
+  method: "DELETE",
+
+  headers: headers,
+})
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (body) {
+    console.log(body);
+  });
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete 'http://127.0.0.1:4010/journeys/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('http://127.0.0.1:4010/journeys/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','http://127.0.0.1:4010/journeys/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://127.0.0.1:4010/journeys/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "http://127.0.0.1:4010/journeys/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /journeys/{id}`
+
+_/journeys/{id}_
+
+Delete a journey of a booking
+
+<h3 id="delete-_journeys_{id}-parameters">Parameters</h3>
+
+| Name            | In     | Type   | Required | Description                                                  |
+| --------------- | ------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Trace-Id      | header | string | false    | Please provide your UUID for tracing                         |
+| Content-Type    | header | string | true     | application/json                                             |
+| Accept-Encoding | header | string | true     | add a req. header for payload to be compressed by the server |
+| id              | path   | string | true     | a journey id                                                 |
+
+> Example responses
+
+> OK
+
+```json
+{
+  "Status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "Trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+<h3 id="delete-_journeys_{id}-responses">Responses</h3>
+
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | Inline |
+
+<h3 id="delete-_journeys_{id}-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+| Property | Value |
+| -------- | ----- |
+| status   | 200   |
+| status   | 201   |
+| status   | 204   |
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
