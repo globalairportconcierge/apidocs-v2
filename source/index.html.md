@@ -222,7 +222,7 @@ Get list of operating Airports.
 |---|---|---|---|---|
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
-|name|query|string|false|airport name|
+|namegfgdfgdfgdfgdf|query|string|false|airport name|
 |city|query|string|false|airport city|
 |country|query|string|false|airport country|
 |code|query|string|false|airport code|
