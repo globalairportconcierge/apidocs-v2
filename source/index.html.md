@@ -29,8 +29,6 @@ Base URLs:
 
 * <a href="http://online.globalairportconcierge.com">http://online.globalairportconcierge.com</a>
 
-* <a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a>
-
 <a href="https://gac.com/terms-of-service.html">Terms of service</a>
 
 License: <a href="https://gac.com/api-license.html">GAC</a>
