@@ -1243,7 +1243,7 @@ GET a list of bookings
                       {
                         "type": "Office",
                         "name": "Head Office",
-                        "phone": "+44 7799 473 140"
+                        "phone": "+18666612345"
                       }
                     ]
                   },
@@ -1331,7 +1331,7 @@ GET a list of bookings
                               {
                                 "type": "Office",
                                 "name": "Head Office",
-                                "phone": "+44 7799 473 140"
+                                "phone": "+18666612345"
                               }
                             ]
                           },
@@ -1711,7 +1711,7 @@ Create a booking
                       {
                         "type": "Office",
                         "name": "Head Office",
-                        "phone": "+44 7799 473 140"
+                        "phone": "+18666612345"
                       }
                     ]
                   },
@@ -1862,7 +1862,7 @@ Create a booking
                               {
                                 "type": "Office",
                                 "name": "Head Office",
-                                "phone": "+44 7799 473 140"
+                                "phone": "+18666612345"
                               }
                             ]
                           },
@@ -2217,7 +2217,7 @@ GET a booking by id
                       {
                         "type": "Office",
                         "name": "Head Office",
-                        "phone": "+44 7799 473 140"
+                        "phone": "+18666612345"
                       }
                     ]
                   },
@@ -2305,7 +2305,7 @@ GET a booking by id
                               {
                                 "type": "Office",
                                 "name": "Head Office",
-                                "phone": "+44 7799 473 140"
+                                "phone": "+18666612345"
                               }
                             ]
                           },
@@ -2686,7 +2686,7 @@ Update a booking
                       {
                         "type": "Office",
                         "name": "Head Office",
-                        "phone": "+44 7799 473 140"
+                        "phone": "+18666612345"
                       }
                     ]
                   },
@@ -2774,7 +2774,7 @@ Update a booking
                               {
                                 "type": "Office",
                                 "name": "Head Office",
-                                "phone": "+44 7799 473 140"
+                                "phone": "+18666612345"
                               }
                             ]
                           },
@@ -3303,7 +3303,7 @@ GET a list of journeys for a single booking
                   {
                     "type": "Office",
                     "name": "Head Office",
-                    "phone": "+44 7799 473 140"
+                    "phone": "+18666612345"
                   }
                 ]
               },
@@ -3391,7 +3391,7 @@ GET a list of journeys for a single booking
                           {
                             "type": "Office",
                             "name": "Head Office",
-                            "phone": "+44 7799 473 140"
+                            "phone": "+18666612345"
                           }
                         ]
                       },
@@ -3824,7 +3824,7 @@ Create a new journey in a booking
                   {
                     "type": "Office",
                     "name": "Head Office",
-                    "phone": "+44 7799 473 140"
+                    "phone": "+18666612345"
                   }
                 ]
               },
@@ -3912,7 +3912,7 @@ Create a new journey in a booking
                           {
                             "type": "Office",
                             "name": "Head Office",
-                            "phone": "+44 7799 473 140"
+                            "phone": "+18666612345"
                           }
                         ]
                       },
@@ -4200,7 +4200,7 @@ GET a list of passengers of a company
           {
             "type": "Office",
             "name": "Head Office",
-            "phone": "+44 7799 473 140"
+            "phone": "+18666612345"
           }
         ]
       },
@@ -4285,7 +4285,7 @@ const inputBody = '{
       {
         "type": "Office",
         "name": "Head Office",
-        "phone": "+44 7799 473 140"
+        "phone": "+18666612345"
       }
     ]
   },
@@ -4476,7 +4476,7 @@ Create a new passenger of a company
       {
         "type": "Office",
         "name": "Head Office",
-        "phone": "+44 7799 473 140"
+        "phone": "+18666612345"
       }
     ]
   },
@@ -4543,7 +4543,7 @@ Create a new passenger of a company
           {
             "type": "Office",
             "name": "Head Office",
-            "phone": "+44 7799 473 140"
+            "phone": "+18666612345"
           }
         ]
       },
@@ -4801,7 +4801,7 @@ GET a single passenger of a company
           {
             "type": "Office",
             "name": "Head Office",
-            "phone": "+44 7799 473 140"
+            "phone": "+18666612345"
           }
         ]
       },
@@ -4886,7 +4886,7 @@ const inputBody = '{
       {
         "type": "Office",
         "name": "Head Office",
-        "phone": "+44 7799 473 140"
+        "phone": "+18666612345"
       }
     ]
   },
@@ -5077,7 +5077,7 @@ Update an exsisting passenger of a company
       {
         "type": "Office",
         "name": "Head Office",
-        "phone": "+44 7799 473 140"
+        "phone": "+18666612345"
       }
     ]
   },
@@ -5144,7 +5144,7 @@ Update an exsisting passenger of a company
           {
             "type": "Office",
             "name": "Head Office",
-            "phone": "+44 7799 473 140"
+            "phone": "+18666612345"
           }
         ]
       },
@@ -5907,7 +5907,7 @@ GET a single journey of a booking
                   {
                     "type": "Office",
                     "name": "Head Office",
-                    "phone": "+44 7799 473 140"
+                    "phone": "+18666612345"
                   }
                 ]
               },
@@ -5995,7 +5995,7 @@ GET a single journey of a booking
                           {
                             "type": "Office",
                             "name": "Head Office",
-                            "phone": "+44 7799 473 140"
+                            "phone": "+18666612345"
                           }
                         ]
                       },
@@ -6428,7 +6428,7 @@ update a jounry of a booking
                   {
                     "type": "Office",
                     "name": "Head Office",
-                    "phone": "+44 7799 473 140"
+                    "phone": "+18666612345"
                   }
                 ]
               },
@@ -6516,7 +6516,7 @@ update a jounry of a booking
                           {
                             "type": "Office",
                             "name": "Head Office",
-                            "phone": "+44 7799 473 140"
+                            "phone": "+18666612345"
                           }
                         ]
                       },
@@ -6995,7 +6995,7 @@ Authorization
                   {
                     "type": "Office",
                     "name": "Head Office",
-                    "phone": "+44 7799 473 140"
+                    "phone": "+18666612345"
                   }
                 ]
               },
@@ -7338,7 +7338,7 @@ Authorization
               {
                 "type": "Office",
                 "name": "Head Office",
-                "phone": "+44 7799 473 140"
+                "phone": "+18666612345"
               }
             ]
           },
@@ -7611,7 +7611,7 @@ Authorization
       {
         "type": "Office",
         "name": "Head Office",
-        "phone": "+44 7799 473 140"
+        "phone": "+18666612345"
       }
     ]
   },
