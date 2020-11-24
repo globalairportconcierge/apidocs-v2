@@ -357,6 +357,22 @@ Get list of operating Airports.
 
 <h3 id="get-airports-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|booking_window|6|
+|booking_window|12|
+|booking_window|24|
+|booking_window|48|
+|below|6|
+|below|12|
+|below|24|
+|below|48|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization ( Scopes: 1234 )
@@ -660,6 +676,22 @@ GET Airport details.
 
 <h3 id="get-airports-id-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|booking_window|6|
+|booking_window|12|
+|booking_window|24|
+|booking_window|48|
+|below|6|
+|below|12|
+|below|24|
+|below|48|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -932,6 +964,14 @@ Get a list of terminals at an airport
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="get-airports-id-terminals-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -1380,6 +1420,55 @@ GET a list of bookings
 
 <h3 id="get-bookings-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|GAC|
+|type|USS|
+|type|MCS|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+|type|Online|
+|type|RES Online|
+|type|Invoice|
+|type|Quotation|
+|status|0|
+|status|1|
+|status|2|
+|status|3|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -1625,6 +1714,42 @@ Create a booking
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|object|false|booking request body|
+|» type|body|string|true|Booking type|
+|» booker|body|object|true|Booker details|
+|»» id|body|string(uuid)|true|none|
+|»» company|body|object|true|none|
+|»»» id|body|string(uuid)|true|none|
+|» billing|body|object|true|Billing details|
+|»» type|body|string|true|none|
+|»» status|body|number|true|none|
+|»» ref_id|body|string|false|none|
+|»» card|body|string|false|none|
+|»» total_service_cost|body|number(double)|true|none|
+|»» add_hrs_charge|body|number|true|none|
+|»» surcharge|body|number(double)|true|none|
+|»» total_booking_cost|body|number(double)|true|none|
+|»» promo_code|body|string|true|none|
+|»» total_discount|body|number|true|none|
+|»» grand_total|body|number|true|none|
+|»» total_paid|body|number|true|none|
+|» commets|body|string|false|Special comments of the booking|
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|» type|GAC|
+|» type|USS|
+|» type|MCS|
+|»» type|Online|
+|»» type|RES Online|
+|»» type|Invoice|
+|»» type|Quotation|
+|»» status|0|
+|»» status|1|
+|»» status|2|
+|»» status|3|
 
 > Example responses
 
@@ -1943,6 +2068,55 @@ Create a booking
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 
 <h3 id="post-_bookings-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|GAC|
+|type|USS|
+|type|MCS|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+|type|Online|
+|type|RES Online|
+|type|Invoice|
+|type|Quotation|
+|status|0|
+|status|1|
+|status|2|
+|status|3|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -2354,6 +2528,55 @@ GET a booking by id
 
 <h3 id="get-bookings-id-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|GAC|
+|type|USS|
+|type|MCS|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+|type|Online|
+|type|RES Online|
+|type|Invoice|
+|type|Quotation|
+|status|0|
+|status|1|
+|status|2|
+|status|3|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -2599,7 +2822,43 @@ Update a booking
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|object|false|update booking request body|
+|» type|body|string|true|Booking type|
+|» booker|body|object|true|Booker details|
+|»» id|body|string(uuid)|true|none|
+|»» company|body|object|true|none|
+|»»» id|body|string(uuid)|true|none|
+|» billing|body|object|true|Billing details|
+|»» type|body|string|true|none|
+|»» status|body|number|true|none|
+|»» ref_id|body|string|false|none|
+|»» card|body|string|false|none|
+|»» total_service_cost|body|number(double)|true|none|
+|»» add_hrs_charge|body|number|true|none|
+|»» surcharge|body|number(double)|true|none|
+|»» total_booking_cost|body|number(double)|true|none|
+|»» promo_code|body|string|true|none|
+|»» total_discount|body|number|true|none|
+|»» grand_total|body|number|true|none|
+|»» total_paid|body|number|true|none|
+|» commets|body|string|false|Special comments of the booking|
 |id|path|string|true|a booking id|
+
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|» type|GAC|
+|» type|USS|
+|» type|MCS|
+|»» type|Online|
+|»» type|RES Online|
+|»» type|Invoice|
+|»» type|Quotation|
+|»» status|0|
+|»» status|1|
+|»» status|2|
+|»» status|3|
 
 > Example responses
 
@@ -2823,6 +3082,55 @@ Update a booking
 
 <h3 id="put-bookings-id-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|GAC|
+|type|USS|
+|type|MCS|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+|type|Online|
+|type|RES Online|
+|type|Invoice|
+|type|Quotation|
+|status|0|
+|status|1|
+|status|2|
+|status|3|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -3037,6 +3345,14 @@ delete a booking
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="delete-bookings-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -3422,6 +3738,32 @@ GET a list of journeys for a single booking
 
 <h3 id="get-bookings-id-journeys-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -3761,6 +4103,7 @@ Create a new journey in a booking
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|[#/paths/~1journeys~1%7Bid%7D/put/requestBody/content/application~1json/schema](#schema#/paths/~1journeys~1%7bid%7d/put/requestbody/content/application~1json/schema)|false|Create new journey request body|
 |id|path|string|true|a booking Id|
 
 > Example responses
@@ -3942,6 +4285,32 @@ Create a new journey in a booking
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 
 <h3 id="post-bookings-id-journeys-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -4222,6 +4591,26 @@ GET a list of passengers of a company
 
 <h3 id="get-companies-id-passengers-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -4495,6 +4884,7 @@ Create a new passenger of a company
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|[#/paths/~1passengers~1%7Bid%7D/put/requestBody/content/application~1json/schema](#schema#/paths/~1passengers~1%7bid%7d/put/requestbody/content/application~1json/schema)|false|Create new passenger request body|
 |id|path|string|true|a company id|
 
 > Example responses
@@ -4564,6 +4954,26 @@ Create a new passenger of a company
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 
 <h3 id="post-companies-id-passengers-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -4822,6 +5232,26 @@ GET a single passenger of a company
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="get-passengers-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -5096,6 +5526,7 @@ Update an exsisting passenger of a company
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|[#/paths/~1passengers~1%7Bid%7D/put/requestBody/content/application~1json/schema](#schema#/paths/~1passengers~1%7bid%7d/put/requestbody/content/application~1json/schema)|false|passenger request body|
 |id|path|string|true|passenger_id|
 
 > Example responses
@@ -5165,6 +5596,26 @@ Update an exsisting passenger of a company
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 
 <h3 id="put-passengers-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -5380,6 +5831,14 @@ DELETE a passenger of a company
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="delete-passengers-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -5655,6 +6114,14 @@ GET a list of services in a terminal
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="getterminals-id-services-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -6026,6 +6493,32 @@ GET a single journey of a booking
 
 <h3 id="get-journeys-id-responseschema">Response Schema</h3>
 
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -6365,6 +6858,7 @@ update a jounry of a booking
 |X-Trace-Id|header|string|false|Please provide your UUID for tracing|
 |Content-Type|header|string|true|application/json|
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|body|body|[#/paths/~1journeys~1%7Bid%7D/put/requestBody/content/application~1json/schema](#schema#/paths/~1journeys~1%7bid%7d/put/requestbody/content/application~1json/schema)|false|update journey request body|
 |id|path|string|true|a journey id|
 
 > Example responses
@@ -6546,6 +7040,32 @@ update a jounry of a booking
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 
 <h3 id="put-journeys-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+|type|Lead|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
+|type|Arrival|
+|type|Departure|
+|type|Connection|
+|type|Lead|
+|type|Additional|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -6761,6 +7281,14 @@ Delete a journey of a booking
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 
 <h3 id="delete-journeys-id-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
