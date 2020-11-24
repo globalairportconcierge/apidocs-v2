@@ -7816,3 +7816,34 @@ Authorization
 |»»»» pax|number|true|none|none|
 |»»»» value|number|true|none|none|
 
+<h2 id="tocS_rsp.pagination">rsp.pagination</h2>
+<!-- backwards compatibility -->
+<a id="schemarsp.pagination"></a>
+<a id="schema_rsp.pagination"></a>
+<a id="tocSrsp.pagination"></a>
+<a id="tocsrsp.pagination"></a>
+
+```json
+{
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  }
+}
+
+```
+
+pagination.v1
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|pagination|object|true|none|pagination object|
+|» total_count|integer(double)|true|none|total result count|
+|» total_pages|integer|true|none|total number of result pages|
+|» current_page|integer|true|none|current result page according to pagination limit|
+|» limit|integer|true|none|result limit per page|
+
