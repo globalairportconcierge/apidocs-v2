@@ -189,6 +189,7 @@ func main() {
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -394,6 +395,44 @@ Get list of operating Airports.
 |sort|desc|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "code": "LHR",
+      "name": "LHR London Heahrow Airport",
+      "country": "United Kingdom",
+      "city": "London",
+      "booking_window": 48,
+      "terminals": [
+        null
+      ],
+      "charges": {},
+      "air_side_meetup": {}
+    }
+  ]
+}
+```
 
 <h3 id="get-airports-responses">Responses</h3>
 
@@ -608,6 +647,42 @@ GET Airport details.
 |id|path|string|true|an airport id |
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "code": "LHR",
+    "name": "LHR London Heahrow Airport",
+    "country": "United Kingdom",
+    "city": "London",
+    "booking_window": 48,
+    "terminals": [
+      {}
+    ],
+    "charges": {
+      "surcharge": null,
+      "additional_hour_charge": null
+    },
+    "air_side_meetup": {
+      "international": null,
+      "domestic": null
+    }
+  }
+}
+```
 
 <h3 id="get-airports-id-responses">Responses</h3>
 
@@ -833,6 +908,39 @@ Get a list of terminals at an airport
 |sort|desc|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "airport_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "terminal_name": "LHR Terminal 2",
+      "services": [
+        null
+      ]
+    }
+  ]
+}
+```
 
 <h3 id="get-airports-id-terminals-responses">Responses</h3>
 
@@ -1070,6 +1178,43 @@ GET a list of bookings
 |sort|desc|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "reference_id": 1001,
+      "type": "GAC",
+      "booker": {},
+      "journeys": [
+        null
+      ],
+      "billing": {},
+      "commets": "First Time Traveller",
+      "status": true
+    }
+  ]
+}
+```
 
 <h3 id="get-bookings-responses">Responses</h3>
 
@@ -1412,6 +1557,54 @@ Create a booking
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1001,
+    "type": "GAC",
+    "booker": {
+      "id": null,
+      "email": null,
+      "email_contacts": null,
+      "name": null,
+      "company": null
+    },
+    "journeys": [
+      {}
+    ],
+    "billing": {
+      "type": null,
+      "status": null,
+      "ref_id": null,
+      "card": null,
+      "total_service_cost": null,
+      "add_hrs_charge": null,
+      "surcharge": null,
+      "total_booking_cost": null,
+      "promo_code": null,
+      "total_discount": null,
+      "grand_total": null,
+      "total_paid": null
+    },
+    "commets": "First Time Traveller",
+    "status": true
+  }
+}
+```
+
 <h3 id="post-_bookings-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -1658,6 +1851,54 @@ GET a booking by id
 |id|path|string|true|a booking id|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1001,
+    "type": "GAC",
+    "booker": {
+      "id": null,
+      "email": null,
+      "email_contacts": null,
+      "name": null,
+      "company": null
+    },
+    "journeys": [
+      {}
+    ],
+    "billing": {
+      "type": null,
+      "status": null,
+      "ref_id": null,
+      "card": null,
+      "total_service_cost": null,
+      "add_hrs_charge": null,
+      "surcharge": null,
+      "total_booking_cost": null,
+      "promo_code": null,
+      "total_discount": null,
+      "grand_total": null,
+      "total_paid": null
+    },
+    "commets": "First Time Traveller",
+    "status": true
+  }
+}
+```
 
 <h3 id="get-bookings-id-responses">Responses</h3>
 
@@ -2001,6 +2242,54 @@ Update a booking
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1001,
+    "type": "GAC",
+    "booker": {
+      "id": null,
+      "email": null,
+      "email_contacts": null,
+      "name": null,
+      "company": null
+    },
+    "journeys": [
+      {}
+    ],
+    "billing": {
+      "type": null,
+      "status": null,
+      "ref_id": null,
+      "card": null,
+      "total_service_cost": null,
+      "add_hrs_charge": null,
+      "surcharge": null,
+      "total_booking_cost": null,
+      "promo_code": null,
+      "total_discount": null,
+      "grand_total": null,
+      "total_paid": null
+    },
+    "commets": "First Time Traveller",
+    "status": true
+  }
+}
+```
+
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -2248,6 +2537,23 @@ delete a booking
 
 > Example responses
 
+> 204 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="delete-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -2463,6 +2769,40 @@ GET a list of journeys for a single booking
 |sort|desc|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "reference_id": 1,
+      "passengers": {},
+      "stops": [
+        null
+      ],
+      "special_notes": "string"
+    }
+  ]
+}
+```
 
 <h3 id="get-bookings-id-journeys-responses">Responses</h3>
 
@@ -2780,6 +3120,35 @@ Create a new journey in a booking
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1,
+    "passengers": {
+      "meta": null,
+      "pax": null
+    },
+    "stops": [
+      {}
+    ],
+    "special_notes": "string"
+  }
+}
+```
+
 <h3 id="post-bookings-id-journeys-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -3020,6 +3389,43 @@ GET a list of passengers of a company
 |sort|desc|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "name": {},
+      "contacts": {},
+      "date_of_birth": "1989-02-14",
+      "passport_no": "N32343423",
+      "comments": "First time traveller.",
+      "signage": "John Doe",
+      "sig_image": "signage_image.png",
+      "image": "passenger_image.png",
+      "pas_stat": true
+    }
+  ]
+}
+```
 
 <h3 id="get-companies-id-passengers-responses">Responses</h3>
 
@@ -3327,6 +3733,43 @@ Create a new passenger of a company
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "name": {
+      "title": null,
+      "forename": null,
+      "surname": null
+    },
+    "contacts": {
+      "address": null,
+      "emails": null,
+      "phones": null
+    },
+    "date_of_birth": "1989-02-14",
+    "passport_no": "N32343423",
+    "comments": "First time traveller.",
+    "signage": "John Doe",
+    "sig_image": "signage_image.png",
+    "image": "passenger_image.png",
+    "pas_stat": true
+  }
+}
+```
+
 <h3 id="post-companies-id-passengers-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -3546,6 +3989,43 @@ GET a single passenger of a company
 |id|path|string|true|passenger_id|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "name": {
+      "title": null,
+      "forename": null,
+      "surname": null
+    },
+    "contacts": {
+      "address": null,
+      "emails": null,
+      "phones": null
+    },
+    "date_of_birth": "1989-02-14",
+    "passport_no": "N32343423",
+    "comments": "First time traveller.",
+    "signage": "John Doe",
+    "sig_image": "signage_image.png",
+    "image": "passenger_image.png",
+    "pas_stat": true
+  }
+}
+```
 
 <h3 id="get-passengers-id-responses">Responses</h3>
 
@@ -3853,6 +4333,43 @@ Update an exsisting passenger of a company
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "name": {
+      "title": null,
+      "forename": null,
+      "surname": null
+    },
+    "contacts": {
+      "address": null,
+      "emails": null,
+      "phones": null
+    },
+    "date_of_birth": "1989-02-14",
+    "passport_no": "N32343423",
+    "comments": "First time traveller.",
+    "signage": "John Doe",
+    "sig_image": "signage_image.png",
+    "image": "passenger_image.png",
+    "pas_stat": true
+  }
+}
+```
+
 <h3 id="put-passengers-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -4070,6 +4587,23 @@ DELETE a passenger of a company
 |id|path|string|true|passenger_id|
 
 > Example responses
+
+> 204 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
 
 <h3 id="delete-passengers-id-responses">Responses</h3>
 
@@ -4290,6 +4824,39 @@ GET a list of services in a terminal
 
 > Example responses
 
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "pagination": {
+    "total_count": 100,
+    "total_pages": 20,
+    "current_page": 3,
+    "limit": 10
+  },
+  "data": [
+    {
+      "airport_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+      "terminal_name": "LHR Terminal 2",
+      "services": [
+        null
+      ]
+    }
+  ]
+}
+```
+
 <h3 id="getterminals-id-services-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -4497,6 +5064,35 @@ GET a single journey of a booking
 |id|path|string|true|a journey id|
 
 > Example responses
+
+> 200 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1,
+    "passengers": {
+      "meta": null,
+      "pax": null
+    },
+    "stops": [
+      {}
+    ],
+    "special_notes": "string"
+  }
+}
+```
 
 <h3 id="get-journeys-id-responses">Responses</h3>
 
@@ -4814,6 +5410,35 @@ update a jounry of a booking
 
 > Example responses
 
+> 201 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  },
+  "data": {
+    "journey_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+    "reference_id": 1,
+    "passengers": {
+      "meta": null,
+      "pax": null
+    },
+    "stops": [
+      {}
+    ],
+    "special_notes": "string"
+  }
+}
+```
+
 <h3 id="put-journeys-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -5037,6 +5662,23 @@ Delete a journey of a booking
 |id|path|string|true|a journey id|
 
 > Example responses
+
+> 204 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
 
 <h3 id="delete-journeys-id-responses">Responses</h3>
 
