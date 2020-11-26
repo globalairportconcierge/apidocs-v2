@@ -599,6 +599,12 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/me 
 <th>Schema</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td>None</td>
+</tr>
 </tbody></table>
 
 <aside class="warning">
@@ -859,8 +865,43 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/air
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR London Heahrow Airport"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"booking_window"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"terminals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"air_side_meetup"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-airports-responses">Responses</h3>
 
 <table><thead>
@@ -1131,8 +1172,41 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/air
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR London Heahrow Airport"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"booking_window"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"terminals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_hour_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"air_side_meetup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"international"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domestic"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-airports-id-responses">Responses</h3>
 
 <table><thead>
@@ -1447,8 +1521,38 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/air
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"airport_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"terminal_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR Terminal 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-airports-id-terminals-responses">Responses</h3>
 
 <table><thead>
@@ -1823,8 +1927,42 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/boo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GAC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"booker"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"commets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-responses">Responses</h3>
 
 <table><thead>
@@ -2470,8 +2608,53 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GAC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"booker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_contacts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ref_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_service_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"commets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-_bookings-responses">Responses</h3>
 
 <table><thead>
@@ -2874,8 +3057,53 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/boo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GAC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"booker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_contacts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ref_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_service_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"commets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -3528,8 +3756,53 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GAC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"booker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_contacts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ref_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_service_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"commets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -3932,8 +4205,22 @@ curl <span class="nt">-X</span> DELETE http://online.globalairportconcierge.com/
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>204 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="delete-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -4209,8 +4496,39 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/boo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-id-journeys-responses">Responses</h3>
 
 <table><thead>
@@ -4618,8 +4936,34 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-bookings-id-journeys-responses">Responses</h3>
 
 <table><thead>
@@ -5004,8 +5348,42 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/com
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-02-14"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"passport_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N32343423"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First time traveller."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"signage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sig_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signage_image.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passenger_image.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pas_stat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-companies-id-passengers-responses">Responses</h3>
 
 <table><thead>
@@ -5385,8 +5763,42 @@ fetch('http://online.globalairportconcierge.com/companies/{id}/passengers',
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-02-14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passport_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N32343423"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First time traveller."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sig_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signage_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passenger_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pas_stat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-companies-id-passengers-responses">Responses</h3>
 
 <table><thead>
@@ -5675,8 +6087,42 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/pas
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-02-14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passport_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N32343423"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First time traveller."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sig_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signage_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passenger_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pas_stat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-passengers-id-responses">Responses</h3>
 
 <table><thead>
@@ -6056,8 +6502,42 @@ fetch('http://online.globalairportconcierge.com/passengers/{id}',
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-02-14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passport_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N32343423"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First time traveller."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sig_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signage_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passenger_image.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pas_stat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-passengers-id-responses">Responses</h3>
 
 <table><thead>
@@ -6344,8 +6824,22 @@ curl <span class="nt">-X</span> DELETE http://online.globalairportconcierge.com/
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>204 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="delete-passengers-id-responses">Responses</h3>
 
 <table><thead>
@@ -6630,8 +7124,38 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/ter
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"airport_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"terminal_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LHR Terminal 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="getterminals-id-services-responses">Responses</h3>
 
 <table><thead>
@@ -6872,8 +7396,34 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/jou
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-journeys-id-responses">Responses</h3>
 
 <table><thead>
@@ -7281,8 +7831,34 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/jou
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>201 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passengers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-journeys-id-responses">Responses</h3>
 
 <table><thead>
@@ -7593,8 +8169,22 @@ curl <span class="nt">-X</span> DELETE http://online.globalairportconcierge.com/
 
 <blockquote>
 <p>Example responses</p>
-</blockquote>
 
+<p>204 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="delete-journeys-id-responses">Responses</h3>
 
 <table><thead>
