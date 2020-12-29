@@ -12,6 +12,7 @@ language_tabs:
 toc_footers: []
 includes: []
 search: true
+code_clipboard: true
 highlight_theme: darkula
 headingLevel: 2
 generator: widdershins v4.0.1
