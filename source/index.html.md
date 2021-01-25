@@ -278,6 +278,7 @@ GET a list of bookings and quotations
   },
   "data": [
     {
+      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
       "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
       "status": "Quote",
       "expires_on": "2019-08-24T14:15:22Z",
@@ -632,9 +633,6 @@ Create a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»»»» child|body|[object]|false|none|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
@@ -664,9 +662,6 @@ Create a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»»»» infant|body|[object]|false|none|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
@@ -696,9 +691,6 @@ Create a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»» stops|body|object|true|stops object|
 |»»»» departure|body|object|true|none|
 |»»»»» connection|body|boolean|true|none|
@@ -803,6 +795,7 @@ Create a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
@@ -1093,6 +1086,7 @@ GET a booking or a quotation by id
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
@@ -1455,9 +1449,6 @@ Update a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»»»» child|body|[object]|false|none|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
@@ -1487,9 +1478,6 @@ Update a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»»»» infant|body|[object]|false|none|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
@@ -1519,9 +1507,6 @@ Update a quotation
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»»»»» sig_image|body|string|false|Signage image of the pasenger|
-|»»»»»»»» image|body|string|false|Image of the passenger|
-|»»»»»»»» pas_stat|body|boolean|false|Status of the passenger|
 |»»» stops|body|object|true|stops object|
 |»»»» departure|body|object|true|none|
 |»»»»» connection|body|boolean|true|none|
@@ -1627,6 +1612,7 @@ Update a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
@@ -1917,6 +1903,7 @@ Save a quotation as a booking
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
@@ -2208,6 +2195,7 @@ Recalculate a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
+    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
@@ -2339,7 +2327,8 @@ const inputBody = '{
       },
       "departure_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "iata": "EWR"
       },
       "flight_no": "UA452",
       "departure_date": "2019-08-24T14:15:22Z"
@@ -2508,7 +2497,8 @@ GET services at departure and arival for a flight
       },
       "departure_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "iata": "EWR"
       },
       "flight_no": "UA452",
       "departure_date": "2019-08-24T14:15:22Z"
@@ -2532,6 +2522,7 @@ GET services at departure and arival for a flight
 |»» departure_airport|body|object|true|none|
 |»»» icao|body|string|false|Departure Airport ICAO code|
 |»»» gac|body|string(uuid)|false|Departure Airport GAC ID|
+|»»» iata|body|string|false|none|
 |»» flight_no|body|string|true|Flight number: Airline code "UA" + Flignt No. "452"|
 |»» departure_date|body|string(date-time)|true|none|
 
