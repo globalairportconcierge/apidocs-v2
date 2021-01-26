@@ -1018,6 +1018,7 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -1172,6 +1173,7 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROMO21"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"flight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA282"</span><span class="p">,</span><span class="w">
@@ -1246,6 +1248,13 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
 <td>string</td>
 <td>true</td>
 <td>currency of the booking</td>
+</tr>
+<tr>
+<td>»» promo_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>promocode for the booking</td>
 </tr>
 <tr>
 <td>» <em>anonymous</em></td>
@@ -2410,6 +2419,7 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
       </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
@@ -2876,6 +2886,7 @@ curl <span class="nt">-X</span> GET http://online.globalairportconcierge.com/boo
       </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
@@ -3146,6 +3157,7 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -3300,6 +3312,7 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Time Traveller"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROMO21"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"flight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA282"</span><span class="p">,</span><span class="w">
@@ -3374,6 +3387,13 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
 <td>string</td>
 <td>true</td>
 <td>currency of the booking</td>
+</tr>
+<tr>
+<td>»» promo_code</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>promocode for the booking</td>
 </tr>
 <tr>
 <td>» <em>anonymous</em></td>
@@ -4545,6 +4565,7 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
       </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
@@ -5011,6 +5032,7 @@ curl <span class="nt">-X</span> POST http://online.globalairportconcierge.com/bo
       </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
@@ -5483,6 +5505,7 @@ curl <span class="nt">-X</span> PUT http://online.globalairportconcierge.com/boo
       </span><span class="nl">"add_hrs_charge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"surcharge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_booking_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"total_paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
