@@ -394,6 +394,7 @@ Accept-Encoding: gzip
 const inputBody = '{
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -564,6 +565,7 @@ Create a quotation
 {
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -591,6 +593,7 @@ Create a quotation
 |» *anonymous*|body|object|false|none|
 |»» comments|body|string|false|Special comments of the booking|
 |»» currency|body|string|true|currency of the booking|
+|»» promo_code|body|string|false|promocode for the booking|
 |» *anonymous*|body|object|false|none|
 |»» journeys|body|[object]|true|list of journeys in the booking|
 |»»» flight|body|string|true|a flight number|
@@ -808,6 +811,7 @@ Create a quotation
       "add_hrs_charge": null,
       "surcharge": null,
       "total_booking_cost": null,
+      "promo_code": null,
       "total_discount": null,
       "grand_total": null,
       "total_paid": null
@@ -1099,6 +1103,7 @@ GET a booking or a quotation by id
       "add_hrs_charge": null,
       "surcharge": null,
       "total_booking_cost": null,
+      "promo_code": null,
       "total_discount": null,
       "grand_total": null,
       "total_paid": null
@@ -1210,6 +1215,7 @@ Accept-Encoding: gzip
 const inputBody = '{
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -1380,6 +1386,7 @@ Update a quotation
 {
   "comments": "First Time Traveller",
   "currency": "USD",
+  "promo_code": "PROMO21",
   "journeys": [
     {
       "flight": "BA282",
@@ -1407,6 +1414,7 @@ Update a quotation
 |» *anonymous*|body|object|false|none|
 |»» comments|body|string|false|Special comments of the booking|
 |»» currency|body|string|true|currency of the booking|
+|»» promo_code|body|string|false|promocode for the booking|
 |» *anonymous*|body|object|false|none|
 |»» journeys|body|[object]|true|list of journeys in the booking|
 |»»» flight|body|string|true|a flight number|
@@ -1625,6 +1633,7 @@ Update a quotation
       "add_hrs_charge": null,
       "surcharge": null,
       "total_booking_cost": null,
+      "promo_code": null,
       "total_discount": null,
       "grand_total": null,
       "total_paid": null
@@ -1916,6 +1925,7 @@ Save a quotation as a booking
       "add_hrs_charge": null,
       "surcharge": null,
       "total_booking_cost": null,
+      "promo_code": null,
       "total_discount": null,
       "grand_total": null,
       "total_paid": null
@@ -2208,6 +2218,7 @@ Recalculate a quotation
       "add_hrs_charge": null,
       "surcharge": null,
       "total_booking_cost": null,
+      "promo_code": null,
       "total_discount": null,
       "grand_total": null,
       "total_paid": null
