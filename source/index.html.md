@@ -256,7 +256,7 @@ GET a list of bookings and quotations
 
 > Example responses
 
-> 200 Response
+> OK
 
 ```json
 {
@@ -283,9 +283,160 @@ GET a list of bookings and quotations
       "status": "Quote",
       "expires_on": "2019-08-24T14:15:22Z",
       "journeys": [
-        null
+        {
+          "flight": "BA281",
+          "pax": {
+            "meta": {
+              "adult": 2,
+              "child": 1,
+              "infant": 0,
+              "bags": {
+                "small": 5,
+                "medium": 5,
+                "large": 5
+              }
+            },
+            "passengers": {
+              "adult": [
+                {
+                  "lead": true,
+                  "pnr": "SJE34D",
+                  "class": "First",
+                  "details": {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "type": "Adult",
+                    "name": "[Object]",
+                    "contacts": "[Object]",
+                    "date_of_birth": "1989-02-14",
+                    "passport_no": "N32343423",
+                    "comments": "First time traveller.",
+                    "signage": "John Doe"
+                  }
+                }
+              ],
+              "child": [
+                {
+                  "lead": true,
+                  "pnr": "SJE34D",
+                  "class": "First",
+                  "details": {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "type": "Adult",
+                    "name": "[Object]",
+                    "contacts": "[Object]",
+                    "date_of_birth": "1989-02-14",
+                    "passport_no": "N32343423",
+                    "comments": "First time traveller.",
+                    "signage": "John Doe"
+                  }
+                }
+              ],
+              "infant": [
+                {
+                  "lead": true,
+                  "pnr": "SJE34D",
+                  "class": "First",
+                  "details": {
+                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                    "type": "Adult",
+                    "name": "[Object]",
+                    "contacts": "[Object]",
+                    "date_of_birth": "1989-02-14",
+                    "passport_no": "N32343423",
+                    "comments": "First time traveller.",
+                    "signage": "John Doe"
+                  }
+                }
+              ]
+            }
+          },
+          "stops": {
+            "departure": {
+              "connection": true,
+              "meeting_date": "2020-10-10T18:13:00.000Z",
+              "departure_date": "2020-10-10T20:13:00.000Z",
+              "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "terminal_name": "LHR Terminal 2",
+              "airport": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "iata": "LHR",
+                "icao": "EGLL",
+                "name": "LHR London Heathrow Airport",
+                "city": "London",
+                "country": "United Kingdom"
+              },
+              "contact_point": {
+                "name": "John",
+                "contact": "+18666612345"
+              },
+              "special_notes": "Need translator",
+              "additional_hour_charge": "100.00",
+              "surcharge": "200.00",
+              "services": [
+                {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "service_name": "Meet & Assist",
+                  "rate": "200.00",
+                  "fields": [
+                    "[Object]"
+                  ]
+                }
+              ],
+              "location_total": {
+                "value": "200.00",
+                "currency": "USD"
+              }
+            },
+            "arrival": {
+              "connection": true,
+              "meeting_date": "2020-10-10T18:13:00.000Z",
+              "date": "2020-10-10T18:13:00.000Z",
+              "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "terminal_name": "LHR Terminal 2",
+              "airport": {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "iata": "LHR",
+                "icao": "EGLL",
+                "name": "LHR London Heathrow Airport",
+                "city": "London",
+                "country": "United Kingdom"
+              },
+              "contact_point": {
+                "name": "John",
+                "contact": "+18666612345"
+              },
+              "special_notes": "Need translator",
+              "additional_hour_charge": "100.00",
+              "surcharge": "200.00",
+              "services": [
+                {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "service_name": "Meet & Assist",
+                  "rate": "200.00",
+                  "fields": [
+                    "[Object]"
+                  ]
+                }
+              ],
+              "location_total": {
+                "value": "200.00",
+                "currency": "USD"
+              }
+            }
+          }
+        }
       ],
-      "billing": {},
+      "billing": {
+        "currency": "USD",
+        "total_service_cost": "336.38",
+        "add_hrs_charge": "0.00",
+        "surcharge": "0.00",
+        "total_booking_cost": "336.38",
+        "promo_code": "PROMO21",
+        "total_discount": "33.63",
+        "grand_total": "302.75",
+        "total_paid": "302.75"
+      },
       "comments": "First Time Traveller"
     }
   ]
@@ -399,12 +550,166 @@ const inputBody = '{
     {
       "flight": "BA282",
       "pax": {
-        "meta": {},
-        "passengers": {}
+        "meta": {
+          "adult": 2,
+          "child": 1,
+          "infant": 1,
+          "bags": {
+            "small": 5,
+            "medium": 5,
+            "large": 5
+          }
+        },
+        "passengers": {
+          "adult": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "child": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "infant": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ]
+        }
       },
       "stops": {
-        "departure": {},
-        "arrival": {}
+        "departure": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "departure_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "arrival": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "arrival_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ]
@@ -570,12 +875,166 @@ Create a quotation
     {
       "flight": "BA282",
       "pax": {
-        "meta": {},
-        "passengers": {}
+        "meta": {
+          "adult": 2,
+          "child": 1,
+          "infant": 1,
+          "bags": {
+            "small": 5,
+            "medium": 5,
+            "large": 5
+          }
+        },
+        "passengers": {
+          "adult": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "child": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "infant": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ]
+        }
       },
       "stops": {
-        "departure": {},
-        "arrival": {}
+        "departure": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "departure_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "arrival": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "arrival_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ]
@@ -783,7 +1242,7 @@ Create a quotation
 
 > Example responses
 
-> 201 Response
+> Created
 
 ```json
 {
@@ -803,18 +1262,189 @@ Create a quotation
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
     "journeys": [
-      {}
+      {
+        "flight": "BA281",
+        "pax": {
+          "meta": {
+            "adult": 2,
+            "child": 1,
+            "infant": 0,
+            "bags": {
+              "small": 5,
+              "medium": 5,
+              "large": 5
+            }
+          },
+          "passengers": {
+            "adult": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "child": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "infant": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ]
+          }
+        },
+        "stops": {
+          "departure": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "departure_date": "2020-10-10T20:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          },
+          "arrival": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "date": "2020-10-10T18:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          }
+        }
+      }
     ],
     "billing": {
-      "currency": null,
-      "total_service_cost": null,
-      "add_hrs_charge": null,
-      "surcharge": null,
-      "total_booking_cost": null,
-      "promo_code": null,
-      "total_discount": null,
-      "grand_total": null,
-      "total_paid": null
+      "currency": "USD",
+      "total_service_cost": "336.38",
+      "add_hrs_charge": "0.00",
+      "surcharge": "0.00",
+      "total_booking_cost": "336.38",
+      "promo_code": "PROMO21",
+      "total_discount": "33.63",
+      "grand_total": "302.75",
+      "total_paid": "302.75"
     },
     "comments": "First Time Traveller"
   }
@@ -1075,7 +1705,7 @@ GET a booking or a quotation by id
 
 > Example responses
 
-> 200 Response
+> OK
 
 ```json
 {
@@ -1095,18 +1725,189 @@ GET a booking or a quotation by id
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
     "journeys": [
-      {}
+      {
+        "flight": "BA281",
+        "pax": {
+          "meta": {
+            "adult": 2,
+            "child": 1,
+            "infant": 0,
+            "bags": {
+              "small": 5,
+              "medium": 5,
+              "large": 5
+            }
+          },
+          "passengers": {
+            "adult": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "child": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "infant": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ]
+          }
+        },
+        "stops": {
+          "departure": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "departure_date": "2020-10-10T20:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          },
+          "arrival": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "date": "2020-10-10T18:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          }
+        }
+      }
     ],
     "billing": {
-      "currency": null,
-      "total_service_cost": null,
-      "add_hrs_charge": null,
-      "surcharge": null,
-      "total_booking_cost": null,
-      "promo_code": null,
-      "total_discount": null,
-      "grand_total": null,
-      "total_paid": null
+      "currency": "USD",
+      "total_service_cost": "336.38",
+      "add_hrs_charge": "0.00",
+      "surcharge": "0.00",
+      "total_booking_cost": "336.38",
+      "promo_code": "PROMO21",
+      "total_discount": "33.63",
+      "grand_total": "302.75",
+      "total_paid": "302.75"
     },
     "comments": "First Time Traveller"
   }
@@ -1220,12 +2021,166 @@ const inputBody = '{
     {
       "flight": "BA282",
       "pax": {
-        "meta": {},
-        "passengers": {}
+        "meta": {
+          "adult": 2,
+          "child": 1,
+          "infant": 1,
+          "bags": {
+            "small": 5,
+            "medium": 5,
+            "large": 5
+          }
+        },
+        "passengers": {
+          "adult": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "child": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "infant": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ]
+        }
       },
       "stops": {
-        "departure": {},
-        "arrival": {}
+        "departure": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "departure_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "arrival": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "arrival_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ]
@@ -1391,12 +2346,166 @@ Update a quotation
     {
       "flight": "BA282",
       "pax": {
-        "meta": {},
-        "passengers": {}
+        "meta": {
+          "adult": 2,
+          "child": 1,
+          "infant": 1,
+          "bags": {
+            "small": 5,
+            "medium": 5,
+            "large": 5
+          }
+        },
+        "passengers": {
+          "adult": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "child": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ],
+          "infant": [
+            {
+              "lead": true,
+              "pnr": "SJE34D",
+              "class": "First",
+              "details": {
+                "type": "Adult",
+                "name": {
+                  "title": "Mr.",
+                  "forename": "John",
+                  "surname": "Doe"
+                },
+                "contacts": {
+                  "address": {
+                    "streets": "[Object]",
+                    "city": "Hethrow",
+                    "state": "London",
+                    "postal_code": "LN223 2323",
+                    "country": "United Kingdom"
+                  },
+                  "emails": [
+                    "[Object]"
+                  ],
+                  "phones": [
+                    "[Object]"
+                  ]
+                },
+                "date_of_birth": "1989-02-14",
+                "passport_no": "N32343423",
+                "comments": "First time traveller.",
+                "signage": "John Doe"
+              }
+            }
+          ]
+        }
       },
       "stops": {
-        "departure": {},
-        "arrival": {}
+        "departure": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "departure_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        "arrival": {
+          "connection": true,
+          "meeting_date": "2020-10-10T18:13:00.000Z",
+          "arrival_date": "2020-10-10T20:13:00.000Z",
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "contact_point": {
+            "name": "John",
+            "contact": "+18666612345"
+          },
+          "special_notes": "Need translator",
+          "services": [
+            {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "fields": [
+                {
+                  "name": "pax_count",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ]
@@ -1605,7 +2714,7 @@ Update a quotation
 
 > Example responses
 
-> 201 Response
+> Created
 
 ```json
 {
@@ -1625,18 +2734,189 @@ Update a quotation
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
     "journeys": [
-      {}
+      {
+        "flight": "BA281",
+        "pax": {
+          "meta": {
+            "adult": 2,
+            "child": 1,
+            "infant": 0,
+            "bags": {
+              "small": 5,
+              "medium": 5,
+              "large": 5
+            }
+          },
+          "passengers": {
+            "adult": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "child": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "infant": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ]
+          }
+        },
+        "stops": {
+          "departure": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "departure_date": "2020-10-10T20:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          },
+          "arrival": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "date": "2020-10-10T18:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          }
+        }
+      }
     ],
     "billing": {
-      "currency": null,
-      "total_service_cost": null,
-      "add_hrs_charge": null,
-      "surcharge": null,
-      "total_booking_cost": null,
-      "promo_code": null,
-      "total_discount": null,
-      "grand_total": null,
-      "total_paid": null
+      "currency": "USD",
+      "total_service_cost": "336.38",
+      "add_hrs_charge": "0.00",
+      "surcharge": "0.00",
+      "total_booking_cost": "336.38",
+      "promo_code": "PROMO21",
+      "total_discount": "33.63",
+      "grand_total": "302.75",
+      "total_paid": "302.75"
     },
     "comments": "First Time Traveller"
   }
@@ -1897,7 +3177,7 @@ Save a quotation as a booking
 
 > Example responses
 
-> 200 Response
+> OK
 
 ```json
 {
@@ -1917,20 +3197,215 @@ Save a quotation as a booking
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
     "journeys": [
-      {}
+      {
+        "flight": "BA281",
+        "pax": {
+          "meta": {
+            "adult": 2,
+            "child": 1,
+            "infant": 0,
+            "bags": {
+              "small": 5,
+              "medium": 5,
+              "large": 5
+            }
+          },
+          "passengers": {
+            "adult": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "child": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "infant": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ]
+          }
+        },
+        "stops": {
+          "departure": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "departure_date": "2020-10-10T20:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "USD"
+            }
+          },
+          "arrival": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "date": "2020-10-10T18:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "USD"
+            }
+          }
+        }
+      }
     ],
     "billing": {
-      "currency": null,
-      "total_service_cost": null,
-      "add_hrs_charge": null,
-      "surcharge": null,
-      "total_booking_cost": null,
-      "promo_code": null,
-      "total_discount": null,
-      "grand_total": null,
-      "total_paid": null
+      "currency": "USD",
+      "total_service_cost": "336.38",
+      "add_hrs_charge": "0.00",
+      "surcharge": "0.00",
+      "total_booking_cost": "336.38",
+      "promo_code": "PROMO21",
+      "total_discount": "33.63",
+      "grand_total": "302.75",
+      "total_paid": "302.75"
     },
     "comments": "First Time Traveller"
+  }
+}
+```
+
+> Unprocessable Entity (WebDAV)
+
+```json
+{
+  "error": {
+    "code": 0,
+    "message": "string",
+    "moreInfo": "string",
+    "errors": [
+      {
+        "code": "string",
+        "message": "string",
+        "description": "string"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   }
 }
 ```
@@ -2190,7 +3665,7 @@ Recalculate a quotation
 
 > Example responses
 
-> 201 Response
+> Created
 
 ```json
 {
@@ -2210,18 +3685,189 @@ Recalculate a quotation
     "status": "Quote",
     "expires_on": "2019-08-24T14:15:22Z",
     "journeys": [
-      {}
+      {
+        "flight": "BA281",
+        "pax": {
+          "meta": {
+            "adult": 2,
+            "child": 1,
+            "infant": 0,
+            "bags": {
+              "small": 5,
+              "medium": 5,
+              "large": 5
+            }
+          },
+          "passengers": {
+            "adult": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "child": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ],
+            "infant": [
+              {
+                "lead": true,
+                "pnr": "SJE34D",
+                "class": "First",
+                "details": {
+                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "type": "Adult",
+                  "name": {
+                    "title": "Mr.",
+                    "forename": "John",
+                    "surname": "Doe"
+                  },
+                  "contacts": {
+                    "address": "[Object]",
+                    "emails": "[Object]",
+                    "phones": "[Object]"
+                  },
+                  "date_of_birth": "1989-02-14",
+                  "passport_no": "N32343423",
+                  "comments": "First time traveller.",
+                  "signage": "John Doe"
+                }
+              }
+            ]
+          }
+        },
+        "stops": {
+          "departure": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "departure_date": "2020-10-10T20:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          },
+          "arrival": {
+            "connection": true,
+            "meeting_date": "2020-10-10T18:13:00.000Z",
+            "date": "2020-10-10T18:13:00.000Z",
+            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "terminal_name": "LHR Terminal 2",
+            "airport": {
+              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "iata": "LHR",
+              "icao": "EGLL",
+              "name": "LHR London Heathrow Airport",
+              "city": "London",
+              "country": "United Kingdom"
+            },
+            "contact_point": {
+              "name": "John",
+              "contact": "+18666612345"
+            },
+            "special_notes": "Need translator",
+            "additional_hour_charge": "100.00",
+            "surcharge": "200.00",
+            "services": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "service_name": "Meet & Assist",
+                "rate": "200.00",
+                "fields": [
+                  {
+                    "name": "pax_count",
+                    "value": "1"
+                  }
+                ]
+              }
+            ],
+            "location_total": {
+              "value": "200.00",
+              "currency": "string"
+            }
+          }
+        }
+      }
     ],
     "billing": {
-      "currency": null,
-      "total_service_cost": null,
-      "add_hrs_charge": null,
-      "surcharge": null,
-      "total_booking_cost": null,
-      "promo_code": null,
-      "total_discount": null,
-      "grand_total": null,
-      "total_paid": null
+      "currency": "USD",
+      "total_service_cost": "336.38",
+      "add_hrs_charge": "0.00",
+      "surcharge": "0.00",
+      "total_booking_cost": "336.38",
+      "promo_code": "PROMO21",
+      "total_discount": "33.63",
+      "grand_total": "302.75",
+      "total_paid": "302.75"
     },
     "comments": "First Time Traveller"
   }
@@ -2482,7 +4128,7 @@ Cancel a booking
 
 > Example responses
 
-> 204 Response
+> No Content
 
 ```json
 {
@@ -2762,7 +4408,7 @@ GET services at departure and arival for a flight
 
 > Example responses
 
-> 200 Response
+> OK
 
 ```json
 {
@@ -2786,9 +4432,39 @@ GET services at departure and arival for a flight
       "city": "London",
       "booking_window": 48,
       "terminals": [
-        null
+        {
+          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "terminal_name": "LHR Terminal 2",
+          "services": [
+            {
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_name": "Meet & Assist Service",
+              "fields": [
+                {
+                  "type": "integer",
+                  "name": "paxCount",
+                  "label": "Pax Count",
+                  "validation": [
+                    "[Object]"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "air_side_meetup": {}
+      "air_side_meetup": {
+        "international": {
+          "arrival": true,
+          "depature": true,
+          "transit": true
+        },
+        "domestic": {
+          "arrival": true,
+          "depature": true,
+          "transit": true
+        }
+      }
     }
   ]
 }
