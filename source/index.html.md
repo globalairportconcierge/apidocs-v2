@@ -2297,6 +2297,229 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
+## delete-bookings-id-cancel
+
+<a id="opIddelete-bookings-id-cancel"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel HTTP/1.1
+Host: online.globalairportconcierge.com
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json',
+  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type':'application/json',
+  'Accept-Encoding':'gzip',
+  'apiKey':'API_KEY'
+};
+
+fetch('http://online.globalairportconcierge.com/bookings/{id}/cancel',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete 'http://online.globalairportconcierge.com/bookings/{id}/cancel',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('http://online.globalairportconcierge.com/bookings/{id}/cancel', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','http://online.globalairportconcierge.com/bookings/{id}/cancel', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}/cancel");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "http://online.globalairportconcierge.com/bookings/{id}/cancel", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /bookings/{id}/cancel`
+
+*/bookings/{id}/cancel*
+
+Cancel a booking
+
+<h3 id="delete-bookings-id-cancel-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|X-Trace-Id|header|string|false|Please provide your UUID for tracing|
+|Content-Type|header|string|true|application/json|
+|Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|id|path|string|true|booking id|
+
+> Example responses
+
+> 204 Response
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 200,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+<h3 id="delete-bookings-id-cancel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
+
+<h3 id="delete-bookings-id-cancel-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
 <h1 id="gac-api-v1-1-0-services">Services</h1>
 
 ## get-services
