@@ -3943,9 +3943,9 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
-## delete-bookings-id-cancel
+## DELETE-bookings-bookingId-cancel
 
-<a id="opIddelete-bookings-id-cancel"></a>
+<a id="opIdDELETE-bookings-bookingId-cancel"></a>
 
 > Code samples
 
@@ -4117,7 +4117,7 @@ func main() {
 
 Cancel a booking
 
-<h3 id="delete-bookings-id-cancel-parameters">Parameters</h3>
+<h3 id="delete-bookings-bookingid-cancel-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -4145,13 +4145,13 @@ Cancel a booking
 }
 ```
 
-<h3 id="delete-bookings-id-cancel-responses">Responses</h3>
+<h3 id="delete-bookings-bookingid-cancel-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
 
-<h3 id="delete-bookings-id-cancel-responseschema">Response Schema</h3>
+<h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
 
 #### Enumerated Values
 
