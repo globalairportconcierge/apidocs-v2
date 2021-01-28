@@ -1051,51 +1051,51 @@ Create a quotation
 |body|body|object|false|booking request body|
 |» *anonymous*|body|object|false|none|
 |»» comments|body|string|false|Special comments of the booking|
-|»» currency|body|string|true|currency of the booking|
-|»» promo_code|body|string|false|promocode for the booking|
+|»» currency|body|string|true|Currency of the booking|
+|»» promo_code|body|string|false|Promocode for the booking|
 |» *anonymous*|body|object|false|none|
-|»» journeys|body|[object]|true|list of journeys in the booking|
-|»»» flight|body|string|true|a flight number|
-|»»» pax|body|object|true|passenger object|
-|»»»» meta|body|object|true|none|
-|»»»»» adult|body|integer|true|none|
-|»»»»» child|body|integer|true|none|
-|»»»»» infant|body|integer|true|none|
-|»»»»» bags|body|object|true|none|
-|»»»»»» small|body|integer|true|none|
-|»»»»»» medium|body|integer|true|none|
-|»»»»»» large|body|integer|true|none|
-|»»»» passengers|body|object|true|none|
-|»»»»» adult|body|[object]|false|none|
-|»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
+|»» journeys|body|[object]|true|List of journeys in the booking|
+|»»» flight|body|string|true|A flight number|
+|»»» pax|body|object|true|Passenger object|
+|»»»» meta|body|object|true|Pax meta data|
+|»»»»» adult|body|integer|true|Number of Adult passengers|
+|»»»»» child|body|integer|true|Number of Child passengers|
+|»»»»» infant|body|integer|true|Number of Infant passengers|
+|»»»»» bags|body|object|true|Number of bags|
+|»»»»»» small|body|integer|true|Number of small bags|
+|»»»»»» medium|body|integer|true|Number of medium bags|
+|»»»»»» large|body|integer|true|mNumber of large bags|
+|»»»» passengers|body|object|true|Passenger details|
+|»»»»» adult|body|[object]|false|Adult passengers' information|
+|»»»»»» passenger.v1|body|object|false|Passenger model|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
 |»»»»»»»» type|body|string|true|passenger type|
 |»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forname|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Email type|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Type of phone|
+|»»»»»»»»»» name|body|string|false|Contact nme of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» child|body|[object]|false|none|
+|»»»»» child|body|[object]|false|Child passengers' information|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
 |»»»»»»» pnr|body|string|true|passenger PNR|
@@ -1103,28 +1103,28 @@ Create a quotation
 |»»»»»»» details|body|object|false|Passenger model|
 |»»»»»»»» type|body|string|true|passenger type|
 |»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»»» title|body|string|true|Tilte|
+|»»»»»»»»» forename|body|string|true|Forname|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Type of email|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Type of phone|
+|»»»»»»»»»» name|body|string|false|Contact person of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» infant|body|[object]|false|none|
+|»»»»» infant|body|[object]|false|Infant passengers' information|
 |»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|is lead passenger|
 |»»»»»»» pnr|body|string|true|passenger PNR|
@@ -1132,60 +1132,60 @@ Create a quotation
 |»»»»»»» details|body|object|false|Passenger model|
 |»»»»»»»» type|body|string|true|passenger type|
 |»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forname|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Type of email|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Type of phone|
+|»»»»»»»»»» name|body|string|false|Contact person of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
 |»»» stops|body|object|true|stops object|
-|»»»» departure|body|object|true|none|
-|»»»»» connection|body|boolean|true|none|
-|»»»»» meeting_date|body|string(date-time)|true|none|
-|»»»»» departure_date|body|string(date-time)|true|flight departure date|
-|»»»»» terminal_id|body|string(uuid)|true|none|
-|»»»»» contact_point|body|object|true|none|
-|»»»»»» name|body|string|true|none|
-|»»»»»» contact|body|string|true|none|
-|»»»»» special_notes|body|string|true|none|
-|»»»»» services|body|[allOf]|true|none|
+|»»»» departure|body|object|true|Departure location informaion|
+|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with previous flight arrival location)|
+|»»»»» meeting_date|body|string(date-time)|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
+|»»»»» departure_date|body|string(date-time)|true|Flight departure date|
+|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
+|»»»»»» name|body|string|true|Name of the contact person|
+|»»»»»» contact|body|string|true|Contact number of the contact point|
+|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
+|»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|none|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|none|
-|»»»»»»»» value|body|string|true|none|
-|»»»» arrival|body|object|true|none|
-|»»»»» connection|body|boolean|true|none|
-|»»»»» meeting_date|body|string(date-time)|true|none|
-|»»»»» arrival_date|body|string(date-time)|true|flight arrival date|
-|»»»»» terminal_id|body|string(uuid)|true|none|
-|»»»»» contact_point|body|object|true|none|
-|»»»»»» name|body|string|true|none|
-|»»»»»» contact|body|string|true|none|
-|»»»»» special_notes|body|string|true|none|
-|»»»»» services|body|[allOf]|true|none|
+|»»»»»»»» name|body|string|true|Field name|
+|»»»»»»»» value|body|string|true|Field value|
+|»»»» arrival|body|object|true|Arrival location informaion|
+|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departure location)|
+|»»»»» meeting_date|body|string(date-time)|true|Meeting date. (Should be same as the flight's arrival time)|
+|»»»»» arrival_date|body|string(date-time)|true|Flight arrival date|
+|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
+|»»»»»» name|body|string|true|Name of the contact person|
+|»»»»»» contact|body|string|true|Contact number of the contact point|
+|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
+|»»»»» services|body|[allOf]|true|Services to be quoted at arrival location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|none|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|none|
-|»»»»»»»» value|body|string|true|none|
+|»»»»»»»» name|body|string|true|Field name|
+|»»»»»»»» value|body|string|true|Field value|
 
 #### Enumerated Values
 
