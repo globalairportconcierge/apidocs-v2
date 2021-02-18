@@ -27,7 +27,7 @@ Your passenger services APIs of choice
 
 Base URLs:
 
-* <a href="http://baas.globalairportconcierge.com/v1">http://baas.globalairportconcierge.com/v1</a>
+* <a href="https://baas.globalairportconcierge.com/v1/">https://baas.globalairportconcierge.com/v1/</a>
 
 * <a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a>
 
@@ -50,7 +50,7 @@ License: <a href="https://gac.com/api-license.html">GAC</a>
 
 ```shell
 # You can also use wget
-curl -X GET http://baas.globalairportconcierge.com/v1/bookings \
+curl -X GET https://baas.globalairportconcierge.com/v1/bookings \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -60,7 +60,7 @@ curl -X GET http://baas.globalairportconcierge.com/v1/bookings \
 ```
 
 ```http
-GET http://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
+GET https://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
 Host: baas.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -79,7 +79,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings',
+fetch('https://baas.globalairportconcierge.com/v1/bookings',
 {
   method: 'GET',
 
@@ -105,7 +105,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://baas.globalairportconcierge.com/v1/bookings',
+result = RestClient.get 'https://baas.globalairportconcierge.com/v1/bookings',
   params: {
   }, headers: headers
 
@@ -123,7 +123,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://baas.globalairportconcierge.com/v1/bookings', headers = headers)
+r = requests.get('https://baas.globalairportconcierge.com/v1/bookings', headers = headers)
 
 print(r.json())
 
@@ -148,7 +148,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://baas.globalairportconcierge.com/v1/bookings', array(
+    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -165,7 +165,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -200,7 +200,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://baas.globalairportconcierge.com/v1/bookings", data)
+    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -379,7 +379,7 @@ GET a list of bookings and quotations
               ],
               "location_total": {
                 "value": "200.00",
-                "currency": "USD"
+                "currency": "string"
               }
             },
             "arrival": {
@@ -415,7 +415,7 @@ GET a list of bookings and quotations
               ],
               "location_total": {
                 "value": "200.00",
-                "currency": "USD"
+                "currency": "string"
               }
             }
           }
@@ -438,11 +438,45 @@ GET a list of bookings and quotations
 }
 ```
 
+> No Content
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 204,
+    "message": "No Data Found"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> 204 Response
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<status>
+  <success>true</success>
+  <status>200</status>
+  <message>Data retreived successfully</message>
+</status>
+<trace>
+  <X-GAC-Trace-Id>a949eea7-56d5-4864-a5e6-0f15b6897960</X-GAC-Trace-Id>
+  <X-Trace-Id>56d9e9d0-08d6-481e-94e7-e2667423cf37</X-Trace-Id>
+  <Idempotency-Key>687d997b-391e-4906-94c5-a24c2fc12ba0</Idempotency-Key>
+</trace>
+```
+
 <h3 id="get-bookings-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
 
 <h3 id="get-bookings-responseschema">Response Schema</h3>
 
@@ -502,6 +536,25 @@ GET a list of bookings and quotations
 |currency|GBP|
 |currency|EUR|
 
+Status Code **204**
+
+*success.v1.json*
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|» status|object|true|none|status object|
+|»» success|boolean|true|none|The response was a success or not|
+|»» status|number|true|none|Response status code|
+|»» message|string|true|none|Response message|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -515,7 +568,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST http://baas.globalairportconcierge.com/v1/bookings \
+curl -X POST https://baas.globalairportconcierge.com/v1/bookings \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -526,7 +579,7 @@ curl -X POST http://baas.globalairportconcierge.com/v1/bookings \
 ```
 
 ```http
-POST http://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
+POST https://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
 Host: baas.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -673,7 +726,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -695,7 +748,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -718,7 +771,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings',
+fetch('https://baas.globalairportconcierge.com/v1/bookings',
 {
   method: 'POST',
   body: inputBody,
@@ -745,7 +798,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'http://baas.globalairportconcierge.com/v1/bookings',
+result = RestClient.post 'https://baas.globalairportconcierge.com/v1/bookings',
   params: {
   }, headers: headers
 
@@ -764,7 +817,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('http://baas.globalairportconcierge.com/v1/bookings', headers = headers)
+r = requests.post('https://baas.globalairportconcierge.com/v1/bookings', headers = headers)
 
 print(r.json())
 
@@ -790,7 +843,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','http://baas.globalairportconcierge.com/v1/bookings', array(
+    $response = $client->request('POST','https://baas.globalairportconcierge.com/v1/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -807,7 +860,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -843,7 +896,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "http://baas.globalairportconcierge.com/v1/bookings", data)
+    req, err := http.NewRequest("POST", "https://baas.globalairportconcierge.com/v1/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -998,7 +1051,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1020,7 +1073,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1053,120 +1106,120 @@ Create a quotation
 |»»» flight|body|string|true|A flight number|
 |»»» pax|body|object|true|Passenger object|
 |»»»» meta|body|object|true|Pax meta data|
-|»»»»» adult|body|integer|true|Number of Adult passengers|
-|»»»»» child|body|integer|true|Number of Child passengers|
-|»»»»» infant|body|integer|true|Number of Infant passengers|
-|»»»»» bags|body|object|true|Number of bags|
+|»»»»» adult|body|integer|true|Number of adults travelling|
+|»»»»» child|body|integer|true|Number of children travelling|
+|»»»»» infant|body|integer|true|Number of infants travelling|
+|»»»»» bags|body|object|true|Number of bags carrying|
 |»»»»»» small|body|integer|true|Number of small bags|
 |»»»»»» medium|body|integer|true|Number of medium bags|
-|»»»»»» large|body|integer|true|mNumber of large bags|
+|»»»»»» large|body|integer|true|Number of large bags|
 |»»»» passengers|body|object|true|Passenger details|
-|»»»»» adult|body|[object]|false|Adult passengers' information|
-|»»»»»» passenger.v1|body|object|false|Passenger model|
+|»»»»» adult|body|[object]|false|Adult passengers' details|
+|»»»»»» passenger.v1|body|object|false|passenger model|
 |»»»»»»» lead|body|boolean|true|Is lead passenger|
 |»»»»»»» pnr|body|string|true|Passenger PNR|
 |»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
 |»»»»»»»»» title|body|string|true|Title|
-|»»»»»»»»» forename|body|string|true|Forname|
+|»»»»»»»»» forename|body|string|true|Forename|
 |»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|Address streets|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
 |»»»»»»»»»» city|body|string|false|City|
 |»»»»»»»»»» state|body|string|false|State|
-|»»»»»»»»»» postal_code|body|string|false|Postal/zip Code|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
 |»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
 |»»»»»»»»»» type|body|string|false|Email type|
 |»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|Type of phone|
-|»»»»»»»»»» name|body|string|false|Contact nme of the phone|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
 |»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» child|body|[object]|false|Child passengers' information|
+|»»»»» child|body|[object]|false|Child passengers' details|
 |»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|Tilte|
-|»»»»»»»»» forename|body|string|true|Forname|
-|»»»»»»»»» surname|body|string|true|Surname|
-|»»»»»»»» contacts|body|object|true|Contact model|
-|»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|Address streets|
-|»»»»»»»»»» city|body|string|false|City|
-|»»»»»»»»»» state|body|string|false|State|
-|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
-|»»»»»»»»»» country|body|string|false|Country|
-|»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|Type of email|
-|»»»»»»»»»» email|body|string(email)|false|Email|
-|»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|Type of phone|
-|»»»»»»»»»» name|body|string|false|Contact person of the phone|
-|»»»»»»»»»» phone|body|string|false|Phone number|
-|»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
-|»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
-|»»»»»»»» comments|body|string|false|Special comments of the passenger|
-|»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» infant|body|[object]|false|Infant passengers' information|
-|»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
-|»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
 |»»»»»»»»» title|body|string|true|Title|
-|»»»»»»»»» forename|body|string|true|Forname|
+|»»»»»»»»» forename|body|string|true|Forename|
 |»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|Address streets|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
 |»»»»»»»»»» city|body|string|false|City|
 |»»»»»»»»»» state|body|string|false|State|
 |»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
 |»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|Type of email|
+|»»»»»»»»»» type|body|string|false|Email type|
 |»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|Type of phone|
-|»»»»»»»»»» name|body|string|false|Contact person of the phone|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
 |»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»» stops|body|object|true|stops object|
-|»»»» departure|body|object|true|Departure location informaion|
+|»»»»» infant|body|[object]|false|Infant passengers' details|
+|»»»»»» passenger.v1|body|object|false|passenger model|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
+|»»»»»»» details|body|object|false|Passenger model|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forename|
+|»»»»»»»»» surname|body|string|true|Surname|
+|»»»»»»»» contacts|body|object|true|Contact model|
+|»»»»»»»»» address|body|object|false|Addres information|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
+|»»»»»»»»» emails|body|[object]|false|Email information|
+|»»»»»»»»»» type|body|string|false|Email type|
+|»»»»»»»»»» email|body|string(email)|false|Email|
+|»»»»»»»»» phones|body|[object]|false|Phone numbers|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
+|»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
+|»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
+|»»»»»»»» comments|body|string|false|Special comments of the passenger|
+|»»»»»»»» signage|body|string|false|Signage of the passenger|
+|»»» stops|body|object|true|Flight stops object|
+|»»»» departure|body|object|true|Departing location information|
 |»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with previous flight arrival location)|
 |»»»»» meeting_date|body|string(date-time)|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
 |»»»»» departure_date|body|string(date-time)|true|Flight departure date|
-|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» terminal_id|body|string(uuid)|true|Airport terminal id|
 |»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
-|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
+|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|Service id|
-|»»»»»» *anonymous*|body|object|false|service field request model|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|Field name|
-|»»»»»»»» value|body|string|true|Field value|
-|»»»» arrival|body|object|true|Arrival location informaion|
-|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departure location)|
+|»»»»»»»» name|body|string|true|Service name|
+|»»»»»»»» value|body|string|true|Service value|
+|»»»» arrival|body|object|true|Arriving location information|
+|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departuer location)|
 |»»»»» meeting_date|body|string(date-time)|true|Meeting date. (Should be same as the flight's arrival time)|
 |»»»»» arrival_date|body|string(date-time)|true|Flight arrival date|
 |»»»»» terminal_id|body|string(uuid)|true|Terminal id|
@@ -1174,13 +1227,13 @@ Create a quotation
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
-|»»»»» services|body|[allOf]|true|Services to be quoted at arrival location|
+|»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|Service id|
-|»»»»»» *anonymous*|body|object|false|service field request model|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|Field name|
-|»»»»»»»» value|body|string|true|Field value|
+|»»»»»»»» name|body|string|true|Service name|
+|»»»»»»»» value|body|string|true|Service value|
 
 #### Enumerated Values
 
@@ -1446,11 +1499,36 @@ Create a quotation
 }
 ```
 
+> Unprocessable Entity (WebDAV)
+
+```json
+{
+  "error": {
+    "code": 422,
+    "message": "Unprocessable Entity (WebDAV)",
+    "moreInfo": "One or more fields undefined",
+    "errors": [
+      {
+        "code": "4001",
+        "message": "Service Field Undefined",
+        "description": "Number of Pax Required"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="post-bookings-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
+|422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
 
 <h3 id="post-bookings-responseschema">Response Schema</h3>
 
@@ -1523,7 +1601,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET http://baas.globalairportconcierge.com/v1/bookings/{id} \
+curl -X GET https://baas.globalairportconcierge.com/v1/bookings/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -1533,7 +1611,7 @@ curl -X GET http://baas.globalairportconcierge.com/v1/bookings/{id} \
 ```
 
 ```http
-GET http://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
+GET https://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
 Host: baas.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -1552,7 +1630,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings/{id}',
+fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}',
 {
   method: 'GET',
 
@@ -1578,7 +1656,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://baas.globalairportconcierge.com/v1/bookings/{id}',
+result = RestClient.get 'https://baas.globalairportconcierge.com/v1/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -1596,7 +1674,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
+r = requests.get('https://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -1621,7 +1699,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://baas.globalairportconcierge.com/v1/bookings/{id}', array(
+    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1638,7 +1716,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings/{id}");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1673,7 +1751,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://baas.globalairportconcierge.com/v1/bookings/{id}", data)
+    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1909,11 +1987,36 @@ GET a booking or a quotation by id
 }
 ```
 
+> Not Found
+
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Not Found",
+    "moreInfo": "Data requested not found",
+    "errors": [
+      {
+        "code": "4002",
+        "message": "Data Not Found",
+        "description": "Booking not found"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="get-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
 
 <h3 id="get-bookings-id-responseschema">Response Schema</h3>
 
@@ -1986,7 +2089,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT http://baas.globalairportconcierge.com/v1/bookings/{id} \
+curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -1997,7 +2100,7 @@ curl -X PUT http://baas.globalairportconcierge.com/v1/bookings/{id} \
 ```
 
 ```http
-PUT http://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
+PUT https://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
 Host: baas.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -2144,7 +2247,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2166,7 +2269,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2189,7 +2292,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings/{id}',
+fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}',
 {
   method: 'PUT',
   body: inputBody,
@@ -2216,7 +2319,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'http://baas.globalairportconcierge.com/v1/bookings/{id}',
+result = RestClient.put 'https://baas.globalairportconcierge.com/v1/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -2235,7 +2338,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('http://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
+r = requests.put('https://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -2261,7 +2364,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','http://baas.globalairportconcierge.com/v1/bookings/{id}', array(
+    $response = $client->request('PUT','https://baas.globalairportconcierge.com/v1/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2278,7 +2381,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings/{id}");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -2314,7 +2417,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "http://baas.globalairportconcierge.com/v1/bookings/{id}", data)
+    req, err := http.NewRequest("PUT", "https://baas.globalairportconcierge.com/v1/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2469,7 +2572,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2491,7 +2594,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2517,141 +2620,141 @@ Update a quotation
 |body|body|object|false|update booking request body|
 |» *anonymous*|body|object|false|none|
 |»» comments|body|string|false|Special comments of the booking|
-|»» currency|body|string|true|currency of the booking|
-|»» promo_code|body|string|false|promocode for the booking|
+|»» currency|body|string|true|Currency of the booking|
+|»» promo_code|body|string|false|Promocode for the booking|
 |» *anonymous*|body|object|false|none|
-|»» journeys|body|[object]|true|list of journeys in the booking|
-|»»» flight|body|string|true|a flight number|
-|»»» pax|body|object|true|passenger object|
-|»»»» meta|body|object|true|none|
-|»»»»» adult|body|integer|true|none|
-|»»»»» child|body|integer|true|none|
-|»»»»» infant|body|integer|true|none|
-|»»»»» bags|body|object|true|none|
-|»»»»»» small|body|integer|true|none|
-|»»»»»» medium|body|integer|true|none|
-|»»»»»» large|body|integer|true|none|
-|»»»» passengers|body|object|true|none|
-|»»»»» adult|body|[object]|false|none|
+|»» journeys|body|[object]|true|List of journeys in the booking|
+|»»» flight|body|string|true|A flight number|
+|»»» pax|body|object|true|Passenger object|
+|»»»» meta|body|object|true|Pax meta data|
+|»»»»» adult|body|integer|true|Number of adults travelling|
+|»»»»» child|body|integer|true|Number of children travelling|
+|»»»»» infant|body|integer|true|Number of infants travelling|
+|»»»»» bags|body|object|true|Number of bags carrying|
+|»»»»»» small|body|integer|true|Number of small bags|
+|»»»»»» medium|body|integer|true|Number of medium bags|
+|»»»»»» large|body|integer|true|Number of large bags|
+|»»»» passengers|body|object|true|Passenger details|
+|»»»»» adult|body|[object]|false|Adult passengers' details|
 |»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forename|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Email type|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» child|body|[object]|false|none|
+|»»»»» child|body|[object]|false|Child passengers' details|
 |»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forename|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Email type|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»»»» infant|body|[object]|false|none|
+|»»»»» infant|body|[object]|false|Infant passengers' details|
 |»»»»»» passenger.v1|body|object|false|passenger model|
-|»»»»»»» lead|body|boolean|true|is lead passenger|
-|»»»»»»» pnr|body|string|true|passenger PNR|
-|»»»»»»» class|body|string|true|passenger class|
+|»»»»»»» lead|body|boolean|true|Is lead passenger|
+|»»»»»»» pnr|body|string|true|Passenger PNR|
+|»»»»»»» class|body|string|true|Passenger class|
 |»»»»»»» details|body|object|false|Passenger model|
-|»»»»»»»» type|body|string|true|passenger type|
-|»»»»»»»» name|body|object|true|Details of the passenger|
-|»»»»»»»»» title|body|string|true|none|
-|»»»»»»»»» forename|body|string|true|none|
-|»»»»»»»»» surname|body|string|true|none|
+|»»»»»»»» type|body|string|true|Passenger type|
+|»»»»»»»» name|body|object|true|Name of the passenger|
+|»»»»»»»»» title|body|string|true|Title|
+|»»»»»»»»» forename|body|string|true|Forename|
+|»»»»»»»»» surname|body|string|true|Surname|
 |»»»»»»»» contacts|body|object|true|Contact model|
 |»»»»»»»»» address|body|object|false|Addres information|
-|»»»»»»»»»» streets|body|[string]|false|none|
-|»»»»»»»»»» city|body|string|false|none|
-|»»»»»»»»»» state|body|string|false|none|
-|»»»»»»»»»» postal_code|body|string|false|none|
-|»»»»»»»»»» country|body|string|false|none|
+|»»»»»»»»»» streets|body|[string]|false|Address Streets|
+|»»»»»»»»»» city|body|string|false|City|
+|»»»»»»»»»» state|body|string|false|State|
+|»»»»»»»»»» postal_code|body|string|false|Postal/Zip Code|
+|»»»»»»»»»» country|body|string|false|Country|
 |»»»»»»»»» emails|body|[object]|false|Email information|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» email|body|string(email)|false|none|
+|»»»»»»»»»» type|body|string|false|Email type|
+|»»»»»»»»»» email|body|string(email)|false|Email|
 |»»»»»»»»» phones|body|[object]|false|Phone numbers|
-|»»»»»»»»»» type|body|string|false|none|
-|»»»»»»»»»» name|body|string|false|none|
-|»»»»»»»»»» phone|body|string|false|none|
+|»»»»»»»»»» type|body|string|false|Phone type|
+|»»»»»»»»»» name|body|string|false|Contact name of the phone|
+|»»»»»»»»»» phone|body|string|false|Phone number|
 |»»»»»»»» date_of_birth|body|string(date)|false|Date of birth of the passenger|
 |»»»»»»»» passport_no|body|string|false|Passport number of the passenger|
 |»»»»»»»» comments|body|string|false|Special comments of the passenger|
 |»»»»»»»» signage|body|string|false|Signage of the passenger|
-|»»» stops|body|object|true|stops object|
-|»»»» departure|body|object|true|none|
-|»»»»» connection|body|boolean|true|none|
-|»»»»» meeting_date|body|string(date-time)|true|none|
-|»»»»» departure_date|body|string(date-time)|true|flight departure date|
-|»»»»» terminal_id|body|string(uuid)|true|none|
-|»»»»» contact_point|body|object|true|none|
-|»»»»»» name|body|string|true|none|
-|»»»»»» contact|body|string|true|none|
-|»»»»» special_notes|body|string|true|none|
-|»»»»» services|body|[allOf]|true|none|
+|»»» stops|body|object|true|Flight stops object|
+|»»»» departure|body|object|true|Departing location information|
+|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with previous flight arrival location)|
+|»»»»» meeting_date|body|string(date-time)|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
+|»»»»» departure_date|body|string(date-time)|true|Flight departure date|
+|»»»»» terminal_id|body|string(uuid)|true|Airport terminal id|
+|»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
+|»»»»»» name|body|string|true|Name of the contact person|
+|»»»»»» contact|body|string|true|Contact number of the contact point|
+|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
+|»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|none|
-|»»»»»» *anonymous*|body|object|false|service field request model|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|none|
-|»»»»»»»» value|body|string|true|none|
-|»»»» arrival|body|object|true|none|
-|»»»»» connection|body|boolean|true|none|
-|»»»»» meeting_date|body|string(date-time)|true|none|
-|»»»»» arrival_date|body|string(date-time)|true|flight arrival date|
-|»»»»» terminal_id|body|string(uuid)|true|none|
-|»»»»» contact_point|body|object|true|none|
-|»»»»»» name|body|string|true|none|
-|»»»»»» contact|body|string|true|none|
-|»»»»» special_notes|body|string|true|none|
-|»»»»» services|body|[allOf]|true|none|
+|»»»»»»»» name|body|string|true|Service name|
+|»»»»»»»» value|body|string|true|Service value|
+|»»»» arrival|body|object|true|Arriving location information|
+|»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departuer location)|
+|»»»»» meeting_date|body|string(date-time)|true|Meeting date. (Should be same as the flight's arrival time)|
+|»»»»» arrival_date|body|string(date-time)|true|Flight arrival date|
+|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
+|»»»»»» name|body|string|true|Name of the contact person|
+|»»»»»» contact|body|string|true|Contact number of the contact point|
+|»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
+|»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» id|body|string(uuid)|true|none|
-|»»»»»» *anonymous*|body|object|false|service field request model|
+|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
-|»»»»»»»» name|body|string|true|none|
-|»»»»»»»» value|body|string|true|none|
+|»»»»»»»» name|body|string|true|Service name|
+|»»»»»»»» value|body|string|true|Service value|
 |id|path|string|true|a booking id|
 
 #### Enumerated Values
@@ -2918,11 +3021,36 @@ Update a quotation
 }
 ```
 
+> Unprocessable Entity (WebDAV)
+
+```json
+{
+  "error": {
+    "code": 422,
+    "message": "Unprocessable Entity (WebDAV)",
+    "moreInfo": "One or more fields undefined",
+    "errors": [
+      {
+        "code": "4001",
+        "message": "Service Field Undefined",
+        "description": "Number of Pax Required"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
+|422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
 
 <h3 id="put-bookings-id-responseschema">Response Schema</h3>
 
@@ -2995,7 +3123,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout \
+curl -X POST https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3005,7 +3133,7 @@ curl -X POST http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/chec
 ```
 
 ```http
-POST http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout HTTP/1.1
+POST https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout HTTP/1.1
 Host: baas.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -3024,7 +3152,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
+fetch('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
 {
   method: 'POST',
 
@@ -3050,7 +3178,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
+result = RestClient.post 'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
   params: {
   }, headers: headers
 
@@ -3068,7 +3196,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', headers = headers)
+r = requests.post('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', headers = headers)
 
 print(r.json())
 
@@ -3093,7 +3221,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', array(
+    $response = $client->request('POST','https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3110,7 +3238,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3145,7 +3273,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout", data)
+    req, err := http.NewRequest("POST", "https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3320,7 +3448,7 @@ Save a quotation as a booking
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "USD"
+              "currency": "string"
             }
           },
           "arrival": {
@@ -3359,7 +3487,7 @@ Save a quotation as a booking
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "USD"
+              "currency": "string"
             }
           }
         }
@@ -3381,19 +3509,19 @@ Save a quotation as a booking
 }
 ```
 
-> Unprocessable Entity (WebDAV)
+> Not Found
 
 ```json
 {
   "error": {
-    "code": 0,
-    "message": "string",
-    "moreInfo": "string",
+    "code": 404,
+    "message": "Not Found",
+    "moreInfo": "Data requested not found",
     "errors": [
       {
-        "code": "string",
-        "message": "string",
-        "description": "string"
+        "code": "4002",
+        "message": "Data Not Found",
+        "description": "Booking not found"
       }
     ]
   },
@@ -3410,7 +3538,7 @@ Save a quotation as a booking
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
 
 <h3 id="post-bookings-bookingid-checkout-responseschema">Response Schema</h3>
 
@@ -3483,7 +3611,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate \
+curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3493,7 +3621,7 @@ curl -X PUT http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recal
 ```
 
 ```http
-PUT http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate HTTP/1.1
+PUT https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate HTTP/1.1
 Host: baas.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -3512,7 +3640,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
+fetch('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
 {
   method: 'PUT',
 
@@ -3538,7 +3666,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
+result = RestClient.put 'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
   params: {
   }, headers: headers
 
@@ -3556,7 +3684,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', headers = headers)
+r = requests.put('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', headers = headers)
 
 print(r.json())
 
@@ -3581,7 +3709,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', array(
+    $response = $client->request('PUT','https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3598,7 +3726,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -3633,7 +3761,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate", data)
+    req, err := http.NewRequest("PUT", "https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3869,11 +3997,36 @@ Recalculate a quotation
 }
 ```
 
+> Not Found
+
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Not Found",
+    "moreInfo": "Data requested not found",
+    "errors": [
+      {
+        "code": "4002",
+        "message": "Data Not Found",
+        "description": "Booking not found"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="put-bookings-bookingid-recalculate-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
 
 <h3 id="put-bookings-bookingid-recalculate-responseschema">Response Schema</h3>
 
@@ -3946,7 +4099,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X DELETE http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel \
+curl -X DELETE https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3956,7 +4109,7 @@ curl -X DELETE http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel \
 ```
 
 ```http
-DELETE http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel HTTP/1.1
+DELETE https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel HTTP/1.1
 Host: baas.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -3975,7 +4128,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
+fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
 {
   method: 'DELETE',
 
@@ -4001,7 +4154,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.delete 'http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
+result = RestClient.delete 'https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
   params: {
   }, headers: headers
 
@@ -4019,7 +4172,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.delete('http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', headers = headers)
+r = requests.delete('https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', headers = headers)
 
 print(r.json())
 
@@ -4044,7 +4197,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('DELETE','http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', array(
+    $response = $client->request('DELETE','https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4061,7 +4214,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
@@ -4096,7 +4249,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel", data)
+    req, err := http.NewRequest("DELETE", "https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4129,8 +4282,32 @@ Cancel a booking
 {
   "status": {
     "success": true,
-    "status": 200,
-    "message": "Data retreived successfully"
+    "status": 204,
+    "message": "Data removed successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Not Found
+
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Not Found",
+    "moreInfo": "Data requested not found",
+    "errors": [
+      {
+        "code": "4002",
+        "message": "Data Not Found",
+        "description": "Booking not found"
+      }
+    ]
   },
   "trace": {
     "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
@@ -4145,6 +4322,7 @@ Cancel a booking
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
 
 <h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
 
@@ -4171,7 +4349,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET http://baas.globalairportconcierge.com/v1/services \
+curl -X GET https://baas.globalairportconcierge.com/v1/services \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -4182,7 +4360,7 @@ curl -X GET http://baas.globalairportconcierge.com/v1/services \
 ```
 
 ```http
-GET http://baas.globalairportconcierge.com/v1/services HTTP/1.1
+GET https://baas.globalairportconcierge.com/v1/services HTTP/1.1
 Host: baas.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -4219,7 +4397,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://baas.globalairportconcierge.com/v1/services',
+fetch('https://baas.globalairportconcierge.com/v1/services',
 {
   method: 'GET',
   body: inputBody,
@@ -4246,7 +4424,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://baas.globalairportconcierge.com/v1/services',
+result = RestClient.get 'https://baas.globalairportconcierge.com/v1/services',
   params: {
   }, headers: headers
 
@@ -4265,7 +4443,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://baas.globalairportconcierge.com/v1/services', headers = headers)
+r = requests.get('https://baas.globalairportconcierge.com/v1/services', headers = headers)
 
 print(r.json())
 
@@ -4291,7 +4469,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://baas.globalairportconcierge.com/v1/services', array(
+    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/services', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4308,7 +4486,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://baas.globalairportconcierge.com/v1/services");
+URL obj = new URL("https://baas.globalairportconcierge.com/v1/services");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -4344,7 +4522,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://baas.globalairportconcierge.com/v1/services", data)
+    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/services", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4465,11 +4643,29 @@ GET services at departure and arival for a flight
 }
 ```
 
+> No Content
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 204,
+    "message": "Data retreived successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="get-services-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
 
 <h3 id="get-services-responseschema">Response Schema</h3>
 
@@ -4484,6 +4680,14 @@ GET services at departure and arival for a flight
 |booking_window|12|
 |booking_window|24|
 |booking_window|48|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
