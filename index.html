@@ -379,7 +379,7 @@
 <p>Base URLs:</p>
 
 <ul>
-<li><p><a href="http://baas.globalairportconcierge.com/v1">http://baas.globalairportconcierge.com/v1</a></p></li>
+<li><p><a href="https://baas.globalairportconcierge.com/v1/">https://baas.globalairportconcierge.com/v1/</a></p></li>
 <li><p><a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a></p></li>
 </ul>
 
@@ -403,14 +403,14 @@
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bookings <span class="se">\</span>
+curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/bookings <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
@@ -426,7 +426,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -449,7 +449,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -464,7 +464,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -486,7 +486,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -500,7 +500,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -532,7 +532,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -826,7 +826,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"location_total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="nl">"arrival"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -862,7 +862,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"location_total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -884,6 +884,37 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>No Content</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Data Found"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>204 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;status&gt;</span>
+  <span class="nt">&lt;success&gt;</span>true<span class="nt">&lt;/success&gt;</span>
+  <span class="nt">&lt;status&gt;</span>200<span class="nt">&lt;/status&gt;</span>
+  <span class="nt">&lt;message&gt;</span>Data retreived successfully<span class="nt">&lt;/message&gt;</span>
+<span class="nt">&lt;/status&gt;</span>
+<span class="nt">&lt;trace&gt;</span>
+  <span class="nt">&lt;X-GAC-Trace-Id&gt;</span>a949eea7-56d5-4864-a5e6-0f15b6897960<span class="nt">&lt;/X-GAC-Trace-Id&gt;</span>
+  <span class="nt">&lt;X-Trace-Id&gt;</span>56d9e9d0-08d6-481e-94e7-e2667423cf37<span class="nt">&lt;/X-Trace-Id&gt;</span>
+  <span class="nt">&lt;Idempotency-Key&gt;</span>687d997b-391e-4906-94c5-a24c2fc12ba0<span class="nt">&lt;/Idempotency-Key&gt;</span>
+<span class="nt">&lt;/trace&gt;</span>
+</code></pre></div>
 <h3 id="get-bookings-responses">Responses</h3>
 
 <table><thead>
@@ -898,6 +929,12 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>OK</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
+<td>No Content</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -1116,6 +1153,69 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 </tr>
 </tbody></table>
 
+<p>Status Code <strong>204</strong></p>
+
+<p><em>success.v1.json</em></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» status</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>status object</td>
+</tr>
+<tr>
+<td>»» success</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>The response was a success or not</td>
+</tr>
+<tr>
+<td>»» status</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+<td>Response status code</td>
+</tr>
+<tr>
+<td>»» message</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Response message</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-3'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>200</td>
+</tr>
+<tr>
+<td>status</td>
+<td>201</td>
+</tr>
+<tr>
+<td>status</td>
+<td>204</td>
+</tr>
+</tbody></table>
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 Authorization
@@ -1127,7 +1227,7 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/bookings <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/bookings <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
@@ -1135,7 +1235,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1279,7 +1379,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1301,7 +1401,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1324,7 +1424,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -1348,7 +1448,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1364,7 +1464,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -1387,7 +1487,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1401,7 +1501,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1434,7 +1534,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -1588,7 +1688,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
           </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Need translator"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pax_count"</span><span class="p">,</span><span class="w">
@@ -1610,7 +1710,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
           </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Need translator"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pax_count"</span><span class="p">,</span><span class="w">
@@ -1732,28 +1832,28 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>Number of Adult passengers</td>
+<td>Number of adults travelling</td>
 </tr>
 <tr>
 <td>»»»»» child</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>Number of Child passengers</td>
+<td>Number of children travelling</td>
 </tr>
 <tr>
 <td>»»»»» infant</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>Number of Infant passengers</td>
+<td>Number of infants travelling</td>
 </tr>
 <tr>
 <td>»»»»» bags</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Number of bags</td>
+<td>Number of bags carrying</td>
 </tr>
 <tr>
 <td>»»»»»» small</td>
@@ -1774,7 +1874,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>mNumber of large bags</td>
+<td>Number of large bags</td>
 </tr>
 <tr>
 <td>»»»» passengers</td>
@@ -1788,14 +1888,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>Adult passengers&#39; information</td>
+<td>Adult passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
 <td>body</td>
 <td>object</td>
 <td>false</td>
-<td>Passenger model</td>
+<td>passenger model</td>
 </tr>
 <tr>
 <td>»»»»»»» lead</td>
@@ -1830,14 +1930,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
@@ -1851,7 +1951,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Forname</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
@@ -1879,7 +1979,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>Address streets</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
@@ -1900,7 +2000,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Postal/zip Code</td>
+<td>Postal/Zip Code</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» country</td>
@@ -1942,14 +2042,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Type of phone</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Contact nme of the phone</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
@@ -1991,7 +2091,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>Child passengers&#39; information</td>
+<td>Child passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
@@ -2005,21 +2105,21 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>is lead passenger</td>
+<td>Is lead passenger</td>
 </tr>
 <tr>
 <td>»»»»»»» pnr</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger PNR</td>
+<td>Passenger PNR</td>
 </tr>
 <tr>
 <td>»»»»»»» class</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger class</td>
+<td>Passenger class</td>
 </tr>
 <tr>
 <td>»»»»»»» details</td>
@@ -2033,28 +2133,28 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Tilte</td>
+<td>Title</td>
 </tr>
 <tr>
 <td>»»»»»»»»» forename</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Forname</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
@@ -2082,7 +2182,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>Address streets</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
@@ -2124,7 +2224,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Type of email</td>
+<td>Email type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» email</td>
@@ -2145,14 +2245,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Type of phone</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Contact person of the phone</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
@@ -2194,7 +2294,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>Infant passengers&#39; information</td>
+<td>Infant passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
@@ -2208,21 +2308,21 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>is lead passenger</td>
+<td>Is lead passenger</td>
 </tr>
 <tr>
 <td>»»»»»»» pnr</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger PNR</td>
+<td>Passenger PNR</td>
 </tr>
 <tr>
 <td>»»»»»»» class</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger class</td>
+<td>Passenger class</td>
 </tr>
 <tr>
 <td>»»»»»»» details</td>
@@ -2236,14 +2336,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
@@ -2257,7 +2357,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Forname</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
@@ -2285,7 +2385,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>Address streets</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
@@ -2327,7 +2427,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Type of email</td>
+<td>Email type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» email</td>
@@ -2348,14 +2448,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Type of phone</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>Contact person of the phone</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
@@ -2397,14 +2497,14 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>stops object</td>
+<td>Flight stops object</td>
 </tr>
 <tr>
 <td>»»»» departure</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Departure location informaion</td>
+<td>Departing location information</td>
 </tr>
 <tr>
 <td>»»»»» connection</td>
@@ -2432,7 +2532,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
-<td>Terminal id</td>
+<td>Airport terminal id</td>
 </tr>
 <tr>
 <td>»»»»» contact_point</td>
@@ -2460,7 +2560,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)</td>
+<td>Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)</td>
 </tr>
 <tr>
 <td>»»»»» services</td>
@@ -2477,7 +2577,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>none</td>
 </tr>
 <tr>
-<td>»»»»»»» id</td>
+<td>»»»»»»» service_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
@@ -2488,7 +2588,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>object</td>
 <td>false</td>
-<td>service field request model</td>
+<td>Service field request model</td>
 </tr>
 <tr>
 <td>»»»»»»» fields</td>
@@ -2502,28 +2602,28 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Field name</td>
+<td>Service name</td>
 </tr>
 <tr>
 <td>»»»»»»»» value</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Field value</td>
+<td>Service value</td>
 </tr>
 <tr>
 <td>»»»» arrival</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Arrival location informaion</td>
+<td>Arriving location information</td>
 </tr>
 <tr>
 <td>»»»»» connection</td>
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>If it is a connection location (should combine and match with next flight departure location)</td>
+<td>If it is a connection location (should combine and match with next flight departuer location)</td>
 </tr>
 <tr>
 <td>»»»»» meeting_date</td>
@@ -2579,7 +2679,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>[allOf]</td>
 <td>true</td>
-<td>Services to be quoted at arrival location</td>
+<td>Services to be quoted at arriving location</td>
 </tr>
 <tr>
 <td>»»»»»» <em>anonymous</em></td>
@@ -2589,7 +2689,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>none</td>
 </tr>
 <tr>
-<td>»»»»»»» id</td>
+<td>»»»»»»» service_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
@@ -2600,7 +2700,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>object</td>
 <td>false</td>
-<td>service field request model</td>
+<td>Service field request model</td>
 </tr>
 <tr>
 <td>»»»»»»» fields</td>
@@ -2614,17 +2714,17 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Field name</td>
+<td>Service name</td>
 </tr>
 <tr>
 <td>»»»»»»»» value</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>Field value</td>
+<td>Service value</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-3'>Enumerated Values</h4>
+<h4 id='enumerated-values-4'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3035,6 +3135,29 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Unprocessable Entity (WebDAV)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unprocessable Entity (WebDAV)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One or more fields undefined"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service Field Undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of Pax Required"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-bookings-responses">Responses</h3>
 
 <table><thead>
@@ -3051,10 +3174,16 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>Created</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>Unprocessable Entity (WebDAV)</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="post-bookings-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-4'>Enumerated Values</h4>
+<h4 id='enumerated-values-5'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -3278,14 +3407,14 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
+curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
@@ -3301,7 +3430,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings/{id}</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings/{id}</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -3324,7 +3453,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3339,7 +3468,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -3361,7 +3490,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -3375,7 +3504,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -3407,7 +3536,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -3673,6 +3802,29 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Not Found</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data requested not found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Not Found"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Booking not found"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -3689,10 +3841,16 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/bo
 <td>OK</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Not Found</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="get-bookings-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-5'>Enumerated Values</h4>
+<h4 id='enumerated-values-6'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -3916,7 +4074,7 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
+curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
@@ -3924,7 +4082,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -4068,7 +4226,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -4090,7 +4248,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
           "special_notes": "Need translator",
           "services": [
             {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
               "fields": [
                 {
                   "name": "pax_count",
@@ -4113,7 +4271,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings/{id}</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings/{id}</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -4137,7 +4295,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4153,7 +4311,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -4176,7 +4334,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'PUT'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'PUT'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -4190,7 +4348,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -4223,7 +4381,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -4377,7 +4535,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
           </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Need translator"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pax_count"</span><span class="p">,</span><span class="w">
@@ -4399,7 +4557,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
           </span><span class="nl">"special_notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Need translator"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pax_count"</span><span class="p">,</span><span class="w">
@@ -4472,14 +4630,14 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>currency of the booking</td>
+<td>Currency of the booking</td>
 </tr>
 <tr>
 <td>»» promo_code</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>promocode for the booking</td>
+<td>Promocode for the booking</td>
 </tr>
 <tr>
 <td>» <em>anonymous</em></td>
@@ -4493,91 +4651,91 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[object]</td>
 <td>true</td>
-<td>list of journeys in the booking</td>
+<td>List of journeys in the booking</td>
 </tr>
 <tr>
 <td>»»» flight</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>a flight number</td>
+<td>A flight number</td>
 </tr>
 <tr>
 <td>»»» pax</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>passenger object</td>
+<td>Passenger object</td>
 </tr>
 <tr>
 <td>»»»» meta</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Pax meta data</td>
 </tr>
 <tr>
 <td>»»»»» adult</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of adults travelling</td>
 </tr>
 <tr>
 <td>»»»»» child</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of children travelling</td>
 </tr>
 <tr>
 <td>»»»»» infant</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of infants travelling</td>
 </tr>
 <tr>
 <td>»»»»» bags</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Number of bags carrying</td>
 </tr>
 <tr>
 <td>»»»»»» small</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of small bags</td>
 </tr>
 <tr>
 <td>»»»»»» medium</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of medium bags</td>
 </tr>
 <tr>
 <td>»»»»»» large</td>
 <td>body</td>
 <td>integer</td>
 <td>true</td>
-<td>none</td>
+<td>Number of large bags</td>
 </tr>
 <tr>
 <td>»»»» passengers</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Passenger details</td>
 </tr>
 <tr>
 <td>»»»»» adult</td>
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>none</td>
+<td>Adult passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
@@ -4591,21 +4749,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>is lead passenger</td>
+<td>Is lead passenger</td>
 </tr>
 <tr>
 <td>»»»»»»» pnr</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger PNR</td>
+<td>Passenger PNR</td>
 </tr>
 <tr>
 <td>»»»»»»» class</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger class</td>
+<td>Passenger class</td>
 </tr>
 <tr>
 <td>»»»»»»» details</td>
@@ -4619,35 +4777,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Title</td>
 </tr>
 <tr>
 <td>»»»»»»»»» forename</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Surname</td>
 </tr>
 <tr>
 <td>»»»»»»»» contacts</td>
@@ -4668,35 +4826,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>none</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» postal_code</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Postal/Zip Code</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>»»»»»»»»» emails</td>
@@ -4710,14 +4868,14 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Email type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» email</td>
 <td>body</td>
 <td>string(email)</td>
 <td>false</td>
-<td>none</td>
+<td>Email</td>
 </tr>
 <tr>
 <td>»»»»»»»»» phones</td>
@@ -4731,21 +4889,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone number</td>
 </tr>
 <tr>
 <td>»»»»»»»» date_of_birth</td>
@@ -4780,7 +4938,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>none</td>
+<td>Child passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
@@ -4794,21 +4952,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>is lead passenger</td>
+<td>Is lead passenger</td>
 </tr>
 <tr>
 <td>»»»»»»» pnr</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger PNR</td>
+<td>Passenger PNR</td>
 </tr>
 <tr>
 <td>»»»»»»» class</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger class</td>
+<td>Passenger class</td>
 </tr>
 <tr>
 <td>»»»»»»» details</td>
@@ -4822,35 +4980,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Title</td>
 </tr>
 <tr>
 <td>»»»»»»»»» forename</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Surname</td>
 </tr>
 <tr>
 <td>»»»»»»»» contacts</td>
@@ -4871,35 +5029,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>none</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» postal_code</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Postal/Zip Code</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>»»»»»»»»» emails</td>
@@ -4913,14 +5071,14 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Email type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» email</td>
 <td>body</td>
 <td>string(email)</td>
 <td>false</td>
-<td>none</td>
+<td>Email</td>
 </tr>
 <tr>
 <td>»»»»»»»»» phones</td>
@@ -4934,21 +5092,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone number</td>
 </tr>
 <tr>
 <td>»»»»»»»» date_of_birth</td>
@@ -4983,7 +5141,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[object]</td>
 <td>false</td>
-<td>none</td>
+<td>Infant passengers&#39; details</td>
 </tr>
 <tr>
 <td>»»»»»» passenger.v1</td>
@@ -4997,21 +5155,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>is lead passenger</td>
+<td>Is lead passenger</td>
 </tr>
 <tr>
 <td>»»»»»»» pnr</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger PNR</td>
+<td>Passenger PNR</td>
 </tr>
 <tr>
 <td>»»»»»»» class</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger class</td>
+<td>Passenger class</td>
 </tr>
 <tr>
 <td>»»»»»»» details</td>
@@ -5025,35 +5183,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>passenger type</td>
+<td>Passenger type</td>
 </tr>
 <tr>
 <td>»»»»»»»» name</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>Details of the passenger</td>
+<td>Name of the passenger</td>
 </tr>
 <tr>
 <td>»»»»»»»»» title</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Title</td>
 </tr>
 <tr>
 <td>»»»»»»»»» forename</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Forename</td>
 </tr>
 <tr>
 <td>»»»»»»»»» surname</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Surname</td>
 </tr>
 <tr>
 <td>»»»»»»»» contacts</td>
@@ -5074,35 +5232,35 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>[string]</td>
 <td>false</td>
-<td>none</td>
+<td>Address Streets</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» city</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>City</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» state</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>State</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» postal_code</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Postal/Zip Code</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» country</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Country</td>
 </tr>
 <tr>
 <td>»»»»»»»»» emails</td>
@@ -5116,14 +5274,14 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Email type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» email</td>
 <td>body</td>
 <td>string(email)</td>
 <td>false</td>
-<td>none</td>
+<td>Email</td>
 </tr>
 <tr>
 <td>»»»»»»»»» phones</td>
@@ -5137,21 +5295,21 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone type</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Contact name of the phone</td>
 </tr>
 <tr>
 <td>»»»»»»»»»» phone</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
+<td>Phone number</td>
 </tr>
 <tr>
 <td>»»»»»»»» date_of_birth</td>
@@ -5186,77 +5344,77 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>stops object</td>
+<td>Flight stops object</td>
 </tr>
 <tr>
 <td>»»»» departure</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Departing location information</td>
 </tr>
 <tr>
 <td>»»»»» connection</td>
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>none</td>
+<td>If it is a connection location (should combine and match with previous flight arrival location)</td>
 </tr>
 <tr>
 <td>»»»»» meeting_date</td>
 <td>body</td>
 <td>string(date-time)</td>
 <td>true</td>
-<td>none</td>
+<td>Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.</td>
 </tr>
 <tr>
 <td>»»»»» departure_date</td>
 <td>body</td>
 <td>string(date-time)</td>
 <td>true</td>
-<td>flight departure date</td>
+<td>Flight departure date</td>
 </tr>
 <tr>
 <td>»»»»» terminal_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
-<td>none</td>
+<td>Airport terminal id</td>
 </tr>
 <tr>
 <td>»»»»» contact_point</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Contact point at ground during the operation. Could be passenger&#39;s or driver/PA contact.</td>
 </tr>
 <tr>
 <td>»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Name of the contact person</td>
 </tr>
 <tr>
 <td>»»»»»» contact</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Contact number of the contact point</td>
 </tr>
 <tr>
 <td>»»»»» special_notes</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)</td>
 </tr>
 <tr>
 <td>»»»»» services</td>
 <td>body</td>
 <td>[allOf]</td>
 <td>true</td>
-<td>none</td>
+<td>Services to be quoted at departing location</td>
 </tr>
 <tr>
 <td>»»»»»» <em>anonymous</em></td>
@@ -5266,18 +5424,18 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>none</td>
 </tr>
 <tr>
-<td>»»»»»»» id</td>
+<td>»»»»»»» service_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
-<td>none</td>
+<td>Service id</td>
 </tr>
 <tr>
 <td>»»»»»» <em>anonymous</em></td>
 <td>body</td>
 <td>object</td>
 <td>false</td>
-<td>service field request model</td>
+<td>Service field request model</td>
 </tr>
 <tr>
 <td>»»»»»»» fields</td>
@@ -5291,84 +5449,84 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Service name</td>
 </tr>
 <tr>
 <td>»»»»»»»» value</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Service value</td>
 </tr>
 <tr>
 <td>»»»» arrival</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Arriving location information</td>
 </tr>
 <tr>
 <td>»»»»» connection</td>
 <td>body</td>
 <td>boolean</td>
 <td>true</td>
-<td>none</td>
+<td>If it is a connection location (should combine and match with next flight departuer location)</td>
 </tr>
 <tr>
 <td>»»»»» meeting_date</td>
 <td>body</td>
 <td>string(date-time)</td>
 <td>true</td>
-<td>none</td>
+<td>Meeting date. (Should be same as the flight&#39;s arrival time)</td>
 </tr>
 <tr>
 <td>»»»»» arrival_date</td>
 <td>body</td>
 <td>string(date-time)</td>
 <td>true</td>
-<td>flight arrival date</td>
+<td>Flight arrival date</td>
 </tr>
 <tr>
 <td>»»»»» terminal_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
-<td>none</td>
+<td>Terminal id</td>
 </tr>
 <tr>
 <td>»»»»» contact_point</td>
 <td>body</td>
 <td>object</td>
 <td>true</td>
-<td>none</td>
+<td>Contact point at ground during the operation. Could be passenger&#39;s or driver/PA contact.</td>
 </tr>
 <tr>
 <td>»»»»»» name</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Name of the contact person</td>
 </tr>
 <tr>
 <td>»»»»»» contact</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Contact number of the contact point</td>
 </tr>
 <tr>
 <td>»»»»» special_notes</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)</td>
 </tr>
 <tr>
 <td>»»»»» services</td>
 <td>body</td>
 <td>[allOf]</td>
 <td>true</td>
-<td>none</td>
+<td>Services to be quoted at arriving location</td>
 </tr>
 <tr>
 <td>»»»»»» <em>anonymous</em></td>
@@ -5378,18 +5536,18 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>none</td>
 </tr>
 <tr>
-<td>»»»»»»» id</td>
+<td>»»»»»»» service_id</td>
 <td>body</td>
 <td>string(uuid)</td>
 <td>true</td>
-<td>none</td>
+<td>Service id</td>
 </tr>
 <tr>
 <td>»»»»»» <em>anonymous</em></td>
 <td>body</td>
 <td>object</td>
 <td>false</td>
-<td>service field request model</td>
+<td>Service field request model</td>
 </tr>
 <tr>
 <td>»»»»»»» fields</td>
@@ -5403,14 +5561,14 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Service name</td>
 </tr>
 <tr>
 <td>»»»»»»»» value</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
-<td>none</td>
+<td>Service value</td>
 </tr>
 <tr>
 <td>id</td>
@@ -5420,7 +5578,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>a booking id</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-6'>Enumerated Values</h4>
+<h4 id='enumerated-values-7'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5831,6 +5989,29 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Unprocessable Entity (WebDAV)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unprocessable Entity (WebDAV)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One or more fields undefined"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service Field Undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of Pax Required"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -5847,10 +6028,16 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>Created</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>Unprocessable Entity (WebDAV)</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="put-bookings-id-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-7'>Enumerated Values</h4>
+<h4 id='enumerated-values-8'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -6074,14 +6261,14 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span>bookingId<span class="o">}</span>/checkout <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span>bookingId<span class="o">}</span>/checkout <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
@@ -6097,7 +6284,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
 
@@ -6120,7 +6307,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6135,7 +6322,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -6157,7 +6344,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -6171,7 +6358,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -6203,7 +6390,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -6409,7 +6596,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"location_total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"arrival"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -6448,7 +6635,7 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"location_total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -6470,18 +6657,18 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unprocessable Entity (WebDAV)</p>
+<p>Not Found</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data requested not found"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Not Found"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Booking not found"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -6509,15 +6696,15 @@ curl <span class="nt">-X</span> POST http://baas.globalairportconcierge.com/v1/b
 <td>Inline</td>
 </tr>
 <tr>
-<td>422</td>
-<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity (WebDAV)</td>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Not Found</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
 
 <h3 id="post-bookings-bookingid-checkout-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-8'>Enumerated Values</h4>
+<h4 id='enumerated-values-9'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -6741,14 +6928,14 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span>bookingId<span class="o">}</span>/recalculate <span class="se">\</span>
+curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span>bookingId<span class="o">}</span>/recalculate <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
@@ -6764,7 +6951,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">,</span>
 
@@ -6787,7 +6974,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6802,7 +6989,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -6824,7 +7011,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'PUT'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'PUT'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -6838,7 +7025,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -6870,7 +7057,7 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -7136,6 +7323,29 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Not Found</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data requested not found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Not Found"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Booking not found"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-bookings-bookingid-recalculate-responses">Responses</h3>
 
 <table><thead>
@@ -7152,10 +7362,16 @@ curl <span class="nt">-X</span> PUT http://baas.globalairportconcierge.com/v1/bo
 <td>Created</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Not Found</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="put-bookings-bookingid-recalculate-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-9'>Enumerated Values</h4>
+<h4 id='enumerated-values-10'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -7379,14 +7595,14 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/cancel <span class="se">\</span>
+curl <span class="nt">-X</span> DELETE https://baas.globalairportconcierge.com/v1/bookings/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/cancel <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">X-Trace-Id</span><span class="p">:</span> <span class="s">1061b7fe-e742-47e2-a41c-1f8cb3c58d9f</span>
@@ -7402,7 +7618,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">,</span>
 
@@ -7425,7 +7641,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7440,7 +7656,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -7462,7 +7678,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -7476,7 +7692,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"DELETE"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -7508,7 +7724,7 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/bookings/{id}/cancel"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -7572,8 +7788,31 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data removed successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Not Found</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data requested not found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Not Found"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Booking not found"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
@@ -7598,10 +7837,16 @@ curl <span class="nt">-X</span> DELETE http://baas.globalairportconcierge.com/v1
 <td>No Content</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Not Found</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-10'>Enumerated Values</h4>
+<h4 id='enumerated-values-11'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -7635,7 +7880,7 @@ Authorization
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/services <span class="se">\</span>
+curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/services <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f'</span> <span class="se">\</span>
@@ -7643,7 +7888,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
   <span class="nt">-H</span> <span class="s1">'Accept-Encoding: gzip'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apiKey: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://baas.globalairportconcierge.com/v1/services</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://baas.globalairportconcierge.com/v1/services</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">baas.globalairportconcierge.com</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
@@ -7677,7 +7922,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
   <span class="dl">'</span><span class="s1">apiKey</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://baas.globalairportconcierge.com/v1/services</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://baas.globalairportconcierge.com/v1/services</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -7701,7 +7946,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
   <span class="s1">'apiKey'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'http://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7717,7 +7962,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
   <span class="s">'apiKey'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -7740,7 +7985,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'http://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'https://baas.globalairportconcierge.com/v1/services'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -7754,7 +7999,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://baas.globalairportconcierge.com/v1/services"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"https://baas.globalairportconcierge.com/v1/services"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -7787,7 +8032,7 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
     <span class="p">}</span>
 
     <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"http://baas.globalairportconcierge.com/v1/services"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://baas.globalairportconcierge.com/v1/services"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
 
     <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
@@ -7997,6 +8242,22 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>No Content</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-services-responses">Responses</h3>
 
 <table><thead>
@@ -8013,10 +8274,16 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
 <td>OK</td>
 <td>Inline</td>
 </tr>
+<tr>
+<td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
+<td>No Content</td>
+<td>Inline</td>
+</tr>
 </tbody></table>
 
 <h3 id="get-services-responseschema">Response Schema</h3>
-<h4 id='enumerated-values-11'>Enumerated Values</h4>
+<h4 id='enumerated-values-12'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -8050,6 +8317,26 @@ curl <span class="nt">-X</span> GET http://baas.globalairportconcierge.com/v1/se
 <tr>
 <td>booking_window</td>
 <td>48</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-13'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>200</td>
+</tr>
+<tr>
+<td>status</td>
+<td>201</td>
+</tr>
+<tr>
+<td>status</td>
+<td>204</td>
 </tr>
 </tbody></table>
 
@@ -8331,7 +8618,7 @@ Authorization
 <td>Status of the passenger</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-12'>Enumerated Values</h4>
+<h4 id='enumerated-values-14'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
