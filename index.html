@@ -355,11 +355,6 @@
           </li>
           <li>
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#tocS_service" class="toc-h2 toc-link" data-title="service">service</a>
-                  </li>
-              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -915,6 +910,75 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/b
   <span class="nt">&lt;Idempotency-Key&gt;</span>687d997b-391e-4906-94c5-a24c2fc12ba0<span class="nt">&lt;/Idempotency-Key&gt;</span>
 <span class="nt">&lt;/trace&gt;</span>
 </code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-responses">Responses</h3>
 
 <table><thead>
@@ -935,6 +999,24 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/b
 <td>204</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
 <td>No Content</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -1150,49 +1232,6 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/b
 <tr>
 <td>currency</td>
 <td>EUR</td>
-</tr>
-</tbody></table>
-
-<p>Status Code <strong>204</strong></p>
-
-<p><em>success.v1.json</em></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>» status</td>
-<td>object</td>
-<td>true</td>
-<td>none</td>
-<td>status object</td>
-</tr>
-<tr>
-<td>»» success</td>
-<td>boolean</td>
-<td>true</td>
-<td>none</td>
-<td>The response was a success or not</td>
-</tr>
-<tr>
-<td>»» status</td>
-<td>number</td>
-<td>true</td>
-<td>none</td>
-<td>Response status code</td>
-</tr>
-<tr>
-<td>»» message</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>Response message</td>
 </tr>
 </tbody></table>
 <h4 id='enumerated-values-3'>Enumerated Values</h4>
@@ -3158,6 +3197,75 @@ curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-bookings-responses">Responses</h3>
 
 <table><thead>
@@ -3178,6 +3286,24 @@ curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
 <td>Unprocessable Entity (WebDAV)</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -3825,6 +3951,75 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/b
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="get-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -3845,6 +4040,24 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/b
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -6012,6 +6225,75 @@ curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/b
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 <table><thead>
@@ -6032,6 +6314,24 @@ curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/b
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
 <td>Unprocessable Entity (WebDAV)</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -6679,6 +6979,75 @@ curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="post-bookings-bookingid-checkout-responses">Responses</h3>
 
 <table><thead>
@@ -6699,6 +7068,24 @@ curl <span class="nt">-X</span> POST https://baas.globalairportconcierge.com/v1/
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -7324,18 +7711,87 @@ curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/b
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Not Found</p>
+<p>Unprocessable Entity (WebDAV)</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data requested not found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unprocessable Entity (WebDAV)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One or more fields undefined"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4002"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Not Found"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Booking not found"</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service Field Undefined"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number of Pax Required"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -7363,9 +7819,27 @@ curl <span class="nt">-X</span> PUT https://baas.globalairportconcierge.com/v1/b
 <td>Inline</td>
 </tr>
 <tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>Unprocessable Entity (WebDAV)</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -7789,7 +8263,7 @@ curl <span class="nt">-X</span> DELETE https://baas.globalairportconcierge.com/v
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data removed successfully"</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Data Found"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
@@ -7821,6 +8295,75 @@ curl <span class="nt">-X</span> DELETE https://baas.globalairportconcierge.com/v
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <h3 id="delete-bookings-bookingid-cancel-responses">Responses</h3>
 
 <table><thead>
@@ -7841,6 +8384,24 @@ curl <span class="nt">-X</span> DELETE https://baas.globalairportconcierge.com/v
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -8249,7 +8810,76 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/s
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data retreived successfully"</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Data Found"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Internal Server Error</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Bad Gateway</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Gateway"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"X-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56d9e9d0-08d6-481e-94e7-e2667423cf37"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Idempotency-Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"687d997b-391e-4906-94c5-a24c2fc12ba0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Gateway Timeout</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moreInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Error"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"trace"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"X-GAC-Trace-Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a949eea7-56d5-4864-a5e6-0f15b6897960"</span><span class="p">,</span><span class="w">
@@ -8278,6 +8908,24 @@ curl <span class="nt">-X</span> GET https://baas.globalairportconcierge.com/v1/s
 <td>204</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
 <td>No Content</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>502</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
+<td>Bad Gateway</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>Gateway Timeout</td>
 <td>Inline</td>
 </tr>
 </tbody></table>
@@ -8345,348 +8993,6 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 <h1 id='schemas'>Schemas</h1>
-<h2 id="tocS_service">service</h2>
-
-<p><a id="schemaservice"></a>
-<a id="schema_service"></a>
-<a id="tocSservice"></a>
-<a id="tocsservice"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"lead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"pnr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SJE34D"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"497f6eca-6276-4993-bfeb-53cbbbba6f08"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"streets"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-02-14"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"passport_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N32343423"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First time traveller."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"signage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sig_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signage_image.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passenger_image.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pas_stat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-<p>/services Response Body</p>
-<h3 id='properties'>Properties</h3>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>lead</td>
-<td>boolean</td>
-<td>true</td>
-<td>none</td>
-<td>is lead passenger</td>
-</tr>
-<tr>
-<td>pnr</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>passenger PNR</td>
-</tr>
-<tr>
-<td>class</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>passenger class</td>
-</tr>
-<tr>
-<td>details</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Passenger model</td>
-</tr>
-<tr>
-<td>» id</td>
-<td>string(uuid)</td>
-<td>true</td>
-<td>none</td>
-<td>Passenger object ID</td>
-</tr>
-<tr>
-<td>» type</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>passenger type</td>
-</tr>
-<tr>
-<td>» name</td>
-<td>object</td>
-<td>true</td>
-<td>none</td>
-<td>Personal information of the passenger</td>
-</tr>
-<tr>
-<td>»» title</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» forename</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» surname</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» contacts</td>
-<td>object</td>
-<td>true</td>
-<td>none</td>
-<td>Contact model</td>
-</tr>
-<tr>
-<td>»» address</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Addres information</td>
-</tr>
-<tr>
-<td>»»» streets</td>
-<td>[string]</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» city</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» state</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» postal_code</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» country</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» emails</td>
-<td>[object]</td>
-<td>false</td>
-<td>none</td>
-<td>Email information</td>
-</tr>
-<tr>
-<td>»»» type</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» email</td>
-<td>string(email)</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» phones</td>
-<td>[object]</td>
-<td>false</td>
-<td>none</td>
-<td>Phone numbers</td>
-</tr>
-<tr>
-<td>»»» type</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» name</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»» phone</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» date_of_birth</td>
-<td>string(date)</td>
-<td>false</td>
-<td>none</td>
-<td>Date of birth of the passenger</td>
-</tr>
-<tr>
-<td>» passport_no</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Passport number of the passenger</td>
-</tr>
-<tr>
-<td>» comments</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Special comments aboout the passenger</td>
-</tr>
-<tr>
-<td>» signage</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Signage of the passenger</td>
-</tr>
-<tr>
-<td>» sig_image</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Sge image</td>
-</tr>
-<tr>
-<td>» image</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Sge image</td>
-</tr>
-<tr>
-<td>» pas_stat</td>
-<td>boolean</td>
-<td>false</td>
-<td>none</td>
-<td>Status of the passenger</td>
-</tr>
-</tbody></table>
-<h4 id='enumerated-values-14'>Enumerated Values</h4>
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
-<td>Adult</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Child</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Infant</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Mr.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Mrs.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Ms.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Dr.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Mstr.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Miss</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Mx.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Prof.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Rev.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Sir</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Sister</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Team</td>
-</tr>
-</tbody></table>
-
       </div>
       <div class="dark-box">
           <div class="lang-selector">
