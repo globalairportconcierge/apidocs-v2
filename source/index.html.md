@@ -471,12 +471,87 @@ GET a list of bookings and quotations
 </trace>
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="get-bookings-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="get-bookings-responseschema">Response Schema</h3>
 
@@ -535,17 +610,6 @@ GET a list of bookings and quotations
 |currency|USD|
 |currency|GBP|
 |currency|EUR|
-
-Status Code **204**
-
-*success.v1.json*
-
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|» status|object|true|none|status object|
-|»» success|boolean|true|none|The response was a success or not|
-|»» status|number|true|none|Response status code|
-|»» message|string|true|none|Response message|
 
 #### Enumerated Values
 
@@ -1523,12 +1587,87 @@ Create a quotation
 }
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="post-bookings-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 |422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="post-bookings-responseschema">Response Schema</h3>
 
@@ -2011,12 +2150,87 @@ GET a booking or a quotation by id
 }
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="get-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="get-bookings-id-responseschema">Response Schema</h3>
 
@@ -3045,12 +3259,87 @@ Update a quotation
 }
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="put-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
 |422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="put-bookings-id-responseschema">Response Schema</h3>
 
@@ -3533,12 +3822,87 @@ Save a quotation as a booking
 }
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="post-bookings-bookingid-checkout-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="post-bookings-bookingid-checkout-responseschema">Response Schema</h3>
 
@@ -3997,19 +4361,91 @@ Recalculate a quotation
 }
 ```
 
-> Not Found
+> Unprocessable Entity (WebDAV)
 
 ```json
 {
   "error": {
-    "code": 404,
-    "message": "Not Found",
-    "moreInfo": "Data requested not found",
+    "code": 422,
+    "message": "Unprocessable Entity (WebDAV)",
+    "moreInfo": "One or more fields undefined",
     "errors": [
       {
-        "code": "4002",
-        "message": "Data Not Found",
-        "description": "Booking not found"
+        "code": "4001",
+        "message": "Service Field Undefined",
+        "description": "Number of Pax Required"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
       }
     ]
   },
@@ -4026,7 +4462,10 @@ Recalculate a quotation
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+|422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|Unprocessable Entity (WebDAV)|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="put-bookings-bookingid-recalculate-responseschema">Response Schema</h3>
 
@@ -4283,7 +4722,7 @@ Cancel a booking
   "status": {
     "success": true,
     "status": 204,
-    "message": "Data removed successfully"
+    "message": "No Data Found"
   },
   "trace": {
     "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
@@ -4317,12 +4756,87 @@ Cancel a booking
 }
 ```
 
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
 <h3 id="delete-bookings-bookingid-cancel-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
 
@@ -4650,7 +5164,79 @@ GET services at departure and arival for a flight
   "status": {
     "success": true,
     "status": 204,
-    "message": "Data retreived successfully"
+    "message": "No Data Found"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
   },
   "trace": {
     "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
@@ -4666,6 +5252,9 @@ GET services at departure and arival for a flight
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
 <h3 id="get-services-responseschema">Response Schema</h3>
 
@@ -4695,109 +5284,4 @@ Authorization
 </aside>
 
 # Schemas
-
-<h2 id="tocS_service">service</h2>
-
-<a id="schemaservice"></a>
-<a id="schema_service"></a>
-<a id="tocSservice"></a>
-<a id="tocsservice"></a>
-
-```json
-{
-  "lead": true,
-  "pnr": "SJE34D",
-  "class": "First",
-  "details": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "type": "Adult",
-    "name": {
-      "title": "Mr.",
-      "forename": "John",
-      "surname": "Doe"
-    },
-    "contacts": {
-      "address": {
-        "streets": null,
-        "city": null,
-        "state": null,
-        "postal_code": null,
-        "country": null
-      },
-      "emails": [
-        {}
-      ],
-      "phones": [
-        {}
-      ]
-    },
-    "date_of_birth": "1989-02-14",
-    "passport_no": "N32343423",
-    "comments": "First time traveller.",
-    "signage": "John Doe",
-    "sig_image": "signage_image.png",
-    "image": "passenger_image.png",
-    "pas_stat": true
-  }
-}
-
-```
-
-/services Response Body
-
-### Properties
-
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|lead|boolean|true|none|is lead passenger|
-|pnr|string|true|none|passenger PNR|
-|class|string|true|none|passenger class|
-|details|object|false|none|Passenger model|
-|» id|string(uuid)|true|none|Passenger object ID|
-|» type|string|true|none|passenger type|
-|» name|object|true|none|Personal information of the passenger|
-|»» title|string|true|none|none|
-|»» forename|string|true|none|none|
-|»» surname|string|true|none|none|
-|» contacts|object|true|none|Contact model|
-|»» address|object|false|none|Addres information|
-|»»» streets|[string]|false|none|none|
-|»»» city|string|false|none|none|
-|»»» state|string|false|none|none|
-|»»» postal_code|string|false|none|none|
-|»»» country|string|false|none|none|
-|»» emails|[object]|false|none|Email information|
-|»»» type|string|false|none|none|
-|»»» email|string(email)|false|none|none|
-|»» phones|[object]|false|none|Phone numbers|
-|»»» type|string|false|none|none|
-|»»» name|string|false|none|none|
-|»»» phone|string|false|none|none|
-|» date_of_birth|string(date)|false|none|Date of birth of the passenger|
-|» passport_no|string|false|none|Passport number of the passenger|
-|» comments|string|false|none|Special comments aboout the passenger|
-|» signage|string|false|none|Signage of the passenger|
-|» sig_image|string|false|none|Sge image|
-|» image|string|false|none|Sge image|
-|» pas_stat|boolean|false|none|Status of the passenger|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|type|Adult|
-|type|Child|
-|type|Infant|
-|title|Mr.|
-|title|Mrs.|
-|title|Ms.|
-|title|Dr.|
-|title|Mstr.|
-|title|Miss|
-|title|Mx.|
-|title|Prof.|
-|title|Rev.|
-|title|Sir|
-|title|Sister|
-|title|Team|
 
