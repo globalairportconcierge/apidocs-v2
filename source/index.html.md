@@ -27,9 +27,7 @@ Your passenger services APIs of choice
 
 Base URLs:
 
-* <a href="https://baas.globalairportconcierge.com/v1/">https://baas.globalairportconcierge.com/v1/</a>
-
-* <a href="http://127.0.0.1:4010">http://127.0.0.1:4010</a>
+* <a href="http://online.globalairportconcierge.com/">http://online.globalairportconcierge.com/</a>
 
 <a href="https://gac.com/terms-of-service.html">Terms of service</a>
 
@@ -50,7 +48,7 @@ License: <a href="https://gac.com/api-license.html">GAC</a>
 
 ```shell
 # You can also use wget
-curl -X GET https://baas.globalairportconcierge.com/v1/bookings \
+curl -X GET http://online.globalairportconcierge.com/bookings \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -60,8 +58,8 @@ curl -X GET https://baas.globalairportconcierge.com/v1/bookings \
 ```
 
 ```http
-GET https://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
-Host: baas.globalairportconcierge.com
+GET http://online.globalairportconcierge.com/bookings HTTP/1.1
+Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -79,7 +77,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings',
+fetch('http://online.globalairportconcierge.com/bookings',
 {
   method: 'GET',
 
@@ -105,7 +103,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://baas.globalairportconcierge.com/v1/bookings',
+result = RestClient.get 'http://online.globalairportconcierge.com/bookings',
   params: {
   }, headers: headers
 
@@ -123,7 +121,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://baas.globalairportconcierge.com/v1/bookings', headers = headers)
+r = requests.get('http://online.globalairportconcierge.com/bookings', headers = headers)
 
 print(r.json())
 
@@ -148,7 +146,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/bookings', array(
+    $response = $client->request('GET','http://online.globalairportconcierge.com/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -165,7 +163,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -200,7 +198,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/bookings", data)
+    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -632,7 +630,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST https://baas.globalairportconcierge.com/v1/bookings \
+curl -X POST http://online.globalairportconcierge.com/bookings \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -643,8 +641,8 @@ curl -X POST https://baas.globalairportconcierge.com/v1/bookings \
 ```
 
 ```http
-POST https://baas.globalairportconcierge.com/v1/bookings HTTP/1.1
-Host: baas.globalairportconcierge.com
+POST http://online.globalairportconcierge.com/bookings HTTP/1.1
+Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -835,7 +833,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings',
+fetch('http://online.globalairportconcierge.com/bookings',
 {
   method: 'POST',
   body: inputBody,
@@ -862,7 +860,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'https://baas.globalairportconcierge.com/v1/bookings',
+result = RestClient.post 'http://online.globalairportconcierge.com/bookings',
   params: {
   }, headers: headers
 
@@ -881,7 +879,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('https://baas.globalairportconcierge.com/v1/bookings', headers = headers)
+r = requests.post('http://online.globalairportconcierge.com/bookings', headers = headers)
 
 print(r.json())
 
@@ -907,7 +905,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://baas.globalairportconcierge.com/v1/bookings', array(
+    $response = $client->request('POST','http://online.globalairportconcierge.com/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -924,7 +922,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -960,7 +958,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "https://baas.globalairportconcierge.com/v1/bookings", data)
+    req, err := http.NewRequest("POST", "http://online.globalairportconcierge.com/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1740,7 +1738,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://baas.globalairportconcierge.com/v1/bookings/{id} \
+curl -X GET http://online.globalairportconcierge.com/bookings/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -1750,8 +1748,8 @@ curl -X GET https://baas.globalairportconcierge.com/v1/bookings/{id} \
 ```
 
 ```http
-GET https://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
-Host: baas.globalairportconcierge.com
+GET http://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -1769,7 +1767,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}',
+fetch('http://online.globalairportconcierge.com/bookings/{id}',
 {
   method: 'GET',
 
@@ -1795,7 +1793,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://baas.globalairportconcierge.com/v1/bookings/{id}',
+result = RestClient.get 'http://online.globalairportconcierge.com/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -1813,7 +1811,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
+r = requests.get('http://online.globalairportconcierge.com/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -1838,7 +1836,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/bookings/{id}', array(
+    $response = $client->request('GET','http://online.globalairportconcierge.com/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1855,7 +1853,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1890,7 +1888,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/bookings/{id}", data)
+    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2303,7 +2301,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{id} \
+curl -X PUT http://online.globalairportconcierge.com/bookings/{id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -2314,8 +2312,8 @@ curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{id} \
 ```
 
 ```http
-PUT https://baas.globalairportconcierge.com/v1/bookings/{id} HTTP/1.1
-Host: baas.globalairportconcierge.com
+PUT http://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -2506,7 +2504,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}',
+fetch('http://online.globalairportconcierge.com/bookings/{id}',
 {
   method: 'PUT',
   body: inputBody,
@@ -2533,7 +2531,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'https://baas.globalairportconcierge.com/v1/bookings/{id}',
+result = RestClient.put 'http://online.globalairportconcierge.com/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -2552,7 +2550,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('https://baas.globalairportconcierge.com/v1/bookings/{id}', headers = headers)
+r = requests.put('http://online.globalairportconcierge.com/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -2578,7 +2576,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','https://baas.globalairportconcierge.com/v1/bookings/{id}', array(
+    $response = $client->request('PUT','http://online.globalairportconcierge.com/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2595,7 +2593,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -2631,7 +2629,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://baas.globalairportconcierge.com/v1/bookings/{id}", data)
+    req, err := http.NewRequest("PUT", "http://online.globalairportconcierge.com/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3412,7 +3410,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout \
+curl -X POST http://online.globalairportconcierge.com/bookings/{bookingId}/checkout \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3422,8 +3420,8 @@ curl -X POST https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/che
 ```
 
 ```http
-POST https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout HTTP/1.1
-Host: baas.globalairportconcierge.com
+POST http://online.globalairportconcierge.com/bookings/{bookingId}/checkout HTTP/1.1
+Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -3441,7 +3439,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
+fetch('http://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
 {
   method: 'POST',
 
@@ -3467,7 +3465,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout',
+result = RestClient.post 'http://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
   params: {
   }, headers: headers
 
@@ -3485,7 +3483,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', headers = headers)
+r = requests.post('http://online.globalairportconcierge.com/bookings/{bookingId}/checkout', headers = headers)
 
 print(r.json())
 
@@ -3510,7 +3508,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout', array(
+    $response = $client->request('POST','http://online.globalairportconcierge.com/bookings/{bookingId}/checkout', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3527,7 +3525,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{bookingId}/checkout");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3562,7 +3560,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/checkout", data)
+    req, err := http.NewRequest("POST", "http://online.globalairportconcierge.com/bookings/{bookingId}/checkout", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3975,7 +3973,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate \
+curl -X PUT http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3985,8 +3983,8 @@ curl -X PUT https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/reca
 ```
 
 ```http
-PUT https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate HTTP/1.1
-Host: baas.globalairportconcierge.com
+PUT http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate HTTP/1.1
+Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -4004,7 +4002,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
+fetch('http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
 {
   method: 'PUT',
 
@@ -4030,7 +4028,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate',
+result = RestClient.put 'http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
   params: {
   }, headers: headers
 
@@ -4048,7 +4046,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', headers = headers)
+r = requests.put('http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', headers = headers)
 
 print(r.json())
 
@@ -4073,7 +4071,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate', array(
+    $response = $client->request('PUT','http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4090,7 +4088,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -4125,7 +4123,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://baas.globalairportconcierge.com/v1/bookings/{bookingId}/recalculate", data)
+    req, err := http.NewRequest("PUT", "http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4538,7 +4536,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X DELETE https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel \
+curl -X DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -4548,8 +4546,8 @@ curl -X DELETE https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel \
 ```
 
 ```http
-DELETE https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel HTTP/1.1
-Host: baas.globalairportconcierge.com
+DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel HTTP/1.1
+Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
 Content-Type: application/json
@@ -4567,7 +4565,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
+fetch('http://online.globalairportconcierge.com/bookings/{id}/cancel',
 {
   method: 'DELETE',
 
@@ -4593,7 +4591,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.delete 'https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel',
+result = RestClient.delete 'http://online.globalairportconcierge.com/bookings/{id}/cancel',
   params: {
   }, headers: headers
 
@@ -4611,7 +4609,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.delete('https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', headers = headers)
+r = requests.delete('http://online.globalairportconcierge.com/bookings/{id}/cancel', headers = headers)
 
 print(r.json())
 
@@ -4636,7 +4634,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('DELETE','https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel', array(
+    $response = $client->request('DELETE','http://online.globalairportconcierge.com/bookings/{id}/cancel', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4653,7 +4651,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel");
+URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}/cancel");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
@@ -4688,7 +4686,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "https://baas.globalairportconcierge.com/v1/bookings/{id}/cancel", data)
+    req, err := http.NewRequest("DELETE", "http://online.globalairportconcierge.com/bookings/{id}/cancel", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4863,7 +4861,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET https://baas.globalairportconcierge.com/v1/services \
+curl -X GET http://online.globalairportconcierge.com/services \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -4874,8 +4872,8 @@ curl -X GET https://baas.globalairportconcierge.com/v1/services \
 ```
 
 ```http
-GET https://baas.globalairportconcierge.com/v1/services HTTP/1.1
-Host: baas.globalairportconcierge.com
+GET http://online.globalairportconcierge.com/services HTTP/1.1
+Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -4911,7 +4909,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('https://baas.globalairportconcierge.com/v1/services',
+fetch('http://online.globalairportconcierge.com/services',
 {
   method: 'GET',
   body: inputBody,
@@ -4938,7 +4936,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'https://baas.globalairportconcierge.com/v1/services',
+result = RestClient.get 'http://online.globalairportconcierge.com/services',
   params: {
   }, headers: headers
 
@@ -4957,7 +4955,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('https://baas.globalairportconcierge.com/v1/services', headers = headers)
+r = requests.get('http://online.globalairportconcierge.com/services', headers = headers)
 
 print(r.json())
 
@@ -4983,7 +4981,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://baas.globalairportconcierge.com/v1/services', array(
+    $response = $client->request('GET','http://online.globalairportconcierge.com/services', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -5000,7 +4998,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("https://baas.globalairportconcierge.com/v1/services");
+URL obj = new URL("http://online.globalairportconcierge.com/services");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -5036,7 +5034,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "https://baas.globalairportconcierge.com/v1/services", data)
+    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/services", data)
     req.Header = headers
 
     client := &http.Client{}
