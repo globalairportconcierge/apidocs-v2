@@ -27,7 +27,7 @@ Your passenger services APIs of choice
 
 Base URLs:
 
-* <a href="http://online.globalairportconcierge.com/">http://online.globalairportconcierge.com/</a>
+* <a href="https://online.globalairportconcierge.com/">https://online.globalairportconcierge.com/</a>
 
 <a href="https://gac.com/terms-of-service.html">Terms of service</a>
 
@@ -48,7 +48,7 @@ License: <a href="https://gac.com/api-license.html">GAC</a>
 
 ```shell
 # You can also use wget
-curl -X GET http://online.globalairportconcierge.com/bookings \
+curl -X GET https://online.globalairportconcierge.com/bookings \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -58,7 +58,7 @@ curl -X GET http://online.globalairportconcierge.com/bookings \
 ```
 
 ```http
-GET http://online.globalairportconcierge.com/bookings HTTP/1.1
+GET https://online.globalairportconcierge.com/bookings HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -77,7 +77,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings',
+fetch('https://online.globalairportconcierge.com/bookings',
 {
   method: 'GET',
 
@@ -103,7 +103,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://online.globalairportconcierge.com/bookings',
+result = RestClient.get 'https://online.globalairportconcierge.com/bookings',
   params: {
   }, headers: headers
 
@@ -121,7 +121,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://online.globalairportconcierge.com/bookings', headers = headers)
+r = requests.get('https://online.globalairportconcierge.com/bookings', headers = headers)
 
 print(r.json())
 
@@ -146,7 +146,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://online.globalairportconcierge.com/bookings', array(
+    $response = $client->request('GET','https://online.globalairportconcierge.com/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -163,7 +163,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -198,7 +198,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/bookings", data)
+    req, err := http.NewRequest("GET", "https://online.globalairportconcierge.com/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -271,10 +271,10 @@ GET a list of bookings and quotations
   },
   "data": [
     {
-      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-      "status": "Quote",
-      "expires_on": "2019-08-24T14:15:22Z",
+      "id": "604626a821d67b0cec6a3674",
+      "ref_no": "GAC-604626A8A194B",
+      "status": "quote",
+      "expires_on": "2019-08-24T14:15:22.000Z",
       "journeys": [
         {
           "flight": "BA281",
@@ -296,8 +296,6 @@ GET a list of bookings and quotations
                   "pnr": "SJE34D",
                   "class": "First",
                   "details": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "type": "Adult",
                     "name": "[Object]",
                     "contacts": "[Object]",
                     "date_of_birth": "1989-02-14",
@@ -313,8 +311,6 @@ GET a list of bookings and quotations
                   "pnr": "SJE34D",
                   "class": "First",
                   "details": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "type": "Adult",
                     "name": "[Object]",
                     "contacts": "[Object]",
                     "date_of_birth": "1989-02-14",
@@ -330,8 +326,6 @@ GET a list of bookings and quotations
                   "pnr": "SJE34D",
                   "class": "First",
                   "details": {
-                    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                    "type": "Adult",
                     "name": "[Object]",
                     "contacts": "[Object]",
                     "date_of_birth": "1989-02-14",
@@ -346,12 +340,12 @@ GET a list of bookings and quotations
           "stops": {
             "departure": {
               "connection": true,
-              "meeting_date": "2020-10-10T18:13:00.000Z",
-              "departure_date": "2020-10-10T20:13:00.000Z",
-              "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "meeting_date": "2020-10-10T18:13:00.000",
+              "departure_date": "2020-10-10T20:13:00.000",
+              "terminal_id": "5ffe8a20689ddd1d3f5a684c",
               "terminal_name": "LHR Terminal 2",
               "airport": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe8a20689ddd1d3f5a684b",
                 "iata": "LHR",
                 "icao": "EGLL",
                 "name": "LHR London Heathrow Airport",
@@ -367,27 +361,30 @@ GET a list of bookings and quotations
               "surcharge": "200.00",
               "services": [
                 {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "id": "5ffe9d8ce805a273154a35bc",
                   "service_name": "Meet & Assist",
-                  "rate": "200.00",
                   "fields": [
                     "[Object]"
-                  ]
+                  ],
+                  "rate": {
+                    "value": "200.00",
+                    "currency": "USD"
+                  }
                 }
               ],
               "location_total": {
                 "value": "200.00",
-                "currency": "string"
+                "currency": "USD"
               }
             },
             "arrival": {
               "connection": true,
-              "meeting_date": "2020-10-10T18:13:00.000Z",
-              "date": "2020-10-10T18:13:00.000Z",
-              "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "meeting_date": "2020-10-10T18:13:00.000",
+              "arrival_date": "2020-10-10T18:13:00.000",
+              "terminal_id": "5ffe8a20689ddd1d3f5a684c",
               "terminal_name": "LHR Terminal 2",
               "airport": {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe8a20689ddd1d3f5a684b",
                 "iata": "LHR",
                 "icao": "EGLL",
                 "name": "LHR London Heathrow Airport",
@@ -403,17 +400,20 @@ GET a list of bookings and quotations
               "surcharge": "200.00",
               "services": [
                 {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                  "id": "5ffe9d8ce805a273154a35bc",
                   "service_name": "Meet & Assist",
-                  "rate": "200.00",
                   "fields": [
                     "[Object]"
-                  ]
+                  ],
+                  "rate": {
+                    "value": "200.00",
+                    "currency": "USD"
+                  }
                 }
               ],
               "location_total": {
                 "value": "200.00",
-                "currency": "string"
+                "currency": "USD"
               }
             }
           }
@@ -421,7 +421,6 @@ GET a list of bookings and quotations
       ],
       "billing": {
         "currency": "USD",
-        "total_service_cost": "336.38",
         "add_hrs_charge": "0.00",
         "surcharge": "0.00",
         "total_booking_cost": "336.38",
@@ -429,8 +428,7 @@ GET a list of bookings and quotations
         "total_discount": "33.63",
         "grand_total": "302.75",
         "total_paid": "302.75"
-      },
-      "comments": "First Time Traveller"
+      }
     }
   ]
 }
@@ -560,9 +558,6 @@ GET a list of bookings and quotations
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -575,9 +570,6 @@ GET a list of bookings and quotations
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -590,9 +582,6 @@ GET a list of bookings and quotations
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -630,7 +619,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST http://online.globalairportconcierge.com/bookings \
+curl -X POST https://online.globalairportconcierge.com/bookings \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -641,7 +630,7 @@ curl -X POST http://online.globalairportconcierge.com/bookings \
 ```
 
 ```http
-POST http://online.globalairportconcierge.com/bookings HTTP/1.1
+POST https://online.globalairportconcierge.com/bookings HTTP/1.1
 Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -653,7 +642,6 @@ Accept-Encoding: gzip
 
 ```javascript
 const inputBody = '{
-  "comments": "First Time Traveller",
   "currency": "USD",
   "promo_code": "PROMO21",
   "journeys": [
@@ -778,9 +766,9 @@ const inputBody = '{
       "stops": {
         "departure": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "departure_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "departure_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684c",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -788,7 +776,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -800,9 +788,9 @@ const inputBody = '{
         },
         "arrival": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "arrival_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "arrival_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684b",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -810,7 +798,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -833,7 +821,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings',
+fetch('https://online.globalairportconcierge.com/bookings',
 {
   method: 'POST',
   body: inputBody,
@@ -860,7 +848,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'http://online.globalairportconcierge.com/bookings',
+result = RestClient.post 'https://online.globalairportconcierge.com/bookings',
   params: {
   }, headers: headers
 
@@ -879,7 +867,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('http://online.globalairportconcierge.com/bookings', headers = headers)
+r = requests.post('https://online.globalairportconcierge.com/bookings', headers = headers)
 
 print(r.json())
 
@@ -905,7 +893,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','http://online.globalairportconcierge.com/bookings', array(
+    $response = $client->request('POST','https://online.globalairportconcierge.com/bookings', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -922,7 +910,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -958,7 +946,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "http://online.globalairportconcierge.com/bookings", data)
+    req, err := http.NewRequest("POST", "https://online.globalairportconcierge.com/bookings", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -978,7 +966,6 @@ Create a quotation
 
 ```json
 {
-  "comments": "First Time Traveller",
   "currency": "USD",
   "promo_code": "PROMO21",
   "journeys": [
@@ -1103,9 +1090,9 @@ Create a quotation
       "stops": {
         "departure": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "departure_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "departure_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684c",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -1113,7 +1100,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1125,9 +1112,9 @@ Create a quotation
         },
         "arrival": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "arrival_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "arrival_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684b",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -1135,7 +1122,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1160,7 +1147,6 @@ Create a quotation
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
 |body|body|object|false|booking request body|
 |» *anonymous*|body|object|false|none|
-|»» comments|body|string|false|Special comments of the booking|
 |»» currency|body|string|true|Currency of the booking|
 |»» promo_code|body|string|false|Promocode for the booking|
 |» *anonymous*|body|object|false|none|
@@ -1266,32 +1252,32 @@ Create a quotation
 |»»» stops|body|object|true|Flight stops object|
 |»»»» departure|body|object|true|Departing location information|
 |»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with previous flight arrival location)|
-|»»»»» meeting_date|body|string(date-time)|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
-|»»»»» departure_date|body|string(date-time)|true|Flight departure date|
-|»»»»» terminal_id|body|string(uuid)|true|Airport terminal id|
+|»»»»» meeting_date|body|string|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
+|»»»»» departure_date|body|string|true|Flight departure date|
+|»»»»» terminal_id|body|string(byte)|true|Airport terminal id|
 |»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»»» service_id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
 |»»»»»»»» value|body|string|true|Service value|
 |»»»» arrival|body|object|true|Arriving location information|
 |»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departuer location)|
-|»»»»» meeting_date|body|string(date-time)|true|Meeting date. (Should be same as the flight's arrival time)|
-|»»»»» arrival_date|body|string(date-time)|true|Flight arrival date|
-|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» meeting_date|body|string|true|Meeting date. (Should be same as the flight's arrival time)|
+|»»»»» arrival_date|body|string|true|Flight arrival date|
+|»»»»» terminal_id|body|string(byte)|true|Terminal id|
 |»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»»» service_id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -1367,10 +1353,10 @@ Create a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "status": "Quote",
-    "expires_on": "2019-08-24T14:15:22Z",
+    "id": "604626a821d67b0cec6a3674",
+    "ref_no": "GAC-604626A8A194B",
+    "status": "quote",
+    "expires_on": "2019-08-24T14:15:22.000Z",
     "journeys": [
       {
         "flight": "BA281",
@@ -1392,8 +1378,6 @@ Create a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -1417,8 +1401,6 @@ Create a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -1442,8 +1424,6 @@ Create a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -1466,12 +1446,12 @@ Create a quotation
         "stops": {
           "departure": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "departure_date": "2020-10-10T20:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "departure_date": "2020-10-10T20:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -1487,30 +1467,33 @@ Create a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           },
           "arrival": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "date": "2020-10-10T18:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "arrival_date": "2020-10-10T18:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -1526,20 +1509,23 @@ Create a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           }
         }
@@ -1547,7 +1533,6 @@ Create a quotation
     ],
     "billing": {
       "currency": "USD",
-      "total_service_cost": "336.38",
       "add_hrs_charge": "0.00",
       "surcharge": "0.00",
       "total_booking_cost": "336.38",
@@ -1555,8 +1540,7 @@ Create a quotation
       "total_discount": "33.63",
       "grand_total": "302.75",
       "total_paid": "302.75"
-    },
-    "comments": "First Time Traveller"
+    }
   }
 }
 ```
@@ -1676,9 +1660,6 @@ Create a quotation
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -1691,9 +1672,6 @@ Create a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -1706,9 +1684,6 @@ Create a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -1738,7 +1713,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET http://online.globalairportconcierge.com/bookings/{id} \
+curl -X GET https://online.globalairportconcierge.com/bookings/{id} \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -1748,7 +1723,7 @@ curl -X GET http://online.globalairportconcierge.com/bookings/{id} \
 ```
 
 ```http
-GET http://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+GET https://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -1767,7 +1742,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings/{id}',
+fetch('https://online.globalairportconcierge.com/bookings/{id}',
 {
   method: 'GET',
 
@@ -1793,7 +1768,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://online.globalairportconcierge.com/bookings/{id}',
+result = RestClient.get 'https://online.globalairportconcierge.com/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -1811,7 +1786,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://online.globalairportconcierge.com/bookings/{id}', headers = headers)
+r = requests.get('https://online.globalairportconcierge.com/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -1836,7 +1811,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://online.globalairportconcierge.com/bookings/{id}', array(
+    $response = $client->request('GET','https://online.globalairportconcierge.com/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1853,7 +1828,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1888,7 +1863,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/bookings/{id}", data)
+    req, err := http.NewRequest("GET", "https://online.globalairportconcierge.com/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -1930,10 +1905,10 @@ GET a booking or a quotation by id
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "status": "Quote",
-    "expires_on": "2019-08-24T14:15:22Z",
+    "id": "604626a821d67b0cec6a3674",
+    "ref_no": "GAC-604626A8A194B",
+    "status": "quote",
+    "expires_on": "2019-08-24T14:15:22.000Z",
     "journeys": [
       {
         "flight": "BA281",
@@ -1955,8 +1930,6 @@ GET a booking or a quotation by id
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -1980,8 +1953,6 @@ GET a booking or a quotation by id
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -2005,8 +1976,6 @@ GET a booking or a quotation by id
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -2029,12 +1998,12 @@ GET a booking or a quotation by id
         "stops": {
           "departure": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "departure_date": "2020-10-10T20:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "departure_date": "2020-10-10T20:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -2050,30 +2019,33 @@ GET a booking or a quotation by id
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           },
           "arrival": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "date": "2020-10-10T18:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "arrival_date": "2020-10-10T18:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -2089,20 +2061,23 @@ GET a booking or a quotation by id
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           }
         }
@@ -2110,7 +2085,6 @@ GET a booking or a quotation by id
     ],
     "billing": {
       "currency": "USD",
-      "total_service_cost": "336.38",
       "add_hrs_charge": "0.00",
       "surcharge": "0.00",
       "total_booking_cost": "336.38",
@@ -2118,8 +2092,7 @@ GET a booking or a quotation by id
       "total_discount": "33.63",
       "grand_total": "302.75",
       "total_paid": "302.75"
-    },
-    "comments": "First Time Traveller"
+    }
   }
 }
 ```
@@ -2239,9 +2212,6 @@ GET a booking or a quotation by id
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -2254,9 +2224,6 @@ GET a booking or a quotation by id
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -2269,9 +2236,6 @@ GET a booking or a quotation by id
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -2301,7 +2265,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT http://online.globalairportconcierge.com/bookings/{id} \
+curl -X PUT https://online.globalairportconcierge.com/bookings/{id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -2312,7 +2276,7 @@ curl -X PUT http://online.globalairportconcierge.com/bookings/{id} \
 ```
 
 ```http
-PUT http://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+PUT https://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
 Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -2324,7 +2288,6 @@ Accept-Encoding: gzip
 
 ```javascript
 const inputBody = '{
-  "comments": "First Time Traveller",
   "currency": "USD",
   "promo_code": "PROMO21",
   "journeys": [
@@ -2449,9 +2412,9 @@ const inputBody = '{
       "stops": {
         "departure": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "departure_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "departure_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684c",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -2459,7 +2422,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2471,9 +2434,9 @@ const inputBody = '{
         },
         "arrival": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "arrival_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "arrival_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684b",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -2481,7 +2444,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2504,7 +2467,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings/{id}',
+fetch('https://online.globalairportconcierge.com/bookings/{id}',
 {
   method: 'PUT',
   body: inputBody,
@@ -2531,7 +2494,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'http://online.globalairportconcierge.com/bookings/{id}',
+result = RestClient.put 'https://online.globalairportconcierge.com/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -2550,7 +2513,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('http://online.globalairportconcierge.com/bookings/{id}', headers = headers)
+r = requests.put('https://online.globalairportconcierge.com/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -2576,7 +2539,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','http://online.globalairportconcierge.com/bookings/{id}', array(
+    $response = $client->request('PUT','https://online.globalairportconcierge.com/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2593,7 +2556,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -2629,7 +2592,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "http://online.globalairportconcierge.com/bookings/{id}", data)
+    req, err := http.NewRequest("PUT", "https://online.globalairportconcierge.com/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2649,7 +2612,6 @@ Update a quotation
 
 ```json
 {
-  "comments": "First Time Traveller",
   "currency": "USD",
   "promo_code": "PROMO21",
   "journeys": [
@@ -2774,9 +2736,9 @@ Update a quotation
       "stops": {
         "departure": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "departure_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "departure_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684c",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -2784,7 +2746,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2796,9 +2758,9 @@ Update a quotation
         },
         "arrival": {
           "connection": true,
-          "meeting_date": "2020-10-10T18:13:00.000Z",
-          "arrival_date": "2020-10-10T20:13:00.000Z",
-          "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+          "meeting_date": "2020-10-10T18:13:00.000",
+          "arrival_date": "2020-10-10T20:13:00.000",
+          "terminal_id": "5ffe8a20689ddd1d3f5a684b",
           "contact_point": {
             "name": "John",
             "contact": "+18666612345"
@@ -2806,7 +2768,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "service_id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2831,7 +2793,6 @@ Update a quotation
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
 |body|body|object|false|update booking request body|
 |» *anonymous*|body|object|false|none|
-|»» comments|body|string|false|Special comments of the booking|
 |»» currency|body|string|true|Currency of the booking|
 |»» promo_code|body|string|false|Promocode for the booking|
 |» *anonymous*|body|object|false|none|
@@ -2937,32 +2898,32 @@ Update a quotation
 |»»» stops|body|object|true|Flight stops object|
 |»»»» departure|body|object|true|Departing location information|
 |»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with previous flight arrival location)|
-|»»»»» meeting_date|body|string(date-time)|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
-|»»»»» departure_date|body|string(date-time)|true|Flight departure date|
-|»»»»» terminal_id|body|string(uuid)|true|Airport terminal id|
+|»»»»» meeting_date|body|string|true|Departure meeting date. Will differ as meeting time is prior flight departure time. Ex: If the departure date of a flight is 21st at 00:10hrs, the meeting date will be 20th at 10:10hrs.|
+|»»»»» departure_date|body|string|true|Flight departure date|
+|»»»»» terminal_id|body|string(byte)|true|Airport terminal id|
 |»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»»» service_id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
 |»»»»»»»» value|body|string|true|Service value|
 |»»»» arrival|body|object|true|Arriving location information|
 |»»»»» connection|body|boolean|true|If it is a connection location (should combine and match with next flight departuer location)|
-|»»»»» meeting_date|body|string(date-time)|true|Meeting date. (Should be same as the flight's arrival time)|
-|»»»»» arrival_date|body|string(date-time)|true|Flight arrival date|
-|»»»»» terminal_id|body|string(uuid)|true|Terminal id|
+|»»»»» meeting_date|body|string|true|Meeting date. (Should be same as the flight's arrival time)|
+|»»»»» arrival_date|body|string|true|Flight arrival date|
+|»»»»» terminal_id|body|string(byte)|true|Terminal id|
 |»»»»» contact_point|body|object|true|Contact point at ground during the operation. Could be passenger's or driver/PA contact.|
 |»»»»»» name|body|string|true|Name of the contact person|
 |»»»»»» contact|body|string|true|Contact number of the contact point|
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(uuid)|true|Service id|
+|»»»»»»» service_id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -3039,10 +3000,10 @@ Update a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "status": "Quote",
-    "expires_on": "2019-08-24T14:15:22Z",
+    "id": "604626a821d67b0cec6a3674",
+    "ref_no": "GAC-604626A8A194B",
+    "status": "quote",
+    "expires_on": "2019-08-24T14:15:22.000Z",
     "journeys": [
       {
         "flight": "BA281",
@@ -3064,8 +3025,6 @@ Update a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3089,8 +3048,6 @@ Update a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3114,8 +3071,6 @@ Update a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3138,12 +3093,12 @@ Update a quotation
         "stops": {
           "departure": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "departure_date": "2020-10-10T20:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "departure_date": "2020-10-10T20:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -3159,30 +3114,33 @@ Update a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           },
           "arrival": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "date": "2020-10-10T18:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "arrival_date": "2020-10-10T18:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -3198,20 +3156,23 @@ Update a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           }
         }
@@ -3219,7 +3180,6 @@ Update a quotation
     ],
     "billing": {
       "currency": "USD",
-      "total_service_cost": "336.38",
       "add_hrs_charge": "0.00",
       "surcharge": "0.00",
       "total_booking_cost": "336.38",
@@ -3227,8 +3187,7 @@ Update a quotation
       "total_discount": "33.63",
       "grand_total": "302.75",
       "total_paid": "302.75"
-    },
-    "comments": "First Time Traveller"
+    }
   }
 }
 ```
@@ -3348,9 +3307,6 @@ Update a quotation
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3363,9 +3319,6 @@ Update a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3378,9 +3331,6 @@ Update a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3410,7 +3360,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X POST http://online.globalairportconcierge.com/bookings/{bookingId}/checkout \
+curl -X POST https://online.globalairportconcierge.com/bookings/{bookingId}/checkout \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3420,7 +3370,7 @@ curl -X POST http://online.globalairportconcierge.com/bookings/{bookingId}/check
 ```
 
 ```http
-POST http://online.globalairportconcierge.com/bookings/{bookingId}/checkout HTTP/1.1
+POST https://online.globalairportconcierge.com/bookings/{bookingId}/checkout HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -3439,7 +3389,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
+fetch('https://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
 {
   method: 'POST',
 
@@ -3465,7 +3415,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.post 'http://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
+result = RestClient.post 'https://online.globalairportconcierge.com/bookings/{bookingId}/checkout',
   params: {
   }, headers: headers
 
@@ -3483,7 +3433,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.post('http://online.globalairportconcierge.com/bookings/{bookingId}/checkout', headers = headers)
+r = requests.post('https://online.globalairportconcierge.com/bookings/{bookingId}/checkout', headers = headers)
 
 print(r.json())
 
@@ -3508,7 +3458,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','http://online.globalairportconcierge.com/bookings/{bookingId}/checkout', array(
+    $response = $client->request('POST','https://online.globalairportconcierge.com/bookings/{bookingId}/checkout', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3525,7 +3475,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings/{bookingId}/checkout");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{bookingId}/checkout");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3560,7 +3510,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "http://online.globalairportconcierge.com/bookings/{bookingId}/checkout", data)
+    req, err := http.NewRequest("POST", "https://online.globalairportconcierge.com/bookings/{bookingId}/checkout", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -3602,10 +3552,10 @@ Save a quotation as a booking
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "status": "Quote",
-    "expires_on": "2019-08-24T14:15:22Z",
+    "id": "604626a821d67b0cec6a3674",
+    "ref_no": "GAC-604626A8A194B",
+    "status": "quote",
+    "expires_on": "2019-08-24T14:15:22.000Z",
     "journeys": [
       {
         "flight": "BA281",
@@ -3627,8 +3577,6 @@ Save a quotation as a booking
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3652,8 +3600,6 @@ Save a quotation as a booking
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3677,8 +3623,6 @@ Save a quotation as a booking
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -3701,12 +3645,12 @@ Save a quotation as a booking
         "stops": {
           "departure": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "departure_date": "2020-10-10T20:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "departure_date": "2020-10-10T20:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -3722,30 +3666,33 @@ Save a quotation as a booking
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           },
           "arrival": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "date": "2020-10-10T18:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "arrival_date": "2020-10-10T18:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -3761,20 +3708,23 @@ Save a quotation as a booking
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           }
         }
@@ -3782,7 +3732,6 @@ Save a quotation as a booking
     ],
     "billing": {
       "currency": "USD",
-      "total_service_cost": "336.38",
       "add_hrs_charge": "0.00",
       "surcharge": "0.00",
       "total_booking_cost": "336.38",
@@ -3790,8 +3739,7 @@ Save a quotation as a booking
       "total_discount": "33.63",
       "grand_total": "302.75",
       "total_paid": "302.75"
-    },
-    "comments": "First Time Traveller"
+    }
   }
 }
 ```
@@ -3911,9 +3859,6 @@ Save a quotation as a booking
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3926,9 +3871,6 @@ Save a quotation as a booking
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3941,9 +3883,6 @@ Save a quotation as a booking
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3973,7 +3912,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X PUT http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate \
+curl -X PUT https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -3983,7 +3922,7 @@ curl -X PUT http://online.globalairportconcierge.com/bookings/{bookingId}/recalc
 ```
 
 ```http
-PUT http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate HTTP/1.1
+PUT https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -4002,7 +3941,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
+fetch('https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
 {
   method: 'PUT',
 
@@ -4028,7 +3967,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
+result = RestClient.put 'https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
   params: {
   }, headers: headers
 
@@ -4046,7 +3985,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', headers = headers)
+r = requests.put('https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', headers = headers)
 
 print(r.json())
 
@@ -4071,7 +4010,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', array(
+    $response = $client->request('PUT','https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4088,7 +4027,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("PUT");
 int responseCode = con.getResponseCode();
@@ -4123,7 +4062,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "http://online.globalairportconcierge.com/bookings/{bookingId}/recalculate", data)
+    req, err := http.NewRequest("PUT", "https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4165,10 +4104,10 @@ Recalculate a quotation
     "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
   },
   "data": {
-    "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "ref_no": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-    "status": "Quote",
-    "expires_on": "2019-08-24T14:15:22Z",
+    "id": "604626a821d67b0cec6a3674",
+    "ref_no": "GAC-604626A8A194B",
+    "status": "quote",
+    "expires_on": "2019-08-24T14:15:22.000Z",
     "journeys": [
       {
         "flight": "BA281",
@@ -4190,8 +4129,6 @@ Recalculate a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -4215,8 +4152,6 @@ Recalculate a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -4240,8 +4175,6 @@ Recalculate a quotation
                 "pnr": "SJE34D",
                 "class": "First",
                 "details": {
-                  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
-                  "type": "Adult",
                   "name": {
                     "title": "Mr.",
                     "forename": "John",
@@ -4264,12 +4197,12 @@ Recalculate a quotation
         "stops": {
           "departure": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "departure_date": "2020-10-10T20:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "departure_date": "2020-10-10T20:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -4285,30 +4218,33 @@ Recalculate a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           },
           "arrival": {
             "connection": true,
-            "meeting_date": "2020-10-10T18:13:00.000Z",
-            "date": "2020-10-10T18:13:00.000Z",
-            "terminal_id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "meeting_date": "2020-10-10T18:13:00.000",
+            "arrival_date": "2020-10-10T18:13:00.000",
+            "terminal_id": "5ffe8a20689ddd1d3f5a684c",
             "terminal_name": "LHR Terminal 2",
             "airport": {
-              "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+              "id": "5ffe8a20689ddd1d3f5a684b",
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
@@ -4324,20 +4260,23 @@ Recalculate a quotation
             "surcharge": "200.00",
             "services": [
               {
-                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "id": "5ffe9d8ce805a273154a35bc",
                 "service_name": "Meet & Assist",
-                "rate": "200.00",
                 "fields": [
                   {
                     "name": "pax_count",
                     "value": "1"
                   }
-                ]
+                ],
+                "rate": {
+                  "value": "200.00",
+                  "currency": "USD"
+                }
               }
             ],
             "location_total": {
               "value": "200.00",
-              "currency": "string"
+              "currency": "USD"
             }
           }
         }
@@ -4345,7 +4284,6 @@ Recalculate a quotation
     ],
     "billing": {
       "currency": "USD",
-      "total_service_cost": "336.38",
       "add_hrs_charge": "0.00",
       "surcharge": "0.00",
       "total_booking_cost": "336.38",
@@ -4353,8 +4291,7 @@ Recalculate a quotation
       "total_discount": "33.63",
       "grand_total": "302.75",
       "total_paid": "302.75"
-    },
-    "comments": "First Time Traveller"
+    }
   }
 }
 ```
@@ -4474,9 +4411,6 @@ Recalculate a quotation
 |status|200|
 |status|201|
 |status|204|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -4489,9 +4423,6 @@ Recalculate a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -4504,9 +4435,6 @@ Recalculate a quotation
 |title|Sir|
 |title|Sister|
 |title|Team|
-|type|Adult|
-|type|Child|
-|type|Infant|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -4536,7 +4464,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel \
+curl -X DELETE https://online.globalairportconcierge.com/bookings/{id}/cancel \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -4546,7 +4474,7 @@ curl -X DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel \
 ```
 
 ```http
-DELETE http://online.globalairportconcierge.com/bookings/{id}/cancel HTTP/1.1
+DELETE https://online.globalairportconcierge.com/bookings/{id}/cancel HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -4565,7 +4493,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/bookings/{id}/cancel',
+fetch('https://online.globalairportconcierge.com/bookings/{id}/cancel',
 {
   method: 'DELETE',
 
@@ -4591,7 +4519,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.delete 'http://online.globalairportconcierge.com/bookings/{id}/cancel',
+result = RestClient.delete 'https://online.globalairportconcierge.com/bookings/{id}/cancel',
   params: {
   }, headers: headers
 
@@ -4609,7 +4537,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.delete('http://online.globalairportconcierge.com/bookings/{id}/cancel', headers = headers)
+r = requests.delete('https://online.globalairportconcierge.com/bookings/{id}/cancel', headers = headers)
 
 print(r.json())
 
@@ -4634,7 +4562,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('DELETE','http://online.globalairportconcierge.com/bookings/{id}/cancel', array(
+    $response = $client->request('DELETE','https://online.globalairportconcierge.com/bookings/{id}/cancel', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4651,7 +4579,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/bookings/{id}/cancel");
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}/cancel");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
@@ -4686,7 +4614,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "http://online.globalairportconcierge.com/bookings/{id}/cancel", data)
+    req, err := http.NewRequest("DELETE", "https://online.globalairportconcierge.com/bookings/{id}/cancel", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4861,7 +4789,7 @@ Authorization
 
 ```shell
 # You can also use wget
-curl -X GET http://online.globalairportconcierge.com/services \
+curl -X GET https://online.globalairportconcierge.com/services \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -4872,7 +4800,7 @@ curl -X GET http://online.globalairportconcierge.com/services \
 ```
 
 ```http
-GET http://online.globalairportconcierge.com/services HTTP/1.1
+GET https://online.globalairportconcierge.com/services HTTP/1.1
 Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -4888,15 +4816,16 @@ const inputBody = '{
     {
       "arrival_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+        "gac": "5ffe8a20689ddd1d3f5a684b",
+        "iata": "EWR"
       },
       "departure_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "gac": "5ffe8a20689ddd1d3f5a684b",
         "iata": "EWR"
       },
       "flight_no": "UA452",
-      "departure_date": "2019-08-24T14:15:22Z"
+      "departure_date": "2019-08-24"
     }
   ]
 }';
@@ -4909,7 +4838,7 @@ const headers = {
   'apiKey':'API_KEY'
 };
 
-fetch('http://online.globalairportconcierge.com/services',
+fetch('https://online.globalairportconcierge.com/services',
 {
   method: 'GET',
   body: inputBody,
@@ -4936,7 +4865,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.get 'http://online.globalairportconcierge.com/services',
+result = RestClient.get 'https://online.globalairportconcierge.com/services',
   params: {
   }, headers: headers
 
@@ -4955,7 +4884,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.get('http://online.globalairportconcierge.com/services', headers = headers)
+r = requests.get('https://online.globalairportconcierge.com/services', headers = headers)
 
 print(r.json())
 
@@ -4981,7 +4910,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','http://online.globalairportconcierge.com/services', array(
+    $response = $client->request('GET','https://online.globalairportconcierge.com/services', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4998,7 +4927,7 @@ try {
 ```
 
 ```java
-URL obj = new URL("http://online.globalairportconcierge.com/services");
+URL obj = new URL("https://online.globalairportconcierge.com/services");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -5034,7 +4963,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("GET", "http://online.globalairportconcierge.com/services", data)
+    req, err := http.NewRequest("GET", "https://online.globalairportconcierge.com/services", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -5058,15 +4987,16 @@ GET services at departure and arival for a flight
     {
       "arrival_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+        "gac": "5ffe8a20689ddd1d3f5a684b",
+        "iata": "EWR"
       },
       "departure_airport": {
         "icao": "EGLL",
-        "gac": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+        "gac": "5ffe8a20689ddd1d3f5a684b",
         "iata": "EWR"
       },
       "flight_no": "UA452",
-      "departure_date": "2019-08-24T14:15:22Z"
+      "departure_date": "2019-08-24"
     }
   ]
 }
@@ -5081,15 +5011,16 @@ GET services at departure and arival for a flight
 |Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
 |body|body|object|false|get services request body|
 |» flights|body|[object]|true|none|
-|»» arrival_airport|body|object|true|none|
+|»» arrival_airport|body|object|true|Arrival airport details|
 |»»» icao|body|string|false|Arrival Airport ICAO code|
-|»»» gac|body|string(uuid)|false|Arrival Airport GAC ID|
-|»» departure_airport|body|object|true|none|
+|»»» gac|body|string(byte)|false|Arrival Airport GAC ID|
+|»»» iata|body|string|false|Arrival Airport IATA code|
+|»» departure_airport|body|object|true|Departure Airprot details|
 |»»» icao|body|string|false|Departure Airport ICAO code|
-|»»» gac|body|string(uuid)|false|Departure Airport GAC ID|
-|»»» iata|body|string|false|none|
+|»»» gac|body|string(byte)|false|Departure Airport GAC ID|
+|»»» iata|body|string|false|Departure Airport IATA code|
 |»» flight_no|body|string|true|Flight number: Airline code "UA" + Flignt No. "452"|
-|»» departure_date|body|string(date-time)|true|none|
+|»» departure_date|body|string|true|Departure date|
 
 > Example responses
 
