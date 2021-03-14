@@ -275,6 +275,72 @@ GET a list of bookings and quotations
       "ref_no": "GAC-604626A8A194B",
       "status": "quote",
       "expires_on": "2019-08-24T14:15:22.000Z",
+      "booker": {
+        "id": "5ffe8fd64ed96d0f572440fb",
+        "name": {
+          "title": "Mr.",
+          "forename": "John",
+          "surname": "Doe"
+        },
+        "email": "email@email.com",
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "company": {
+          "id": "5ffe8f374ed96d0f572440f6",
+          "name": "This is a Company PVT Ltd",
+          "roles": [
+            "customer"
+          ],
+          "contacts": {
+            "address": {
+              "streets": [
+                "No 221/1, Baker's Street"
+              ],
+              "city": "Hethrow",
+              "state": "London",
+              "postal_code": "LN223 2323",
+              "country": "United Kingdom"
+            },
+            "emails": [
+              {
+                "type": "Main",
+                "email": "email@email.com"
+              }
+            ],
+            "phones": [
+              {
+                "type": "Office",
+                "name": "Head Office",
+                "phone": "+18666612345"
+              }
+            ]
+          },
+          "image": "\"image url\"",
+          "payment_type": "invoice"
+        }
+      },
       "journeys": [
         {
           "flight": "BA281",
@@ -349,8 +415,9 @@ GET a list of bookings and quotations
                 "iata": "LHR",
                 "icao": "EGLL",
                 "name": "LHR London Heathrow Airport",
+                "country": "United Kingdom",
                 "city": "London",
-                "country": "United Kingdom"
+                "booking_window": "24"
               },
               "contact_point": {
                 "name": "John",
@@ -388,8 +455,9 @@ GET a list of bookings and quotations
                 "iata": "LHR",
                 "icao": "EGLL",
                 "name": "LHR London Heathrow Airport",
+                "country": "United Kingdom",
                 "city": "London",
-                "country": "United Kingdom"
+                "booking_window": "24"
               },
               "contact_point": {
                 "name": "John",
@@ -594,6 +662,18 @@ GET a list of bookings and quotations
 |title|Sir|
 |title|Sister|
 |title|Team|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |currency|USD|
 |currency|GBP|
 |currency|EUR|
@@ -644,6 +724,7 @@ Accept-Encoding: gzip
 const inputBody = '{
   "currency": "USD",
   "promo_code": "PROMO21",
+  "booker_id": "5ffe8fd64ed96d0f572440fb",
   "journeys": [
     {
       "flight": "BA282",
@@ -776,7 +857,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -798,7 +879,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -968,6 +1049,7 @@ Create a quotation
 {
   "currency": "USD",
   "promo_code": "PROMO21",
+  "booker_id": "5ffe8fd64ed96d0f572440fb",
   "journeys": [
     {
       "flight": "BA282",
@@ -1100,7 +1182,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1122,7 +1204,7 @@ Create a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -1149,6 +1231,7 @@ Create a quotation
 |» *anonymous*|body|object|false|none|
 |»» currency|body|string|true|Currency of the booking|
 |»» promo_code|body|string|false|Promocode for the booking|
+|»» booker_id|body|string|true|A booker ID|
 |» *anonymous*|body|object|false|none|
 |»» journeys|body|[object]|true|List of journeys in the booking|
 |»»» flight|body|string|true|A flight number|
@@ -1261,7 +1344,7 @@ Create a quotation
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(byte)|true|Service id|
+|»»»»»»» id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -1277,7 +1360,7 @@ Create a quotation
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(byte)|true|Service id|
+|»»»»»»» id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -1357,6 +1440,72 @@ Create a quotation
     "ref_no": "GAC-604626A8A194B",
     "status": "quote",
     "expires_on": "2019-08-24T14:15:22.000Z",
+    "booker": {
+      "id": "5ffe8fd64ed96d0f572440fb",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "email": "email@email.com",
+      "contacts": {
+        "address": {
+          "streets": [
+            "No 221/1, Baker's Street"
+          ],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+18666612345"
+          }
+        ]
+      },
+      "company": {
+        "id": "5ffe8f374ed96d0f572440f6",
+        "name": "This is a Company PVT Ltd",
+        "roles": [
+          "customer"
+        ],
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "image": "\"image url\"",
+        "payment_type": "invoice"
+      }
+    },
     "journeys": [
       {
         "flight": "BA281",
@@ -1455,8 +1604,9 @@ Create a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -1497,8 +1647,9 @@ Create a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -1660,6 +1811,18 @@ Create a quotation
 |status|200|
 |status|201|
 |status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -1909,6 +2072,72 @@ GET a booking or a quotation by id
     "ref_no": "GAC-604626A8A194B",
     "status": "quote",
     "expires_on": "2019-08-24T14:15:22.000Z",
+    "booker": {
+      "id": "5ffe8fd64ed96d0f572440fb",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "email": "email@email.com",
+      "contacts": {
+        "address": {
+          "streets": [
+            "No 221/1, Baker's Street"
+          ],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+18666612345"
+          }
+        ]
+      },
+      "company": {
+        "id": "5ffe8f374ed96d0f572440f6",
+        "name": "This is a Company PVT Ltd",
+        "roles": [
+          "customer"
+        ],
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "image": "\"image url\"",
+        "payment_type": "invoice"
+      }
+    },
     "journeys": [
       {
         "flight": "BA281",
@@ -2007,8 +2236,9 @@ GET a booking or a quotation by id
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -2049,8 +2279,9 @@ GET a booking or a quotation by id
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -2248,6 +2479,18 @@ GET a booking or a quotation by id
 |title|Sir|
 |title|Sister|
 |title|Team|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |currency|USD|
 |currency|GBP|
 |currency|EUR|
@@ -2290,6 +2533,7 @@ Accept-Encoding: gzip
 const inputBody = '{
   "currency": "USD",
   "promo_code": "PROMO21",
+  "booker_id": "5ffe8fd64ed96d0f572440fb",
   "journeys": [
     {
       "flight": "BA282",
@@ -2422,7 +2666,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2444,7 +2688,7 @@ const inputBody = '{
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2614,6 +2858,7 @@ Update a quotation
 {
   "currency": "USD",
   "promo_code": "PROMO21",
+  "booker_id": "5ffe8fd64ed96d0f572440fb",
   "journeys": [
     {
       "flight": "BA282",
@@ -2746,7 +2991,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2768,7 +3013,7 @@ Update a quotation
           "special_notes": "Need translator",
           "services": [
             {
-              "service_id": "5ffe9d8ce805a273154a35bc",
+              "id": "5ffe9d8ce805a273154a35bc",
               "fields": [
                 {
                   "name": "pax_count",
@@ -2795,6 +3040,7 @@ Update a quotation
 |» *anonymous*|body|object|false|none|
 |»» currency|body|string|true|Currency of the booking|
 |»» promo_code|body|string|false|Promocode for the booking|
+|»» booker_id|body|string|true|A booker ID|
 |» *anonymous*|body|object|false|none|
 |»» journeys|body|[object]|true|List of journeys in the booking|
 |»»» flight|body|string|true|A flight number|
@@ -2907,7 +3153,7 @@ Update a quotation
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need wheelchair assistance)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at departing location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(byte)|true|Service id|
+|»»»»»»» id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -2923,7 +3169,7 @@ Update a quotation
 |»»»»» special_notes|body|string|true|Special notes or instructions regarding the passengers during the operation (Ex: Need Hindi speaking greeter)|
 |»»»»» services|body|[allOf]|true|Services to be quoted at arriving location|
 |»»»»»» *anonymous*|body|object|false|none|
-|»»»»»»» service_id|body|string(byte)|true|Service id|
+|»»»»»»» id|body|string(byte)|true|Service id|
 |»»»»»» *anonymous*|body|object|false|Service field request model|
 |»»»»»»» fields|body|[object]|true|Fields of the service|
 |»»»»»»»» name|body|string|true|Service name|
@@ -3004,6 +3250,72 @@ Update a quotation
     "ref_no": "GAC-604626A8A194B",
     "status": "quote",
     "expires_on": "2019-08-24T14:15:22.000Z",
+    "booker": {
+      "id": "5ffe8fd64ed96d0f572440fb",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "email": "email@email.com",
+      "contacts": {
+        "address": {
+          "streets": [
+            "No 221/1, Baker's Street"
+          ],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+18666612345"
+          }
+        ]
+      },
+      "company": {
+        "id": "5ffe8f374ed96d0f572440f6",
+        "name": "This is a Company PVT Ltd",
+        "roles": [
+          "customer"
+        ],
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "image": "\"image url\"",
+        "payment_type": "invoice"
+      }
+    },
     "journeys": [
       {
         "flight": "BA281",
@@ -3102,8 +3414,9 @@ Update a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -3144,8 +3457,9 @@ Update a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -3307,6 +3621,18 @@ Update a quotation
 |status|200|
 |status|201|
 |status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -3556,6 +3882,72 @@ Save a quotation as a booking
     "ref_no": "GAC-604626A8A194B",
     "status": "quote",
     "expires_on": "2019-08-24T14:15:22.000Z",
+    "booker": {
+      "id": "5ffe8fd64ed96d0f572440fb",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "email": "email@email.com",
+      "contacts": {
+        "address": {
+          "streets": [
+            "No 221/1, Baker's Street"
+          ],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+18666612345"
+          }
+        ]
+      },
+      "company": {
+        "id": "5ffe8f374ed96d0f572440f6",
+        "name": "This is a Company PVT Ltd",
+        "roles": [
+          "customer"
+        ],
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "image": "\"image url\"",
+        "payment_type": "invoice"
+      }
+    },
     "journeys": [
       {
         "flight": "BA281",
@@ -3654,8 +4046,9 @@ Save a quotation as a booking
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -3696,8 +4089,9 @@ Save a quotation as a booking
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -3859,6 +4253,18 @@ Save a quotation as a booking
 |status|200|
 |status|201|
 |status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -4108,6 +4514,72 @@ Recalculate a quotation
     "ref_no": "GAC-604626A8A194B",
     "status": "quote",
     "expires_on": "2019-08-24T14:15:22.000Z",
+    "booker": {
+      "id": "5ffe8fd64ed96d0f572440fb",
+      "name": {
+        "title": "Mr.",
+        "forename": "John",
+        "surname": "Doe"
+      },
+      "email": "email@email.com",
+      "contacts": {
+        "address": {
+          "streets": [
+            "No 221/1, Baker's Street"
+          ],
+          "city": "Hethrow",
+          "state": "London",
+          "postal_code": "LN223 2323",
+          "country": "United Kingdom"
+        },
+        "emails": [
+          {
+            "type": "Main",
+            "email": "email@email.com"
+          }
+        ],
+        "phones": [
+          {
+            "type": "Office",
+            "name": "Head Office",
+            "phone": "+18666612345"
+          }
+        ]
+      },
+      "company": {
+        "id": "5ffe8f374ed96d0f572440f6",
+        "name": "This is a Company PVT Ltd",
+        "roles": [
+          "customer"
+        ],
+        "contacts": {
+          "address": {
+            "streets": [
+              "No 221/1, Baker's Street"
+            ],
+            "city": "Hethrow",
+            "state": "London",
+            "postal_code": "LN223 2323",
+            "country": "United Kingdom"
+          },
+          "emails": [
+            {
+              "type": "Main",
+              "email": "email@email.com"
+            }
+          ],
+          "phones": [
+            {
+              "type": "Office",
+              "name": "Head Office",
+              "phone": "+18666612345"
+            }
+          ]
+        },
+        "image": "\"image url\"",
+        "payment_type": "invoice"
+      }
+    },
     "journeys": [
       {
         "flight": "BA281",
@@ -4206,8 +4678,9 @@ Recalculate a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -4248,8 +4721,9 @@ Recalculate a quotation
               "iata": "LHR",
               "icao": "EGLL",
               "name": "LHR London Heathrow Airport",
+              "country": "United Kingdom",
               "city": "London",
-              "country": "United Kingdom"
+              "booking_window": "24"
             },
             "contact_point": {
               "name": "John",
@@ -4411,6 +4885,18 @@ Recalculate a quotation
 |status|200|
 |status|201|
 |status|204|
+|title|Mr.|
+|title|Mrs.|
+|title|Ms.|
+|title|Dr.|
+|title|Mstr.|
+|title|Miss|
+|title|Mx.|
+|title|Prof.|
+|title|Rev.|
+|title|Sir|
+|title|Sister|
+|title|Team|
 |title|Mr.|
 |title|Mrs.|
 |title|Ms.|
@@ -4648,7 +5134,7 @@ Cancel a booking
   "status": {
     "success": true,
     "status": 204,
-    "message": "No Data Found"
+    "message": "No Deleted Successfully"
   },
   "trace": {
     "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
