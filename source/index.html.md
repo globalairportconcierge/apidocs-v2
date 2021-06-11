@@ -2500,15 +2500,15 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
-## PUT-bookings-id
+## PATCH-bookings-id
 
-<a id="opIdPUT-bookings-id"></a>
+<a id="opIdPATCH-bookings-id"></a>
 
 > Code samples
 
 ```shell
 # You can also use wget
-curl -X PUT https://online.globalairportconcierge.com/bookings/{id} \
+curl -X PATCH https://online.globalairportconcierge.com/bookings/{id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
@@ -2519,7 +2519,7 @@ curl -X PUT https://online.globalairportconcierge.com/bookings/{id} \
 ```
 
 ```http
-PUT https://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+PATCH https://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
 Host: online.globalairportconcierge.com
 Content-Type: application/json
 Accept: application/json
@@ -2534,6 +2534,7 @@ const inputBody = '{
   "currency": "USD",
   "promo_code": "PROMO21",
   "booker_id": "5ffe8fd64ed96d0f572440fb",
+  "ref_no": "GAC-604626A8A194B",
   "journeys": [
     {
       "flight": "BA282",
@@ -2713,7 +2714,7 @@ const headers = {
 
 fetch('https://online.globalairportconcierge.com/bookings/{id}',
 {
-  method: 'PUT',
+  method: 'PATCH',
   body: inputBody,
   headers: headers
 })
@@ -2738,7 +2739,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'https://online.globalairportconcierge.com/bookings/{id}',
+result = RestClient.patch 'https://online.globalairportconcierge.com/bookings/{id}',
   params: {
   }, headers: headers
 
@@ -2757,7 +2758,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('https://online.globalairportconcierge.com/bookings/{id}', headers = headers)
+r = requests.patch('https://online.globalairportconcierge.com/bookings/{id}', headers = headers)
 
 print(r.json())
 
@@ -2783,7 +2784,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','https://online.globalairportconcierge.com/bookings/{id}', array(
+    $response = $client->request('PATCH','https://online.globalairportconcierge.com/bookings/{id}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2802,7 +2803,7 @@ try {
 ```java
 URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
+con.setRequestMethod("PATCH");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
     new InputStreamReader(con.getInputStream()));
@@ -2836,7 +2837,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://online.globalairportconcierge.com/bookings/{id}", data)
+    req, err := http.NewRequest("PATCH", "https://online.globalairportconcierge.com/bookings/{id}", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -2846,7 +2847,7 @@ func main() {
 
 ```
 
-`PUT /bookings/{id}`
+`PATCH /bookings/{id}`
 
 */bookings/{id}*
 
@@ -2859,6 +2860,7 @@ Update a quotation
   "currency": "USD",
   "promo_code": "PROMO21",
   "booker_id": "5ffe8fd64ed96d0f572440fb",
+  "ref_no": "GAC-604626A8A194B",
   "journeys": [
     {
       "flight": "BA282",
@@ -3029,7 +3031,7 @@ Update a quotation
 }
 ```
 
-<h3 id="put-bookings-id-parameters">Parameters</h3>
+<h3 id="patch-bookings-id-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -3041,6 +3043,7 @@ Update a quotation
 |»» currency|body|string|true|Currency of the booking|
 |»» promo_code|body|string|false|Promocode for the booking|
 |»» booker_id|body|string|true|A booker ID|
+|»» ref_no|body|string|true|A booking ref number|
 |» *anonymous*|body|object|false|none|
 |»» journeys|body|[object]|true|List of journeys in the booking|
 |»»» flight|body|string|true|A flight number|
@@ -3602,7 +3605,7 @@ Update a quotation
 }
 ```
 
-<h3 id="put-bookings-id-responses">Responses</h3>
+<h3 id="patch-bookings-id-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -3612,7 +3615,7 @@ Update a quotation
 |502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
 |504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
-<h3 id="put-bookings-id-responseschema">Response Schema</h3>
+<h3 id="patch-bookings-id-responseschema">Response Schema</h3>
 
 #### Enumerated Values
 
@@ -3672,6 +3675,329 @@ Update a quotation
 |currency|USD|
 |currency|GBP|
 |currency|EUR|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Authorization
+</aside>
+
+## DELETE-bookings-bookingId-cancel
+
+<a id="opIdDELETE-bookings-bookingId-cancel"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE https://online.globalairportconcierge.com/bookings/{id} \
+  -H 'Accept: application/json' \
+  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept-Encoding: gzip' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE https://online.globalairportconcierge.com/bookings/{id} HTTP/1.1
+Host: online.globalairportconcierge.com
+Accept: application/json
+X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
+Content-Type: application/json
+Accept-Encoding: gzip
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json',
+  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type':'application/json',
+  'Accept-Encoding':'gzip',
+  'apiKey':'API_KEY'
+};
+
+fetch('https://online.globalairportconcierge.com/bookings/{id}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type' => 'application/json',
+  'Accept-Encoding' => 'gzip',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete 'https://online.globalairportconcierge.com/bookings/{id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+  'Content-Type': 'application/json',
+  'Accept-Encoding': 'gzip',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('https://online.globalairportconcierge.com/bookings/{id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
+    'Content-Type' => 'application/json',
+    'Accept-Encoding' => 'gzip',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','https://online.globalairportconcierge.com/bookings/{id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"application/json"},
+        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
+        "Content-Type": []string{"application/json"},
+        "Accept-Encoding": []string{"gzip"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "https://online.globalairportconcierge.com/bookings/{id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /bookings/{id}`
+
+*/bookings/{id}/*
+
+Cancel a booking
+
+<h3 id="delete-bookings-bookingid-cancel-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|X-Trace-Id|header|string|false|Please provide your UUID for tracing|
+|Content-Type|header|string|true|application/json|
+|Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
+|id|path|string|true|a booking id|
+
+> Example responses
+
+> No Content
+
+```json
+{
+  "status": {
+    "success": true,
+    "status": 204,
+    "message": "No Deleted Successfully"
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Not Found
+
+```json
+{
+  "error": {
+    "code": 404,
+    "message": "Not Found",
+    "moreInfo": "Data requested not found",
+    "errors": [
+      {
+        "code": "4002",
+        "message": "Data Not Found",
+        "description": "Booking not found"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Internal Server Error
+
+```json
+{
+  "error": {
+    "code": 500,
+    "message": "Server Error",
+    "moreInfo": "Internal Server Error",
+    "errors": [
+      {
+        "code": "5000",
+        "message": "Server Error",
+        "description": "Internal Server Error"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Bad Gateway
+
+```json
+{
+  "error": {
+    "code": 502,
+    "message": "Server Error",
+    "moreInfo": "Bad Gateway",
+    "errors": [
+      {
+        "code": "5002",
+        "message": "Server Error",
+        "description": "Bad Gateway"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+> Gateway Timeout
+
+```json
+{
+  "error": {
+    "code": 504,
+    "message": "Server Error",
+    "moreInfo": "Gateway Timeout",
+    "errors": [
+      {
+        "code": "5004",
+        "message": "Server Error",
+        "description": "Gateway Timeout"
+      }
+    ]
+  },
+  "trace": {
+    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
+    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
+    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
+  }
+}
+```
+
+<h3 id="delete-bookings-bookingid-cancel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
+|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
+|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
+
+<h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|status|200|
+|status|201|
+|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -4310,15 +4636,15 @@ To perform this operation, you must be authenticated by means of one of the foll
 Authorization
 </aside>
 
-## PUT-bookings-bookingId-recalculate
+## POST-bookings-bookingId-recalculate
 
-<a id="opIdPUT-bookings-bookingId-recalculate"></a>
+<a id="opIdPOST-bookings-bookingId-recalculate"></a>
 
 > Code samples
 
 ```shell
 # You can also use wget
-curl -X PUT https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate \
+curl -X POST https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate \
   -H 'Accept: application/json' \
   -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
   -H 'Content-Type: application/json' \
@@ -4328,7 +4654,7 @@ curl -X PUT https://online.globalairportconcierge.com/bookings/{bookingId}/recal
 ```
 
 ```http
-PUT https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate HTTP/1.1
+POST https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate HTTP/1.1
 Host: online.globalairportconcierge.com
 Accept: application/json
 X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
@@ -4349,7 +4675,7 @@ const headers = {
 
 fetch('https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
 {
-  method: 'PUT',
+  method: 'POST',
 
   headers: headers
 })
@@ -4373,7 +4699,7 @@ headers = {
   'apiKey' => 'API_KEY'
 }
 
-result = RestClient.put 'https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
+result = RestClient.post 'https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate',
   params: {
   }, headers: headers
 
@@ -4391,7 +4717,7 @@ headers = {
   'apiKey': 'API_KEY'
 }
 
-r = requests.put('https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', headers = headers)
+r = requests.post('https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', headers = headers)
 
 print(r.json())
 
@@ -4416,7 +4742,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('PUT','https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', array(
+    $response = $client->request('POST','https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -4435,7 +4761,7 @@ try {
 ```java
 URL obj = new URL("https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
+con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
     new InputStreamReader(con.getInputStream()));
@@ -4468,7 +4794,7 @@ func main() {
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("PUT", "https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate", data)
+    req, err := http.NewRequest("POST", "https://online.globalairportconcierge.com/bookings/{bookingId}/recalculate", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -4478,13 +4804,13 @@ func main() {
 
 ```
 
-`PUT /bookings/{bookingId}/recalculate`
+`POST /bookings/{bookingId}/recalculate`
 
 */bookings/{bookingId}/recalculate*
 
 Recalculate a quotation
 
-<h3 id="put-bookings-bookingid-recalculate-parameters">Parameters</h3>
+<h3 id="post-bookings-bookingid-recalculate-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -4866,7 +5192,7 @@ Recalculate a quotation
 }
 ```
 
-<h3 id="put-bookings-bookingid-recalculate-responses">Responses</h3>
+<h3 id="post-bookings-bookingid-recalculate-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -4876,7 +5202,7 @@ Recalculate a quotation
 |502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
 |504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
 
-<h3 id="put-bookings-bookingid-recalculate-responseschema">Response Schema</h3>
+<h3 id="post-bookings-bookingid-recalculate-responseschema">Response Schema</h3>
 
 #### Enumerated Values
 
@@ -4936,329 +5262,6 @@ Recalculate a quotation
 |currency|USD|
 |currency|GBP|
 |currency|EUR|
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Authorization
-</aside>
-
-## DELETE-bookings-bookingId-cancel
-
-<a id="opIdDELETE-bookings-bookingId-cancel"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X DELETE https://online.globalairportconcierge.com/bookings/{id}/cancel \
-  -H 'Accept: application/json' \
-  -H 'X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f' \
-  -H 'Content-Type: application/json' \
-  -H 'Accept-Encoding: gzip' \
-  -H 'apiKey: API_KEY'
-
-```
-
-```http
-DELETE https://online.globalairportconcierge.com/bookings/{id}/cancel HTTP/1.1
-Host: online.globalairportconcierge.com
-Accept: application/json
-X-Trace-Id: 1061b7fe-e742-47e2-a41c-1f8cb3c58d9f
-Content-Type: application/json
-Accept-Encoding: gzip
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json',
-  'X-Trace-Id':'1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type':'application/json',
-  'Accept-Encoding':'gzip',
-  'apiKey':'API_KEY'
-};
-
-fetch('https://online.globalairportconcierge.com/bookings/{id}/cancel',
-{
-  method: 'DELETE',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type' => 'application/json',
-  'Accept-Encoding' => 'gzip',
-  'apiKey' => 'API_KEY'
-}
-
-result = RestClient.delete 'https://online.globalairportconcierge.com/bookings/{id}/cancel',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'X-Trace-Id': '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-  'Content-Type': 'application/json',
-  'Accept-Encoding': 'gzip',
-  'apiKey': 'API_KEY'
-}
-
-r = requests.delete('https://online.globalairportconcierge.com/bookings/{id}/cancel', headers = headers)
-
-print(r.json())
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'X-Trace-Id' => '1061b7fe-e742-47e2-a41c-1f8cb3c58d9f',
-    'Content-Type' => 'application/json',
-    'Accept-Encoding' => 'gzip',
-    'apiKey' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('DELETE','https://online.globalairportconcierge.com/bookings/{id}/cancel', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```java
-URL obj = new URL("https://online.globalairportconcierge.com/bookings/{id}/cancel");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```go
-package main
-
-import (
-       "bytes"
-       "net/http"
-)
-
-func main() {
-
-    headers := map[string][]string{
-        "Accept": []string{"application/json"},
-        "X-Trace-Id": []string{"1061b7fe-e742-47e2-a41c-1f8cb3c58d9f"},
-        "Content-Type": []string{"application/json"},
-        "Accept-Encoding": []string{"gzip"},
-        "apiKey": []string{"API_KEY"},
-    }
-
-    data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("DELETE", "https://online.globalairportconcierge.com/bookings/{id}/cancel", data)
-    req.Header = headers
-
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    // ...
-}
-
-```
-
-`DELETE /bookings/{id}/cancel`
-
-*/bookings/{id}/cancel*
-
-Cancel a booking
-
-<h3 id="delete-bookings-bookingid-cancel-parameters">Parameters</h3>
-
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|X-Trace-Id|header|string|false|Please provide your UUID for tracing|
-|Content-Type|header|string|true|application/json|
-|Accept-Encoding|header|string|true|add a req. header for payload to be compressed by the server|
-|id|path|string|true|booking id|
-
-> Example responses
-
-> No Content
-
-```json
-{
-  "status": {
-    "success": true,
-    "status": 204,
-    "message": "No Deleted Successfully"
-  },
-  "trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-> Not Found
-
-```json
-{
-  "error": {
-    "code": 404,
-    "message": "Not Found",
-    "moreInfo": "Data requested not found",
-    "errors": [
-      {
-        "code": "4002",
-        "message": "Data Not Found",
-        "description": "Booking not found"
-      }
-    ]
-  },
-  "trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-> Internal Server Error
-
-```json
-{
-  "error": {
-    "code": 500,
-    "message": "Server Error",
-    "moreInfo": "Internal Server Error",
-    "errors": [
-      {
-        "code": "5000",
-        "message": "Server Error",
-        "description": "Internal Server Error"
-      }
-    ]
-  },
-  "trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-> Bad Gateway
-
-```json
-{
-  "error": {
-    "code": 502,
-    "message": "Server Error",
-    "moreInfo": "Bad Gateway",
-    "errors": [
-      {
-        "code": "5002",
-        "message": "Server Error",
-        "description": "Bad Gateway"
-      }
-    ]
-  },
-  "trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-> Gateway Timeout
-
-```json
-{
-  "error": {
-    "code": 504,
-    "message": "Server Error",
-    "moreInfo": "Gateway Timeout",
-    "errors": [
-      {
-        "code": "5004",
-        "message": "Server Error",
-        "description": "Gateway Timeout"
-      }
-    ]
-  },
-  "trace": {
-    "X-GAC-Trace-Id": "a949eea7-56d5-4864-a5e6-0f15b6897960",
-    "X-Trace-Id": "56d9e9d0-08d6-481e-94e7-e2667423cf37",
-    "Idempotency-Key": "687d997b-391e-4906-94c5-a24c2fc12ba0"
-  }
-}
-```
-
-<h3 id="delete-bookings-bookingid-cancel-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
-|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|Inline|
-|502|[Bad Gateway](https://tools.ietf.org/html/rfc7231#section-6.6.3)|Bad Gateway|Inline|
-|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|Inline|
-
-<h3 id="delete-bookings-bookingid-cancel-responseschema">Response Schema</h3>
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|status|200|
-|status|201|
-|status|204|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
